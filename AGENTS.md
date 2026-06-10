@@ -75,6 +75,12 @@ Si una figura TikZ se repite en varias opciones o se crea mediante una macro del
 
 El PDF se usa como verificacion visual, no como fuente principal para reconstruir graficos. Despues de generar el HTML, revisar al menos los items con graficas para confirmar que no haya recortes, etiquetas perdidas, cambios de escala o diferencias visibles respecto al PDF.
 
+## GitHub y publicacion
+
+Cuando se realicen cambios en este proyecto, subirlos tambien al repositorio GitHub configurado (`origin/main`) mediante commit y push. Si el cambio afecta la version HTML publicada, verificar que GitHub Pages quede actualizado para que el enlace compartible por celular siga mostrando la version mas reciente:
+
+`https://hoja1304-sudo.github.io/editor-examenes-latex/`
+
 ## Skills desde GitHub
 
 Cuando el usuario indique una skill publicada en GitHub para este proyecto:
