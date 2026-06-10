@@ -918,6 +918,87 @@ Una plataforma de cursos registra una relacion entre cada codigo de curso y la c
   \item Cada codigo de curso debe estar asociado con todas las cantidades de horas disponibles.
 \end{enumerate}
 
+\Needspace{0.58\textheight}
+\item
+Considere la siguiente informacion:
+
+En un centro de acopio se estima la cantidad maxima $M$ de cajas pequenas que se pueden colocar en una zona de almacenamiento. Esa cantidad esta dada por
+\[
+M(x)=2\sqrt{x+9}+6,
+\]
+donde $x$ representa el area disponible adicional, en metros cuadrados, con $7 \leq x \leq 72$.
+
+De acuerdo con la informacion anterior, \textquestiondown cual es la cantidad maxima de cajas pequenas que se pueden colocar si el area disponible adicional es de $16\text{ m}^2$?
+
+\begin{enumerate}[label=\Alph*)]
+  \item 11
+  \item 14
+  \item 16
+  \item 31
+\end{enumerate}
+
+\Needspace{0.60\textheight}
+\item
+Considere la siguiente informacion:
+
+En una planta de tratamiento se usa un sensor para estimar la cantidad $L$ de litros de agua filtrada por minuto. Esa cantidad esta dada por
+\[
+L(t)=3\sqrt{t+4}+2,
+\]
+donde $t$ representa el tiempo de funcionamiento del filtro, en minutos, con $0 \leq t \leq 60$.
+
+De acuerdo con la informacion anterior, \textquestiondown cuantos minutos debe funcionar el filtro para que la cantidad estimada sea de $17$ litros por minuto?
+
+\begin{enumerate}[label=\Alph*)]
+  \item 9
+  \item 21
+  \item 25
+  \item 29
+\end{enumerate}
+
+\Needspace{0.96\textheight}
+\item
+Considere la siguiente informacion:
+
+En un laboratorio escolar se registra la altura $h(x)$, en centimetros, de una columna de espuma que se forma durante una reaccion. La variable $x$ representa el tiempo, en minutos, desde que inicia la observacion.
+
+La siguiente representacion grafica muestra el comportamiento de esa altura:
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.58, yscale=0.55]
+  \path[use as bounding box] (-0.9,-0.8) rectangle (11.2,10.8);
+  \draw[->, thick] (-0.5,0) -- (10.6,0) node[anchor=west] {$x$};
+  \draw[->, thick] (0,-0.4) -- (0,10.2) node[anchor=south] {$h(x)$};
+
+  \foreach \x/\lab in {1/1,2/2,5/5,10/10}
+    \node[anchor=north] at (\x,0) {$\lab$};
+  \foreach \y/\lab in {3/3,5/5,7/7,9/9}
+    \node[anchor=east] at (0,\y) {$\lab$};
+
+  \draw[densely dashed, gray!80] (1,0) -- (1,3) -- (0,3);
+  \draw[densely dashed, gray!80] (2,0) -- (2,5) -- (0,5);
+  \draw[densely dashed, gray!80] (5,0) -- (5,7) -- (0,7);
+  \draw[densely dashed, gray!80] (10,0) -- (10,9) -- (0,9);
+
+  \draw[thick, domain=1:10, samples=120, smooth, variable=\x]
+    plot ({\x},{2*sqrt(\x-1)+3});
+
+  \fill (1,3) circle (\puntograficoafirmacioncuatro);
+  \fill (2,5) circle (\puntograficoafirmacioncuatro);
+  \fill (5,7) circle (\puntograficoafirmacioncuatro);
+  \fill (10,9) circle (\puntograficoafirmacioncuatro);
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, \textquestiondown cual representacion algebraica corresponde a la funcion $h$?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $h(x)=2\sqrt{x-1}+3$
+  \item $h(x)=2\sqrt{x+1}+3$
+  \item $h(x)=2\sqrt{x-1}-3$
+  \item $h(x)=\sqrt{x-1}+3$
+\end{enumerate}
+
 \end{enumerate}
 
 \end{document}

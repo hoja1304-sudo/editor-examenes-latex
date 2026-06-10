@@ -28,6 +28,7 @@ Preferencias de formato para pruebas estandarizadas:
 - Cuando un plano cartesiano contextualizado use etiquetas direccionales como `$y$ (norte)` y `$x$ (este)`, colocarlas alineadas con la flecha del eje respectivo: `$y$ (norte)` debe quedar sobre la punta superior de la flecha del eje `y`, centrada con respecto al eje vertical, y `$x$ (este)` debe quedar junto a la punta derecha del eje horizontal. En HTML/SVG, verificar que esas palabras completas no se pierdan ni queden recortadas; si se convierten a texto SVG literal, usar alineacion centrada (`text-anchor="middle"` o equivalente) para `y (norte)` sobre la punta superior del eje `y` y mantener `x (este)` junto a la flecha del eje `x`.
 - Evitar que un item quede partido entre paginas. Si el bloque de enunciado, grafico, pregunta y opciones no cabe en el espacio restante, moverlo completo a la pagina siguiente usando `needspace` u otra tecnica equivalente.
 - Cuando dos o tres items se relacionen con una misma figura, mantener en la misma hoja el encabezado, la figura y todos los items relacionados. El encabezado de la figura no debe llevar numero de item; el numero debe iniciar en el texto de la primera pregunta relacionada.
+- En expresiones con radical, el signo de raiz debe abarcar visualmente todo el subradical. Por ejemplo, escribir en LaTeX `\sqrt{t+4}` y verificar que en HTML la barra del radical cubra completo `(t+4)` o la expresion que corresponda.
 
 ## Compilacion LaTeX
 
@@ -59,6 +60,8 @@ Ejemplo:
 La version HTML debe reproducir los mismos items, opciones, notacion matematica y graficos. Debe generar unicamente el Modo Examen, con retroalimentacion y resultados. No generar, mostrar ni mencionar Modo Practica.
 
 El texto del HTML no debe recortarse, resumirse ni parafrasearse respecto al `.tex`/PDF. Los enunciados, datos contextuales, preguntas y opciones deben coincidir en contenido con la fuente LaTeX, porque omitir texto puede cambiar la interpretacion del item. Solo adaptar la marcacion HTML necesaria para formato matematico o listas, sin eliminar informacion.
+
+La secuencia de trabajo para pruebas debe ser siempre: primero crear o corregir el documento LaTeX, despues compilar y verificar el PDF, y por ultimo trasladar esos cambios al HTML con base en el `.tex` ya corregido. El HTML no debe adelantarse ni definir un orden distinto al documento LaTeX/PDF.
 
 Cuando exista el `.tex`, usarlo como fuente principal para el HTML. Las figuras TikZ deben renderizarse desde el codigo `tikzpicture` real; no reconstruirlas manualmente en SVG/JavaScript salvo que no haya bloque TikZ disponible, que el renderizador falle despues de intentar corregirlo, o que el usuario pida una simplificacion explicita. La meta es que PDF y HTML compartan la misma fuente visual para evitar diferencias de escala, recortes, etiquetas movidas o flechas distintas.
 
