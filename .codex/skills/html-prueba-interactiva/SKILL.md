@@ -37,6 +37,7 @@ Usar esta skill para convertir una prueba creada en LaTeX/PDF en una version HTM
 - Para valores negativos sobre el eje `x`, centrar los digitos bajo la guia y dejar el signo menos hacia la izquierda.
 - Cuando exista una figura TikZ en el `.tex`, usar la figura renderizada desde LaTeX sobre un SVG recreado manualmente. El PDF solo debe servir como verificacion visual.
 - Al convertir TikZ a SVG con `dvisvgm`, evitar fuentes bitmap o codificaciones que hagan desaparecer texto normal como `(este)` y `(norte)`. En los documentos temporales de conversion, usar fuentes vectoriales compatibles o la codificacion predeterminada OT1; verificar que etiquetas de ejes completas sobrevivan en el SVG.
+- En planos cartesianos con rotulos direccionales `y (norte)` y `x (este)`, verificar que `y (norte)` quede centrado sobre la flecha del eje vertical y que `x (este)` quede cerca de la flecha derecha del eje horizontal. Si el SVG pierde glifos o hay que sustituir rotulos por `<text>`, usar `text-anchor="middle"` o equivalente para centrar `y (norte)` sobre la coordenada del eje `y`, y dejar margen suficiente para que no se recorte.
 - Para opciones graficas generadas por macros en el `.tex`, renderizar cada llamada de macro o un fragmento TikZ con los mismos parametros del PDF; no reemplazarlas por una funcion SVG aproximada si el renderizador del proyecto puede producir el SVG desde TikZ.
 
 ## Datos De Items
