@@ -31,7 +31,7 @@ Usar esta skill cuando un examen, item o version HTML necesite graficas matemati
 - Lineas punteadas: deben conectar el punto con su eje o con el salto relevante. No convertirlas en cuadricula completa si el PDF solo muestra proyecciones.
 - Ejes: usar flechas claras y margen para etiquetas. Si hay coordenadas negativas, extender el eje hacia la region negativa.
 - Etiquetas numericas: alinear cada etiqueta con su guia punteada. En negativos del eje `x`, centrar los digitos y desplazar el signo con una forma como `\llap{-}`.
-- Rotulos direccionales: si un plano cartesiano usa `y (norte)` y `x (este)`, esos rotulos deben quedar asociados visualmente a sus flechas. Colocar `y (norte)` centrado sobre el eje vertical cerca de la flecha superior y `x (este)` junto a la flecha derecha del eje horizontal; en SVG/HTML comprobar que las palabras completas se rendericen, no se recorten y no queden alejadas del eje.
+- Rotulos direccionales: si un plano cartesiano usa `y (norte)` y `x (este)`, esos rotulos deben quedar asociados visualmente a sus flechas. Colocar `y (norte)` sobre la punta superior de la flecha del eje vertical, centrado con respecto al eje `y`, y `x (este)` junto a la flecha derecha del eje horizontal; en SVG/HTML comprobar que las palabras completas se rendericen, no se recorten y no queden alejadas del eje.
 - Graficas compartidas: si dos o tres items dependen de una figura, mantener encabezado, figura y preguntas juntos en PDF. En HTML, repetir o mantener visible la figura en cada item relacionado.
 - No dibujar puntos que el estudiante debe inferir a partir de coordenadas, salvo que el enunciado diga que se muestran en la grafica.
 
