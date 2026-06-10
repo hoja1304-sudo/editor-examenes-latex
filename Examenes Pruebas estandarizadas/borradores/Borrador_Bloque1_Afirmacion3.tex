@@ -1,0 +1,194 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\newcommand{\puntografico}{0.35}
+\newcommand{\opcionalgebra}[2]{\item[#1)] $#2$}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Borrador de items}}\\
+  {\large Bloque 1. Geometria - Afirmacion 3}\\[4pt]
+  Prueba Nacional Estandarizada de Matematica, Secundaria 2026
+\end{center}
+
+\section*{Afirmacion}
+Resuelve problemas que involucran relaciones de posicion relativa entre rectas, rectas y circunferencias o puntos y circunferencias.
+
+\section*{Items propuestos}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.05cm]
+
+\Needspace{0.92\textheight}
+\item
+En las instalaciones de un centro recreativo hay una fuente circular de $16$ m de diametro. Si se crea un sendero rectilineo que pasa por los puntos $(20,4)$ y $(20,14)$.
+
+La siguiente representacion grafica, cuyas unidades estan en metros, muestra la ubicacion $O$ de la oficina y $C$ del centro de la fuente:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.34]
+  \path[use as bounding box] (-2,-1.5) rectangle (22,19);
+  \draw[<->, thick] (-1,0) -- (21,0);
+  \draw[<->, thick] (0,-1) -- (0,18);
+  \node[anchor=west] at (21.3,-0.25) {$x$ (este)};
+  \node[anchor=south east] at (1.1,18.3) {$y$ (norte)};
+  \fill (0,0) circle (\puntografico) node[below left] {$O$};
+  \draw[dashed] (10,0) -- (10,9);
+  \draw[dashed] (0,9) -- (10,9);
+  \draw[thick] (10,9) circle (8);
+  \fill (10,9) circle (\puntografico) node[anchor=south east, inner sep=2pt] {$C$};
+  \node[anchor=north] at (10,0) {$10$};
+  \node[left] at (0,9) {$9$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, la recta que representa ese sendero, con respecto a la circunferencia que representa el borde de esa fuente, es
+
+\begin{enumerate}[label=\Alph*)]
+  \item exterior.
+  \item secante.
+  \item tangente.
+  \item Ninguna de las anteriores.
+\end{enumerate}
+
+\Needspace{0.96\textheight}
+\item
+Un juego consiste en lanzar una ficha desde cierta distancia hacia un objetivo circular colocado en el piso de un salon de actividades. La medida del radio de ese objetivo es $5$ m.
+
+La siguiente representacion grafica, cuyas unidades estan en metros, muestra la circunferencia que representa el borde del objetivo:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.38]
+  \path[use as bounding box] (-2,-1.5) rectangle (17,16);
+  \draw[<->, thick] (-1,0) -- (16,0);
+  \draw[<->, thick] (0,-1) -- (0,15);
+  \node[anchor=west] at (16.3,-0.25) {$x$ (este)};
+  \node[anchor=south east] at (1.1,15.3) {$y$ (norte)};
+  \draw[dashed] (9,0) -- (9,13);
+  \draw[dashed] (0,8) -- (9,8);
+  \draw[dashed] (0,13) -- (9,13);
+  \draw[thick] (9,8) circle (5);
+  \fill (9,8) circle (\puntografico);
+  \fill (9,13) circle (\puntografico);
+  \node[anchor=north] at (9,0) {$9$};
+  \node[left] at (0,8) {$8$};
+  \node[left] at (0,13) {$13$};
+\end{tikzpicture}
+\end{center}
+
+Ademas, durante el juego:
+
+\begin{itemize}
+  \item Mariela lanzo una ficha y esta se ubico en el punto correspondiente a $(12,12)$.
+  \item Andres lanzo una ficha y esta se ubico en el punto correspondiente a $(4,8)$.
+  \item Valeria lanzo una ficha y esta se ubico en el punto correspondiente a $(15,9)$.
+  \item Esteban lanzo una ficha y esta se ubico en el punto correspondiente a $(8,4)$.
+\end{itemize}
+
+De acuerdo con la informacion anterior, \textquestiondown cual de esas personas lanzo la ficha que se ubico en el exterior de ese objetivo?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Mariela.
+  \item Andres.
+  \item Valeria.
+  \item Esteban.
+\end{enumerate}
+
+\Needspace{0.96\textheight}
+\item
+Una rotonda tiene forma circular y la medida de su diametro es $24$ m. Las rectas $h$ y $j$ representan senderos que pasan por el centro de la rotonda. Las rectas $k$ y $n$ representan otros senderos del lugar. La siguiente representacion grafica, en la que las unidades estan en metros, muestra la rotonda y esos senderos:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.27]
+  \path[use as bounding box] (-10,-7) rectangle (38,33);
+  \draw[<->, thick] (-8,0) -- (36,0);
+  \draw[<->, thick] (0,-5) -- (0,31);
+  \node[anchor=west] at (36.7,-0.5) {$x$};
+  \node[anchor=south east] at (1.6,31.7) {$y$};
+  \draw[thick] (18,14) circle (12);
+  \draw[very thick, <->] (18,-4) -- (18,32);
+  \draw[very thick, <->] (2,14) -- (34,14);
+  \draw[very thick, <->] (1,4) -- (35,4);
+  \draw[very thick, <->] (7,29) -- (31,-2);
+  \draw[thick] (18,4) -- (16.4,4) -- (16.4,5.6) -- (18,5.6);
+  \draw[dashed] (0,14) -- (18,14);
+  \draw[dashed] (18,0) -- (18,14);
+  \fill (18,14) circle (\puntografico);
+  \node[anchor=north] at (18,0) {$18$};
+  \node[left] at (0,14) {$14$};
+  \node[left] at (0,4) {$4$};
+  \node[anchor=south east] at (18,32) {$h$};
+  \node[anchor=south west] at (34,14) {$j$};
+  \node[anchor=south east] at (8,29) {$k$};
+  \node[anchor=south west] at (34,4) {$n$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, \textquestiondown cuales de esas rectas, que representan senderos, son perpendiculares entre si?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $j$ y $k$.
+  \item $h$ y $j$.
+  \item $k$ y $n$.
+  \item $j$ y $n$.
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+Una antena de telecomunicaciones emite una senal que permite a los telefonos celulares, que se encuentran a $6$ km o menos alrededor de esa antena, realizar y recibir llamadas. A continuacion, se muestra la representacion grafica, en la que las unidades estan en kilometros, de la circunferencia que corresponde al alcance maximo de la senal que emite esa antena:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.38]
+  \path[use as bounding box] (-2,-1.5) rectangle (17,16);
+  \draw[<->, thick] (-1,0) -- (16,0);
+  \draw[<->, thick] (0,-1) -- (0,15);
+  \node[anchor=west] at (16.3,-0.25) {$x$};
+  \node[anchor=south east] at (1.1,15.3) {$y$};
+  \draw[thick] (7,8) circle (6);
+  \draw[dashed] (7,0) -- (7,14);
+  \draw[dashed] (0,8) -- (13,8);
+  \draw[dashed] (0,14) -- (7,14);
+  \draw[dashed] (13,0) -- (13,8);
+  \fill (7,8) circle (\puntografico);
+  \fill (7,14) circle (\puntografico);
+  \fill (13,8) circle (\puntografico);
+  \node[anchor=north] at (7,0) {$7$};
+  \node[anchor=north] at (13,0) {$13$};
+  \node[left] at (0,8) {$8$};
+  \node[left] at (0,14) {$14$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, si las ubicaciones que tienen los telefonos celulares $W$, $K$, $L$ y $M$ corresponden, respectivamente, a los puntos $(10,12)$, $(14,8)$, $(2,2)$ y $(7,15)$, entonces \textquestiondown en cual de esos telefonos se pueden realizar y recibir llamadas por medio de la senal de esa antena?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $W$
+  \item $K$
+  \item $L$
+  \item $M$
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Clave y justificacion breve}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{A.} El sendero esta representado por la recta $x=20$. La distancia del centro $(10,9)$ a esa recta es $10$, mayor que el radio de la circunferencia, que mide $8$ m; por eso la recta es exterior.
+  \item \textbf{C.} El centro es $(9,8)$ y el radio es $5$. Para Valeria, $(15-9)^2+(9-8)^2=37>25$, por lo que su ficha se ubico en el exterior. Las demas fichas estan en el interior o sobre la circunferencia.
+  \item \textbf{B.} La recta $h$ es vertical y la recta $j$ es horizontal; por lo tanto, se intersecan formando angulos rectos y son perpendiculares.
+  \item \textbf{A.} El centro de la circunferencia es $(7,8)$ y el radio es $6$. Para $W(10,12)$ se cumple $(10-7)^2+(12-8)^2=25\leq 36$, por lo que esta dentro del alcance. Los telefonos $K$, $L$ y $M$ quedan a una distancia mayor que $6$ km.
+\end{enumerate}
+
+\end{document}

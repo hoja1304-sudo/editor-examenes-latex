@@ -1,0 +1,7 @@
+interface:
+  display_name: "LaTeX Matematica"
+  short_description: "Examenes LaTeX con TikZ y PGFPlots"
+  default_prompt: "Usa $latex-matematica para crear, editar, compilar y corregir examenes matematicos en LaTeX."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,200 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\newcommand{\puntografico}{0.09}
+\newcommand{\puntocerrado}[2]{\fill (#1,#2) circle (\puntografico);}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Borrador de items}}\\
+  {\large Bloque 2. Relaciones y Algebra - Afirmacion 2}\\[4pt]
+  Prueba Nacional Estandarizada de Matematica, Secundaria 2026
+\end{center}
+
+\section*{Afirmacion}
+Resuelve problemas relacionados con la inversa de una funcion en sus distintas representaciones.
+
+\section*{Items propuestos}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.05cm]
+
+\Needspace{0.95\textheight}
+\item
+La siguiente representacion grafica corresponde a la funcion $p$, que determina la presion $p(t)$, en kilopascales, registrada por un sensor industrial en funcion del tiempo $t$, en minutos, desde que se inicia una prueba, con $0 \leq t \leq 8$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.72]
+  \path[use as bounding box] (-1.1,-0.9) rectangle (9.2,7.1);
+  \draw[<->, thick] (-0.55,0) -- (8.8,0);
+  \draw[<->, thick] (0,-0.45) -- (0,6.65);
+  \node[anchor=west] at (8.9,-0.05) {$t$};
+  \node[anchor=south east] at (-0.05,6.7) {$p(t)$};
+  \node[anchor=north] at (8,0) {$8$};
+  \node[anchor=east] at (0,2) {$2$};
+  \node[anchor=east] at (0,6) {$6$};
+  \draw[densely dashed, gray!75] (8,0) -- (8,2) -- (0,2);
+  \draw[densely dashed, gray!75] (0,6) -- (0,6);
+  \draw[thick] (0,6) -- (8,2);
+  \puntocerrado{0}{6}
+  \puntocerrado{8}{2}
+  \node[anchor=south] at (3.2,4.55) {$p$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, \textquestiondown cual representacion grafica corresponde a $p^{-1}$?
+
+\begin{enumerate}[label=\Alph*)]
+  \item
+  \begin{tikzpicture}[scale=0.45, baseline=-0.5ex]
+    \draw[<->, thick] (-0.4,0) -- (8.7,0);
+    \draw[<->, thick] (0,-0.4) -- (0,6.7);
+    \node[anchor=west] at (8.8,0) {$x$};
+    \node[anchor=south] at (0,6.8) {$y$};
+    \node[anchor=north] at (8,0) {$8$};
+    \node[anchor=east] at (0,2) {$2$};
+    \node[anchor=east] at (0,6) {$6$};
+    \draw[densely dashed, gray!75] (8,0) -- (8,2) -- (0,2);
+    \draw[thick] (0,6) -- (8,2);
+    \fill (0,6) circle (0.12);
+    \fill (8,2) circle (0.12);
+  \end{tikzpicture}
+  \item
+  \begin{tikzpicture}[scale=0.45, baseline=-0.5ex]
+    \draw[<->, thick] (-0.4,0) -- (8.7,0);
+    \draw[<->, thick] (0,-0.4) -- (0,8.7);
+    \node[anchor=west] at (8.8,0) {$x$};
+    \node[anchor=south] at (0,8.8) {$y$};
+    \node[anchor=north] at (2,0) {$2$};
+    \node[anchor=north] at (6,0) {$6$};
+    \node[anchor=east] at (0,8) {$8$};
+    \draw[densely dashed, gray!75] (2,0) -- (2,0);
+    \draw[densely dashed, gray!75] (6,0) -- (6,8) -- (0,8);
+    \draw[thick] (2,0) -- (6,8);
+    \fill (2,0) circle (0.12);
+    \fill (6,8) circle (0.12);
+  \end{tikzpicture}
+  \item
+  \begin{tikzpicture}[scale=0.45, baseline=-0.5ex]
+    \draw[<->, thick] (-0.4,0) -- (8.7,0);
+    \draw[<->, thick] (0,-0.4) -- (0,8.7);
+    \node[anchor=west] at (8.8,0) {$x$};
+    \node[anchor=south] at (0,8.8) {$y$};
+    \node[anchor=north] at (2,0) {$2$};
+    \node[anchor=north] at (8,0) {$8$};
+    \node[anchor=east] at (0,6) {$6$};
+    \draw[densely dashed, gray!75] (8,0) -- (8,6) -- (0,6);
+    \draw[thick] (2,0) -- (8,6);
+    \fill (2,0) circle (0.12);
+    \fill (8,6) circle (0.12);
+  \end{tikzpicture}
+  \item
+  \begin{tikzpicture}[scale=0.45, baseline=-0.5ex]
+    \draw[<->, thick] (-0.4,0) -- (8.7,0);
+    \draw[<->, thick] (0,-0.4) -- (0,8.7);
+    \node[anchor=west] at (8.8,0) {$x$};
+    \node[anchor=south] at (0,8.8) {$y$};
+    \node[anchor=north] at (2,0) {$2$};
+    \node[anchor=north] at (6,0) {$6$};
+    \node[anchor=east] at (0,8) {$8$};
+    \draw[densely dashed, gray!75] (2,0) -- (2,8) -- (0,8);
+    \draw[densely dashed, gray!75] (6,0) -- (6,0);
+    \draw[thick] (2,8) -- (6,0);
+    \fill (2,8) circle (0.12);
+    \fill (6,0) circle (0.12);
+  \end{tikzpicture}
+\end{enumerate}
+
+\Needspace{0.56\textheight}
+\item
+Considere la siguiente informacion:
+
+En un vivero se usa la funcion $a$, que determina la altura $a(s)$, en centimetros, de una planta de albahaca en funcion del tiempo $s$, en semanas, desde que se trasplanto, dada por
+\[
+a(s)=7s+18,
+\]
+donde $s$ representa el tiempo en semanas, con $2 \leq s \leq 9$.
+
+De acuerdo con la informacion anterior, si se requiere determinar el criterio de la funcion inversa de $a$, entonces, \textquestiondown cual opcion corresponde a ese criterio?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $s(a)=7a+18$
+  \item $s(a)=\dfrac{a-18}{7}$
+  \item $s(a)=\dfrac{a}{7}-18$
+  \item $s(a)=\dfrac{18-a}{7}$
+\end{enumerate}
+
+\Needspace{0.62\textheight}
+\item
+Considere la siguiente informacion:
+
+Una empresa de empaque establece que la funcion $c$, que determina el costo $c(h)$, en miles de colones, de operar una maquina segun el tiempo $h$, en horas, esta dada por
+\[
+c(h)=4(h^2+6),
+\]
+donde $h$ representa el tiempo de operacion de la maquina, con $3 \leq h \leq 7$.
+
+De acuerdo con la informacion anterior, si se requiere determinar el criterio de la funcion $h$, la cual corresponde a la funcion inversa de $c$, entonces, \textquestiondown cual opcion corresponde a ese criterio?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $h(c)=\sqrt{\dfrac{c}{4}-6}$
+  \item $h(c)=\sqrt{\dfrac{c}{4}+6}$
+  \item $h(c)=\sqrt{\dfrac{c-6}{4}}$
+  \item $h(c)=\dfrac{\sqrt{c}}{4}-6$
+\end{enumerate}
+
+\Needspace{0.56\textheight}
+\item
+Considere la siguiente informacion:
+
+La funcion $q$, que determina la cantidad de litros de solucion nutritiva $q(r)$ que hay en un deposito, esta dada por
+\[
+q(r)=5r+12,
+\]
+donde $r$ representa el tiempo en horas desde que inicia el llenado del deposito, con $4 \leq r \leq 14$.
+
+De acuerdo con la informacion anterior, si se define la funcion $r$, la cual corresponde a la funcion inversa de $q$, entonces, \textquestiondown cual es el ambito de $r$?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $[4,14]$
+  \item $[17,82]$
+  \item $[32,82]$
+  \item $[32,70]$
+\end{enumerate}
+
+\Needspace{0.58\textheight}
+\item
+Una plataforma de cursos registra una relacion entre cada codigo de curso y la cantidad de horas de tutoria asignadas por semana. Para que esa relacion tenga funcion inversa, \textquestiondown cual condicion debe cumplirse?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Cada codigo de curso debe estar asociado con una unica cantidad de horas, aunque dos codigos diferentes tengan la misma cantidad.
+  \item Cada cantidad de horas debe estar asociada con al menos dos codigos de curso.
+  \item Cada codigo de curso debe estar asociado con una unica cantidad de horas y no debe haber dos codigos diferentes con la misma cantidad.
+  \item Cada codigo de curso debe estar asociado con todas las cantidades de horas disponibles.
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Clave y justificacion breve}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{D.} La grafica de la inversa se obtiene al intercambiar las coordenadas de los extremos de $p$: $(0,6)$ pasa a $(6,0)$ y $(8,2)$ pasa a $(2,8)$.
+  \item \textbf{B.} Al despejar $a=7s+18$, se obtiene $s=\dfrac{a-18}{7}$.
+  \item \textbf{A.} Al despejar $c=4(h^2+6)$, se obtiene $\dfrac{c}{4}=h^2+6$ y, como $h$ es positivo en el dominio dado, $h=\sqrt{\dfrac{c}{4}-6}$.
+  \item \textbf{A.} El ambito de la funcion inversa corresponde al dominio de la funcion original. Como $4 \leq r \leq 14$, el ambito de la inversa es $[4,14]$.
+  \item \textbf{C.} Para que una funcion tenga inversa como funcion, debe ser uno a uno: cada entrada tiene una unica imagen y valores de entrada diferentes no comparten la misma imagen.
+\end{enumerate}
+
+\end{document}

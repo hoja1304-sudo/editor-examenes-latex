@@ -1,0 +1,166 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\newcommand{\puntografico}{0.09}
+\newcommand{\puntograficoitemuno}{0.14}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Borrador de items}}\\
+  {\large Bloque 1. Geometria - Afirmacion 4}\\[4pt]
+  Prueba Nacional Estandarizada de Matematica, Secundaria 2026
+\end{center}
+
+\section*{Afirmacion}
+Resuelve problemas relacionados con area, perimetro o elementos de figuras planas poligonales o no poligonales.
+
+\section*{Items propuestos}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.05cm]
+
+\Needspace{0.92\textheight}
+\item
+En un centro educativo se destinara una zona con forma poligonal para construir un jardin. La siguiente representacion grafica, en la que las unidades estan en metros, muestra la forma de esa zona:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-1.2,-1.2) rectangle (12,9.4);
+  \draw[<->, thick] (-0.5,0) -- (11.5,0);
+  \draw[<->, thick] (0,-0.5) -- (0,9);
+  \node[anchor=west] at (11.8,-0.2) {$x$};
+  \node[anchor=south east] at (0.9,9.2) {$y$};
+  \fill[gray!18] (2,1) -- (10,1) -- (10,5) -- (6,8) -- (2,5) -- cycle;
+  \draw[very thick] (2,1) -- (10,1) -- (10,5) -- (6,8) -- (2,5) -- cycle;
+  \foreach \x/\lab in {2/2,10/10} {
+    \draw[dashed] (\x,0) -- (\x,1);
+    \node[anchor=north] at (\x,0) {$\lab$};
+  }
+  \foreach \y/\lab in {1/1,5/5} {
+    \draw[dashed] (0,\y) -- (2,\y);
+    \node[left] at (0,\y) {$\lab$};
+  }
+  \draw[dashed] (0,8) -- (6,8);
+  \node[left] at (0,8) {$8$};
+  \foreach \p/\pos/\name in {(2,1)/below left/A,(10,1)/below right/B,(10,5)/right/C,(6,8)/above/D,(2,5)/left/E} {
+    \fill \p circle (\puntograficoitemuno) node[\pos] {$\name$};
+  }
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, \textquestiondown cuantos metros cuadrados mide el area de la zona destinada para ese jardin?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $32$
+  \item $40$
+  \item $44$
+  \item $56$
+\end{enumerate}
+
+\Needspace{0.70\textheight}
+\item
+Una empresa fabrica senales decorativas con forma de hexagono regular. Para colocar un refuerzo, se mide la distancia entre dos vertices opuestos de una de esas senales y se obtiene $18$ cm.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+  \path[use as bounding box] (-3.7,-3.2) rectangle (3.7,3.4);
+  \draw[very thick] (0:3) -- (60:3) -- (120:3) -- (180:3) -- (240:3) -- (300:3) -- cycle;
+  \draw[dashed, thick] (180:3) -- (0:3);
+  \fill (0,0) circle (\puntografico);
+  \node[below] at (0,0) {$O$};
+  \node[above] at (0,0.35) {$18$ cm};
+  \fill (180:3) circle (\puntografico);
+  \fill (0:3) circle (\puntografico);
+\end{tikzpicture}
+\end{center}
+
+Si se coloca una cinta alrededor de todo el borde de esa senal, \textquestiondown cuantos centimetros de cinta se necesitan?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $27$
+  \item $36$
+  \item $54$
+  \item $108$
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+Un artesano diseno una pieza decorativa para la entrada de un salon comunal. La siguiente representacion grafica muestra la forma de esa pieza sobre una cuadricula. La medida del lado de cada cuadrado de la cuadricula es $1$ m.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.58]
+  \path[use as bounding box] (-0.8,-0.8) rectangle (9.3,8.4);
+  \fill[gray!18] (2,1) -- (6,1) -- (6,5) arc[start angle=0,end angle=180,radius=2] -- cycle;
+  \draw[step=1, black!70, dotted, line width=0.8pt] (0,0) grid (8,8);
+  \draw[<->, thick] (-0.35,0) -- (8.4,0);
+  \draw[<->, thick] (0,-0.35) -- (0,8.2);
+  \node[anchor=west] at (8.55,-0.15) {$x$};
+  \node[anchor=south east] at (0.65,8.35) {$y$};
+  \draw[very thick] (2,1) -- (6,1) -- (6,5) arc[start angle=0,end angle=180,radius=2] -- cycle;
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, la superficie de esa pieza decorativa, en metros cuadrados, es mayor que
+
+\begin{enumerate}[label=\Alph*)]
+  \item $22$ y menor que $23$.
+  \item $18$ y menor que $20$.
+  \item $16$ y menor que $18$.
+  \item $24$ y menor que $26$.
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+Para una actividad escolar se arma un mural con cinco piezas cuadradas congruentes. Cada pieza tiene $4$ dm de lado y se colocan como se muestra en la siguiente figura:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+  \path[use as bounding box] (-0.5,-0.5) rectangle (4.5,4.5);
+  \fill[gray!18] (1,0) rectangle (2,1);
+  \fill[gray!18] (1,1) rectangle (2,2);
+  \fill[gray!18] (0,1) rectangle (1,2);
+  \fill[gray!18] (2,1) rectangle (3,2);
+  \fill[gray!18] (1,2) rectangle (2,3);
+  \draw[very thick] (1,0) -- (2,0) -- (2,1) -- (3,1) -- (3,2) -- (2,2) -- (2,3) -- (1,3) -- (1,2) -- (0,2) -- (0,1) -- (1,1) -- cycle;
+  \draw[thin] (1,1) -- (2,1);
+  \draw[thin] (1,2) -- (2,2);
+  \draw[thin] (1,1) -- (1,2);
+  \draw[thin] (2,1) -- (2,2);
+  \draw[<->] (3.25,1) -- (3.25,2);
+  \node[right] at (3.25,1.5) {$4$ dm};
+\end{tikzpicture}
+\end{center}
+
+Si se coloca una cinta alrededor del borde exterior del mural, \textquestiondown cuantos decimetros de cinta se necesitan?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $32$
+  \item $40$
+  \item $48$
+  \item $80$
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Clave y justificacion breve}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{C.} La figura puede descomponerse en un rectangulo de $8\cdot 4=32$ m$^2$ y un triangulo de base $8$ m y altura $3$ m, cuya area es $12$ m$^2$. En total, el area es $44$ m$^2$.
+  \item \textbf{C.} En un hexagono regular, la distancia entre vertices opuestos corresponde a dos radios. Si esa distancia es $18$ cm, entonces el radio mide $9$ cm y coincide con la medida del lado. Por eso, el perimetro es $6\cdot 9=54$ cm.
+  \item \textbf{A.} La pieza puede estimarse como un rectangulo de $4\cdot 4=16$ m$^2$ y media circunferencia de radio $2$ m, cuya area es aproximadamente $6,28$ m$^2$. En total, la superficie se estima entre $22$ m$^2$ y $23$ m$^2$.
+  \item \textbf{C.} El borde exterior del mural esta formado por $12$ lados de cuadrados. Como cada lado mide $4$ dm, el perimetro es $12\cdot 4=48$ dm.
+\end{enumerate}
+
+\end{document}

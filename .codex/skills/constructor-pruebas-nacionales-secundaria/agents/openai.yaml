@@ -1,0 +1,4 @@
+interface:
+  display_name: "Constructor pruebas nacionales secundaria"
+  short_description: "Crea pruebas nacionales estandarizadas de Matemática secundaria."
+  default_prompt: "Crea una prueba nacional estandarizada de Matemática secundaria de 60 ítems siguiendo el marco de especificaciones 2026."

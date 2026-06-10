@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\newcommand{\puntografico}{0.35}
+\newcommand{\opcionalgebra}[2]{\item[#1)] $#2$}
+\newcommand{\graftrasbase}[7]{%
+\begin{tikzpicture}[scale=0.16]
+  \path[use as bounding box] (-11,-9) rectangle (31,24);
+  \draw[<->, thick] (-8,0) -- (28,0);
+  \draw[<->, thick] (0,-7) -- (0,21);
+  \node[anchor=west] at (29,-0.7) {$x$};
+  \node[anchor=south east] at (3,22) {$y$};
+  \draw[thick] (#4,#5) circle (#3);
+  \draw[dashed] (#4,0) -- (#4,#5);
+  \draw[dashed] (0,#5) -- (#4,#5);
+  \fill (#4,#5) circle (\puntografico) node[anchor=south west, inner sep=2pt] {$A'$};
+  #7
+  \node[left] at (0,#5) {$#5$};
+\end{tikzpicture}}
+\newcommand{\graftras}[6]{%
+\graftrasbase{#1}{#2}{#3}{#4}{#5}{#6}{\node[anchor=north] at (#4,0) {$#4$};}}
+\newcommand{\graftrasetiquetabaja}[6]{%
+\graftrasbase{#1}{#2}{#3}{#4}{#5}{#6}{\node[anchor=north, inner sep=1pt] at (#4,#5-0.45) {$#4$};}}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Borrador de items}}\\
+  {\large Bloque 1. Geometria - Afirmacion 2}\\[4pt]
+  Prueba Nacional Estandarizada de Matematica, Secundaria 2026
+\end{center}
+
+\section*{Afirmacion}
+Resuelve problemas relacionados con traslaciones de circunferencias.
+
+\section*{Items propuestos}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.05cm]
+
+\Needspace{0.68\textheight}
+\item
+En un plano cartesiano, la circunferencia $C$ tiene centro en $A(6,4)$ y radio $5$. A esa circunferencia se le aplica una traslacion de $8$ unidades hacia la derecha y $3$ unidades hacia abajo, obteniendo la circunferencia $C'$.
+
+\textquestiondown Cual de las siguientes representaciones algebraicas corresponde a la circunferencia $C'$?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcionalgebra{A}{(x-14)^2+(y-1)^2=25}
+  \opcionalgebra{B}{(x+14)^2+(y+1)^2=25}
+  \opcionalgebra{C}{(x-14)^2+(y-7)^2=25}
+  \opcionalgebra{D}{(x-6)^2+(y-4)^2=25}
+\end{enumerate}
+
+\Needspace{0.90\textheight}
+\item
+En un centro recreativo, una piscina circular esta representada en un plano por la circunferencia $C$, con centro en $A(4,3)$ y radio $4$. Debido a una remodelacion del terreno, la piscina se trasladara $12$ unidades hacia la derecha y $5$ unidades hacia arriba, obteniendo la nueva ubicacion representada por la circunferencia $C'$.
+
+\textquestiondown Cual de las siguientes representaciones graficas corresponde a esa traslacion?
+
+\vspace{2\baselineskip}
+
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{@{}r@{\hspace{0.35cm}}c@{\hspace{0.55cm}}r@{\hspace{0.35cm}}c@{}}
+\raisebox{1.45cm}{\textbf{A)}} & \graftras{4}{3}{4}{12}{8}{4} &
+\raisebox{1.45cm}{\textbf{B)}} & \graftrasetiquetabaja{4}{3}{4}{16}{-2}{4} \\[0.75cm]
+\raisebox{1.45cm}{\textbf{C)}} & \graftras{4}{3}{4}{16}{8}{4} &
+\raisebox{1.45cm}{\textbf{D)}} & \graftras{4}{3}{4}{9}{15}{4}
+\end{tabular}
+\end{center}
+
+\Needspace{0.72\textheight}
+\item
+En una plaza, el borde de una zona circular de juego esta representado por la circunferencia
+\[
+(x-18)^2+(y-10)^2=36,
+\]
+donde las unidades estan en metros. Por una remodelacion, toda la zona se trasladara $7$ m hacia el oeste y $4$ m hacia el norte.
+
+\textquestiondown Cual sera la representacion algebraica del borde de la zona circular despues de la traslacion?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcionalgebra{A}{(x-11)^2+(y-14)^2=36}
+  \opcionalgebra{B}{(x-25)^2+(y-14)^2=36}
+  \opcionalgebra{C}{(x-11)^2+(y-6)^2=36}
+  \opcionalgebra{D}{(x-18)^2+(y-10)^2=36}
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Clave y justificacion breve}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{A.} El centro se traslada de $(6,4)$ a $(14,1)$ y el radio conserva su medida, por eso $r^2=25$.
+  \item \textbf{C.} El centro imagen es $A'(16,8)$, pues $(4+12,3+5)=(16,8)$; el radio no cambia.
+  \item \textbf{A.} El centro original es $(18,10)$; al trasladarlo $7$ m al oeste y $4$ m al norte se obtiene $(11,14)$, con el mismo radio.
+\end{enumerate}
+
+\end{document}

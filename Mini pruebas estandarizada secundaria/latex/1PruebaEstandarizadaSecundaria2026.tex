@@ -1,0 +1,622 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\newcommand{\opcion}[2]{\item[#1)] $#2$}
+\newcommand{\puntografico}{0.35}
+\newcommand{\puntograficoafirmacioncuatro}{0.09}
+\newcommand{\puntograficoitemunoafirmacioncuatro}{0.14}
+\newcommand{\grafcirc}[5]{%
+\begin{tikzpicture}[scale=0.078]
+  \path[use as bounding box] (-32,-15) rectangle (43,34);
+  \draw[<->, thick] (-30,0) -- (36,0);
+  \draw[<->, thick] (0,-12) -- (0,31);
+  \node[anchor=west] at (37,-1.2) {$x$ (este)};
+  \node[anchor=south east] at (7,32.5) {$y$ (norte)};
+  \fill (0,0) circle (\puntografico) node[below left] {$P$};
+  \draw[dashed] (#1,0) -- (#1,#2);
+  \draw[dashed] (0,#2) -- (#1,#2);
+  \draw[thick] (#1,#2) circle (#3);
+  \fill (#1,#2) circle (\puntografico);
+  \node[anchor=south, inner sep=1pt, yshift=1pt] at (#1,#2) {$#4$};
+  \node[anchor=south west, inner sep=0.5pt] at (#1+#3*0.72,#2+#3*0.78) {$C$};
+  \node[anchor=north] at (#1,0) {$#5$};
+  \node[left] at (0,#2) {$#2$};
+\end{tikzpicture}}
+\newcommand{\graftrasbase}[7]{%
+\begin{tikzpicture}[scale=0.16]
+  \path[use as bounding box] (-11,-9) rectangle (31,24);
+  \draw[<->, thick] (-8,0) -- (28,0);
+  \draw[<->, thick] (0,-7) -- (0,21);
+  \node[anchor=west] at (29,-0.7) {$x$};
+  \node[anchor=south east] at (3,22) {$y$};
+  \draw[thick] (#4,#5) circle (#3);
+  \draw[dashed] (#4,0) -- (#4,#5);
+  \draw[dashed] (0,#5) -- (#4,#5);
+  \fill (#4,#5) circle (\puntografico) node[anchor=south west, inner sep=2pt] {$A'$};
+  #7
+  \node[left] at (0,#5) {$#5$};
+\end{tikzpicture}}
+\newcommand{\graftras}[6]{%
+\graftrasbase{#1}{#2}{#3}{#4}{#5}{#6}{\node[anchor=north] at (#4,0) {$#4$};}}
+\newcommand{\graftrasetiquetabaja}[6]{%
+\graftrasbase{#1}{#2}{#3}{#4}{#5}{#6}{\node[anchor=north, inner sep=1pt] at (#4,#5-0.45) {$#4$};}}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Prueba Estandarizada de Matem\'atica}}\\
+  {\large Secundaria 2026}\\[4pt]
+  Nombre: \rule{8cm}{0.4pt}\hfill Fecha: \rule{3cm}{0.4pt}
+\end{center}
+
+\section*{Instrucciones}
+Seleccione la opci\'on que corresponde a la representaci\'on algebraica o gr\'afica descrita en cada situaci\'on. Todas las unidades est\'an dadas en metros, salvo que se indique otra unidad.
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.1cm]
+
+\Needspace{0.92\textheight}
+\item
+El alcance m\'aximo de la se\~nal inal\'ambrica que emite un dispositivo es de $8$ m a su alrededor. La ubicaci\'on de ese dispositivo ($M$) es $20$ m al este y $12$ m al norte de la ubicaci\'on de una casa ($P$), la cual se considera como origen.
+
+\textquestiondown Cu\'al de las siguientes representaciones gr\'aficas, en la que las unidades est\'an en metros, corresponde a la circunferencia del alcance m\'aximo de la se\~nal que emite ese dispositivo?
+
+\vspace{2\baselineskip}
+
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{@{}r@{\hspace{0.45cm}}c@{\hspace{1.7cm}}r@{\hspace{0.45cm}}c@{}}
+\raisebox{1.65cm}{\textbf{A)}} & \grafcirc{20}{12}{8}{M}{20} &
+\raisebox{1.65cm}{\textbf{B)}} & \grafcirc{12}{20}{8}{M}{12} \\[0.85cm]
+\raisebox{1.65cm}{\textbf{C)}} & \grafcirc{20}{12}{4}{M}{20} &
+\raisebox{1.65cm}{\textbf{D)}} & \grafcirc{-20}{12}{8}{M}{\llap{-}20}
+\end{tabular}
+\end{center}
+
+\Needspace{0.76\textheight}
+\item
+La siguiente representaci\'on gr\'afica, en la que las unidades est\'an en cent\'imetros, muestra la ubicaci\'on del centro ($P$) de la base circular de una pecera y la circunferencia correspondiente al borde de esa base.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.18]
+  \path[use as bounding box] (-8,-8) rectangle (28,18);
+  \draw[<->, thick] (-5,0) -- (25,0);
+  \draw[<->, thick] (0,-5) -- (0,16);
+  \node[anchor=west] at (26,-0.8) {$x$};
+  \node[anchor=south east] at (3.5,16.6) {$y$};
+  \draw[dashed] (10,0) -- (10,6);
+  \draw[dashed] (0,6) -- (10,6);
+  \draw[thick] (10,6) circle (6);
+  \fill (10,6) circle (\puntografico) node[above left] {$P$};
+  \node[anchor=north] at (10,0) {$10$};
+  \node[left] at (0,6) {$6$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la representaci\'on algebraica, en la que las unidades est\'an en cent\'imetros, de la circunferencia correspondiente al borde de la base de la pecera?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x+10)^2+(y+6)^2=36}
+  \opcion{B}{(x-10)^2+(y-6)^2=36}
+  \opcion{C}{(x-6)^2+(y-10)^2=36}
+  \opcion{D}{(x-10)^2+(y-6)^2=6}
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+Una antena de telecomunicaciones ($T$) emite una se\~nal que permite a los tel\'efonos celulares, ubicados a $13$ km o menos alrededor de esa antena, realizar y recibir llamadas. En una representaci\'on gr\'afica, la ubicaci\'on de la antena corresponde al punto $T(5,12)$.
+
+Durante una revisi\'on t\'ecnica se registraron tres tel\'efonos celulares ubicados en los puntos $R(10,24)$, $S(18,12)$ y $U(17,18)$.
+
+La siguiente representaci\'on gr\'afica, en la que las unidades est\'an en kil\'ometros, muestra la ubicaci\'on de la antena y la circunferencia correspondiente al alcance m\'aximo de la se\~nal.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.16]
+  \path[use as bounding box] (-6,-5) rectangle (27,31);
+  \draw[<->, thick] (-4,0) -- (25,0);
+  \draw[<->, thick] (0,-3) -- (0,29);
+  \node[anchor=west] at (26,-0.8) {$x$ (este)};
+  \node[anchor=south east] at (5.5,30) {$y$ (norte)};
+  \draw[thick] (5,12) circle (13);
+  \draw[dashed] (5,0) -- (5,12);
+  \draw[dashed] (0,12) -- (5,12);
+  \fill (5,12) circle (\puntografico);
+  \node[anchor=south east, inner sep=2pt, xshift=-2pt, yshift=2pt] at (5,12) {$T$};
+  \node[anchor=north] at (5,0) {$5$};
+  \node[left] at (0,12) {$12$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown en cu\'al de esos tel\'efonos se pueden realizar y recibir llamadas por medio de la se\~nal de esa antena?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Solo en $R$.
+  \item Solo en $S$.
+  \item En $R$ y en $S$.
+  \item En $R$, en $S$ y en $U$.
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+En una finca se desea construir un estanque circular para peces. El centro del estanque ($C$) se ubicar\'a a $9$ m al oeste y $4$ m al sur de un \'arbol ($A$), el cual se considera como origen. Adem\'as, el borde del estanque debe quedar a $7$ m del centro.
+
+La siguiente representaci\'on gr\'afica, en la que las unidades est\'an en metros, muestra la ubicaci\'on del \'arbol, del centro del estanque y de la circunferencia correspondiente al borde del estanque.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.18]
+  \path[use as bounding box] (-22,-16) rectangle (13,10);
+  \draw[<->, thick] (-20,0) -- (11,0);
+  \draw[<->, thick] (0,-14) -- (0,8);
+  \node[anchor=west] at (12,-0.8) {$x$ (este)};
+  \node[anchor=south east] at (4,9) {$y$ (norte)};
+  \fill (0,0) circle (\puntografico) node[below right] {$A$};
+  \draw[dashed] (-9,0) -- (-9,-4);
+  \draw[dashed] (0,-4) -- (-9,-4);
+  \draw[thick] (-9,-4) circle (7);
+  \fill (-9,-4) circle (\puntografico) node[anchor=east, inner sep=2pt] {$C$};
+  \node[anchor=north] at (-9,0) {$\llap{-}9$};
+  \node[right] at (0,-4) {$-4$};
+\end{tikzpicture}
+\end{center}
+
+\textquestiondown Cu\'al de las siguientes representaciones algebraicas, en la que las unidades est\'an en metros, corresponde a la circunferencia que representa el borde de ese estanque?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x-9)^2+(y-4)^2=49}
+  \opcion{B}{(x+9)^2+(y+4)^2=49}
+  \opcion{C}{(x+9)^2+(y+4)^2=7}
+  \opcion{D}{(x-4)^2+(y-9)^2=49}
+\end{enumerate}
+
+\Needspace{0.68\textheight}
+\item
+En un plano cartesiano, la circunferencia $C$ tiene centro en $A(6,4)$ y radio $5$. A esa circunferencia se le aplica una traslaci\'on de $8$ unidades hacia la derecha y $3$ unidades hacia abajo, obteniendo la circunferencia $C'$.
+
+\textquestiondown Cu\'al de las siguientes representaciones algebraicas corresponde a la circunferencia $C'$?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x-14)^2+(y-1)^2=25}
+  \opcion{B}{(x+14)^2+(y+1)^2=25}
+  \opcion{C}{(x-14)^2+(y-7)^2=25}
+  \opcion{D}{(x-6)^2+(y-4)^2=25}
+\end{enumerate}
+
+\Needspace{0.90\textheight}
+\item
+En un centro recreativo, una piscina circular est\'a representada en un plano por la circunferencia $C$, con centro en $A(4,3)$ y radio $4$. Debido a una remodelaci\'on del terreno, la piscina se trasladar\'a $12$ unidades hacia la derecha y $5$ unidades hacia arriba, obteniendo la nueva ubicaci\'on representada por la circunferencia $C'$.
+
+\textquestiondown Cu\'al de las siguientes representaciones gr\'aficas corresponde a esa traslaci\'on?
+
+\vspace{2\baselineskip}
+
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{@{}r@{\hspace{0.35cm}}c@{\hspace{0.55cm}}r@{\hspace{0.35cm}}c@{}}
+\raisebox{1.45cm}{\textbf{A)}} & \graftras{4}{3}{4}{12}{8}{4} &
+\raisebox{1.45cm}{\textbf{B)}} & \graftrasetiquetabaja{4}{3}{4}{16}{-2}{4} \\[0.75cm]
+\raisebox{1.45cm}{\textbf{C)}} & \graftras{4}{3}{4}{16}{8}{4} &
+\raisebox{1.45cm}{\textbf{D)}} & \graftras{4}{3}{4}{9}{15}{4}
+\end{tabular}
+\end{center}
+
+\Needspace{0.72\textheight}
+\item
+En una plaza, el borde de una zona circular de juego est\'a representado por la circunferencia
+\[
+(x-18)^2+(y-10)^2=36,
+\]
+donde las unidades est\'an en metros. Por una remodelaci\'on, toda la zona se trasladar\'a $7$ m hacia el oeste y $4$ m hacia el norte.
+
+\textquestiondown Cu\'al ser\'a la representaci\'on algebraica del borde de la zona circular despu\'es de la traslaci\'on?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x-11)^2+(y-14)^2=36}
+  \opcion{B}{(x-25)^2+(y-14)^2=36}
+  \opcion{C}{(x-11)^2+(y-6)^2=36}
+  \opcion{D}{(x-18)^2+(y-10)^2=36}
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+En las instalaciones de un centro recreativo hay una fuente circular de $16$ m de diametro. Si se crea un sendero rectilineo que pasa por los puntos $(20,4)$ y $(20,14)$.
+
+La siguiente representacion grafica, cuyas unidades estan en metros, muestra el origen $O$ y $C$ del centro de la fuente:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.34]
+  \path[use as bounding box] (-2,-1.5) rectangle (22,19);
+  \draw[<->, thick] (-1,0) -- (21,0);
+  \draw[<->, thick] (0,-1) -- (0,18);
+  \node[anchor=west] at (21.3,-0.25) {$x$ (este)};
+  \node[anchor=south east] at (1.1,18.3) {$y$ (norte)};
+  \fill (0,0) circle (\puntografico) node[below left] {$O$};
+  \draw[dashed] (10,0) -- (10,9);
+  \draw[dashed] (0,9) -- (10,9);
+  \draw[thick] (10,9) circle (8);
+  \fill (10,9) circle (\puntografico) node[anchor=south east, inner sep=2pt] {$C$};
+  \node[anchor=north] at (10,0) {$10$};
+  \node[left] at (0,9) {$9$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, la recta que representa ese sendero, con respecto a la circunferencia que representa el borde de esa fuente, es
+
+\begin{enumerate}[label=\Alph*)]
+  \item exterior.
+  \item secante.
+  \item tangente.
+  \item Ninguna de las anteriores.
+\end{enumerate}
+
+\Needspace{0.96\textheight}
+\item
+Un juego consiste en lanzar una ficha desde cierta distancia hacia un objetivo circular colocado en el piso de un salon de actividades. La medida del radio de ese objetivo es $5$ m.
+
+La siguiente representacion grafica, cuyas unidades estan en metros, muestra la circunferencia que representa el borde del objetivo:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.38]
+  \path[use as bounding box] (-2,-1.5) rectangle (17,16);
+  \draw[<->, thick] (-1,0) -- (16,0);
+  \draw[<->, thick] (0,-1) -- (0,15);
+  \node[anchor=west] at (16.3,-0.25) {$x$ (este)};
+  \node[anchor=south east] at (1.1,15.3) {$y$ (norte)};
+  \draw[dashed] (9,0) -- (9,13);
+  \draw[dashed] (0,8) -- (9,8);
+  \draw[dashed] (0,13) -- (9,13);
+  \draw[thick] (9,8) circle (5);
+  \fill (9,8) circle (\puntografico);
+  \fill (9,13) circle (\puntografico);
+  \node[anchor=north] at (9,0) {$9$};
+  \node[left] at (0,8) {$8$};
+  \node[left] at (0,13) {$13$};
+\end{tikzpicture}
+\end{center}
+
+Ademas, durante el juego:
+
+\begin{itemize}
+  \item Mariela lanzo una ficha y esta se ubico en el punto correspondiente a $(12,12)$.
+  \item Andres lanzo una ficha y esta se ubico en el punto correspondiente a $(4,8)$.
+  \item Valeria lanzo una ficha y esta se ubico en el punto correspondiente a $(15,9)$.
+  \item Esteban lanzo una ficha y esta se ubico en el punto correspondiente a $(8,4)$.
+\end{itemize}
+
+De acuerdo con la informacion anterior, \textquestiondown cual de esas personas lanzo la ficha que se ubico en el exterior de ese objetivo?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Mariela.
+  \item Andres.
+  \item Valeria.
+  \item Esteban.
+\end{enumerate}
+
+\Needspace{0.96\textheight}
+\item
+Una rotonda tiene forma circular y la medida de su diametro es $24$ m. Las rectas $h$ y $j$ representan senderos que pasan por el centro de la rotonda. Las rectas $k$ y $n$ representan otros senderos del lugar. La siguiente representacion grafica, en la que las unidades estan en metros, muestra la rotonda y esos senderos:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.27]
+  \path[use as bounding box] (-10,-7) rectangle (38,33);
+  \draw[<->, thick] (-8,0) -- (36,0);
+  \draw[<->, thick] (0,-5) -- (0,31);
+  \node[anchor=west] at (36.7,-0.5) {$x$};
+  \node[anchor=south east] at (1.6,31.7) {$y$};
+  \draw[thick] (18,14) circle (12);
+  \draw[very thick, <->] (18,-4) -- (18,32);
+  \draw[very thick, <->] (2,14) -- (34,14);
+  \draw[very thick, <->] (1,4) -- (35,4);
+  \draw[very thick, <->] (7,29) -- (31,-2);
+  \draw[thick] (18,4) -- (16.4,4) -- (16.4,5.6) -- (18,5.6);
+  \draw[dashed] (0,14) -- (18,14);
+  \draw[dashed] (18,0) -- (18,14);
+  \fill (18,14) circle (\puntografico);
+  \node[anchor=north] at (18,0) {$18$};
+  \node[left] at (0,14) {$14$};
+  \node[left] at (0,4) {$4$};
+  \node[anchor=south east] at (18,32) {$h$};
+  \node[anchor=south west] at (34,14) {$j$};
+  \node[anchor=south east] at (8,29) {$k$};
+  \node[anchor=south west] at (34,4) {$n$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, \textquestiondown cuales de esas rectas, que representan senderos, son perpendiculares entre si?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $j$ y $k$.
+  \item $h$ y $j$.
+  \item $k$ y $n$.
+  \item $j$ y $n$.
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+Una antena de telecomunicaciones emite una senal que permite a los telefonos celulares, que se encuentran a $6$ km o menos alrededor de esa antena, realizar y recibir llamadas. A continuacion, se muestra la representacion grafica, en la que las unidades estan en kilometros, de la circunferencia que corresponde al alcance maximo de la senal que emite esa antena:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.38]
+  \path[use as bounding box] (-2,-1.5) rectangle (17,16);
+  \draw[<->, thick] (-1,0) -- (16,0);
+  \draw[<->, thick] (0,-1) -- (0,15);
+  \node[anchor=west] at (16.3,-0.25) {$x$};
+  \node[anchor=south east] at (1.1,15.3) {$y$};
+  \draw[thick] (7,8) circle (6);
+  \draw[dashed] (7,0) -- (7,14);
+  \draw[dashed] (0,8) -- (13,8);
+  \draw[dashed] (0,14) -- (7,14);
+  \draw[dashed] (13,0) -- (13,8);
+  \fill (7,8) circle (\puntografico);
+  \fill (7,14) circle (\puntografico);
+  \fill (13,8) circle (\puntografico);
+  \node[anchor=north] at (7,0) {$7$};
+  \node[anchor=north] at (13,0) {$13$};
+  \node[left] at (0,8) {$8$};
+  \node[left] at (0,14) {$14$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, si las ubicaciones que tienen los telefonos celulares $W$, $K$, $L$ y $M$ corresponden, respectivamente, a los puntos $(10,12)$, $(14,8)$, $(2,2)$ y $(7,15)$, entonces \textquestiondown en cual de esos telefonos se pueden realizar y recibir llamadas por medio de la senal de esa antena?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $W$
+  \item $K$
+  \item $L$
+  \item $M$
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+En un centro educativo se destinara una zona con forma poligonal para construir un jardin. La siguiente representacion grafica, en la que las unidades estan en metros, muestra la forma de esa zona:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-1.2,-1.2) rectangle (12,9.4);
+  \draw[<->, thick] (-0.5,0) -- (11.5,0);
+  \draw[<->, thick] (0,-0.5) -- (0,9);
+  \node[anchor=west] at (11.8,-0.2) {$x$};
+  \node[anchor=south east] at (0.9,9.2) {$y$};
+  \fill[gray!18] (2,1) -- (10,1) -- (10,5) -- (6,8) -- (2,5) -- cycle;
+  \draw[very thick] (2,1) -- (10,1) -- (10,5) -- (6,8) -- (2,5) -- cycle;
+  \foreach \x/\lab in {2/2,10/10} {
+    \draw[dashed] (\x,0) -- (\x,1);
+    \node[anchor=north] at (\x,0) {$\lab$};
+  }
+  \foreach \y/\lab in {1/1,5/5} {
+    \draw[dashed] (0,\y) -- (2,\y);
+    \node[left] at (0,\y) {$\lab$};
+  }
+  \draw[dashed] (0,8) -- (6,8);
+  \node[left] at (0,8) {$8$};
+  \foreach \p/\pos/\name in {(2,1)/below left/A,(10,1)/below right/B,(10,5)/right/C,(6,8)/above/D,(2,5)/left/E} {
+    \fill \p circle (\puntograficoitemunoafirmacioncuatro) node[\pos] {$\name$};
+  }
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, \textquestiondown cuantos metros cuadrados mide el area de la zona destinada para ese jardin?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $32$
+  \item $40$
+  \item $44$
+  \item $56$
+\end{enumerate}
+
+\Needspace{0.70\textheight}
+\item
+Una empresa fabrica senales decorativas con forma de hexagono regular. Para colocar un refuerzo, se mide la distancia entre dos vertices opuestos de una de esas senales y se obtiene $18$ cm.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+  \path[use as bounding box] (-3.7,-3.2) rectangle (3.7,3.4);
+  \draw[very thick] (0:3) -- (60:3) -- (120:3) -- (180:3) -- (240:3) -- (300:3) -- cycle;
+  \draw[dashed, thick] (180:3) -- (0:3);
+  \fill (0,0) circle (\puntograficoafirmacioncuatro);
+  \node[below] at (0,0) {$O$};
+  \node[above] at (0,0.35) {$18$ cm};
+  \fill (180:3) circle (\puntograficoafirmacioncuatro);
+  \fill (0:3) circle (\puntograficoafirmacioncuatro);
+\end{tikzpicture}
+\end{center}
+
+Si se coloca una cinta alrededor de todo el borde de esa senal, \textquestiondown cuantos centimetros de cinta se necesitan?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $27$
+  \item $36$
+  \item $54$
+  \item $108$
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+Un artesano diseno una pieza decorativa para la entrada de un salon comunal. La siguiente representacion grafica muestra la forma de esa pieza sobre una cuadricula. La medida del lado de cada cuadrado de la cuadricula es $1$ m.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.58]
+  \path[use as bounding box] (-0.8,-0.8) rectangle (9.3,8.4);
+  \fill[gray!18] (2,1) -- (6,1) -- (6,5) arc[start angle=0,end angle=180,radius=2] -- cycle;
+  \draw[step=1, black!70, dotted, line width=0.8pt] (0,0) grid (8,8);
+  \draw[<->, thick] (-0.35,0) -- (8.4,0);
+  \draw[<->, thick] (0,-0.35) -- (0,8.2);
+  \node[anchor=west] at (8.55,-0.15) {$x$};
+  \node[anchor=south east] at (0.65,8.35) {$y$};
+  \draw[very thick] (2,1) -- (6,1) -- (6,5) arc[start angle=0,end angle=180,radius=2] -- cycle;
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, la superficie de esa pieza decorativa, en metros cuadrados, es mayor que
+
+\begin{enumerate}[label=\Alph*)]
+  \item $22$ y menor que $23$.
+  \item $18$ y menor que $20$.
+  \item $16$ y menor que $18$.
+  \item $24$ y menor que $26$.
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+Para una actividad escolar se arma un mural con cinco piezas cuadradas congruentes. Cada pieza tiene $4$ dm de lado y se colocan como se muestra en la siguiente figura:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+  \path[use as bounding box] (-0.5,-0.5) rectangle (4.5,4.5);
+  \fill[gray!18] (1,0) rectangle (2,1);
+  \fill[gray!18] (1,1) rectangle (2,2);
+  \fill[gray!18] (0,1) rectangle (1,2);
+  \fill[gray!18] (2,1) rectangle (3,2);
+  \fill[gray!18] (1,2) rectangle (2,3);
+  \draw[very thick] (1,0) -- (2,0) -- (2,1) -- (3,1) -- (3,2) -- (2,2) -- (2,3) -- (1,3) -- (1,2) -- (0,2) -- (0,1) -- (1,1) -- cycle;
+  \draw[thin] (1,1) -- (2,1);
+  \draw[thin] (1,2) -- (2,2);
+  \draw[thin] (1,1) -- (1,2);
+  \draw[thin] (2,1) -- (2,2);
+  \draw[<->] (3.25,1) -- (3.25,2);
+  \node[right] at (3.25,1.5) {$4$ dm};
+\end{tikzpicture}
+\end{center}
+
+Si se coloca una cinta alrededor del borde exterior del mural, \textquestiondown cuantos decimetros de cinta se necesitan?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $32$
+  \item $40$
+  \item $48$
+  \item $80$
+\end{enumerate}
+
+\Needspace{0.42\textheight}
+\item
+En un taller se elaboran recuerdos a partir de esferas de acrilico. A cada esfera se le realiza un corte plano que pasa por el centro de la esfera.
+
+De acuerdo con la informacion anterior, la seccion plana obtenida en cada recuerdo, producto del corte realizado a esa esfera, corresponde a una
+
+\begin{enumerate}[label=\Alph*)]
+  \item circunferencia.
+  \item hiperbola.
+  \item parabola.
+  \item recta.
+\end{enumerate}
+
+\Needspace{0.48\textheight}
+\item
+Considere la siguiente informacion:
+
+Una persona artesana trabaja con un bloque de cera con forma de cilindro circular recto, cuyo radio de la base mide $8$ cm y la altura del cilindro mide $24$ cm. Para elaborar una pieza decorativa, realiza un corte plano al bloque, que pasa por el centro de las bases y es perpendicular a estas.
+
+De acuerdo con la informacion anterior, \textquestiondown cual es el perimetro de la seccion plana obtenida producto del corte realizado a ese bloque?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $32$ cm
+  \item $64$ cm
+  \item $80$ cm
+  \item $192$ cm
+\end{enumerate}
+
+\Needspace{0.78\textheight}
+\item
+Maria debe hacer cinco sombreros de cumpleanos como proyecto para un curso de fiestas infantiles. Ella confecciono los sombreros con un diametro de $14$ cm y una altura de $25$ cm. Si quiere pegar cinta formando una circunferencia paralela a la base y a $10$ cm de altura sobre la base del cono, como se muestra en la siguiente figura, \textquestiondown cuanta cinta debe comprar, aproximadamente, para los cinco sombreros?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.62]
+  \path[use as bounding box] (-4.4,-0.9) rectangle (4.7,7.3);
+  \coordinate (V) at (0,6);
+  \coordinate (L) at (-3,0);
+  \coordinate (R) at (3,0);
+  \coordinate (C) at (0,0);
+  \coordinate (S) at (0,2.4);
+  \coordinate (P) at (1.8,2.4);
+  \draw[very thick] (V) -- (L);
+  \draw[very thick] (V) -- (R);
+  \draw[very thick] (0,0) ellipse (3 and 0.55);
+  \draw[gray!40, very thick] (0,2.4) ellipse (1.8 and 0.33);
+  \draw[dashed, thick] (0,0) -- (0,6);
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=\Alph*)]
+  \item $42$ cm
+  \item $84$ cm
+  \item $132$ cm
+  \item $220$ cm
+\end{enumerate}
+
+\Needspace{0.95\textheight}
+\item
+Considere la siguiente representacion grafica para responder los siguientes dos items.
+
+En el plano de diseno de una institucion educativa, el poligono $ABCD$ representa la forma de una zona verde que sera reproducida en diferentes posiciones del patio.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-7.9,-1.2) rectangle (1.8,7.8);
+  \draw[step=1, gray!45, very thin] (-7,0) grid (0,7);
+  \draw[<->, thick] (-7.6,0) -- (1.3,0);
+  \draw[<->, thick] (0,-0.7) -- (0,7.4);
+  \node[anchor=west] at (1.45,-0.15) {$x$};
+  \node[anchor=south east] at (0.65,7.55) {$y$};
+  \fill[gray!15] (-2,6) -- (-4,1) -- (-6,4) -- (-5,5) -- cycle;
+  \draw[very thick] (-2,6) -- (-4,1) -- (-6,4) -- (-5,5) -- cycle;
+  \foreach \x/\lab in {-7/{\llap{-}7},-6/{\llap{-}6},-5/{\llap{-}5},-4/{\llap{-}4},-3/{\llap{-}3},-2/{\llap{-}2},-1/{\llap{-}1}}
+    \node[anchor=north, inner sep=1pt] at (\x,0) {$\lab$};
+  \foreach \y in {1,2,3,4,5,6,7}
+    \node[anchor=east, inner sep=1pt] at (0,\y) {$\y$};
+  \fill (-2,6) circle (\puntografico) node[anchor=south west, inner sep=1pt, xshift=1pt, yshift=1pt] {$A$};
+  \fill (-4,1) circle (\puntografico) node[anchor=north east, inner sep=1pt, xshift=-1pt, yshift=-1pt] {$B$};
+  \fill (-6,4) circle (\puntografico) node[anchor=east, inner sep=1pt, xshift=-1pt] {$C$};
+  \fill (-5,5) circle (\puntografico) node[anchor=north west, inner sep=1pt, xshift=1pt, yshift=-1pt] {$D$};
+\end{tikzpicture}
+\end{center}
+
+Si al poligono $ABCD$ se le aplica una reflexion respecto a la recta dada por $y=-x$, entonces, \textquestiondown cual es la imagen del punto $A$?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $(-2,-6)$
+  \item $(6,-2)$
+  \item $(-6,2)$
+  \item $(2,6)$
+\end{enumerate}
+
+\Needspace{0.52\textheight}
+\item
+En el mismo plano de diseno, al poligono $ABCD$ se le aplica una homotecia de razon $k=-2$ con centro en el origen y, luego, una traslacion de $3$ unidades hacia la derecha.
+
+\textquestiondown Cual es la imagen del punto $C$ luego de aplicar ambas transformaciones?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $(-15,8)$
+  \item $(15,-8)$
+  \item $(9,-8)$
+  \item $(12,-5)$
+\end{enumerate}
+
+\Needspace{0.48\textheight}
+\item
+En una aplicacion de mapas, la ubicacion de una camara de seguridad se representa por el punto $P(3,-2)$ en un plano cartesiano. Para ajustar la orientacion del mapa en la pantalla, el sistema aplica una rotacion de $90^\circ$ en sentido antihorario alrededor del origen.
+
+\textquestiondown Cuales son las coordenadas del punto que representa la nueva ubicacion de la camara en la pantalla?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $(-2,-3)$
+  \item $(2,3)$
+  \item $(-3,2)$
+  \item $(3,2)$
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revision Bloque 1 - Afirmacion 1</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#eef2f5;color:#20242a;line-height:1.55}
+.app{min-height:100vh;display:grid;grid-template-columns:286px minmax(0,1fr)}
+.side{background:#13213c;color:#fff;padding:20px;position:sticky;top:0;height:100vh;overflow:auto}
+.side h1{font-size:1.18rem;margin:0 0 8px}
+.side p{font-size:.92rem;color:#dbe6f4;margin:0 0 16px}
+.meta{border-top:1px solid rgba(255,255,255,.22);border-bottom:1px solid rgba(255,255,255,.22);padding:14px 0;margin-bottom:16px;font-size:.9rem}
+.meta strong{display:block;color:#fff;margin-bottom:4px}
+.pill{display:inline-block;background:#266dd3;color:#fff;border-radius:999px;padding:3px 9px;font-size:.78rem;margin:4px 4px 0 0}
+.nav{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.nav button{height:42px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;border-radius:7px;font-weight:700;cursor:pointer}
+.nav button.active{background:#f2a51a;color:#111827;border-color:#f2a51a}
+.checklist{display:grid;gap:8px;margin-top:16px}
+.checklist label{display:flex;gap:8px;align-items:flex-start;font-size:.9rem;color:#edf2f7}
+.checklist input{margin-top:4px}
+.content{padding:24px;max-width:980px;width:100%;margin:0 auto}
+.topbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}
+.topbar h2{font-size:1.14rem;margin:0;color:#14213d}
+.counter{background:#fff;border:1px solid #d5dce4;border-radius:7px;padding:7px 10px;font-weight:700;color:#344054}
+.card{background:#fff;border:1px solid #cfd8e3;border-radius:8px;padding:22px;box-shadow:0 2px 8px rgba(15,23,42,.08)}
+.item-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;border-bottom:1px solid #e5e7eb;padding-bottom:12px;margin-bottom:16px}
+.item-title{font-weight:700;color:#1d4ed8}
+.evidencia{font-size:.9rem;color:#475467;max-width:680px}
+.stem p{margin:0 0 10px}
+.graph-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:10px}
+.opciones{display:grid;gap:9px;margin-top:14px}
+.opcion{display:grid;grid-template-columns:32px minmax(0,1fr);gap:10px;align-items:start;border:1.5px solid #d0d5dd;background:#fbfcfe;border-radius:7px;padding:10px 12px;cursor:pointer}
+.opcion:hover{border-color:#2f80ed;background:#f3f8ff}
+.opcion.selected{border-color:#1d4ed8;background:#eaf2ff}
+.opcion.correct{border-color:#16a34a;background:#ecfdf3}
+.letter{font-weight:700;color:#14213d}
+.explain{display:none;margin-top:16px;border-left:4px solid #1d4ed8;background:#f8fafc;padding:12px 14px;border-radius:6px}
+.explain.visible{display:block}
+.controls{display:flex;justify-content:space-between;gap:10px;margin-top:16px;flex-wrap:wrap}
+.controls button{border:0;border-radius:7px;padding:10px 16px;font-weight:700;cursor:pointer}
+.secondary{background:#e5e7eb;color:#111827}
+.primary{background:#1d4ed8;color:#fff}
+.reveal{background:#16a34a;color:#fff}
+.notes{margin-top:16px}
+.notes textarea{width:100%;min-height:86px;resize:vertical;border:1px solid #cfd8e3;border-radius:7px;padding:10px;font-family:Arial,Helvetica,sans-serif;font-size:.95rem}
+.summary{background:#fff;border:1px solid #cfd8e3;border-radius:8px;padding:16px;margin-top:18px}
+.summary h3{margin:0 0 8px;color:#14213d;font-size:1rem}
+.summary ul{margin:8px 0 0 20px;padding:0}
+svg{max-width:100%;height:auto}
+@media(max-width:860px){
+  .app{display:block}
+  .side{position:static;height:auto}
+  .content{padding:14px}
+  .topbar,.item-head{display:block}
+  .counter{display:inline-block;margin-top:8px}
+  .graph-options{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <h1>Revision de items</h1>
+    <p>Bloque 1. Geometria<br>Afirmacion 1</p>
+    <div class="meta">
+      <strong>Afirmacion</strong>
+      Resuelve problemas relacionados con la representacion de circunferencias de manera analitica o grafica.
+    </div>
+    <span class="pill">4 items</span>
+    <span class="pill">Seleccion unica</span>
+    <span class="pill">Vista de aprobacion</span>
+    <div class="nav" id="nav"></div>
+    <div class="checklist">
+      <label><input type="checkbox"> Redaccion similar a los ejemplos</label>
+      <label><input type="checkbox"> Contextos adecuados</label>
+      <label><input type="checkbox"> Claves verificadas</label>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="topbar">
+      <h2>Vista previa interactiva del lote</h2>
+      <div class="counter" id="counter"></div>
+    </div>
+    <section class="card" id="item-card"></section>
+    <section class="summary">
+      <h3>Distribucion del lote</h3>
+      <ul>
+        <li>Item 1: evidencia 1, representacion grafica dado centro y radio.</li>
+        <li>Item 2: evidencia 2, representacion algebraica dado centro y radio.</li>
+        <li>Items 3 y 4: evidencia 3, problemas con circunferencia y representaciones.</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<script>
+function graph(cx, cy, r, label, xminLabel){
+  const sx = 4.45, sy = 4.45, ox = 138, oy = 92;
+  const X = x => ox + x*sx;
+  const Y = y => oy - y*sy;
+  return `<svg width="285" height="185" viewBox="0 0 285 185" role="img">
+  <defs><marker id="arrow${cx}${cy}${r}" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L0,6 L8,3 z" fill="#111"/></marker></defs>
+  <rect width="310" height="205" fill="#fff"/>
+  <line x1="${X(-30)}" y1="${Y(0)}" x2="${X(36)}" y2="${Y(0)}" stroke="#111" stroke-width="1.7" marker-start="url(#arrow${cx}${cy}${r})" marker-end="url(#arrow${cx}${cy}${r})"/>
+  <line x1="${X(0)}" y1="${Y(-12)}" x2="${X(0)}" y2="${Y(31)}" stroke="#111" stroke-width="1.7" marker-start="url(#arrow${cx}${cy}${r})" marker-end="url(#arrow${cx}${cy}${r})"/>
+  <text x="${X(37)}" y="${Y(0)+13}" font-size="13">x (este)</text>
+  <text x="${X(6)}" y="${Y(31)-6}" font-size="13">y (norte)</text>
+  <line x1="${X(cx)}" y1="${Y(0)}" x2="${X(cx)}" y2="${Y(cy)}" stroke="#555" stroke-dasharray="4 4"/>
+  <line x1="${X(0)}" y1="${Y(cy)}" x2="${X(cx)}" y2="${Y(cy)}" stroke="#555" stroke-dasharray="4 4"/>
+  <circle cx="${X(cx)}" cy="${Y(cy)}" r="${r*sx}" fill="none" stroke="#111" stroke-width="1.8"/>
+  <circle cx="${X(cx)}" cy="${Y(cy)}" r="1.2" fill="#111"/>
+  <text x="${X(cx)}" y="${Y(cy)-7}" font-size="14" font-style="italic" text-anchor="middle">${label}</text>
+  <text x="${X(cx + r*0.72)}" y="${Y(cy + r*0.78)-3}" font-size="14" font-style="italic">C</text>
+  <text x="${X(cx)}" y="${Y(0)+18}" font-size="13" text-anchor="middle">${xminLabel}</text>
+  <text x="${X(0)-8}" y="${Y(cy)+5}" font-size="13" text-anchor="end">${cy}</text>
+  <text x="${X(0)-12}" y="${Y(0)+16}" font-size="13">P</text>
+  </svg>`;
+}
+
+function antennaGraph(){
+  const sx = 8.8, sy = 8.8, ox = 82, oy = 252;
+  const X = x => ox + x*sx;
+  const Y = y => oy - y*sy;
+  return `<svg width="360" height="330" viewBox="0 0 360 330" role="img" aria-label="Alcance de antena y telefonos">
+  <defs><marker id="arrowAnt" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L0,6 L8,3 z" fill="#111"/></marker></defs>
+  <rect width="360" height="330" fill="#fff"/>
+  <line x1="${X(-4)}" y1="${Y(0)}" x2="${X(25)}" y2="${Y(0)}" stroke="#111" stroke-width="1.7" marker-start="url(#arrowAnt)" marker-end="url(#arrowAnt)"/>
+  <line x1="${X(0)}" y1="${Y(-3)}" x2="${X(0)}" y2="${Y(29)}" stroke="#111" stroke-width="1.7" marker-start="url(#arrowAnt)" marker-end="url(#arrowAnt)"/>
+  <text x="${X(26)}" y="${Y(0)+14}" font-size="13">x (este)</text>
+  <text x="${X(5.5)}" y="${Y(30)}" font-size="13">y (norte)</text>
+  <circle cx="${X(5)}" cy="${Y(12)}" r="${13*sx}" fill="none" stroke="#111" stroke-width="1.8"/>
+  <line x1="${X(5)}" y1="${Y(0)}" x2="${X(5)}" y2="${Y(12)}" stroke="#555" stroke-dasharray="4 4"/>
+  <line x1="${X(0)}" y1="${Y(12)}" x2="${X(5)}" y2="${Y(12)}" stroke="#555" stroke-dasharray="4 4"/>
+  <circle cx="${X(5)}" cy="${Y(12)}" r="1.2" fill="#111"/><text x="${X(5)-5}" y="${Y(12)-10}" font-size="14" font-style="italic" text-anchor="end">T</text>
+  <text x="${X(5)}" y="${Y(0)+18}" font-size="13" text-anchor="middle">5</text>
+  <text x="${X(0)-8}" y="${Y(12)+5}" font-size="13" text-anchor="end">12</text>
+  </svg>`;
+}
+
+function pondGraph(){
+  const sx = 9.4, sy = 9.4, ox = 230, oy = 105;
+  const X = x => ox + x*sx;
+  const Y = y => oy - y*sy;
+  return `<svg width="360" height="250" viewBox="0 0 360 250" role="img" aria-label="Estanque con centro al oeste y sur del arbol">
+  <defs><marker id="arrowPond" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto-start-reverse"><path d="M0,0 L0,6 L8,3 z" fill="#111"/></marker></defs>
+  <rect width="360" height="250" fill="#fff"/>
+  <line x1="${X(-20)}" y1="${Y(0)}" x2="${X(11)}" y2="${Y(0)}" stroke="#111" stroke-width="1.7" marker-start="url(#arrowPond)" marker-end="url(#arrowPond)"/>
+  <line x1="${X(0)}" y1="${Y(-14)}" x2="${X(0)}" y2="${Y(8)}" stroke="#111" stroke-width="1.7" marker-start="url(#arrowPond)" marker-end="url(#arrowPond)"/>
+  <text x="${X(12)}" y="${Y(0)+14}" font-size="13">x (este)</text>
+  <text x="${X(4)}" y="${Y(9)}" font-size="13">y (norte)</text>
+  <circle cx="${X(-9)}" cy="${Y(-4)}" r="${7*sx}" fill="none" stroke="#111" stroke-width="1.8"/>
+  <line x1="${X(-9)}" y1="${Y(0)}" x2="${X(-9)}" y2="${Y(-4)}" stroke="#555" stroke-dasharray="4 4"/>
+  <line x1="${X(0)}" y1="${Y(-4)}" x2="${X(-9)}" y2="${Y(-4)}" stroke="#555" stroke-dasharray="4 4"/>
+  <circle cx="${X(0)}" cy="${Y(0)}" r="1.2" fill="#111"/><text x="${X(0)+6}" y="${Y(0)+16}" font-size="14" font-style="italic">A</text>
+  <circle cx="${X(-9)}" cy="${Y(-4)}" r="1.2" fill="#111"/><text x="${X(-9)-7}" y="${Y(-4)+4}" font-size="14" font-style="italic" text-anchor="end">C</text>
+  <text x="${X(-9)}" y="${Y(0)+18}" font-size="13" text-anchor="middle">-9</text>
+  <text x="${X(0)+8}" y="${Y(-4)+5}" font-size="13">-4</text>
+  </svg>`;
+}
+
+const items = [
+  {
+    evidencia:"Evidencia 1: reconoce la representacion grafica de una circunferencia dado su centro y su radio.",
+    enunciado:`<p>El alcance maximo de la senal inalambrica que emite un dispositivo es de 8 m a su alrededor. La ubicacion de ese dispositivo (<em>M</em>) es 20 m al este y 12 m al norte de la ubicacion de una casa (<em>P</em>), la cual se considera como origen.</p><p>¿Cual de las siguientes representaciones graficas, en la que las unidades estan en metros, corresponde a la circunferencia del alcance maximo de la senal que emite ese dispositivo?</p>`,
+    opciones:[graph(20,12,8,"M","20"),graph(12,20,8,"M","12"),graph(20,12,4,"M","20"),graph(-20,12,8,"M","-20")],
+    grafica:true,
+    clave:0,
+    explicacion:"El centro debe ubicarse en (20, 12) y el radio debe ser 8 m."
+  },
+  {
+    evidencia:"Evidencia 2: reconoce la representacion algebraica de una circunferencia dado su centro y su radio.",
+    enunciado:`<p>La siguiente representacion grafica, en la que las unidades estan en centimetros, muestra la ubicacion del centro (<em>P</em>) de la base circular de una pecera y la circunferencia correspondiente al borde de esa base.</p><div style="text-align:center">${graph(10,6,6,"P","10")}</div><p>De acuerdo con la informacion anterior, ¿cual es la representacion algebraica, en la que las unidades estan en centimetros, de la circunferencia correspondiente al borde de la base de la pecera?</p>`,
+    opciones:["(x + 10)<sup>2</sup> + (y + 6)<sup>2</sup> = 36","(x - 10)<sup>2</sup> + (y - 6)<sup>2</sup> = 36","(x - 6)<sup>2</sup> + (y - 10)<sup>2</sup> = 36","(x - 10)<sup>2</sup> + (y - 6)<sup>2</sup> = 6"],
+    clave:1,
+    explicacion:"La circunferencia tiene centro (10, 6) y radio 6, por eso r^2 = 36."
+  },
+  {
+    evidencia:"Evidencia 3: resuelve problemas relacionados con la circunferencia y sus representaciones.",
+    enunciado:`<p>Una antena de telecomunicaciones (<em>T</em>) emite una senal que permite a los telefonos celulares, ubicados a 13 km o menos alrededor de esa antena, realizar y recibir llamadas. En una representacion grafica, la ubicacion de la antena corresponde al punto <em>T</em>(5, 12).</p><p>Durante una revision tecnica se registraron tres telefonos celulares ubicados en los puntos <em>R</em>(10, 24), <em>S</em>(18, 12) y <em>U</em>(17, 18).</p><p>La siguiente representacion grafica, en la que las unidades estan en kilometros, muestra la ubicacion de la antena y la circunferencia correspondiente al alcance maximo de la senal.</p><div style="text-align:center">${antennaGraph()}</div><p>De acuerdo con la informacion anterior, ¿en cual de esos telefonos se pueden realizar y recibir llamadas por medio de la senal de esa antena?</p>`,
+    opciones:["Solo en R.","Solo en S.","En R y en S.","En R, en S y en U."],
+    clave:2,
+    explicacion:"TR^2 = 5^2 + 12^2 = 169 y TS^2 = 13^2 + 0^2 = 169; ambos estan sobre el alcance. TU^2 = 12^2 + 6^2 = 180, por lo que queda fuera."
+  },
+  {
+    evidencia:"Evidencia 3: resuelve problemas relacionados con la circunferencia y sus representaciones.",
+    enunciado:`<p>En una finca se desea construir un estanque circular para peces. El centro del estanque (<em>C</em>) se ubicara a 9 m al oeste y 4 m al sur de un arbol (<em>A</em>), el cual se considera como origen. Ademas, el borde del estanque debe quedar a 7 m del centro.</p><p>La siguiente representacion grafica, en la que las unidades estan en metros, muestra la ubicacion del arbol, del centro del estanque y de la circunferencia correspondiente al borde del estanque.</p><div style="text-align:center">${pondGraph()}</div><p>¿Cual de las siguientes representaciones algebraicas, en la que las unidades estan en metros, corresponde a la circunferencia que representa el borde de ese estanque?</p>`,
+    opciones:["(x - 9)<sup>2</sup> + (y - 4)<sup>2</sup> = 49","(x + 9)<sup>2</sup> + (y + 4)<sup>2</sup> = 49","(x + 9)<sup>2</sup> + (y + 4)<sup>2</sup> = 7","(x - 4)<sup>2</sup> + (y - 9)<sup>2</sup> = 49"],
+    clave:1,
+    explicacion:"El centro es (-9, -4) y el radio es 7; la ecuacion es (x + 9)^2 + (y + 4)^2 = 49."
+  }
+];
+
+let current = 0;
+const selected = Array(items.length).fill(null);
+
+function renderNav(){
+  document.getElementById("nav").innerHTML = items.map((_,i)=>`<button class="${i===current?'active':''}" onclick="go(${i})">${i+1}</button>`).join("");
+}
+
+function renderItem(){
+  const item = items[current];
+  document.getElementById("counter").textContent = `Item ${current + 1} de ${items.length}`;
+  const className = item.grafica ? "graph-options" : "opciones";
+  document.getElementById("item-card").innerHTML = `
+    <div class="item-head">
+      <div class="item-title">Item ${current + 1}</div>
+      <div class="evidencia">${item.evidencia}</div>
+    </div>
+    <div class="stem">${item.enunciado}</div>
+    <div class="${className}">
+      ${item.opciones.map((op,i)=>`
+        <div class="opcion ${selected[current]===i?'selected':''}" onclick="selectOption(${i})">
+          <div class="letter">${String.fromCharCode(65+i)})</div>
+          <div>${op}</div>
+        </div>`).join("")}
+    </div>
+    <div class="controls">
+      <button class="secondary" onclick="prevItem()">Anterior</button>
+      <button class="reveal" onclick="reveal()">Ver clave y explicacion</button>
+      <button class="primary" onclick="nextItem()">Siguiente</button>
+    </div>
+    <div id="explain" class="explain"></div>
+    <div class="notes"><textarea placeholder="Observaciones para modificar este item..."></textarea></div>`;
+  renderNav();
+}
+
+function selectOption(i){selected[current]=i;renderItem();}
+function reveal(){
+  const item = items[current];
+  document.querySelectorAll(".opcion").forEach((el,i)=>el.classList.toggle("correct", i===item.clave));
+  const box = document.getElementById("explain");
+  box.classList.add("visible");
+  box.innerHTML = `<strong>Clave: ${String.fromCharCode(65+item.clave)}</strong><br>${item.explicacion}`;
+}
+function go(i){current=i;renderItem();}
+function nextItem(){current=Math.min(items.length-1,current+1);renderItem();}
+function prevItem(){current=Math.max(0,current-1);renderItem();}
+renderItem();
+</script>
+</body>
+</html>

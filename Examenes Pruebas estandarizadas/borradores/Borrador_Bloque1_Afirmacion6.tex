@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\newcommand{\puntografico}{0.09}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Borrador de items}}\\
+  {\large Bloque 1. Geometria - Afirmacion 6}\\[4pt]
+  Prueba Nacional Estandarizada de Matematica, Secundaria 2026
+\end{center}
+
+\section*{Afirmacion}
+Resuelve problemas relacionados con simetrias en diversas figuras.
+
+\section*{Items propuestos}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.05cm]
+
+\Needspace{0.82\textheight}
+\item
+En una institucion educativa se diseno una pieza decorativa para colocarla en la entrada del gimnasio. La siguiente figura representa la forma de esa pieza y algunas rectas trazadas sobre ella:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.72]
+  \path[use as bounding box] (-4.2,-3.1) rectangle (4.3,4.1);
+  \fill[gray!18] (0,3) -- (2.5,0.8) -- (1.6,-2) -- (0,-1.1) -- (-1.6,-2) -- (-2.5,0.8) -- cycle;
+  \draw[very thick] (0,3) -- (2.5,0.8) -- (1.6,-2) -- (0,-1.1) -- (-1.6,-2) -- (-2.5,0.8) -- cycle;
+  \draw[thick, dashed] (0,-2.7) -- (0,3.6);
+  \draw[thick, dashed] (-3.5,0.35) -- (3.5,0.35);
+  \draw[thick, dashed] (-2.8,-2.4) -- (2.8,3.2);
+  \draw[thick, dashed] (-2.8,3.2) -- (2.8,-2.4);
+  \node[above] at (0,3.6) {$h$};
+  \node[right] at (3.5,0.35) {$j$};
+  \node[above right] at (2.8,3.2) {$k$};
+  \node[below right] at (2.8,-2.4) {$n$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, \textquestiondown cual de esas rectas corresponde a un eje de simetria de la pieza decorativa?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $h$
+  \item $j$
+  \item $k$
+  \item $n$
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+En el diseno de un parque se desea ubicar dos postes de iluminacion de manera simetrica con respecto a un sendero rectilineo. En el plano, el sendero esta representado por la recta $r$, y el poste $P$ esta ubicado como se muestra en la siguiente representacion grafica, cuyas unidades estan en metros:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-1.2,-1.1) rectangle (12.4,8.7);
+  \draw[<->, thick] (-0.5,0) -- (11.8,0);
+  \draw[<->, thick] (0,-0.5) -- (0,8.3);
+  \node[anchor=west] at (12.05,-0.2) {$x$};
+  \node[anchor=south east] at (0.85,8.45) {$y$};
+  \draw[very thick] (6,-0.2) -- (6,8.1);
+  \node[anchor=south west] at (6,8.1) {$r$};
+  \draw[dashed] (2,0) -- (2,3);
+  \draw[dashed] (0,3) -- (2,3);
+  \draw[dashed] (6,0) -- (6,3);
+  \fill (2,3) circle (\puntografico) node[above left] {$P$};
+  \node[anchor=north] at (2,0) {$2$};
+  \node[anchor=north] at (6,0) {$6$};
+  \node[left] at (0,3) {$3$};
+\end{tikzpicture}
+\end{center}
+
+Si el poste $Q$ debe ubicarse en el punto simetrico de $P$ con respecto a la recta $r$, entonces \textquestiondown cuales son las coordenadas de $Q$?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $(4,3)$
+  \item $(6,3)$
+  \item $(8,3)$
+  \item $(10,3)$
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Clave y justificacion breve}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{A.} La recta $h$ divide la figura en dos partes congruentes que coinciden al reflejarse una sobre la otra; por eso corresponde a un eje de simetria.
+  \item \textbf{D.} La recta $r$ corresponde a $x=6$. El punto $P(2,3)$ esta a $4$ unidades a la izquierda de esa recta, por lo que su simetrico debe estar $4$ unidades a la derecha: $Q(10,3)$.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,3 @@
+display_name: Graficas LaTeX y Estadistica
+short_description: Crea y verifica graficas TikZ/PGFPlots y SVG para examenes.
+default_prompt: Corrige o genera graficas matematicas y estadisticas para que el PDF y el HTML coincidan visualmente.

@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\newcommand{\puntografico}{0.09}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Borrador de items}}\\
+  {\large Bloque 1. Geometria - Afirmacion 5}\\[4pt]
+  Prueba Nacional Estandarizada de Matematica, Secundaria 2026
+\end{center}
+
+\section*{Afirmacion}
+Resuelve problemas relacionados con secciones planas o elementos de figuras geometricas tridimensionales.
+
+\section*{Items propuestos}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.05cm]
+
+\Needspace{0.42\textheight}
+\item
+En un taller se elaboran recuerdos a partir de esferas de acrilico. A cada esfera se le realiza un corte plano que pasa por el centro de la esfera.
+
+De acuerdo con la informacion anterior, la seccion plana obtenida en cada recuerdo, producto del corte realizado a esa esfera, corresponde a una
+
+\begin{enumerate}[label=\Alph*)]
+  \item circunferencia.
+  \item hiperbola.
+  \item parabola.
+  \item recta.
+\end{enumerate}
+
+\Needspace{0.48\textheight}
+\item
+Considere la siguiente informacion:
+
+Una persona artesana trabaja con un bloque de cera con forma de cilindro circular recto, cuyo radio de la base mide $8$ cm y la altura del cilindro mide $24$ cm. Para elaborar una pieza decorativa, realiza un corte plano al bloque, que pasa por el centro de las bases y es perpendicular a estas.
+
+De acuerdo con la informacion anterior, \textquestiondown cual es el perimetro de la seccion plana obtenida producto del corte realizado a ese bloque?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $32$ cm
+  \item $64$ cm
+  \item $80$ cm
+  \item $192$ cm
+\end{enumerate}
+
+\Needspace{0.78\textheight}
+\item
+Maria debe hacer cinco sombreros de cumpleanos como proyecto para un curso de fiestas infantiles. Ella confecciono los sombreros con un diametro de $14$ cm y una altura de $25$ cm. Si quiere pegar cinta formando una circunferencia paralela a la base y a $10$ cm de altura sobre la base del cono, como se muestra en la siguiente figura, \textquestiondown cuanta cinta debe comprar, aproximadamente, para los cinco sombreros?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.62]
+  \path[use as bounding box] (-4.4,-0.9) rectangle (4.7,7.3);
+  \coordinate (V) at (0,6);
+  \coordinate (L) at (-3,0);
+  \coordinate (R) at (3,0);
+  \coordinate (C) at (0,0);
+  \coordinate (S) at (0,2.4);
+  \coordinate (P) at (1.8,2.4);
+  \draw[very thick] (V) -- (L);
+  \draw[very thick] (V) -- (R);
+  \draw[very thick] (0,0) ellipse (3 and 0.55);
+  \draw[gray!40, very thick] (0,2.4) ellipse (1.8 and 0.33);
+  \draw[dashed, thick] (0,0) -- (0,6);
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=\Alph*)]
+  \item $42$ cm
+  \item $84$ cm
+  \item $132$ cm
+  \item $220$ cm
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Clave y justificacion breve}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{A.} Si un plano corta una esfera pasando por su centro, la seccion plana obtenida corresponde a una circunferencia.
+  \item \textbf{C.} Un corte perpendicular a las bases y que pasa por sus centros produce un rectangulo cuyos lados miden la altura del cilindro, $24$ cm, y el diametro de la base, $16$ cm. Por eso, el perimetro es $2(24+16)=80$ cm.
+  \item \textbf{C.} A $10$ cm sobre la base quedan $15$ cm hasta el vertice, de un total de $25$ cm. Por semejanza, el radio de la circunferencia de la cinta es $7\cdot\frac{15}{25}=4,2$ cm. La longitud de una cinta es aproximadamente $2\pi(4,2)\approx 26,4$ cm; para cinco sombreros se necesitan aproximadamente $132$ cm.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,200 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\newcommand{\puntografico}{0.09}
+\newcommand{\opcionalgebra}[2]{\item[#1)] $#2$}
+\newcommand{\tablarel}[2]{%
+\begin{tabular}{|c|*{5}{c|}}
+\hline
+#1 \\ \hline
+#2 \\ \hline
+\end{tabular}}
+\newcommand{\puntoabierto}[2]{\draw[fill=white, thick] (#1,#2) circle (0.15);}
+\newcommand{\puntocerrado}[2]{\fill (#1,#2) circle (0.15);}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Borrador de items}}\\
+  {\large Bloque 2. Relaciones y Algebra - Afirmacion 1}\\[4pt]
+  Prueba Nacional Estandarizada de Matematica, Secundaria 2026
+\end{center}
+
+\section*{Afirmacion}
+Resuelve problemas relacionados con elementos y propiedades de funciones o composicion de estas, en sus distintas representaciones.
+
+\section*{Items propuestos}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.05cm]
+
+\Needspace{0.82\textheight}
+\item
+En una estacion meteorologica se registra la relacion entre la variable $d$, que corresponde al dia de medicion, y la variable $r$, que corresponde a la cantidad de lluvia acumulada, en milimetros. Cada una de las siguientes tablas muestra una relacion obtenida durante tres semanas distintas.
+
+\textbf{I.}
+
+\begin{center}
+\tablarel{$d$ & 1 & 2 & 3 & 2 & 5}{$r$ & 4 & 8 & 6 & 10 & 7}
+\end{center}
+
+\textbf{II.}
+
+\begin{center}
+\tablarel{$d$ & 0 & 1 & 2 & 3 & 4}{$r$ & 0 & 3 & 6 & 9 & 12}
+\end{center}
+
+\textbf{III.}
+
+\begin{center}
+\tablarel{$d$ & -2 & -1 & 0 & -2 & 1}{$r$ & 5 & 4 & 3 & 6 & 2}
+\end{center}
+
+De acuerdo con la informacion anterior, \textquestiondown cual tabla muestra una relacion que corresponde a una funcion?
+
+\begin{enumerate}[label=\Alph*)]
+  \item I
+  \item II
+  \item III
+  \item I y III
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+La siguiente representacion grafica corresponde al monto $C(x)$, en colones, que se debe pagar por el uso de un parqueo, en funcion del tiempo $x$, en horas, que permanece estacionado un vehiculo.
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.55, yscale=0.65]
+  \path[use as bounding box] (-1,-0.9) rectangle (11,6.2);
+  \draw[->, thick] (-0.6,0) -- (10.5,0) node[anchor=west] {$x$};
+  \draw[->, thick] (0,-0.25) -- (0,5.9) node[anchor=south] {$C(x)$};
+
+  \foreach \x/\lab in {1/1,3/3,6/6,10/10}
+    \node[anchor=north] at (\x,0) {$\lab$};
+  \foreach \y/\lab in {0.8/800,1.5/{1500},3/{3000},5/{5000}}
+    \node[anchor=east] at (0,\y) {$\lab$};
+
+  \draw[densely dashed, gray!85, line width=0.55pt] (1,0) -- (1,0.8) -- (0,0.8);
+  \draw[densely dashed, gray!85, line width=0.55pt] (3,0) -- (3,1.5) -- (0,1.5);
+  \draw[densely dashed, gray!85, line width=0.55pt] (6,0) -- (6,3) -- (0,3);
+  \draw[densely dashed, gray!85, line width=0.55pt] (10,0) -- (10,5) -- (0,5);
+
+  \draw[thick] (0,0.8) -- (1,0.8);
+  \draw[thick] (1,1.5) -- (3,1.5);
+  \draw[thick] (3,3) -- (6,3);
+  \draw[thick] (6,5) -- (10,5);
+
+  \draw[densely dashed, black, line width=0.65pt] (1,0.8) -- (1,1.5);
+  \draw[densely dashed, black, line width=0.65pt] (3,1.5) -- (3,3);
+  \draw[densely dashed, black, line width=0.65pt] (6,3) -- (6,5);
+
+  \puntoabierto{0}{0.8}
+  \puntocerrado{1}{0.8}
+  \puntoabierto{1}{1.5}
+  \puntocerrado{3}{1.5}
+  \puntoabierto{3}{3}
+  \puntocerrado{6}{3}
+  \puntoabierto{6}{5}
+  \puntocerrado{10}{5}
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, si un vehiculo permanece estacionado durante $3$ horas, entonces, \textquestiondown cual monto se debe pagar por el uso del parqueo?
+
+\begin{enumerate}[label=\Alph*)]
+  \item 800 colones
+  \item 1500 colones
+  \item 3000 colones
+  \item 5000 colones
+\end{enumerate}
+
+\Needspace{0.98\textheight}
+Para responder los items 3 y 4, considere la siguiente informacion.
+
+La siguiente representacion grafica corresponde a la funcion $n$, que determina la cantidad de botellas de agua disponibles, en cientos, en una bodega de emergencia, en funcion del tiempo $x$, en dias, desde el inicio de una jornada de distribucion, con $0 \leq x \leq 30$.
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.20, yscale=0.16]
+  \path[use as bounding box] (-6,-6) rectangle (36,33);
+  \draw[->, thick] (-3,0) -- (34,0) node[anchor=west] {$x$};
+  \draw[->, thick] (0,-2) -- (0,31) node[anchor=south] {$n(x)$};
+  \node[rotate=90] at (-5,16) {Cantidad};
+  \node at (17,-5.2) {Tiempo};
+
+  \foreach \x/\lab in {5/5,10/10,15/15,20/20,25/25,30/30}
+    \node[anchor=north] at (\x,0) {$\lab$};
+  \foreach \y/\lab in {6/6,12/12,18/18,24/24,28/28}
+    \node[anchor=east] at (0,\y) {$\lab$};
+
+  \foreach \x/\y in {5/28,10/28,15/24,20/18,25/18,30/6}
+    {
+      \draw[densely dashed, gray!85, line width=0.55pt] (\x,0) -- (\x,\y);
+      \draw[densely dashed, gray!85, line width=0.55pt] (0,\y) -- (\x,\y);
+    }
+
+  \draw[thick] (0,12) -- (5,28) -- (10,28) -- (15,24) -- (20,18) -- (25,18) -- (30,6);
+  \foreach \x/\y in {0/12,5/28,10/28,15/24,20/18,25/18,30/6}
+    \fill (\x,\y) circle (0.54);
+\end{tikzpicture}
+\end{center}
+
+\item
+\textquestiondown Cual fue la cantidad de botellas de agua disponibles en la bodega el dia $15$ desde el inicio de la jornada?
+
+\begin{enumerate}[label=\Alph*)]
+  \item 15 cientos
+  \item 18 cientos
+  \item 24 cientos
+  \item 28 cientos
+\end{enumerate}
+
+\item
+Durante todo ese tiempo, \textquestiondown cual fue la menor cantidad de botellas de agua disponibles en la bodega?
+
+\begin{enumerate}[label=\Alph*)]
+  \item 6 cientos
+  \item 12 cientos
+  \item 24 cientos
+  \item 30 cientos
+\end{enumerate}
+
+\Needspace{0.62\textheight}
+\item
+En una aplicacion de entrenamiento, la funcion $f$ asigna a cada rutina su duracion recomendada, en minutos, y la funcion $g$ asigna a cada duracion la cantidad de puntos que obtiene una persona usuaria. Se sabe que
+\[
+f(x)=4x+10 \qquad \text{y} \qquad g(x)=2x-15.
+\]
+
+Si $x$ representa el nivel de una rutina, \textquestiondown cual es el valor de $(g\circ f)(5)$?
+
+\begin{enumerate}[label=\Alph*)]
+  \item 15
+  \item 45
+  \item 55
+  \item 75
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Clave y justificacion breve}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{B.} En la tabla II, cada valor de $d$ tiene una unica imagen. En I y III se repite un valor de $d$ con dos valores distintos de $r$.
+  \item \textbf{B.} En la grafica, el punto cerrado en $x=3$ esta en $C(x)=1500$.
+  \item \textbf{C.} En la grafica, al dia $15$ le corresponde $n(15)=24$.
+  \item \textbf{A.} El menor valor observado en la grafica es $6$, alcanzado al dia $30$.
+  \item \textbf{B.} Primero, $f(5)=4(5)+10=30$. Luego, $g(30)=2(30)-15=45$. Por tanto, $(g\circ f)(5)=45$.
+\end{enumerate}
+
+\end{document}

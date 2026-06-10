@@ -1,0 +1,421 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\newcommand{\opcion}[2]{\item[#1)] $#2$}
+\newcommand{\puntografico}{0.35}
+
+% Mini grafico con P en origen
+% grafcirc{cx}{cy}{r}{etiq-centro}{etiq-eje-x}
+% scale=0.078 → necesita puntos grandes (1.0) para que sean visibles
+\newcommand{\grafcirc}[5]{%
+\begin{tikzpicture}[scale=0.078]
+  \path[use as bounding box] (-32,-15) rectangle (43,34);
+  \draw[<->, thick] (-30,0) -- (36,0);
+  \draw[<->, thick] (0,-12) -- (0,31);
+  \node[anchor=west] at (37,-1.2) {\scriptsize$x$ (este)};
+  \node[anchor=south east] at (7,32.5) {\scriptsize$y$ (norte)};
+  \fill (0,0) circle (1.0) node[below left] {\scriptsize$P$};
+  \draw[dashed] (#1,0) -- (#1,{#2+#3});
+  \draw[dashed] (0,#2) -- (#1,#2);
+  \draw[dashed] (0,{#2+#3}) -- (#1,{#2+#3});
+  \draw[thick] (#1,#2) circle (#3);
+  \fill (#1,#2) circle (1.0);
+  \fill (#1,{#2+#3}) circle (1.0);
+  \node[anchor=south west, inner sep=1pt, xshift=2pt, yshift=1pt] at (#1,#2) {\scriptsize$#4$};
+  \node[anchor=north] at (#1,0) {\scriptsize$#5$};
+  \node[left] at (0,#2) {\scriptsize$#2$};
+  \node[left] at (0,{#2+#3}) {\scriptsize\pgfmathparse{int(#2+#3)}\pgfmathresult};
+\end{tikzpicture}}
+
+% Mini grafico sin P: nueva posicion tras traslacion
+% grafpos{cx}{cy}{r}{etiq-centro}{etiq-eje-x}
+\newcommand{\grafpos}[5]{%
+\begin{tikzpicture}[scale=0.35]
+  \path[use as bounding box] (-2,-1) rectangle (11,11);
+  \draw[<->, thick] (-1,0) -- (10,0);
+  \draw[<->, thick] (0,-0.5) -- (0,10);
+  \node[anchor=west] at (10.2,-0.3) {\scriptsize$x$};
+  \node[anchor=south east] at (1.1,10.2) {\scriptsize$y$};
+  \draw[dashed] (#1,0) -- (#1,{#2+#3});
+  \draw[dashed] (0,#2) -- (#1,#2);
+  \draw[dashed] (0,{#2+#3}) -- (#1,{#2+#3});
+  \draw[thick] (#1,#2) circle (#3);
+  \fill (#1,#2) circle (0.22) node[anchor=south west, inner sep=1pt] {\scriptsize$#4$};
+  \fill (#1,{#2+#3}) circle (0.22);
+  \node[anchor=north] at (#1,0) {\scriptsize$#5$};
+  \node[left] at (0,#2) {\scriptsize$#2$};
+  \node[left] at (0,{#2+#3}) {\scriptsize\pgfmathparse{int(#2+#3)}\pgfmathresult};
+\end{tikzpicture}}
+
+% Variante con eje Y extendido a 12 (para cy+r=10)
+\newcommand{\grafposX}[5]{%
+\begin{tikzpicture}[scale=0.35]
+  \path[use as bounding box] (-2,-1) rectangle (11,13);
+  \draw[<->, thick] (-1,0) -- (10,0);
+  \draw[<->, thick] (0,-0.5) -- (0,12);
+  \node[anchor=west] at (10.2,-0.3) {\scriptsize$x$};
+  \node[anchor=south east] at (1.1,12.2) {\scriptsize$y$};
+  \draw[dashed] (#1,0) -- (#1,{#2+#3});
+  \draw[dashed] (0,#2) -- (#1,#2);
+  \draw[dashed] (0,{#2+#3}) -- (#1,{#2+#3});
+  \draw[thick] (#1,#2) circle (#3);
+  \fill (#1,#2) circle (0.22) node[anchor=south west, inner sep=1pt] {\scriptsize$#4$};
+  \fill (#1,{#2+#3}) circle (0.22);
+  \node[anchor=north] at (#1,0) {\scriptsize$#5$};
+  \node[left] at (0,#2) {\scriptsize$#2$};
+  \node[left] at (0,{#2+#3}) {\scriptsize\pgfmathparse{int(#2+#3)}\pgfmathresult};
+\end{tikzpicture}}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Pr\'actica para la Prueba Nacional Estandarizada Sumativa 2026}}\\[4pt]
+  {\large Secundaria -- Bloque~1 -- Afirmaciones~1~y~2}\\[4pt]
+  Nombre: \rule{8cm}{0.4pt}\hfill Fecha: \rule{3cm}{0.4pt}
+\end{center}
+
+\medskip
+\textbf{Instrucciones:} Seleccione la \'unica opci\'on correcta en cada \'item.
+Tiempo disponible: \textbf{21 minutos}.
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.0cm]
+
+%---------------------------------------
+% ITEM 1
+%---------------------------------------
+\Needspace{0.82\textheight}
+\item
+Un dr\'on de monitoreo emite una se\~nal inal\'ambrica que llega a $8$ m a su alrededor.
+La ubicaci\'on de ese dr\'on ($D$) es $20$ m al este y $12$ m al norte de un punto de
+control ($P$), el cual se considera como origen.
+
+\textquestiondown Cu\'al de las siguientes representaciones gr\'aficas, en la que las unidades
+est\'an en metros, corresponde a la circunferencia del alcance m\'aximo de la se\~nal que
+emite ese dr\'on?
+
+\vspace{1.8\baselineskip}
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{@{}r@{\hspace{0.45cm}}c@{\hspace{1.6cm}}r@{\hspace{0.45cm}}c@{}}
+\raisebox{1.65cm}{\textbf{A)}} & \grafcirc{20}{12}{8}{D}{20} &
+\raisebox{1.65cm}{\textbf{B)}} & \grafcirc{12}{20}{8}{D}{12} \\[0.85cm]
+\raisebox{1.65cm}{\textbf{C)}} & \grafcirc{20}{12}{4}{D}{20} &
+\raisebox{1.8cm}{\textbf{D)}} & \begin{tikzpicture}[scale=0.14]
+  \path[use as bounding box] (-30,-9) rectangle (12,24);
+  \draw[<->, thick] (-28,0) -- (5,0);
+  \draw[<->, thick] (0,-7) -- (0,23);
+  \node[anchor=west] at (5.3,-0.7) {\scriptsize$x$ (este)};
+  \node[anchor=south east] at (3,23.5) {\scriptsize$y$ (norte)};
+  \fill (0,0) circle (0.55) node[below left] {\scriptsize$P$};
+  \draw[dashed] (-20,0) -- (-20,20);
+  \draw[dashed] (0,12) -- (-20,12);
+  \draw[dashed] (0,20) -- (-20,20);
+  \draw[thick] (-20,12) circle (8);
+  \fill (-20,12) circle (0.55);
+  \fill (-20,20) circle (0.55);
+  \node[anchor=south west, inner sep=1pt, xshift=2pt, yshift=1pt] at (-20,12) {\scriptsize$D$};
+  \node[anchor=north] at (-20,0) {\scriptsize$-20$};
+  \node[left] at (0,12) {\scriptsize$12$};
+  \node[left] at (0,20) {\scriptsize$20$};
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+%---------------------------------------
+% ITEM 2
+%---------------------------------------
+\Needspace{0.72\textheight}
+\item
+La siguiente representaci\'on gr\'afica, en la que las unidades est\'an en metros, muestra
+la ubicaci\'on del centro ($S$) de un sistema de riego circular y la circunferencia
+correspondiente a su alcance.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.34]
+  \path[use as bounding box] (-3,-3) rectangle (20,16);
+  \draw[<->, thick] (-2,0) -- (18,0);
+  \draw[<->, thick] (0,-2) -- (0,15);
+  \node[anchor=west] at (18.4,-0.8) {$x$ (este)};
+  \node[anchor=south east] at (3.5,15.5) {$y$ (norte)};
+  \draw[dashed] (10,0) -- (10,6);
+  \draw[dashed] (0,6) -- (10,6);
+  \draw[thick] (10,6) circle (6);
+  \fill (10,6) circle (\puntografico) node[above left, inner sep=2pt] {$S$};
+  \node[anchor=north] at (10,0) {$10$};
+  \node[left] at (0,6) {$6$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la representaci\'on
+algebraica, en la que las unidades est\'an en metros, de la circunferencia correspondiente
+al alcance de ese sistema de riego?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x+10)^{2}+(y+6)^{2}=36}
+  \opcion{B}{(x-10)^{2}+(y-6)^{2}=36}
+  \opcion{C}{(x-6)^{2}+(y-10)^{2}=36}
+  \opcion{D}{(x-10)^{2}+(y-6)^{2}=6}
+\end{enumerate}
+
+%---------------------------------------
+% ITEM 3
+%---------------------------------------
+\Needspace{0.82\textheight}
+\item
+Un juego consiste en lanzar una bolsa de arena hacia una zona circular en el suelo,
+cuya medida del radio es $5$ m.
+
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra la
+circunferencia correspondiente al borde de esa zona:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.34]
+  \path[use as bounding box] (-2,-2) rectangle (17,14);
+  \draw[<->, thick] (-1,0) -- (16,0);
+  \draw[<->, thick] (0,-1) -- (0,13);
+  \node[anchor=west] at (16.2,-0.4) {$x$};
+  \node[anchor=south east] at (1.2,13.3) {$y$};
+  \draw[thick] (8,6) circle (5);
+  \draw[dashed] (8,0) -- (8,11);
+  \draw[dashed] (0,6) -- (8,6);
+  \draw[dashed] (0,11) -- (8,11);
+  \fill (8,6) circle (\puntografico);
+  \fill (8,11) circle (\puntografico);
+  \node[anchor=north] at (8,0) {$8$};
+  \node[left] at (0,6) {$6$};
+  \node[left] at (0,11) {$11$};
+\end{tikzpicture}
+\end{center}
+
+Adem\'as, durante el juego:
+\begin{itemize}
+  \item Ana lanz\'o una bolsa y esta se ubic\'o en el punto correspondiente a $(3,\,7)$.
+  \item Bruno lanz\'o una bolsa y esta se ubic\'o en el punto correspondiente a $(8,\,12)$.
+  \item Carla lanz\'o una bolsa y esta se ubic\'o en el punto correspondiente a $(11,\,9)$.
+  \item Diego lanz\'o una bolsa y esta se ubic\'o en el punto correspondiente a $(13,\,7)$.
+\end{itemize}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al persona lanz\'o la
+bolsa que se ubic\'o en el interior de esa zona?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Ana
+  \item Bruno
+  \item Carla
+  \item Diego
+\end{enumerate}
+
+%---------------------------------------
+% ITEM 4
+%---------------------------------------
+\Needspace{0.84\textheight}
+\item
+Una antena de telecomunicaciones ($T$) emite una se\~nal que permite a los tel\'efonos
+celulares ubicados a $5$ km o menos alrededor de ella realizar y recibir llamadas.
+La siguiente representaci\'on gr\'afica, en la que las unidades est\'an en kil\'ometros,
+muestra la ubicaci\'on de la antena y la circunferencia correspondiente al alcance m\'aximo
+de la se\~nal.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.34]
+  \path[use as bounding box] (-2,-2) rectangle (15,14);
+  \draw[<->, thick] (-1,0) -- (14,0);
+  \draw[<->, thick] (0,-1) -- (0,13);
+  \node[anchor=west] at (14.4,-0.4) {$x$ (este)};
+  \node[anchor=south east] at (1.3,13.4) {$y$ (norte)};
+  \draw[thick] (7,5) circle (5);
+  \draw[dashed] (7,0) -- (7,10);
+  \draw[dashed] (0,5) -- (7,5);
+  \draw[dashed] (0,10) -- (7,10);
+  \fill (7,5) circle (\puntografico)
+    node[anchor=south east, inner sep=2pt, xshift=-2pt, yshift=2pt] {$T$};
+  \fill (7,10) circle (\puntografico);
+  \node[anchor=north] at (7,0) {$7$};
+  \node[left] at (0,5) {$5$};
+  \node[left] at (0,10) {$10$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, si las ubicaciones que tienen los tel\'efonos
+celulares $P$, $Q$, $S$ y $U$ corresponden, respectivamente, a los puntos
+$(10,\,9)$, $(13,\,5)$, $(7,\,11)$ y $(2,\,1)$, entonces \textquestiondown en cu\'al de esos
+tel\'efonos se pueden realizar y recibir llamadas por medio de la se\~nal de esa antena?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $P$
+  \item $Q$
+  \item $S$
+  \item $U$
+\end{enumerate}
+
+%---------------------------------------
+% ITEM 5
+%---------------------------------------
+\Needspace{0.84\textheight}
+\item
+Considere la siguiente representaci\'on gr\'afica, en la que las unidades est\'an en
+kil\'ometros, de la circunferencia correspondiente al alcance m\'aximo de la se\~nal
+emitida por una antena ubicada en el pueblo $H$\text{:}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+  \path[use as bounding box] (-1.5,-2) rectangle (9,9);
+  \draw[<->, thick] (-1,0) -- (8.5,0);
+  \draw[<->, thick] (0,-1) -- (0,8.5);
+  \node[anchor=west] at (8.7,-0.3) {$x$ (este)};
+  \node[anchor=south east] at (1.2,8.7) {$y$ (norte)};
+  \draw[thick] (4,5) circle (2);
+  \draw[dashed] (4,0) -- (4,7);
+  \draw[dashed] (0,5) -- (4,5);
+  \draw[dashed] (0,7) -- (4,7);
+  \fill (4,5) circle (0.22)
+    node[anchor=south east, inner sep=2pt] {$H$};
+  \fill (4,7) circle (0.22);
+  \node[anchor=north] at (4,0) {$4$};
+  \node[left] at (0,5) {$5$};
+  \node[left] at (0,7) {$7$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, para mejorar el servicio la empresa traslad\'o la
+antena al pueblo $K$, el cual se ubica a $3$ km al este y $3$ km al sur de $H$. \textquestiondown Cu\'al es
+la representaci\'on gr\'afica, en la que las unidades est\'an en kil\'ometros, de la
+circunferencia correspondiente al alcance m\'aximo de la se\~nal emitida por la antena en
+la nueva ubicaci\'on?
+
+\vspace{1.5\baselineskip}
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{@{}r@{\hspace{0.4cm}}c@{\hspace{1.4cm}}r@{\hspace{0.4cm}}c@{}}
+\raisebox{1.9cm}{\textbf{A)}} & \grafpos{7}{5}{2}{K}{7} &
+\raisebox{1.9cm}{\textbf{B)}} & \grafposX{4}{8}{2}{K}{4} \\[0.6cm]
+\raisebox{1.9cm}{\textbf{C)}} & \grafpos{1}{5}{2}{K}{1} &
+\raisebox{1.9cm}{\textbf{D)}} & \grafpos{7}{2}{2}{K}{7}
+\end{tabular}
+\end{center}
+
+%---------------------------------------
+% ITEM 6
+%---------------------------------------
+\Needspace{0.84\textheight}
+\item
+A continuaci\'on, se muestra la representaci\'on gr\'afica, en la que las unidades est\'an
+en kil\'ometros, de la ubicaci\'on ($P$) de un puerto, ($R$) de un barco y de la
+circunferencia que corresponde al alcance m\'aximo de la se\~nal que emite el radar de
+ese barco.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+  \path[use as bounding box] (-1.5,-1) rectangle (8,7);
+  \draw[<->, thick] (-1,0) -- (7.5,0);
+  \draw[<->, thick] (0,-0.5) -- (0,6.5);
+  \node[anchor=west] at (7.7,-0.3) {$x$ (este)};
+  \node[anchor=south east] at (1.1,6.7) {$y$ (norte)};
+  \fill (0,0) circle (0.18) node[below left, inner sep=2pt] {$P$};
+  \draw[thick] (5,3) circle (1);
+  \draw[dashed] (5,0) -- (5,4);
+  \draw[dashed] (0,3) -- (5,3);
+  \draw[dashed] (0,4) -- (5,4);
+  \fill (5,3) circle (0.18)
+    node[anchor=south west, inner sep=2pt] {$R$};
+  \fill (5,4) circle (0.18);
+  \node[anchor=north] at (5,0) {$5$};
+  \node[left] at (0,3) {$3$};
+  \node[left] at (0,4) {$4$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, si dos horas despu\'es la nueva ubicaci\'on ($S$)
+del barco es $2$ km al norte de ($R$), entonces \textquestiondown cu\'al es la representaci\'on
+gr\'afica, en la que las unidades est\'an en kil\'ometros, de la circunferencia que corresponde
+al alcance m\'aximo de la se\~nal que emite el radar del barco en su nueva ubicaci\'on?
+
+\vspace{1.5\baselineskip}
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{@{}r@{\hspace{0.4cm}}c@{\hspace{1.4cm}}r@{\hspace{0.4cm}}c@{}}
+\raisebox{1.9cm}{\textbf{A)}} & \grafpos{5}{5}{1}{S}{5} &
+\raisebox{1.9cm}{\textbf{B)}} & \grafpos{7}{3}{1}{S}{7} \\[0.6cm]
+\raisebox{1.9cm}{\textbf{C)}} & \grafpos{5}{1}{1}{S}{5} &
+\raisebox{1.9cm}{\textbf{D)}} & \grafpos{3}{3}{1}{S}{3}
+\end{tabular}
+\end{center}
+
+%---------------------------------------
+% ITEM 7
+%---------------------------------------
+\Needspace{0.82\textheight}
+\item
+Un dispositivo electr\'onico, que emite una se\~nal inal\'ambrica con forma circular, se
+ubica $8$ m al este y $4$ m al norte del laboratorio de una escuela. El alcance m\'aximo de
+la se\~nal emitida por ese dispositivo es de $4$ m a su alrededor.
+
+La siguiente representaci\'on gr\'afica, en la que las unidades est\'an en metros, muestra
+las ubicaciones $V$ del dispositivo, $L$ del laboratorio y $C$ de la circunferencia
+correspondiente al alcance m\'aximo de la se\~nal emitida por ese dispositivo\text{:}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.46]
+  \path[use as bounding box] (-1.5,-1) rectangle (15,11);
+  \draw[<->, thick] (-1,0) -- (14,0);
+  \draw[<->, thick] (0,-0.5) -- (0,10.5);
+  \node[anchor=west] at (14.2,-0.3) {$x$ (este)};
+  \node[anchor=south east] at (1.2,10.7) {$y$ (norte)};
+  \fill (0,0) circle (0.175) node[below left, inner sep=2pt] {$L$};
+  \draw[thick] (8,4) circle (4);
+  \draw[dashed] (8,0) -- (8,4);
+  \draw[dashed] (0,4) -- (8,4);
+  \draw[dashed] (8,4) -- (8,8);
+  \draw[dashed] (0,8) -- (8,8);
+  \fill (8,4) circle (0.175)
+    node[anchor=north east, inner sep=2pt, xshift=2pt, yshift=-2pt] {$V$};
+  \fill (8,8) circle (0.175) node[above right, inner sep=2pt] {$C$};
+  \node[anchor=north] at (8,0) {$8$};
+  \node[left] at (0,4) {$4$};
+  \node[left] at (0,8) {$8$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, si desde su ubicaci\'on actual el dispositivo se
+traslada $6$ m al oeste y $1$ m al sur, entonces \textquestiondown cu\'al es la
+representaci\'on algebraica, en la que las unidades est\'an en metros, de la circunferencia
+correspondiente al alcance m\'aximo de la se\~nal emitida por el dispositivo en su nueva
+ubicaci\'on?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x-2)^{2}+(y-3)^{2}=4}
+  \opcion{B}{(x-2)^{2}+(y-5)^{2}=16}
+  \opcion{C}{(x-2)^{2}+(y-3)^{2}=16}
+  \opcion{D}{(x-14)^{2}+(y-3)^{2}=16}
+\end{enumerate}
+
+\end{enumerate}
+
+\vspace{1.2cm}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{\'Item} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} &
+                  \textbf{5} & \textbf{6} & \textbf{7} \\
+\hline
+\textbf{Clave}  & A & B & C & A & D & A & C \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

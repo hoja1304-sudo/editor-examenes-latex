@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\newcommand{\puntografico}{0.09}
+
+\begin{document}
+
+\begin{center}
+  {\Large \textbf{Borrador de items}}\\
+  {\large Bloque 1. Geometria - Afirmacion 7}\\[4pt]
+  Prueba Nacional Estandarizada de Matematica, Secundaria 2026
+\end{center}
+
+\section*{Afirmacion}
+Resuelve problemas relacionados con transformaciones en el plano.
+
+\section*{Items propuestos}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.05cm]
+
+\Needspace{0.95\textheight}
+\item
+Considere la siguiente representacion grafica para responder los items 1 y 2.
+
+En el plano de diseno de una institucion educativa, el poligono $ABCD$ representa la forma de una zona verde que sera reproducida en diferentes posiciones del patio.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-7.9,-1.2) rectangle (1.8,7.8);
+  \draw[step=1, gray!45, very thin] (-7,0) grid (0,7);
+  \draw[<->, thick] (-7.6,0) -- (1.3,0);
+  \draw[<->, thick] (0,-0.7) -- (0,7.4);
+  \node[anchor=west] at (1.45,-0.15) {$x$};
+  \node[anchor=south east] at (0.65,7.55) {$y$};
+  \fill[gray!15] (-2,6) -- (-4,1) -- (-6,4) -- (-5,5) -- cycle;
+  \draw[very thick] (-2,6) -- (-4,1) -- (-6,4) -- (-5,5) -- cycle;
+  \foreach \x/\lab in {-7/{\llap{-}7},-6/{\llap{-}6},-5/{\llap{-}5},-4/{\llap{-}4},-3/{\llap{-}3},-2/{\llap{-}2},-1/{\llap{-}1}}
+    \node[anchor=north, inner sep=1pt] at (\x,0) {$\lab$};
+  \foreach \y in {1,2,3,4,5,6,7}
+    \node[anchor=east, inner sep=1pt] at (0,\y) {$\y$};
+  \fill (-2,6) circle (\puntografico) node[anchor=south west, inner sep=1pt, xshift=1pt, yshift=1pt] {$A$};
+  \fill (-4,1) circle (\puntografico) node[anchor=north east, inner sep=1pt, xshift=-1pt, yshift=-1pt] {$B$};
+  \fill (-6,4) circle (\puntografico) node[anchor=east, inner sep=1pt, xshift=-1pt] {$C$};
+  \fill (-5,5) circle (\puntografico) node[anchor=north west, inner sep=1pt, xshift=1pt, yshift=-1pt] {$D$};
+\end{tikzpicture}
+\end{center}
+
+Si al poligono $ABCD$ se le aplica una reflexion respecto a la recta dada por $y=-x$, entonces, \textquestiondown cual es la imagen del punto $A$?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $(-2,-6)$
+  \item $(6,-2)$
+  \item $(-6,2)$
+  \item $(2,6)$
+\end{enumerate}
+
+\Needspace{0.52\textheight}
+\item
+En el mismo plano de diseno, al poligono $ABCD$ se le aplica una homotecia de razon $k=-2$ con centro en el origen y, luego, una traslacion de $3$ unidades hacia la derecha.
+
+\textquestiondown Cual es la imagen del punto $C$ luego de aplicar ambas transformaciones?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $(-15,8)$
+  \item $(15,-8)$
+  \item $(9,-8)$
+  \item $(12,-5)$
+\end{enumerate}
+
+\Needspace{0.48\textheight}
+\item
+En una aplicacion de mapas, la ubicacion de una camara de seguridad se representa por el punto $P(3,-2)$ en un plano cartesiano. Para ajustar la orientacion del mapa en la pantalla, el sistema aplica una rotacion de $90^\circ$ en sentido antihorario alrededor del origen.
+
+\textquestiondown Cuales son las coordenadas del punto que representa la nueva ubicacion de la camara en la pantalla?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $(-2,-3)$
+  \item $(2,3)$
+  \item $(-3,2)$
+  \item $(3,2)$
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Clave y justificacion breve}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{C.} La reflexion respecto a la recta $y=-x$ transforma un punto $(x,y)$ en $(-y,-x)$. Por tanto, $A(-2,6)$ se transforma en $(-6,2)$.
+  \item \textbf{B.} El punto $C(-6,4)$, bajo la homotecia de razon $-2$, se transforma en $(12,-8)$. Al trasladarlo $3$ unidades hacia la derecha se obtiene $(15,-8)$.
+  \item \textbf{B.} Una rotacion de $90^\circ$ en sentido antihorario alrededor del origen transforma $(x,y)$ en $(-y,x)$. Por tanto, $P(3,-2)$ se transforma en $(2,3)$.
+\end{enumerate}
+
+\end{document}

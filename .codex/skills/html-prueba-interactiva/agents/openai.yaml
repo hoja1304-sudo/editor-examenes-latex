@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML Prueba Interactiva"
+  short_description: "Versiones HTML interactivas de pruebas"
+  default_prompt: "Usa $html-prueba-interactiva para crear una version HTML interactiva de una prueba LaTeX o PDF."
