@@ -64,6 +64,8 @@ El texto del HTML no debe recortarse, resumirse ni parafrasearse respecto al `.t
 
 La secuencia de trabajo para pruebas debe ser siempre: primero crear o corregir el documento LaTeX, despues compilar y verificar el PDF, y por ultimo trasladar esos cambios al HTML con base en el `.tex` ya corregido. El HTML no debe adelantarse ni definir un orden distinto al documento LaTeX/PDF.
 
+Si una expresion matematica con radicales, fracciones u otra notacion no se puede reproducir en HTML/CSS con la misma apariencia del PDF, renderizar esa expresion desde LaTeX a SVG e incrustarla o referenciarla en el HTML. Esto aplica especialmente a opciones de respuesta: el radical debe salir de `\sqrt{...}` y abarcar exactamente todo el subradical igual que en el PDF.
+
 Cuando exista el `.tex`, usarlo como fuente principal para el HTML. Las figuras TikZ deben renderizarse desde el codigo `tikzpicture` real; no reconstruirlas manualmente en SVG/JavaScript salvo que no haya bloque TikZ disponible, que el renderizador falle despues de intentar corregirlo, o que el usuario pida una simplificacion explicita. La meta es que PDF y HTML compartan la misma fuente visual para evitar diferencias de escala, recortes, etiquetas movidas o flechas distintas.
 
 Para crear o actualizar un HTML desde un `.tex`, primero generar/incrustar las figuras con:
