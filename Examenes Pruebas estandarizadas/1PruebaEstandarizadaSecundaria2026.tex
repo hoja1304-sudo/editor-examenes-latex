@@ -626,6 +626,56 @@ En una aplicacion de mapas, la ubicacion de una camara de seguridad se represent
   \item $(3,2)$
 \end{enumerate}
 
+\Needspace{0.98\textheight}
+Considere la siguiente representacion grafica para responder los items 22 y 23.
+
+En el siguiente plano cartesiano se muestra el poligono $MNPQR$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+  \def\puntotransformacion{0.18}
+  \path[use as bounding box] (-1.7,-6.3) rectangle (6.5,0.9);
+  \draw[<->, thick] (-1.2,0) -- (5.8,0);
+  \draw[<->, thick] (0,0.7) -- (0,-6.0);
+  \node[anchor=west, inner sep=1pt] at (5.85,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,0.72) {$y$};
+  \foreach \x in {1,3,4}
+    \draw[densely dotted, gray!60] (\x,0) -- (\x,-5);
+  \foreach \y in {-1,-2,-4,-5}
+    \draw[densely dotted, gray!60] (0,\y) -- (4,\y);
+  \foreach \x in {1,3,4,5}
+    \node[anchor=north, inner sep=2pt] at (\x,0) {$\x$};
+  \foreach \y/\ylab in {-1/{$-1$},-2/{$-2$},-4/{$-4$},-5/{$-5$}}
+    \node[anchor=east, inner sep=2pt] at (0,\y) {\ylab};
+  \draw[thick] (1,-2) -- (4,-1) -- (4,-5) -- (1,-5) -- (3,-4) -- cycle;
+  \fill (1,-2) circle (\puntotransformacion) node[anchor=south east] {$M$};
+  \fill (4,-1) circle (\puntotransformacion) node[anchor=south west] {$N$};
+  \fill (4,-5) circle (\puntotransformacion) node[anchor=north west] {$P$};
+  \fill (1,-5) circle (\puntotransformacion) node[anchor=north east] {$Q$};
+  \fill (3,-4) circle (\puntotransformacion) node[anchor=north west] {$R$};
+\end{tikzpicture}
+\end{center}
+
+\item
+Si al poligono $MNPQR$ se le aplica una reflexion respecto al eje $y$, \textquestiondown cual es la imagen del punto $N$?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $(4, 1)$
+  \item $(1, 4)$
+  \item $(-1, -4)$
+  \item $(-4, -1)$
+\end{enumerate}
+
+\item
+Si al poligono $MNPQR$ se le aplica una homotecia de razon $k = -2$ con centro en el origen y, luego, una traslacion de $2$ unidades hacia la derecha, \textquestiondown cual es la imagen del punto $R$ luego de aplicar ambas transformaciones?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $(-6, 6)$
+  \item $(-4, 8)$
+  \item $(-10, 8)$
+  \item $(-6, 10)$
+\end{enumerate}
+
 \Needspace{0.90\textheight}
 \item
 En una estacion meteorologica se registra la relacion entre la variable $d$, que corresponde al dia de medicion, y la variable $r$, que corresponde a la cantidad de lluvia acumulada, en milimetros. Cada una de las siguientes tablas muestra una relacion obtenida durante tres semanas distintas.
@@ -715,7 +765,7 @@ De acuerdo con la informacion anterior, si un vehiculo permanece estacionado dur
 \end{enumerate}
 
 \Needspace{0.98\textheight}
-Para responder los items 24 y 25, considere la siguiente informacion.
+Para responder los items 26 y 27, considere la siguiente informacion.
 
 La siguiente representacion grafica corresponde a la funcion $n$, que determina la cantidad de botellas de agua disponibles, en cientos, en una bodega de emergencia, en funcion del tiempo $x$, en dias, desde el inicio de una jornada de distribucion, con $0 \leq x \leq 30$.
 
@@ -997,6 +1047,590 @@ De acuerdo con la informacion anterior, \textquestiondown cual representacion al
   \item $h(x)=2\sqrt{x+1}+3$
   \item $h(x)=2\sqrt{x-1}-3$
   \item $h(x)=\sqrt{x-1}+3$
+\end{enumerate}
+
+\Needspace{0.45\textheight}
+\item
+Considere la siguiente informacion:
+
+Un sismografo registra la magnitud $M(t)$ de los movimientos sismicos en una zona cercana a una region volcanica del pais. La magnitud \textquotedblleft$M(t)$\textquotedblright, en grados, esta dada por
+\[
+M(t) = 1 + \log_3(t),
+\]
+donde \textquotedblleft$t$\textquotedblright\ es el tiempo en horas transcurridas desde el inicio del monitoreo, con $1 \leq t < 9$.
+
+De acuerdo con la informacion anterior, la magnitud de los movimientos sismicos cuando han transcurrido mas de $3$ horas desde el inicio del monitoreo es
+
+\begin{enumerate}[label=\Alph*)]
+  \item mayor que $3$ grados y menor que $4$ grados
+  \item mayor que $2$ grados y menor que $3$ grados
+  \item mayor que $1$ grado y menor que $2$ grados
+  \item mayor que $0$ grados y menor que $1$ grado
+\end{enumerate}
+
+\Needspace{0.42\textheight}
+\item
+Considere la siguiente informacion:
+
+El tiempo $t$, en minutos, que necesita una impresora 3D para fabricar una pieza en funcion de la cantidad de capas $n$ de material utilizado esta dado por
+\[
+t = 2\log_4(n), \quad 1 \leq n \leq 64.
+\]
+
+De acuerdo con la informacion anterior, \textquestiondown cuantas capas de material se necesitan para que la impresora 3D tarde $6$ minutos en fabricar la pieza?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $4$
+  \item $16$
+  \item $32$
+  \item $64$
+\end{enumerate}
+
+\Needspace{0.56\textheight}
+\item
+La siguiente representacion grafica corresponde a la funcion $h$ que determina la cantidad de litros de agua $h(x)$ consumidos por hora en un sistema de riego, en funcion de la cantidad de aspersores $x$ activos, con $1 \leq x \leq 8$:
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.65, yscale=0.65]
+  \path[use as bounding box] (-1.2,-0.8) rectangle (9.5,13.5);
+  \draw[->, thick] (-0.5,0) -- (9.0,0) node[anchor=west] {$x$};
+  \draw[->, thick] (0,-0.4) -- (0,13.0) node[anchor=south] {$h(x)$};
+
+  \foreach \x/\lab in {1/1,8/8}
+    \node[anchor=north] at (\x,0) {$\lab$};
+  \foreach \y/\lab in {5/5,12/12}
+    \node[anchor=east] at (0,\y) {$\lab$};
+
+  \draw[densely dashed, gray!80] (1,0) -- (1,5) -- (0,5);
+  \draw[densely dashed, gray!80] (8,0) -- (8,12) -- (0,12);
+
+  \draw[thick] (1,5) -- (8,12);
+
+  \fill (1,5)  circle (\puntograficoafirmacioncuatro);
+  \fill (8,12) circle (\puntograficoafirmacioncuatro);
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, \textquestiondown cual es el criterio de $h$?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $h(x) = x$
+  \item $h(x) = x + 4$
+  \item $h(x) = 4x + 1$
+  \item $h(x) = x - 4$
+\end{enumerate}
+
+\Needspace{0.40\textheight}
+\item
+Considere la siguiente informacion:
+
+Una empresa de mensajeria cobra ₡$1\,500$ por cada paquete entregado, ademas de un costo fijo de ₡$5\,000$ por dia de operacion, sin importar la cantidad de paquetes entregados ese dia.
+
+De acuerdo con la informacion anterior, el criterio que relaciona el ingreso total $I(x)$, en colones, de la empresa en funcion de la cantidad $x$ de paquetes entregados corresponde a
+
+\begin{enumerate}[label=\Alph*)]
+  \item $I(x) = 6\,500x$
+  \item $I(x) = 5\,000x + 1\,500$
+  \item $I(x) = 1\,500x + 5\,000$
+  \item $I(x) = 1\,500x - 5\,000$
+\end{enumerate}
+
+\Needspace{0.44\textheight}
+\item
+Considere la siguiente informacion:
+
+La funcion $v$ que determina la rapidez $v(t)$, en metros por segundo, de una lancha durante una competencia acuatica esta dada por
+\[
+v(t) = t^2 - 4t + 8,
+\]
+donde $t$ es el tiempo en minutos desde el inicio de la competencia, con $0 \leq t \leq 8$.
+
+De acuerdo con la informacion anterior, si la rapidez de la lancha durante la competencia es de $20$ metros por segundo, \textquestiondown cual es el tiempo, en minutos, transcurrido desde el inicio de la competencia?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $1$
+  \item $2$
+  \item $4$
+  \item $6$
+\end{enumerate}
+
+\Needspace{0.42\textheight}
+\item
+Considere la siguiente informacion:
+
+La funcion $g$ que determina la cantidad $g(t)$ de unidades vendidas por semana en un negocio esta dada por
+\[
+g(t) = -t^2 + 5t + 4,
+\]
+donde $t$ es el tiempo en semanas desde la apertura del negocio, con $1 \leq t \leq 5$.
+
+De acuerdo con la informacion anterior, \textquestiondown cuantas unidades se vendieron en la semana $3$ desde la apertura del negocio?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $4$
+  \item $8$
+  \item $10$
+  \item $28$
+\end{enumerate}
+
+\Needspace{0.55\textheight}
+\item
+Considere la siguiente informacion:
+
+En un taller artesanal se elaboran unicamente cajas de madera y estantes. Para su elaboracion, cada caja requiere 15 min de ensamblaje y 12 min de lijado. Asimismo, cada estante requiere 10 min de ensamblaje y 7 min de lijado.
+
+De acuerdo con la informacion anterior, si para la elaboracion de estantes y cajas se utilizaron 345 min de ensamblaje y 264 min de lijado, entonces, \textquestiondown cuantas cajas de madera se fabricaron en total?
+
+\begin{enumerate}[label=\Alph*)]
+  \item 15
+  \item 50
+  \item 107
+  \item 12
+\end{enumerate}
+
+\Needspace{0.48\textheight}
+\item
+Carlos y Mariana fueron a una cafeteria a comprar cafe molido y cafe en grano. Carlos compro 3~kg de cafe molido y 2~kg de cafe en grano, por los cuales pago \mbox{₡$24\,500$}. Mariana compro 2~kg de cafe molido y 4~kg de cafe en grano, por los cuales pago \mbox{₡$27\,000$}. Si cada kilogramo de cafe molido tenia el mismo precio y cada kilogramo de cafe en grano tenia el mismo precio, entonces, \textquestiondown cual fue el precio de cada kilogramo de cafe molido?
+
+\begin{enumerate}[label=\Alph*)]
+  \item \mbox{₡$7\,375$}
+  \item \mbox{₡$5\,500$}
+  \item \mbox{₡$4\,900$}
+  \item \mbox{₡$4\,000$}
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+Las empresas W y H cobran a sus respectivos clientes un monto por el alquiler de una bicicleta. En la siguiente representacion grafica se muestra el monto ``$y$'' en colones que cada empresa cobra a sus clientes, en funcion del tiempo ``$x$'' en horas, por el alquiler de la bicicleta.
+
+\begin{center}
+\begin{tikzpicture}[xscale=1.22, yscale=0.86]
+  \path[use as bounding box] (-2.8,-1.3) rectangle (7.8,8.8);
+
+  \draw[->, thick] (-0.3,0) -- (7.2,0) node[anchor=west, inner sep=1pt] {$X$};
+  \draw[->, thick] (0,-0.5) -- (0,8.0) node[anchor=south, inner sep=1pt] {$Y$};
+
+  \node[rotate=90, anchor=south, inner sep=6pt] at (-2.2,4.0) {Monto};
+  \node[anchor=north, inner sep=6pt] at (3.5,-0.9) {Horas};
+
+  \foreach \x in {2,4,6}
+    \draw (\x,0.07) -- (\x,-0.07) node[anchor=north, inner sep=2pt, font=\small] {\x};
+
+  \foreach \y/\lab in {1/1000, 2/2000, 3/3000, 3.5/3500, 5/5000, 6.5/6500, 7/7000}
+    \draw (0.07,\y) -- (-0.07,\y) node[anchor=east, inner sep=2pt, font=\small] {\lab};
+
+  \draw[densely dashed, gray!45] (2,0) -- (2,3.5);
+  \draw[densely dashed, gray!45] (0,3.0) -- (2,3.0);
+  \draw[densely dashed, gray!45] (0,3.5) -- (2,3.5);
+  \draw[densely dashed, gray!45] (4,0) -- (4,5.0);
+  \draw[densely dashed, gray!45] (0,5.0) -- (4,5.0);
+  \draw[densely dashed, gray!45] (6,0) -- (6,7.0);
+  \draw[densely dashed, gray!45] (0,6.5) -- (6,6.5);
+  \draw[densely dashed, gray!45] (0,7.0) -- (6,7.0);
+
+  % W: y = 1 + x (en miles de colones), intersecta H en x=4
+  \draw[thick] (0,1) -- (6,7);
+  \draw[thick, fill=white] (0,1) circle (0.10);
+  \fill (2,3.0) circle (0.10);
+  \fill (4,5.0) circle (0.10);
+  \fill (6,7) circle (0.10);
+  \node[anchor=south west, inner sep=2pt, font=\small\itshape] at (6.1,7.0) {$W$};
+
+  % H: y = 2 + 0.75x (en miles de colones)
+  \draw[thick] (0,2) -- (6,6.5);
+  \draw[thick, fill=white] (0,2) circle (0.10);
+  \fill (2,3.5) circle (0.10);
+  \fill (6,6.5) circle (0.10);
+  \node[anchor=north west, inner sep=2pt, font=\small\itshape] at (6.1,6.4) {$H$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, si un cliente de W alquilo una bicicleta por el mismo precio que la alquilo un cliente de H y ambos pagaron el mismo monto, entonces, \textquestiondown cuantas horas alquilo, cada uno de los clientes, la respectiva bicicleta?
+
+\begin{enumerate}[label=\Alph*)]
+  \item 2
+  \item 4
+  \item 8
+  \item 6
+\end{enumerate}
+
+\Needspace{0.55\textheight}
+\item
+Considere la siguiente tabla referente a una funcion $h$.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$    & 1  & 5  & 25 \\
+\hline
+$h(x)$ & 0 & $-1$ & $-2$ \\
+\hline
+\end{tabular}
+\end{center}
+
+De acuerdo con la informacion anterior, \textquestiondown cual es el criterio de $h$ que modela los datos de la tabla?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $h(x) = 5^{x}$
+  \item $h(x) = 5x^{2}$
+  \item $h(x) = \log_{1/5}(x)$
+  \item $h(x) = 5x$
+\end{enumerate}
+
+\Needspace{0.42\textheight}
+\item
+Considere la siguiente situacion:
+
+Una fabrica de sombreros tiene un costo mensual fijo de \mbox{₡$400\,000$} (independientemente de la cantidad de sombreros que se produzca) y un costo adicional de \mbox{₡$250$} por cada sombrero confeccionado.
+
+De acuerdo con la informacion anterior, el mejor modelo para representar la relacion entre el costo mensual de la fabrica y la cantidad de sombreros fabricados mensualmente, corresponde a una funcion
+
+\begin{enumerate}[label=\Alph*)]
+  \item lineal
+  \item logaritmica
+  \item exponencial
+  \item cuadratica
+\end{enumerate}
+
+\Needspace{0.62\textheight}
+\item
+Considere la siguiente informacion:
+
+En un laboratorio se estudia el crecimiento de una poblacion de bacterias. Su comportamiento se muestra en la siguiente tabla:
+
+\begin{center}
+\begin{tabular}{|p{5.5cm}|c|c|c|c|c|c|}
+\hline
+Cantidad de horas desde que se inicio el estudio. & 1 & 3 & 5 & 7 & 9 & 11 \\
+\hline
+Cantidad de bacterias & 4 & 12 & 28 & 52 & 84 & 124 \\
+\hline
+\end{tabular}
+\end{center}
+
+De acuerdo con la informacion anterior, si ``$x$'' representa la cantidad de horas desde que se inicio el estudio y ``$C(x)$'' corresponde a la cantidad de bacterias, entonces, \textquestiondown cual es el criterio que mejor modela la cantidad de bacterias, en funcion de la cantidad de horas, desde que se inicio el estudio?
+
+\begin{enumerate}[label=\Alph*), itemsep=5pt]
+  \item $C(x) = 2^{x} + 4$
+  \item $C(x) = x^{2} + 3$
+  \item $C(x) = \sqrt{x-3}$
+  \item $C(x) = \log_{2}(x) + 4$
+\end{enumerate}
+
+\Needspace{0.82\textheight}
+\item
+La siguiente representacion grafica muestra la rapidez ``$R(x)$'', en metros por segundo, a la que corrio Miguel en una carrera, en funcion del tiempo ``$x$'' en minutos, desde el inicio de esa carrera, con $0 \leq x \leq 4$.
+
+\begin{center}
+\begin{tikzpicture}[xscale=1.5, yscale=1.5]
+  \path[use as bounding box] (-0.9,-0.6) rectangle (5.5,3.0);
+  \draw[->, thick] (-0.3,0) -- (5.0,0) node[anchor=west, inner sep=1pt] {$x$};
+  \draw[->, thick] (0,-0.3) -- (0,2.7) node[anchor=south, inner sep=1pt] {$R(x)$};
+
+  \draw (4,0.06) -- (4,-0.06) node[anchor=north, inner sep=2pt] {$4$};
+  \draw[densely dashed, gray!70] (4,0) -- (4,2) -- (0,2);
+  \node[anchor=east, inner sep=2pt] at (0,2) {$2$};
+
+  \draw[thick, domain=0:4, samples=100, smooth, variable=\x]
+    plot ({\x},{sqrt(\x)});
+
+  \fill (0,0) circle (0.07);
+  \fill (4,2) circle (0.07);
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, \textquestiondown cual de los siguientes criterios de funciones podria modelar la rapidez, en metros por segundo, a la que corrio Miguel en esa carrera, en funcion del tiempo en minutos, desde el inicio de esa carrera?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $R(x) = 2^{x}$
+  \item $R(x) = x^{2}$
+  \item $R(x) = \sqrt{x}$
+  \item $R(x) = \log_{2}(x)$
+\end{enumerate}
+
+\Needspace{0.82\textheight}
+\item
+La siguiente representacion grafica muestra la distribucion de los datos correspondiente a los tiempos, en horas, que tardo un grupo de ciclistas en recorrer una ruta de montana, durante un evento deportivo:
+
+\begin{center}
+\begin{tikzpicture}[xscale=1.8, yscale=9.5]
+  \path[use as bounding box] (-0.5,-0.02) rectangle (5.8,0.44);
+  \draw[->, thick] (-0.2,0) -- (5.5,0);
+
+  \draw[thick, domain=0.005:5.2, samples=200, smooth, variable=\x]
+    plot ({\x},{\x*exp(-\x)});
+
+  \draw[densely dashed, gray!60] (2,0) -- (2,{2*exp(-2)});
+  \node[anchor=north, inner sep=3pt, font=\small] at (2,0) {$2\,\mathrm{h}$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informacion anterior, si $2\,\mathrm{h}$ corresponde al promedio de esos datos, entonces la mediana de los tiempos que tardaron los ciclistas en recorrer esa ruta, es
+
+\begin{enumerate}[label=\Alph*)]
+  \item menor que $2\,\mathrm{h}$
+  \item mayor que $2\,\mathrm{h}$
+  \item igual que $2\,\mathrm{h}$
+  \item Ninguna
+\end{enumerate}
+
+\Needspace{0.62\textheight}
+\item
+En la siguiente tabla se presentan algunas medidas de posicion referentes a las cantidades de dinero, en colones, ahorradas por las personas integrantes de un club social:
+
+\begin{center}
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Medida de posicion} & \textbf{Valor} \\
+\hline
+Minimo         & 700\,000 \\
+Maximo         & 1\,200\,000 \\
+Moda           & 875\,000 \\
+Mediana        & 900\,000 \\
+Promedio       & 915\,000 \\
+Primer Cuartil & 820\,000 \\
+Tercer Cuartil & 1\,000\,000 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textquestiondown Cual es la cantidad de dinero que con mayor frecuencia han ahorrado las personas integrantes de ese club?
+
+\begin{enumerate}[label=\Alph*)]
+  \item \mbox{₡$875\,000$}
+  \item \mbox{₡$1\,000\,000$}
+  \item \mbox{₡$1\,200\,000$}
+  \item \mbox{₡$900\,000$}
+\end{enumerate}
+
+\Needspace{0.68\textheight}
+\item
+La siguiente tabla muestra el valor porcentual de cada uno de los tres componentes que se consideran al calificar proyectos de reciclaje de las personas participantes de un concurso. Asimismo, se muestra la calificacion obtenida por componente, en una escala de 1 a 100, del proyecto de reciclaje presentado por Cristian:
+
+\begin{center}
+\begin{tabular}{|l|c|p{4.5cm}|}
+\hline
+\textbf{Componente} & \textbf{Porcentaje} & \textbf{Calificacion del proyecto de Cristian} \\
+\hline
+Innovacion       & 45\% & \centering 89 \tabularnewline
+Impacto ambiental & 35\% & \centering 85 \tabularnewline
+Creatividad      & 20\% & \centering 73 \tabularnewline
+\hline
+\end{tabular}
+\end{center}
+
+Ademas, la nota final de ese proyecto corresponde a la media aritmetica ponderada de los tres componentes evaluados.
+
+De acuerdo con la informacion anterior, \textquestiondown cual es la nota final del proyecto de reciclaje presentado por Cristian en ese concurso?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $82{,}33$
+  \item $84{,}40$
+  \item $85{,}00$
+  \item $84{,}00$
+\end{enumerate}
+
+\Needspace{0.65\textheight}
+\item
+Considere la siguiente informacion:
+
+En la siguiente tabla se presentan algunas medidas de posicion referentes a los salarios mensuales, en colones, obtenidos por las personas trabajadoras de una empresa:
+
+\begin{center}
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Medida de posicion} & \textbf{Valor} \\
+\hline
+Minimo         & 800\,000 \\
+Maximo         & 1\,650\,000 \\
+Moda           & 1\,100\,000 \\
+Mediana        & 1\,250\,000 \\
+Promedio       & 1\,310\,000 \\
+Primer Cuartil & 950\,000 \\
+Tercer Cuartil & 1\,500\,000 \\
+\hline
+\end{tabular}
+\end{center}
+
+Al menos el 75\% de los trabajadores de esa empresa obtuvo un salario mensual mayor o igual que
+
+\begin{enumerate}[label=\Alph*)]
+  \item \mbox{₡$950\,000$}
+  \item \mbox{₡$1\,250\,000$}
+  \item \mbox{₡$1\,500\,000$}
+  \item \mbox{₡$1\,100\,000$}
+\end{enumerate}
+
+\Needspace{0.55\textheight}
+\item
+En el experimento de lanzar un dado legal y registrar el numero que sale en la cara superior, interesan dos eventos:
+
+\begin{description}
+  \item[A.] que el numero sea impar.
+  \item[B.] que el numero sea un 4.
+\end{description}
+
+Con base en la informacion anterior, considere las siguientes proposiciones:
+
+\begin{description}
+  \item[I.] El evento A es el complemento del evento B.
+  \item[II.] Los eventos A y B son mutuamente excluyentes.
+\end{description}
+
+\textquestiondown Cuales de ellas son verdaderas?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Ambas
+  \item Ninguna
+  \item Solo I
+  \item Solo II
+\end{enumerate}
+
+\Needspace{0.45\textheight}
+\item
+Considere el experimento de sacar dos bolas de una caja que contiene bolas blancas (B), azules (A) y rojas (R). Si las bolas poseen la misma forma y tamano, y el evento M es: que las bolas sean del mismo color, entonces con certeza el complemento $M^{C}$ de M es
+
+\begin{enumerate}[label=\Alph*)]
+  \item $\{AA,\; RR,\; BB\}$
+  \item $\{BA,\; RB,\; BA,\; AB\}$
+  \item $\{AA,\; BB,\; RR,\; BA,\; RA\}$
+  \item $\{AB,\; AR,\; BA,\; BR,\; RA,\; RB\}$
+\end{enumerate}
+
+\Needspace{0.65\textheight}
+Considere el siguiente contexto para responder los items 55 y 56.
+
+\begin{center}
+\textbf{Participantes de la carrera del Dia del Deporte, edicion 2014}
+
+\vspace{4pt}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Categoria} & \textbf{Juvenil} & \textbf{Mayor} & \textbf{Veterano A} & \textbf{Veterano B a D} & \textbf{Total} \\
+\hline
+Hombres & 18 & 96  & 42 & 28 & 184 \\
+Mujeres & 6  & 56  & 32 & 14 & 108 \\
+Total   & 24 & 152 & 74 & 42 & 292 \\
+\hline
+\end{tabular}
+\end{center}
+
+\item
+\textquestiondown Cual es la probabilidad aproximada de elegir al azar a una participante mujer o de la categoria mayor?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $0{,}37$
+  \item $0{,}52$
+  \item $0{,}70$
+  \item $0{,}89$
+\end{enumerate}
+
+\item
+\textquestiondown Cual es la probabilidad aproximada de elegir al azar a un participante hombre de la categoria veterano B a D o de la categoria veterano A?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $0{,}24$
+  \item $0{,}35$
+  \item $0{,}40$
+  \item $0{,}63$
+\end{enumerate}
+
+\Needspace{0.62\textheight}
+Considere la siguiente informacion para responder los items 57 y 58.
+
+En un colegio se registran las estaturas, en centimetros, de los estudiantes de cuatro equipos de baloncesto que compiten en un torneo institucional. El promedio de las estaturas y la desviacion estandar, por equipo, asi como la estatura de uno de los estudiantes de cada equipo, se presentan en la siguiente tabla:
+
+\begin{center}
+\begin{tabular}{|c|c|c|p{3.2cm}|}
+\hline
+\textbf{Equipo} & \textbf{Promedio} & \textbf{Desviacion estandar} & \centering\textbf{Estatura del estudiante} \tabularnewline
+\hline
+M & 174 & 6 & \centering 168 \tabularnewline
+N & 170 & 5 & \centering 172 \tabularnewline
+P & 175 & 8 & \centering 170 \tabularnewline
+Q & 160 & 5 & \centering 164 \tabularnewline
+\hline
+\end{tabular}
+\end{center}
+
+\item
+\textquestiondown En cual de los equipos se presenta una menor variabilidad relativa de los datos?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Q
+  \item P
+  \item N
+  \item M
+\end{enumerate}
+
+\item
+\textquestiondown A cual equipo pertenece el estudiante que posee la mejor posicion relativa de su estatura, respecto a las estaturas de los estudiantes de su equipo?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Q
+  \item P
+  \item N
+  \item M
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+Considere la siguiente informacion para responder los items 59 y 60.
+
+La siguiente tabla muestra informacion relacionada con los tiempos, en minutos, que tardaron diversos atletas de cuatro categorias al completar una carrera de 5~km:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Categoria} & \textbf{Media aritmetica} & \textbf{Desviacion estandar} \\
+\hline
+M & 21 & 7 \\
+N & 27 & 9 \\
+P & 31 & 10 \\
+Q & 36 & 12 \\
+\hline
+\end{tabular}
+\end{center}
+
+Los datos obtenidos por cuatro atletas que participaron en la carrera se muestran a continuacion:
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Nombre} & \textbf{Categoria} & \textbf{Tiempo en minutos} \\
+\hline
+Elena   & M & 39 \\
+Julian  & N & 33 \\
+Fabian  & P & 28 \\
+Adriana & Q & 23 \\
+\hline
+\end{tabular}
+\end{center}
+
+\item
+\textquestiondown Cual de los atletas obtuvo la mejor posicion relativa respecto a su categoria?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Elena
+  \item Julian
+  \item Fabian
+  \item Adriana
+\end{enumerate}
+
+\item
+Considere las siguientes proposiciones:
+
+\begin{description}
+  \item[I.] Los tiempos de la categoria M presentan igual variabilidad relativa respecto a los tiempos de la categoria N.
+  \item[II.] Los tiempos de la categoria P presentan menor variabilidad relativa respecto a los tiempos de la categoria Q.
+\end{description}
+
+De ellas, \textquestiondown cual o cuales son verdaderas?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Ambas
+  \item Ninguna
+  \item Solo la I
+  \item Solo la II
 \end{enumerate}
 
 \end{enumerate}
