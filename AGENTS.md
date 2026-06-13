@@ -103,9 +103,7 @@ Ejemplo:
 
 `powershell -ExecutionPolicy Bypass -File .codex/scripts/compile-exam.ps1 "Examenes Pruebas estandarizadas/1PruebaEstandarizadaSecundaria2026.tex"`
 
-Despues de compilar o generar previsualizaciones, limpiar auxiliares con:
-
-`powershell -ExecutionPolicy Bypass -File .codex/scripts/clean-exam-temporales.ps1`
+Despues de compilar, eliminar los auxiliares generados (`.aux`, `.log`) directamente con `Remove-Item`.
 
 ## Version interactiva HTML
 
