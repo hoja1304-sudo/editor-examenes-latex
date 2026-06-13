@@ -31,6 +31,64 @@ Preferencias de formato para pruebas estandarizadas:
 - Cuando dos o tres items se relacionen con una misma figura, mantener en la misma hoja el encabezado, la figura y todos los items relacionados. El encabezado de la figura no debe llevar numero de item; el numero debe iniciar en el texto de la primera pregunta relacionada.
 - En expresiones con radical, el signo de raiz debe abarcar visualmente todo el subradical. Por ejemplo, escribir en LaTeX `\sqrt{t+4}` y verificar que en HTML la barra del radical cubra completo `(t+4)` o la expresion que corresponda.
 
+## Flujo de creacion de items
+
+### Paso 0 — Consultar el Marco de Especificaciones
+
+Antes de crear cualquier item, leer `Marco-especificaciones-Matematicas-Secundaria.pdf` (raiz del proyecto) para obtener:
+
+1. La **posicion exacta** de los items en el examen de 60 items segun la afirmacion indicada.
+2. La **lista de evidencias** asociadas a esa afirmacion.
+3. Los **contextos** permitidos (pagina 6): Personal, Ocupacional y Productivo, Comunitario, Cientifico.
+
+Mapa de afirmaciones → posiciones (resumido):
+
+**Bloque 1: Geometria**
+- Afirmacion 1 (circunferencias): items 1-4 | 3 evidencias
+- Afirmacion 2 (traslaciones circunferencias): items 5-7 | 2 evidencias
+- Afirmacion 3 (posicion relativa rectas/circ.): items 8-11 | 5 evidencias
+- Afirmacion 4 (area/perimetro figuras planas): items 12-15 | 3 evidencias
+- Afirmacion 5 (secciones figuras 3D): items 16-18 | 7 evidencias
+- Afirmacion 6 (simetrias): items 19-20 | 2 evidencias
+- Afirmacion 7 (transformaciones en el plano): items 21-23 | 4 evidencias
+
+**Bloque 2: Relaciones y Algebra**
+- Afirmacion 1 (funciones y composicion): items 24-28 | 4 evidencias
+- Afirmacion 2 (funcion inversa): items 29-32 | 6 evidencias
+- Afirmacion 3 (f(x)=a*sqrt(x+b)+c): items 33-35 | 3 evidencias
+- Afirmacion 4 (logaritmos): items 36-41 | 12 evidencias
+- Afirmacion 5 (sistemas 2x2): items 42-44 | 2 evidencias
+- Afirmacion 6 (modelos matematicos): items 45-48 | 5 evidencias
+
+**Bloque 3: Estadistica y Probabilidad**
+- Afirmacion 1 (medidas de posicion): items 49-52 | 5 evidencias
+- Afirmacion 2 (probabilidad eventos): items 53-56 | 5 evidencias
+- Afirmacion 3 (variabilidad comparada): items 57-60 | 3 evidencias
+
+### Paso 1 — Seleccion de evidencias
+
+**Si items_requeridos <= evidencias_disponibles:** crear un item por evidencia seleccionada; si sobran evidencias, elegir cuales cubrir (o preguntar al usuario si quiere indicarlas).
+
+**Si items_requeridos > evidencias_disponibles:** usar evidencias distintas para los items extra (diferentes contextos o representaciones); no repetir la misma evidencia con el mismo contexto.
+
+**Prueba completa (60 items):** crear todos siguiendo la tabla; seleccionar libremente las evidencias de cada afirmacion aplicando las reglas anteriores.
+
+Si el usuario indica que evidencias usar: respetar siempre su seleccion.
+
+### Paso 2 — Pregunta de referencia
+
+Cuando el usuario indique una afirmacion y/o bloque (sin pegar items directamente), preguntar obligatoriamente:
+
+> "¿Tienes un item o items de referencia que quieras que emule, o procedo a crearlos analizando los documentos del proyecto?"
+
+**Si el usuario proporciona items de referencia:** emular estructura, nivel de dificultad, tipo de contexto y redaccion, adaptando el contenido matematico a la afirmacion.
+
+**Si el usuario no tiene items de referencia:** consultar `Ejemplos de examenes de pruebas estandarizadas/` para calibrar tipo de item, dificultad y redaccion.
+
+**Excepcion:** Si el usuario ya pego un item directamente en el mensaje, no preguntar — proceder en modo emulacion de inmediato.
+
+Cuando el usuario diga "mejore el folleto" o indique que actualizo `Folleto Prueba Estandarizada Sumativa Secundaria 2026.docx`, releer ese archivo antes de crear cualquier item nuevo.
+
 ## Compilacion LaTeX
 
 Este proyecto tiene MiKTeX Portable instalado localmente. Usar este ejecutable para compilar con `pdflatex`:
