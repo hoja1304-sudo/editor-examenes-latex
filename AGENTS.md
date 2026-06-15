@@ -31,6 +31,7 @@ Preferencias de formato para pruebas estandarizadas:
 - Cuando dos o tres items se relacionen con una misma figura, mantener en la misma hoja el encabezado, la figura y todos los items relacionados. El encabezado de la figura no debe llevar numero de item; el numero debe iniciar en el texto de la primera pregunta relacionada.
 - En expresiones con radical, el signo de raiz debe abarcar visualmente todo el subradical.
 - Las etiquetas que nombran puntos en una grafica (W, H, A, B, etc.) deben colocarse lo mas cerca posible del punto sin tocarlo, eligiendo la posicion (arriba, abajo, izquierda o derecha) que no quede sobre una linea punteada de proyeccion hacia los ejes. Si todas las direcciones tienen punteadas, preferir arriba o abajo con separacion minima. Por ejemplo, escribir en LaTeX `\sqrt{t+4}` y verificar que en HTML la barra del radical cubra completo `(t+4)` o la expresion que corresponda.
+- En la portada de pruebas, practicas y proyectos nuevos, incluir una autoria discreta y elegante, con tamano reducido y jerarquia visual sobria: "Elaborado por: Alberto Jiménez Ruiz", "Asesor Regional de Matemática", "DRE-Cartago 2026 | DAP". Primero colocarla en LaTeX, compilar el PDF y luego reproducirla en la portada o pantalla inicial del HTML.
 
 ## Flujo de creacion de items
 
