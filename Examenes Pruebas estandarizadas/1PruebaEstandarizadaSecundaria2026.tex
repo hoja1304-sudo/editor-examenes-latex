@@ -92,41 +92,39 @@ Una antena ($A$) que emite una se\~nal para radio se ubica a $8$ km al este del 
 }
 
 
-\Needspace{0.9\textheight}
+\Needspace{0.90\textheight}
 \item
-En una mesa un carpintero traza una circunferencia a $6$ cm al este y $9$ cm al norte de uno de los extremos de la mesa, la cual representa la ubicaci\'on de un portavasos.
+Un dispositivo mec\'anico se coloca en el jard\'in de una casa y lanza un chorro continuo de agua, cuyo alcance m\'aximo es $6$ m alrededor de ese dispositivo.
 
-La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en cm, muestra las ubicaciones, $A$ del centro de la circunferencia y $B$ extremo de la mesa, as\'i como la ubicaci\'on de la circunferencia correspondiente al alcance de la zona iluminada en el piso:
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra las ubicaciones, $W$ de esa casa, $D$ del dispositivo y $C$ de la circunferencia correspondiente al alcance m\'aximo del chorro de agua lanzado por ese dispositivo:
 
 \begin{center}
-\begin{tikzpicture}[scale=0.28]
-  \path[use as bounding box] (-2,-2) rectangle (14,15);
-  \draw[<->, thick] (-1,0) -- (12.5,0);
-  \draw[<->, thick] (0,-1) -- (0,14);
-  \node[anchor=west, inner sep=1pt] at (12.55,0) {$x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,14.15) {$y$ (norte)};
-  \draw[dashed] (6,0) -- (6,9);
-  \draw[dashed] (0,9) -- (6,9);
-  \draw[dashed] (0,5) -- (6,5);
-  \draw[thick] (6,9) circle (4);
-  \fill (0,0) circle (\puntografico) node[above left] {$B$};
-  \fill (6,9) circle (\puntografico) node[right] {$A$};
-  \fill (6,5) circle (\puntografico);
-  \node[anchor=north] at (6,0) {$6$};
-  \node[left] at (0,5) {$5$};
-  \node[left] at (0,9) {$9$};
+\begin{tikzpicture}[scale=0.15]
+  \path[use as bounding box] (-4,-4) rectangle (35,36);
+  \draw[<->, thick] (-2,0) -- (32,0);
+  \draw[<->, thick] (0,-2) -- (0,34);
+  \node[anchor=west, inner sep=1pt] at (32.1,0) {$x$ (este)};
+  \node[anchor=south, inner sep=1pt] at (0,34.3) {$y$ (norte)};
+  \draw[dashed] (20,0) -- (20,24);
+  \draw[dashed] (26,0) -- (26,24);
+  \draw[dashed] (0,24) -- (26,24);
+  \draw[thick] (20,24) circle (6);
+  \fill (0,0) circle (\puntografico) node[below left] {$W$};
+  \fill (20,24) circle (\puntografico) node[above] {$D$};
+  \fill (26,24) circle (\puntografico) node[above right] {$C$};
+  \node[anchor=north] at (20,0) {$20$};
+  \node[anchor=north] at (26,0) {$26$};
+  \node[left] at (0,24) {$24$};
 \end{tikzpicture}
 \end{center}
 
-El carpintero traslada la circunferencia, desde su ubicaci\'on actual, a $30$ cm al norte y $40$ cm al oeste para luego trazar otra circunferencia que representar\'a otro portavasos.
-
-De acuerdo con la informaci\'on anterior, \textquestiondown Cu\'al es la representaci\'on algebraica, cuyas unidades est\'an en cent\'imetros, de la circunferencia correspondiente a la circunferencia que corresponde al segundo portavasos?
+De acuerdo con la informaci\'on anterior, \textquestiondown Cu\'al es la representaci\'on algebraica, cuyas unidades est\'an en metros, de la circunferencia $C$ correspondiente al alcance m\'aximo del chorro de agua lanzado por ese dispositivo?
 
 \begin{enumerate}[label=\Alph*)]
-  \opcion{A}{(x-46)^2+(y-39)^2=16}
-  \opcion{B}{(x-39)^2+(y-46)^2=16}
-  \opcion{C}{(x+24)^2+(y+31)^2=8}
-  \opcion{D}{(x+34)^2+(y-39)^2=16}
+  \opcion{A}{(x-20)^2+(y-24)^2=36}
+  \opcion{B}{(x+20)^2+(y+24)^2=36}
+  \opcion{C}{(x-20)^2+(y-24)^2=6}
+  \opcion{D}{(x-26)^2+(y-24)^2=36}
 \end{enumerate}
 
 \Needspace{0.88\textheight}
@@ -227,21 +225,41 @@ En un centro recreativo, una piscina circular est\'a representada en un plano po
 \end{tabular}
 \end{center}
 
-\Needspace{0.72\textheight}
+\Needspace{0.90\textheight}
 \item
-En una plaza, el borde de una zona circular de juego est\'a representado por la circunferencia
-\[
-(x-18)^2+(y-10)^2=36,
-\]
-donde las unidades est\'an en metros. Por una remodelaci\'on, toda la zona se trasladar\'a $7$ m hacia el oeste y $4$ m hacia el norte.
+En una mesa un carpintero traza una circunferencia a $6$ cm al este y $9$ cm al norte de uno de los extremos de la mesa, la cual representa la ubicaci\'on de un portavasos.
 
-\textquestiondown Cu\'al ser\'a la representaci\'on algebraica del borde de la zona circular despu\'es de la traslaci\'on?
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en cm, muestra las ubicaciones, $A$ del centro de la circunferencia y $B$ extremo de la mesa, as\'i como la ubicaci\'on de la circunferencia correspondiente al alcance de la zona iluminada en el piso:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.28]
+  \path[use as bounding box] (-2,-2) rectangle (14,15);
+  \draw[<->, thick] (-1,0) -- (12.5,0);
+  \draw[<->, thick] (0,-1) -- (0,14);
+  \node[anchor=west, inner sep=1pt] at (12.55,0) {$x$ (este)};
+  \node[anchor=south, inner sep=1pt] at (0,14.15) {$y$ (norte)};
+  \draw[dashed] (6,0) -- (6,9);
+  \draw[dashed] (0,9) -- (6,9);
+  \draw[dashed] (0,5) -- (6,5);
+  \draw[thick] (6,9) circle (4);
+  \fill (0,0) circle (\puntografico) node[above left] {$B$};
+  \fill (6,9) circle (\puntografico) node[right] {$A$};
+  \fill (6,5) circle (\puntografico);
+  \node[anchor=north] at (6,0) {$6$};
+  \node[left] at (0,5) {$5$};
+  \node[left] at (0,9) {$9$};
+\end{tikzpicture}
+\end{center}
+
+El carpintero traslada la circunferencia, desde su ubicaci\'on actual, a $30$ cm al norte y $40$ cm al oeste para luego trazar otra circunferencia que representar\'a otro portavasos.
+
+De acuerdo con la informaci\'on anterior, \textquestiondown Cu\'al es la representaci\'on algebraica, cuyas unidades est\'an en cent\'imetros, de la circunferencia correspondiente a la circunferencia que corresponde al segundo portavasos?
 
 \begin{enumerate}[label=\Alph*)]
-  \opcion{A}{(x-11)^2+(y-14)^2=36}
-  \opcion{B}{(x-25)^2+(y-14)^2=36}
-  \opcion{C}{(x-11)^2+(y-6)^2=36}
-  \opcion{D}{(x-18)^2+(y-10)^2=36}
+  \opcion{A}{(x-46)^2+(y-39)^2=16}
+  \opcion{B}{(x-39)^2+(y-46)^2=16}
+  \opcion{C}{(x+24)^2+(y+31)^2=8}
+  \opcion{D}{(x+34)^2+(y-39)^2=16}
 \end{enumerate}
 
 \Needspace{0.92\textheight}
