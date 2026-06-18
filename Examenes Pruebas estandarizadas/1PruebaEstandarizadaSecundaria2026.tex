@@ -92,33 +92,41 @@ Una antena ($A$) que emite una se\~nal para radio se ubica a $8$ km al este del 
 }
 
 
-\Needspace{0.76\textheight}
+\Needspace{0.9\textheight}
 \item
-La siguiente representaci\'on gr\'afica, en la que las unidades est\'an en cent\'imetros, muestra la ubicaci\'on del centro ($P$) de la base circular de una pecera y la circunferencia correspondiente al borde de esa base.
+En una mesa un carpintero traza una circunferencia a $6$ cm al este y $9$ cm al norte de uno de los extremos de la mesa, la cual representa la ubicaci\'on de un portavasos.
+
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en cm, muestra las ubicaciones, $A$ del centro de la circunferencia y $B$ extremo de la mesa, as\'i como la ubicaci\'on de la circunferencia correspondiente al alcance de la zona iluminada en el piso:
 
 \begin{center}
-\begin{tikzpicture}[scale=0.18]
-  \path[use as bounding box] (-8,-8) rectangle (28,18);
-  \draw[<->, thick] (-5,0) -- (25,0);
-  \draw[<->, thick] (0,-5) -- (0,16);
-  \node[anchor=west, inner sep=1pt] at (25.05,0) {$x$};
-  \node[anchor=south, inner sep=1pt] at (0,16.05) {$y$};
-  \draw[dashed] (10,0) -- (10,6);
-  \draw[dashed] (0,6) -- (10,6);
-  \draw[thick] (10,6) circle (6);
-  \fill (10,6) circle (\puntografico) node[above left] {$P$};
-  \node[anchor=north] at (10,0) {$10$};
-  \node[left] at (0,6) {$6$};
+\begin{tikzpicture}[scale=0.28]
+  \path[use as bounding box] (-2,-2) rectangle (14,15);
+  \draw[<->, thick] (-1,0) -- (12.5,0);
+  \draw[<->, thick] (0,-1) -- (0,14);
+  \node[anchor=west, inner sep=1pt] at (12.55,0) {$x$ (este)};
+  \node[anchor=south, inner sep=1pt] at (0,14.15) {$y$ (norte)};
+  \draw[dashed] (6,0) -- (6,9);
+  \draw[dashed] (0,9) -- (6,9);
+  \draw[dashed] (0,5) -- (6,5);
+  \draw[thick] (6,9) circle (4);
+  \fill (0,0) circle (\puntografico) node[above left] {$B$};
+  \fill (6,9) circle (\puntografico) node[right] {$A$};
+  \fill (6,5) circle (\puntografico);
+  \node[anchor=north] at (6,0) {$6$};
+  \node[left] at (0,5) {$5$};
+  \node[left] at (0,9) {$9$};
 \end{tikzpicture}
 \end{center}
 
-De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la representaci\'on algebraica, en la que las unidades est\'an en cent\'imetros, de la circunferencia correspondiente al borde de la base de la pecera?
+El carpintero traslada la circunferencia, desde su ubicaci\'on actual, a $30$ cm al norte y $40$ cm al oeste para luego trazar otra circunferencia que representar\'a otro portavasos.
+
+De acuerdo con la informaci\'on anterior, \textquestiondown Cu\'al es la representaci\'on algebraica, cuyas unidades est\'an en cent\'imetros, de la circunferencia correspondiente a la circunferencia que corresponde al segundo portavasos?
 
 \begin{enumerate}[label=\Alph*)]
-  \opcion{A}{(x+10)^2+(y+6)^2=36}
-  \opcion{B}{(x-10)^2+(y-6)^2=36}
-  \opcion{C}{(x-6)^2+(y-10)^2=36}
-  \opcion{D}{(x-10)^2+(y-6)^2=6}
+  \opcion{A}{(x-46)^2+(y-39)^2=16}
+  \opcion{B}{(x-39)^2+(y-46)^2=16}
+  \opcion{C}{(x+24)^2+(y+31)^2=8}
+  \opcion{D}{(x+34)^2+(y-39)^2=16}
 \end{enumerate}
 
 \Needspace{0.88\textheight}
