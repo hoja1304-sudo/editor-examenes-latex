@@ -12,6 +12,8 @@
 \geometry{letterpaper, margin=2cm}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
 
 \newcommand{\opcion}[2]{\item[#1)] $#2$}
 \newcommand{\puntografico}{0.35}
@@ -61,18 +63,68 @@
 \begin{document}
 
 \begin{center}
-  {\Large \textbf{Primera Pr\'actica de la Prueba Nacional}}\\
-  {\Large \textbf{Estandarizada Sumativa de Matem\'atica 2026}}\\[6pt]
-  {\scriptsize\scshape Elaborado por: Alberto Jim\'enez Ruiz}\\[-1pt]
-  {\scriptsize Asesor Regional de Matem\'atica}\\[-1pt]
-  {\scriptsize DRE-Cartago 2026 \textbar{} DAP}\\[5pt]
-  Nombre: \rule{8cm}{0.4pt}\hfill Fecha: \rule{3cm}{0.4pt}
+{\large \textbf{Primera Pr\'actica de Secundaria de la Prueba Nacional Estandarizada Sumativa de Matem\'atica 2026.}}
 \end{center}
 
-\section*{Instrucciones}
-Seleccione la opci\'on que corresponde a la representaci\'on algebraica o gr\'afica descrita en cada situaci\'on. Todas las unidades est\'an dadas en metros, salvo que se indique otra unidad.
+\noindent Nombre: \rule{8cm}{0.4pt}\hfill Sec: \rule{3cm}{0.4pt}
 
-\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=1.1cm]
+\vspace{6pt}
+\noindent\textbf{INFORMACI\'ON GENERAL}
+
+\vspace{4pt}
+\noindent\textbf{Materiales necesarios para la prueba:}
+
+\begin{itemize}[leftmargin=1.6em, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Un cuadernillo que contiene:
+  \begin{itemize}[leftmargin=1.6em, itemsep=0pt, topsep=1pt, parsep=0pt, label=$\blacklozenge$]
+    \item informaci\'on general
+    \item 60 \'items de selecci\'on de respuesta
+  \end{itemize}
+  \item Hoja de respuestas para lectora \'optica
+  \item Bol\'igrafo con tinta azul o negra
+  \item Corrector l\'iquido blanco
+\end{itemize}
+
+\noindent\textbf{Material que se puede requerir para la prueba:}
+
+\begin{itemize}[leftmargin=1.6em, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Calculadora
+\end{itemize}
+
+\vspace{4pt}
+\noindent\textbf{Instrucciones:}
+
+\begin{enumerate}[leftmargin=*, itemsep=3pt, topsep=2pt, parsep=0pt]
+  \item La Prueba Nacional Estandarizada de secundaria de matem\'atica est\'a compuesta por 60 \'items. Verifique que el cuadernillo que tiene en sus manos est\'e bien compaginado y contenga los 60 \'items de selecci\'on de respuesta correspondientes al componente Matem\'aticas. En caso de encontrar alguna irregularidad, notif\'iquela inmediatamente al delegado de aula; de lo contrario, usted asume la responsabilidad sobre los problemas que se pudieran suscitar por esta causa.
+
+  \item Cada \'item presenta tres posibilidades de respuesta: A), B), C) y D) Solamente una de ellas es la respuesta correcta.
+
+  \item Lea cuidadosamente cada \'item y sus respectivas opciones. Puede utilizar el espacio al lado de cada \'item para realizar cualquier anotaci\'on que necesite, con el fin de hallar la respuesta.
+
+  \item Ning\'un \'item debe aparecer sin respuesta o con m\'as de una marca en la hoja lectora \'optica.
+
+  \item Una vez que haya revisado todas las opciones y tenga seguridad de su elecci\'on, rellene completamente el c\'irculo correspondiente, en la hoja lectora \'optica, tal como se indica en el siguiente ejemplo:
+
+  \begin{center}
+  \begin{tikzpicture}[baseline=-0.5ex]
+    \draw[thick] (0,0) circle (0.38);
+    \node at (0,0) {\textbf{A}};
+    \fill (1.1,0) circle (0.38);
+    \node[white] at (1.1,0) {\textbf{B}};
+    \draw[thick] (2.2,0) circle (0.38);
+    \node at (2.2,0) {\textbf{C}};
+  \end{tikzpicture}
+  \end{center}
+
+  \item Si necesita rectificar la respuesta, utilice corrector l\'iquido blanco sobre el c\'irculo por corregir y rellene con bol\'igrafo de tinta negra o azul la nueva opci\'on seleccionada. Adem\'as, en el espacio de observaciones de la hoja lectora \'optica debe anotar y firmar la correcci\'on efectuada (Ejemplo: 12=A, firma). Se firma solo una vez al final de todas las correcciones.
+\end{enumerate}
+
+\vspace{8pt}
+\noindent Creado por: Alberto Jim\'enez Ruiz asesor regional de Matem\'atica de la DRE-Cartago 2026.
+
+\newpage
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=2.5cm]
 
 \Needspace{0.92\textheight}
 \item
@@ -670,27 +722,31 @@ Considere la siguiente representaci\'on gr\'afica para responder los items 22 y 
 En el siguiente plano cartesiano se muestra el pol\'igono $MNPQR$.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.55]
-  \def\puntotransformacion{0.18}
-  \path[use as bounding box] (-1.7,-6.3) rectangle (6.5,0.9);
+\begin{tikzpicture}[scale=0.85]
+  \def\puntotransformacion{0.12}
   \draw[<->, thick] (-1.2,0) -- (5.8,0);
   \draw[<->, thick] (0,0.7) -- (0,-6.0);
   \node[anchor=west, inner sep=1pt] at (5.85,0) {$x$};
   \node[anchor=south, inner sep=1pt] at (0,0.72) {$y$};
-  \foreach \x in {1,3,4}
-    \draw[densely dotted, gray!60] (\x,0) -- (\x,-5);
-  \foreach \y in {-1,-2,-4,-5}
-    \draw[densely dotted, gray!60] (0,\y) -- (4,\y);
+  % Proyecciones verticales
+  \draw[dashed, black!70] (1,0) -- (1,-5);
+  \draw[dashed, black!70] (4,0) -- (4,-5);
+  \draw[dashed, black!70] (3,0) -- (3,-4);
+  % Proyecciones horizontales (hasta el punto exacto)
+  \draw[dashed, black!70] (0,-1) -- (4,-1);
+  \draw[dashed, black!70] (0,-2) -- (1,-2);
+  \draw[dashed, black!70] (0,-4) -- (3,-4);
+  \draw[dashed, black!70] (0,-5) -- (4,-5);
   \foreach \x in {1,3,4,5}
     \node[anchor=north, inner sep=2pt] at (\x,0) {$\x$};
   \foreach \y/\ylab in {-1/{$-1$},-2/{$-2$},-4/{$-4$},-5/{$-5$}}
     \node[anchor=east, inner sep=2pt] at (0,\y) {\ylab};
   \draw[thick] (1,-2) -- (4,-1) -- (4,-5) -- (1,-5) -- (3,-4) -- cycle;
-  \fill (1,-2) circle (\puntotransformacion) node[anchor=south east] {$M$};
-  \fill (4,-1) circle (\puntotransformacion) node[anchor=south west] {$N$};
-  \fill (4,-5) circle (\puntotransformacion) node[anchor=north west] {$P$};
-  \fill (1,-5) circle (\puntotransformacion) node[anchor=north east] {$Q$};
-  \fill (3,-4) circle (\puntotransformacion) node[anchor=north west] {$R$};
+  \fill (1,-2) circle (\puntotransformacion) node[anchor=south east, inner sep=1pt] {$M$};
+  \fill (4,-1) circle (\puntotransformacion) node[anchor=south west, inner sep=1pt] {$N$};
+  \fill (4,-5) circle (\puntotransformacion) node[anchor=north west, inner sep=1pt] {$P$};
+  \fill (1,-5) circle (\puntotransformacion) node[anchor=north east, inner sep=1pt] {$Q$};
+  \fill (3,-4) circle (\puntotransformacion) node[anchor=north west, inner sep=1pt] {$R$};
 \end{tikzpicture}
 \end{center}
 
@@ -884,7 +940,7 @@ La siguiente representaci\'on gr\'afica corresponde a la funci\'on $p$, que dete
   \node[anchor=north] at (8,0) {$8$};
   \node[anchor=east] at (0,2) {$2$};
   \node[anchor=east] at (0,6) {$6$};
-  \draw[densely dashed, gray!85, line width=0.6pt] (8,0) -- (8,2) -- (0,2);
+  \draw[densely dashed, black!70, line width=0.6pt] (8,0) -- (8,2) -- (0,2);
   \draw[thick] (0,6) -- (8,2);
   \fill (0,6) circle (0.18);
   \fill (8,2) circle (0.18);
@@ -907,7 +963,7 @@ De acuerdo con la informaci\'on anterior, \textquestiondown Cu\'al representaci\
     \node[anchor=north] at (8,0) {$8$};
     \node[anchor=east] at (0,2) {$2$};
     \node[anchor=east] at (0,6) {$6$};
-    \draw[densely dashed, gray!85, line width=0.6pt] (8,0) -- (8,2) -- (0,2);
+    \draw[densely dashed, black!70, line width=0.6pt] (8,0) -- (8,2) -- (0,2);
     \draw[thick] (0,6) -- (8,2);
     \fill (0,6) circle (0.18);
     \fill (8,2) circle (0.18);
@@ -921,7 +977,7 @@ De acuerdo con la informaci\'on anterior, \textquestiondown Cu\'al representaci\
     \node[anchor=north] at (2,0) {$2$};
     \node[anchor=north] at (6,0) {$6$};
     \node[anchor=east] at (0,8) {$8$};
-    \draw[densely dashed, gray!85, line width=0.6pt] (6,0) -- (6,8) -- (0,8);
+    \draw[densely dashed, black!70, line width=0.6pt] (6,0) -- (6,8) -- (0,8);
     \draw[thick] (2,0) -- (6,8);
     \fill (2,0) circle (0.18);
     \fill (6,8) circle (0.18);
@@ -935,7 +991,7 @@ De acuerdo con la informaci\'on anterior, \textquestiondown Cu\'al representaci\
     \node[anchor=north] at (2,0) {$2$};
     \node[anchor=north] at (8,0) {$8$};
     \node[anchor=east] at (0,6) {$6$};
-    \draw[densely dashed, gray!85, line width=0.6pt] (8,0) -- (8,6) -- (0,6);
+    \draw[densely dashed, black!70, line width=0.6pt] (8,0) -- (8,6) -- (0,6);
     \draw[thick] (2,0) -- (8,6);
     \fill (2,0) circle (0.18);
     \fill (8,6) circle (0.18);
@@ -949,7 +1005,7 @@ De acuerdo con la informaci\'on anterior, \textquestiondown Cu\'al representaci\
     \node[anchor=north] at (2,0) {$2$};
     \node[anchor=north] at (6,0) {$6$};
     \node[anchor=east] at (0,8) {$8$};
-    \draw[densely dashed, gray!85, line width=0.6pt] (2,0) -- (2,8) -- (0,8);
+    \draw[densely dashed, black!70, line width=0.6pt] (2,0) -- (2,8) -- (0,8);
     \draw[thick] (2,8) -- (6,0);
     \fill (2,8) circle (0.18);
     \fill (6,0) circle (0.18);
@@ -1063,10 +1119,10 @@ La siguiente representaci\'on gr\'afica muestra el comportamiento de esa altura:
   \foreach \y/\lab in {3/3,5/5,7/7,9/9}
     \node[anchor=east] at (0,\y) {$\lab$};
 
-  \draw[densely dashed, gray!80] (1,0) -- (1,3) -- (0,3);
-  \draw[densely dashed, gray!80] (2,0) -- (2,5) -- (0,5);
-  \draw[densely dashed, gray!80] (5,0) -- (5,7) -- (0,7);
-  \draw[densely dashed, gray!80] (10,0) -- (10,9) -- (0,9);
+  \draw[densely dashed, black!70] (1,0) -- (1,3) -- (0,3);
+  \draw[densely dashed, black!70] (2,0) -- (2,5) -- (0,5);
+  \draw[densely dashed, black!70] (5,0) -- (5,7) -- (0,7);
+  \draw[densely dashed, black!70] (10,0) -- (10,9) -- (0,9);
 
   \draw[thick, domain=1:10, samples=120, smooth, variable=\x]
     plot ({\x},{2*sqrt(\x-1)+3});
@@ -1139,8 +1195,8 @@ La siguiente representaci\'on gr\'afica corresponde a la funci\'on $h$ que deter
   \foreach \y/\lab in {5/5,12/12}
     \node[anchor=east] at (0,\y) {$\lab$};
 
-  \draw[densely dashed, gray!80] (1,0) -- (1,5) -- (0,5);
-  \draw[densely dashed, gray!80] (8,0) -- (8,12) -- (0,12);
+  \draw[densely dashed, black!70] (1,0) -- (1,5) -- (0,5);
+  \draw[densely dashed, black!70] (8,0) -- (8,12) -- (0,12);
 
   \draw[thick] (1,5) -- (8,12);
 
