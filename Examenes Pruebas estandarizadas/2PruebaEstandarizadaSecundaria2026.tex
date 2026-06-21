@@ -1,0 +1,488 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\newcommand{\opcion}[2]{\item[#1)] $#2$}
+\newcommand{\puntografico}{0.09}
+
+% Gráficas de circunferencia para opciones del ítem 4
+% #1,#2 = centro; punto superior = (#1, #2+3)
+\newcommand{\grafcirc}[2]{%
+\pgfmathtruncatemacro{\topY}{#2+3}%
+\begin{tikzpicture}[scale=0.42]
+  \path[use as bounding box] (-7.5,-8) rectangle (9,8.5);
+  \draw[<->, thick] (-6.5,0) -- (6.5,0);
+  \draw[<->, thick] (0,-7.5) -- (0,7.5);
+  \node[anchor=west, inner sep=1pt] at (6.55,0) {\scriptsize $x$ (este)};
+  \node[anchor=south, inner sep=1pt] at (0,7.85) {\scriptsize $y$ (norte)};
+  % Punteadas: eje x-centro, eje y-centro, centro-punto superior, eje y-punto superior
+  \draw[dashed, black!70] (#1,0) -- (#1,#2);
+  \draw[dashed, black!70] (0,#2) -- (#1,#2);
+  \draw[dashed, black!70] (#1,#2) -- (#1,\topY);
+  \draw[dashed, black!70] (0,\topY) -- (#1,\topY);
+  % Marcas y etiquetas (fill=white para visibilidad sobre punteadas)
+  \draw (#1,-0.5) -- (#1,0.5);
+  \node[fill=white, anchor=north, inner sep=1.5pt] at (#1,0) {\scriptsize $#1$};
+  \draw (-0.5,#2) -- (0.5,#2);
+  \node[fill=white, anchor=east, inner sep=1.5pt] at (0,#2) {\scriptsize $#2$};
+  \draw (-0.5,\topY) -- (0.5,\topY);
+  \node[fill=white, anchor=east, inner sep=1.5pt] at (0,\topY) {\scriptsize $\topY$};
+  % Circunferencia y puntos
+  \draw[thick] (#1,#2) circle (3);
+  \fill (#1,#2) circle (0.18);
+  \fill (#1,\topY) circle (0.18);
+\end{tikzpicture}}
+
+% Mini-gráficas para opciones gráficas de traslación
+% #1,#2 = centro; #3 = radio
+\newcommand{\grafcirctrasl}[3]{%
+\pgfmathtruncatemacro{\rxcoordint}{#1+#3}%
+\begin{tikzpicture}[scale=0.25]
+  \path[use as bounding box] (-8,-15) rectangle (18,13);
+  \draw[<->, thick] (-7,0) -- (14,0);
+  \draw[<->, thick] (0,-14) -- (0,12);
+  \node[anchor=west, inner sep=1pt] at (14.1,0) {\tiny $x$ (este)};
+  \node[anchor=south, inner sep=1pt] at (0,12.1) {\tiny $y$ (norte)};
+  \draw[thick] (#1,#2) circle (#3);
+  \draw[dashed] (#1,0) -- (#1,#2);
+  \draw[dashed] (\rxcoordint,0) -- (\rxcoordint,#2);
+  \draw[dashed] (0,#2) -- (\rxcoordint,#2);
+  \fill (#1,#2) circle (0.42);
+  \fill (\rxcoordint,#2) circle (0.42);
+  \draw (#1,-0.45) -- (#1,0.45);
+  \node[anchor=north, inner sep=1.5pt] at (#1,0) {\scriptsize $#1$};
+  \draw (\rxcoordint,-0.45) -- (\rxcoordint,0.45);
+  \node[anchor=north, inner sep=1.5pt] at (\rxcoordint,0) {\scriptsize $\rxcoordint$};
+  \draw (-0.45,#2) -- (0.45,#2);
+  \node[anchor=east, inner sep=1.5pt] at (0,#2) {\scriptsize $#2$};
+\end{tikzpicture}}
+
+\begin{document}
+
+\begin{center}
+{\large \textbf{Segunda Pr\'actica de Secundaria de la Prueba Nacional Estandarizada Sumativa de Matem\'atica 2026.}}
+\end{center}
+
+\noindent Nombre: \rule{8cm}{0.4pt}\hfill Sec: \rule{3cm}{0.4pt}
+
+\vspace{6pt}
+\noindent\textbf{INFORMACI\'ON GENERAL}
+
+\vspace{4pt}
+\noindent\textbf{Materiales necesarios para la prueba:}
+
+\begin{itemize}[leftmargin=1.6em, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Un cuadernillo que contiene:
+  \begin{itemize}[leftmargin=1.6em, itemsep=0pt, topsep=1pt, parsep=0pt, label=$\blacklozenge$]
+    \item informaci\'on general
+    \item 60 \'items de selecci\'on de respuesta
+  \end{itemize}
+  \item Hoja de respuestas para lectora \'optica
+  \item Bol\'igrafo con tinta azul o negra
+  \item Corrector l\'iquido blanco
+\end{itemize}
+
+\noindent\textbf{Material que se puede requerir para la prueba:}
+
+\begin{itemize}[leftmargin=1.6em, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Calculadora
+\end{itemize}
+
+\vspace{4pt}
+\noindent\textbf{Instrucciones:}
+
+\begin{enumerate}[leftmargin=*, itemsep=3pt, topsep=2pt, parsep=0pt]
+  \item La Prueba Nacional Estandarizada de secundaria de matem\'atica est\'a compuesta por 60 \'items. Verifique que el cuadernillo que tiene en sus manos est\'e bien compaginado y contenga los 60 \'items de selecci\'on de respuesta correspondientes al componente Matem\'aticas. En caso de encontrar alguna irregularidad, notif\'iquela inmediatamente al delegado de aula; de lo contrario, usted asume la responsabilidad sobre los problemas que se pudieran suscitar por esta causa.
+
+  \item Cada \'item presenta tres posibilidades de respuesta: A), B), C) y D) Solamente una de ellas es la respuesta correcta.
+
+  \item Lea cuidadosamente cada \'item y sus respectivas opciones. Puede utilizar el espacio al lado de cada \'item para realizar cualquier anotaci\'on que necesite, con el fin de hallar la respuesta.
+
+  \item Ning\'un \'item debe aparecer sin respuesta o con m\'as de una marca en la hoja lectora \'optica.
+
+  \item Una vez que haya revisado todas las opciones y tenga seguridad de su elecci\'on, rellene completamente el c\'irculo correspondiente, en la hoja lectora \'optica, tal como se indica en el siguiente ejemplo:
+
+  \begin{center}
+  \begin{tikzpicture}[baseline=-0.5ex]
+    \draw[thick] (0,0) circle (0.38);
+    \node at (0,0) {\textbf{A}};
+    \fill (1.1,0) circle (0.38);
+    \node[white] at (1.1,0) {\textbf{B}};
+    \draw[thick] (2.2,0) circle (0.38);
+    \node at (2.2,0) {\textbf{C}};
+  \end{tikzpicture}
+  \end{center}
+
+  \item Si necesita rectificar la respuesta, utilice corrector l\'iquido blanco sobre el c\'irculo por corregir y rellene con bol\'igrafo de tinta negra o azul la nueva opci\'on seleccionada. Adem\'as, en el espacio de observaciones de la hoja lectora \'optica debe anotar y firmar la correcci\'on efectuada (Ejemplo: 12=A, firma). Se firma solo una vez al final de todas las correcciones.
+\end{enumerate}
+
+\vspace{8pt}
+\noindent Creado por: Alberto Jim\'enez Ruiz asesor regional de Matem\'atica de la DRE-Cartago 2026.
+
+\newpage
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=2.5cm]
+
+\Needspace{0.92\textheight}
+\item
+En la plaza de un barrio existe una piscina comunal de forma circular.
+
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra las posiciones, $M$ del punto de referencia de la plaza, $D$ del centro de la piscina y $C$ de la circunferencia correspondiente al borde de esa piscina:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.4]
+  \path[use as bounding box] (-4,-7) rectangle (14,11.5);
+  \draw[<->, thick] (-3,0) -- (13,0);
+  \draw[<->, thick] (0,-6) -- (0,11);
+  \node[anchor=west, inner sep=1pt] at (13.05,0) {$x$ (este)};
+  \node[anchor=south, inner sep=1pt] at (0,11.35) {$y$ (norte)};
+  \draw[thick] (4,3) circle (6);
+  \draw[dashed] (4,0) -- (4,3);
+  \draw[dashed] (10,0) -- (10,3);
+  \draw[dashed] (0,3) -- (10,3);
+  \fill (0,0) circle (0.18) node[below left] {$M$};
+  \fill (4,3) circle (0.18) node[anchor=south east, inner sep=1pt] {$D$};
+  \fill (10,3) circle (0.18) node[anchor=south west, inner sep=1pt] {$C$};
+  \node[anchor=north] at (4,0) {$4$};
+  \node[anchor=north] at (10,0) {$10$};
+  \node[left] at (0,3) {$3$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la representaci\'on algebraica, cuyas unidades est\'an en metros, de la circunferencia $C$ que delimita esa piscina?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x-3)^2+(y-4)^2=36}
+  \opcion{B}{(x+4)^2+(y+3)^2=36}
+  \opcion{C}{(x-4)^2+(y-3)^2=6}
+  \opcion{D}{(x-4)^2+(y-3)^2=36}
+\end{enumerate}
+
+\Needspace{0.90\textheight}
+\item
+En el jard\'in de una casa, se instala un aspersor de agua.
+
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra las posiciones, $V$ de la esquina del jard\'in, $A$ del aspersor y $C$ de la circunferencia correspondiente al alcance m\'aximo del chorro de agua lanzado por ese aspersor en metros:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.4]
+  \path[use as bounding box] (-9.5,-5) rectangle (7,11);
+  \draw[<->, thick] (-8.5,0) -- (6,0);
+  \draw[<->, thick] (0,-4) -- (0,10);
+  \node[anchor=west, inner sep=1pt] at (6.05,0) {$x$ (este)};
+  \node[anchor=south, inner sep=1pt] at (0,10.35) {$y$ (norte)};
+  \draw[thick] (-2,3) circle (4);
+  \draw[dashed] (-2,0) -- (-2,3);
+  \draw[dashed] (0,3) -- (-2,3);
+  \draw[dashed] (2,0) -- (2,3);
+  \draw[dashed] (0,3) -- (2,3);
+  \fill (0,0) circle (0.18) node[below left] {$V$};
+  \fill (-2,3) circle (0.18) node[anchor=south east, inner sep=1pt] {$A$};
+  \fill (2,3) circle (0.18) node[anchor=south west, inner sep=1pt] {$C$};
+  \node[anchor=north] at (-2,0) {$-2$};
+  \node[anchor=north] at (2,0) {$2$};
+  \node[left] at (0,3) {$3$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la representaci\'on algebraica, cuyas unidades est\'an en metros, de la circunferencia $C$ correspondiente al alcance m\'aximo del chorro de agua?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x-2)^2+(y+3)^2=16}
+  \opcion{B}{(x+2)^2+(y-3)^2=16}
+  \opcion{C}{(x+2)^2+(y-3)^2=4}
+  \opcion{D}{(x+2)^2+(y+3)^2=16}
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+Una empresa instala un enrutador de Wi-Fi en el punto $E$ del plano de la oficina, donde las unidades est\'an en metros. El enrutador emite una se\~nal de $10$ metros a la redonda.
+
+Cuatro computadoras est\'an ubicadas en los puntos $P(11,2)$, $Q(3,14)$, $R(-3,9)$ y $S(8,9)$.
+
+La siguiente representaci\'on gr\'afica muestra la ubicaci\'on del enrutador y la circunferencia correspondiente al alcance m\'aximo de la se\~nal:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.18]
+  \path[use as bounding box] (-11,-12) rectangle (17,17);
+  \draw[<->, thick] (-10,0) -- (16,0);
+  \draw[<->, thick] (0,-11) -- (0,16);
+  \node[anchor=west, inner sep=1pt] at (16.05,0) {\small $x$ (este)};
+  \node[anchor=south, inner sep=1pt] at (0,16.35) {\small $y$ (norte)};
+  \draw[thick] (3,2) circle (10);
+  \draw[dashed] (3,0) -- (3,2);
+  \draw[dashed] (0,2) -- (3,2);
+  \fill (3,2) circle (\puntografico);
+  \node[anchor=south, inner sep=1pt, yshift=3pt] at (3,2) {$E$};
+  \node[anchor=north] at (3,0) {$3$};
+  \node[left] at (0,2) {$2$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de esas computadoras se debe reubicar para que tenga se\~nal Wi-Fi del enrutador?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $Q$
+  \item $S$
+  \item $P$
+  \item $R$
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+Una empresa de telecomunicaciones modela el alcance de la se\~nal de una antena con la siguiente representaci\'on algebraica, donde las unidades est\'an en kil\'ometros:
+
+\[(x+3)^2+(y-4)^2=9\]
+
+\textquestiondown Cu\'al de las siguientes representaciones gr\'aficas corresponde a esa circunferencia?
+
+\vspace{1\baselineskip}
+
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{r@{\hspace{0.3cm}}c@{\hspace{0.6cm}}r@{\hspace{0.3cm}}c}
+\raisebox{3.2cm}{\textbf{A)}} & \grafcirc{3}{4} & \raisebox{3.2cm}{\textbf{B)}} & \grafcirc{-3}{-4} \\[0.5cm]
+\raisebox{3.2cm}{\textbf{C)}} & \grafcirc{-3}{4} & \raisebox{3.2cm}{\textbf{D)}} & \grafcirc{3}{-4}
+\end{tabular}
+\end{center}
+
+
+\Needspace{0.72\textheight}
+\item
+Un sistema de alarma instalado en una bodega emite una se\~nal sonora circular. El alcance m\'aximo de esa se\~nal se modela mediante la circunferencia $C_1$ con la ecuaci\'on:
+\[(x+4)^2+(y-2)^2=9\]
+donde las unidades est\'an en metros.
+
+Por razones de mantenimiento, el equipo se traslada $7$ metros hacia el este y $3$ metros hacia el sur.
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la ecuaci\'on de la circunferencia $C_2$ que representa el nuevo alcance de la se\~nal sonora?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x-3)^2+(y+1)^2=9}
+  \opcion{B}{(x+3)^2+(y-1)^2=9}
+  \opcion{C}{(x+11)^2+(y-5)^2=9}
+  \opcion{D}{(x-3)^2+(y+1)^2=3}
+\end{enumerate}
+
+\Needspace{0.90\textheight}
+\item
+Un tel\'efono celular que emite una se\~nal inal\'ambrica circular se ubica en el punto $T$ de un dormitorio.
+
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra las ubicaciones $T$ del tel\'efono y $C$ de la circunferencia correspondiente al alcance m\'aximo de la se\~nal emitida:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+  \path[use as bounding box] (-3,-2) rectangle (9,12);
+  \draw[<->, thick] (-2.5,0) -- (8,0);
+  \draw[<->, thick] (0,-1.5) -- (0,11);
+  \node[anchor=west, inner sep=1pt] at (8.05,0) {$x$ (este)};
+  \node[anchor=south, inner sep=1pt] at (0,11.35) {$y$ (norte)};
+  \draw[thick] (2,5) circle (3);
+  \draw[dashed] (2,0) -- (2,5);
+  \draw[dashed] (5,0) -- (5,5);
+  \draw[dashed] (0,5) -- (5,5);
+  \fill (2,5) circle (0.15) node[anchor=south east, inner sep=1pt] {$T$};
+  \fill (5,5) circle (0.15) node[anchor=south west, inner sep=1pt] {$C$};
+  \node[anchor=north] at (2,0) {$2$};
+  \node[anchor=north] at (5,0) {$5$};
+  \node[left] at (0,5) {$5$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, si ese tel\'efono se traslada $4$ metros hacia la izquierda y $5$ metros hacia el sur, \textquestiondown cu\'al es la representaci\'on algebraica, cuyas unidades est\'an en metros, de la circunferencia correspondiente al alcance m\'aximo de la se\~nal en su nueva ubicaci\'on?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x-2)^2+y^2=9}
+  \opcion{B}{(x+2)^2+y^2=9}
+  \opcion{C}{(x+2)^2+y^2=3}
+  \opcion{D}{(x+2)^2+(y-5)^2=9}
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+Un aspersor de riego instalado en un terreno cubre un \'area circular cuyo alcance m\'aximo se modela mediante la circunferencia $C_1$ con ecuaci\'on:
+\[(x-5)^2+(y+3)^2=16\]
+donde las unidades est\'an en metros.
+
+Debido a una remodelaci\'on del terreno, el aspersor se reubica $3$ metros hacia el oeste y $6$ metros hacia el norte.
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de las siguientes representaciones gr\'aficas, cuyas unidades est\'an en metros, corresponde al alcance del aspersor en su nueva ubicaci\'on?
+
+\vspace{1\baselineskip}
+
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{r@{\hspace{0.4cm}}c@{\hspace{1.2cm}}r@{\hspace{0.4cm}}c}
+\raisebox{3.5cm}{\textbf{A)}} & \grafcirctrasl{2}{3}{7} & \raisebox{3.5cm}{\textbf{B)}} & \grafcirctrasl{8}{3}{4} \\[1.8cm]
+\raisebox{3.5cm}{\textbf{C)}} & \grafcirctrasl{2}{-9}{4} & \raisebox{3.5cm}{\textbf{D)}} & \grafcirctrasl{2}{3}{4}
+\end{tabular}
+\end{center}
+
+\Needspace{0.90\textheight}
+\item
+En una feria cient\'ifica se coloca un sensor circular sobre una mesa para detectar la posici\'on final de peque\~nas fichas met\'alicas. El borde de la zona de detecci\'on se representa mediante una circunferencia $C$ de centro $O$.
+
+La figura muestra, en cent\'imetros, la circunferencia $C$ y su centro $O$:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+  \path[use as bounding box] (-2,-2) rectangle (13,11);
+  \draw[<->, thick] (-1,0) -- (12,0);
+  \draw[<->, thick] (0,-1) -- (0,10);
+  \node[anchor=west, inner sep=1pt] at (12.05,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,10.35) {$y$};
+  \draw[thick] (7,5) circle (3);
+  \draw[dashed] (7,0) -- (7,5);
+  \draw[dashed] (4,0) -- (4,5);
+  \draw[dashed] (0,5) -- (7,5);
+  \fill (7,5) circle (0.15);
+  \fill (4,5) circle (0.15);
+  \node[anchor=south, inner sep=1pt, yshift=2pt] at (7,5) {$O$};
+  \node[anchor=north] at (7,0) {$7$};
+  \node[anchor=north] at (4,0) {$4$};
+  \node[left] at (0,5) {$5$};
+\end{tikzpicture}
+\end{center}
+
+Durante una prueba, cuatro fichas identificadas como $R$, $S$, $W$ y $T$ quedaron ubicadas, respectivamente, en los puntos $(9,7)$, $(4,5)$, $(10,9)$ y $(7,2)$.
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de esas fichas qued\'o ubicada en el exterior de la zona de detecci\'on?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $R$
+  \item $S$
+  \item $T$
+  \item $W$
+\end{enumerate}
+
+\Needspace{0.96\textheight}
+\item
+Considere la siguiente informaci\'on:
+
+La siguiente figura representa dos zonas circulares de jardiner\'ia, $C_1$ de centro $O$ y radio $5$, y $C_2$ de centro $P$ y radio $3$, adem\'as de la recta $m$, en un sistema de coordenadas:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-7.2,-1.7) rectangle (14.2,12.2);
+  \draw[<->, thick] (-6,0) -- (13,0);
+  \draw[<->, thick] (0,-1) -- (0,11);
+  \node[anchor=west, inner sep=1pt] at (13.05,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,11.25) {$y$};
+  \draw[thick] (0,5) circle (5);
+  \draw[thick] (8,3) circle (3);
+  \draw[very thick, <->] (-6,6) -- (13,6) node[anchor=south west, inner sep=1pt] {$m$};
+  \draw[dashed] (8,0) -- (8,3);
+  \draw[dashed] (0,3) -- (8,3);
+  \fill (0,5) circle (0.15);
+  \fill (8,3) circle (0.15);
+  \fill (0,0) circle (0.15);
+  \fill (8,0) circle (0.15);
+  \fill (8,6) circle (0.15);
+  \fill (-4.9,6) circle (0.15);
+  \node[anchor=south west, inner sep=1pt, xshift=2pt] at (0,5) {$O$};
+  \node[anchor=south west, inner sep=1pt] at (8,3) {$P$};
+  \node[anchor=north east, inner sep=1pt] at (0,0) {$A$};
+  \node[anchor=south east, inner sep=1pt] at (8,0) {$B$};
+  \node[anchor=south west, inner sep=1pt] at (8,6) {$D$};
+  \node[anchor=south east, inner sep=1pt] at (-4.9,6) {$E$};
+  \node[anchor=north, yshift=-6pt] at (8,0) {$8$};
+  \node[left] at (0,3) {$3$};
+  \node[left] at (0,5) {$5$};
+  \node[anchor=south west, inner sep=1pt] at (4.3,9.2) {$C_1$};
+  \node[anchor=west, inner sep=1pt] at (11.2,3.7) {$C_2$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on de la figura anterior, considere las siguientes proposiciones:
+
+I. El eje $x$ es tangente a $C_1$ y a $C_2$.
+
+II. La recta $m$ es secante a $C_1$ y tangente a $C_2$.
+
+De ellas, \textquestiondown cu\'al o cu\'ales son verdaderas?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Ambas.
+  \item Ninguna.
+  \item Solo la I.
+  \item Solo la II.
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+Considere la siguiente representaci\'on gr\'afica, en la cual la circunferencia $C$ de centro $M$ y la circunferencia $P$ de centro $H$ son tangentes en el punto $B$, y el eje $x$ es tangente a $C$ en el punto $A$:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95, >=stealth]
+  \path[use as bounding box] (-1.7,-5.1) rectangle (9.3,4.4);
+  \def\puntotangencia{0.12}
+  \draw[<->, thick] (-1.4,0) -- (8.9,0);
+  \draw[<->, thick] (0,-3.8) -- (0,3.9);
+  \node[anchor=west, inner sep=1pt] at (8.95,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,4.05) {$y$};
+  \draw[thick] (0,-1.4) circle (1.4);
+  \draw[thick] (4.8,0) circle (3.6);
+  \draw[dashed, thick] (0,-1.4) -- (4.8,0);
+  \fill (0,0) circle (\puntotangencia) node[anchor=south east, inner sep=1pt, xshift=-2pt, yshift=2pt] {$A$};
+  \fill (0,-1.4) circle (\puntotangencia) node[anchor=north east, inner sep=1pt] {$M$};
+  \fill (4.8,0) circle (\puntotangencia) node[anchor=south, inner sep=1pt, yshift=3pt] {$H$};
+  \fill (1.34,-1.01) circle (\puntotangencia) node[anchor=south west, inner sep=1pt, xshift=2pt, yshift=1pt] {$B$};
+  \node[anchor=south west, inner sep=1pt] at (-0.9,-2.4) {$C$};
+  \node[anchor=south, inner sep=1pt] at (4.8,3.6) {$P$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, si $AH=48$ y $MH=50$, entonces, \textquestiondown cu\'al es la medida del radio de $P$?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{14}
+  \opcion{B}{36}
+  \opcion{C}{50}
+  \opcion{D}{64}
+\end{enumerate}
+
+\Needspace{0.82\textheight}
+\item
+La gr\'afica adjunta representa un camino $m$ construido en un terreno cuyas unidades est\'an en kil\'ometros:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.62]
+  \path[use as bounding box] (-2.6,-2.2) rectangle (6.5,5.3);
+  \draw[<->, thick] (-2.2,0) -- (5.8,0);
+  \draw[<->, thick] (0,-1.8) -- (0,4.8);
+  \node[anchor=west, inner sep=1pt] at (5.85,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,4.95) {$y$};
+  \draw[very thick, <->] (-1.4,4.05) -- (5.35,-1.01);
+  \node[anchor=south east, inner sep=1pt] at (-1.15,4.05) {$m$};
+  \fill (0,3) circle (\puntografico);
+  \fill (4,0) circle (\puntografico);
+  \node[anchor=east] at (0,3) {$3$};
+  \node[anchor=north] at (4,0) {$4$};
+\end{tikzpicture}
+\end{center}
+
+Si se desea crear un camino perpendicular al camino $m$ representado por $3y=kx-6$, entonces, \textquestiondown cu\'al es el valor de $k$?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{4}
+  \opcion{B}{\frac{3}{4}}
+  \opcion{C}{-4}
+  \opcion{D}{-\frac{3}{4}}
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

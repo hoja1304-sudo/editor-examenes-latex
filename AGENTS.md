@@ -129,6 +129,10 @@ Si una expresion matematica con radicales, fracciones u otra notacion no se pued
 
 Cuando exista el `.tex`, usarlo como fuente principal para el HTML. Las figuras TikZ deben renderizarse desde el codigo `tikzpicture` real; no reconstruirlas manualmente en SVG/JavaScript salvo que no haya bloque TikZ disponible, que el renderizador falle despues de intentar corregirlo, o que el usuario pida una simplificacion explicita. La meta es que PDF y HTML compartan la misma fuente visual para evitar diferencias de escala, recortes, etiquetas movidas o flechas distintas.
 
+Regla obligatoria de fidelidad: si una figura, formula, radical, fraccion, opcion grafica, texto de una figura, rotulo de eje, etiqueta de punto, opcion de respuesta o notacion matematica existe en LaTeX, la version HTML debe salir de esa fuente LaTeX mediante renderizado SVG/HTML equivalente. El texto y la notacion matematica tambien deben renderizarse desde LaTeX cuando su apariencia o posicion dependa del PDF, especialmente en expresiones matematicas, opciones, etiquetas dentro de figuras y rotulos como `y (norte)` y `x (este)`. Queda prohibido sustituirlos por dibujos aproximados hechos a mano en SVG, Canvas o JavaScript. Cualquier excepcion debe indicarse explicitamente en la respuesta final, con la razon tecnica y la verificacion visual realizada contra el PDF.
+
+Antes de cerrar una actualizacion HTML, auditar las figuras del archivo: no deben aparecer funciones generadoras de graficos aproximados como `circFig`, `optionCirc`, `optionTras` ni SVG manuales para reemplazar figuras que si existen como TikZ o macros en el `.tex`. Si se detectan, corregirlas renderizando desde LaTeX antes de entregar.
+
 Para crear o actualizar un HTML desde un `.tex`, primero generar/incrustar las figuras con:
 
 `powershell -ExecutionPolicy Bypass -File .codex/scripts/render-tikz-for-html.ps1 "<archivo.tex>" "<archivo.html>"`
@@ -142,6 +146,12 @@ Tambien admite `-Macro <nombre>`, `-Snippet "<codigo TikZ>"`, `-OutputDir`, `-Ou
 Si una figura TikZ se repite en varias opciones o se crea mediante una macro del `.tex`, renderizar esa macro o un fragmento TikZ equivalente con el mismo codigo y parametros del PDF. Si por excepcion se usa SVG manual, dejarlo lo mas simple posible, documentar mentalmente el motivo en la respuesta y verificar visualmente contra el PDF.
 
 El PDF se usa como verificacion visual, no como fuente principal para reconstruir graficos. Despues de generar el HTML, revisar al menos los items con graficas para confirmar que no haya recortes, etiquetas perdidas, cambios de escala o diferencias visibles respecto al PDF.
+
+Para verificar visualmente un HTML en navegador headless y capturar items especificos, usar:
+
+`powershell -ExecutionPolicy Bypass -File .codex/scripts/verify-html-browser.ps1 "<archivo.html>" -Items 10,11`
+
+Este helper debe reportar cero errores de consola y guardar capturas PNG en `.codex/tmp/browser-html/<nombre-del-html>/`, utiles para comparar los graficos con el PDF antes de cerrar el cambio.
 
 ## GitHub y publicacion
 
