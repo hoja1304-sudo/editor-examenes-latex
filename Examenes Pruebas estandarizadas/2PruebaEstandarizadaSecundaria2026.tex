@@ -17,17 +17,19 @@
 
 \newcommand{\opcion}[2]{\item[#1)] $#2$}
 \newcommand{\puntografico}{0.09}
+\newcommand{\rotuloxeste}{\mbox{\textit{x} (este)}}
+\newcommand{\rotuloynorte}{\mbox{\textit{y} (norte)}}
 
 % Gráficas de circunferencia para opciones del ítem 4
 % #1,#2 = centro; punto superior = (#1, #2+3)
 \newcommand{\grafcirc}[2]{%
 \pgfmathtruncatemacro{\topY}{#2+3}%
 \begin{tikzpicture}[scale=0.42]
-  \path[use as bounding box] (-7.5,-8) rectangle (9,8.5);
+  \path[use as bounding box] (-7.5,-8) rectangle (10.5,9);
   \draw[<->, thick] (-6.5,0) -- (6.5,0);
   \draw[<->, thick] (0,-7.5) -- (0,7.5);
-  \node[anchor=west, inner sep=1pt] at (6.55,0) {\scriptsize $x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,7.85) {\scriptsize $y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (6.55,0) {\scriptsize\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,7.85) {\scriptsize\rotuloynorte};
   % Punteadas: eje x-centro, eje y-centro, centro-punto superior, eje y-punto superior
   \draw[dashed, black!70] (#1,0) -- (#1,#2);
   \draw[dashed, black!70] (0,#2) -- (#1,#2);
@@ -51,11 +53,11 @@
 \newcommand{\grafcirctrasl}[3]{%
 \pgfmathtruncatemacro{\rxcoordint}{#1+#3}%
 \begin{tikzpicture}[scale=0.25]
-  \path[use as bounding box] (-8,-15) rectangle (18,13);
+  \path[use as bounding box] (-8,-15) rectangle (19.5,13.5);
   \draw[<->, thick] (-7,0) -- (14,0);
   \draw[<->, thick] (0,-14) -- (0,12);
-  \node[anchor=west, inner sep=1pt] at (14.1,0) {\tiny $x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,12.1) {\tiny $y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (14.1,0) {\tiny\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,12.1) {\tiny\rotuloynorte};
   \draw[thick] (#1,#2) circle (#3);
   \draw[dashed] (#1,0) -- (#1,#2);
   \draw[dashed] (\rxcoordint,0) -- (\rxcoordint,#2);
@@ -144,11 +146,11 @@ La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muest
 
 \begin{center}
 \begin{tikzpicture}[scale=0.4]
-  \path[use as bounding box] (-4,-7) rectangle (14,11.5);
+  \path[use as bounding box] (-4,-7) rectangle (15,12);
   \draw[<->, thick] (-3,0) -- (13,0);
   \draw[<->, thick] (0,-6) -- (0,11);
-  \node[anchor=west, inner sep=1pt] at (13.05,0) {$x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,11.35) {$y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (13.05,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,11.35) {\rotuloynorte};
   \draw[thick] (4,3) circle (6);
   \draw[dashed] (4,0) -- (4,3);
   \draw[dashed] (10,0) -- (10,3);
@@ -179,11 +181,11 @@ La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muest
 
 \begin{center}
 \begin{tikzpicture}[scale=0.4]
-  \path[use as bounding box] (-9.5,-5) rectangle (7,11);
+  \path[use as bounding box] (-9.5,-5) rectangle (8.2,11);
   \draw[<->, thick] (-8.5,0) -- (6,0);
   \draw[<->, thick] (0,-4) -- (0,10);
-  \node[anchor=west, inner sep=1pt] at (6.05,0) {$x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,10.35) {$y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (6.05,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,10.35) {\rotuloynorte};
   \draw[thick] (-2,3) circle (4);
   \draw[dashed] (-2,0) -- (-2,3);
   \draw[dashed] (0,3) -- (-2,3);
@@ -217,11 +219,11 @@ La siguiente representaci\'on gr\'afica muestra la ubicaci\'on del enrutador y l
 
 \begin{center}
 \begin{tikzpicture}[scale=0.18]
-  \path[use as bounding box] (-11,-12) rectangle (17,17);
+  \path[use as bounding box] (-11,-12) rectangle (18.5,17);
   \draw[<->, thick] (-10,0) -- (16,0);
   \draw[<->, thick] (0,-11) -- (0,16);
-  \node[anchor=west, inner sep=1pt] at (16.05,0) {\small $x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,16.35) {\small $y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (16.05,0) {\small\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,16.35) {\small\rotuloynorte};
   \draw[thick] (3,2) circle (10);
   \draw[dashed] (3,0) -- (3,2);
   \draw[dashed] (0,2) -- (3,2);
@@ -285,11 +287,11 @@ La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muest
 
 \begin{center}
 \begin{tikzpicture}[scale=0.45]
-  \path[use as bounding box] (-3,-2) rectangle (9,12);
+  \path[use as bounding box] (-3,-2) rectangle (10,12);
   \draw[<->, thick] (-2.5,0) -- (8,0);
   \draw[<->, thick] (0,-1.5) -- (0,11);
-  \node[anchor=west, inner sep=1pt] at (8.05,0) {$x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,11.35) {$y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (8.05,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,11.35) {\rotuloynorte};
   \draw[thick] (2,5) circle (3);
   \draw[dashed] (2,0) -- (2,5);
   \draw[dashed] (5,0) -- (5,5);
