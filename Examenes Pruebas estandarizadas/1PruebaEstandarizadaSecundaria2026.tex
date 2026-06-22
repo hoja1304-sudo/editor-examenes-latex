@@ -19,13 +19,15 @@
 \newcommand{\puntografico}{0.35}
 \newcommand{\puntograficoafirmacioncuatro}{0.09}
 \newcommand{\puntograficoitemunoafirmacioncuatro}{0.14}
+\newcommand{\rotuloxeste}{\mbox{\textit{x} (este)}}
+\newcommand{\rotuloynorte}{\mbox{\textit{y} (norte)}}
 \newcommand{\grafsenal}[4]{%
 \begin{tikzpicture}[scale=0.09]
   \path[use as bounding box] (-15,-22) rectangle (32,24);
   \draw[<->, thick] (-13,0) -- (30,0);
   \draw[<->, thick] (0,-20) -- (0,21);
-  \node[anchor=west, inner sep=1pt] at (30.05,0) {\scriptsize $x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,21.55) {\scriptsize $y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (30.05,0) {\scriptsize\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,21.55) {\scriptsize\rotuloynorte};
   \draw[thick] (#1,0) circle (#2);
   \fill (0,0) circle (\puntografico) node[below left] {\scriptsize $M$};
   \fill (#1,0) circle (\puntografico) node[above] {\scriptsize $A$};
@@ -138,7 +140,7 @@ Una antena ($A$) que emite una se\~nal para radio se ubica a $8$ km al este del 
 \begin{tabular}{@{}r@{\hspace{0.7cm}}c@{}}
 \raisebox{1.95cm}{\textbf{A)}} & \grafsenal{8}{5}{13}{8} \\[0.7cm]
 \raisebox{1.95cm}{\textbf{B)}} & \grafsenal{8}{10}{18}{8} \\[0.7cm]
-\raisebox{1.95cm}{\textbf{C)}} & \grafsenal{8}{20}{28}{8} \\[0.7cm]
+\raisebox{1.95cm}{\textbf{C)}} & \grafsenal{8}{8}{16}{8} \\[0.7cm]
 \raisebox{1.95cm}{\textbf{D)}} & \grafsenal{10}{8}{18}{10}
 \end{tabular}
 }
@@ -152,11 +154,11 @@ La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muest
 
 \begin{center}
 \begin{tikzpicture}[scale=0.15]
-  \path[use as bounding box] (-4,-4) rectangle (35,36);
+  \path[use as bounding box] (-4,-4) rectangle (39,37);
   \draw[<->, thick] (-2,0) -- (32,0);
   \draw[<->, thick] (0,-2) -- (0,34);
-  \node[anchor=west, inner sep=1pt] at (32.1,0) {$x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,34.3) {$y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (32.1,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,34.3) {\rotuloynorte};
   \draw[dashed] (20,0) -- (20,24);
   \draw[dashed] (26,0) -- (26,24);
   \draw[dashed] (0,24) -- (26,24);
@@ -189,11 +191,11 @@ La siguiente representaci\'on gr\'afica, en la que las unidades est\'an en kil\'
 
 \begin{center}
 \begin{tikzpicture}[scale=0.16]
-  \path[use as bounding box] (-6,-5) rectangle (27,31);
+  \path[use as bounding box] (-6,-5) rectangle (30,32);
   \draw[<->, thick] (-4,0) -- (25,0);
   \draw[<->, thick] (0,-3) -- (0,29);
-  \node[anchor=west, inner sep=1pt] at (25.05,0) {$x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,29.55) {$y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (25.05,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,29.55) {\rotuloynorte};
   \draw[thick] (5,12) circle (13);
   \draw[dashed] (5,0) -- (5,12);
   \draw[dashed] (0,12) -- (5,12);
@@ -221,11 +223,11 @@ La siguiente representaci\'on gr\'afica, en la que las unidades est\'an en metro
 
 \begin{center}
 \begin{tikzpicture}[scale=0.18]
-  \path[use as bounding box] (-22,-16) rectangle (13,10);
+  \path[use as bounding box] (-22,-16) rectangle (16,11);
   \draw[<->, thick] (-20,0) -- (11,0);
   \draw[<->, thick] (0,-14) -- (0,8);
-  \node[anchor=west, inner sep=1pt] at (11.05,0) {$x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,8.55) {$y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (11.05,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,8.55) {\rotuloynorte};
   \fill (0,0) circle (\puntografico) node[below right] {$A$};
   \draw[dashed] (-9,0) -- (-9,-4);
   \draw[dashed] (0,-4) -- (-9,-4);
@@ -285,11 +287,11 @@ La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en cm, muestra l
 
 \begin{center}
 \begin{tikzpicture}[scale=0.28]
-  \path[use as bounding box] (-2,-2) rectangle (14,15);
+  \path[use as bounding box] (-2,-2) rectangle (16,15.5);
   \draw[<->, thick] (-1,0) -- (12.5,0);
   \draw[<->, thick] (0,-1) -- (0,14);
-  \node[anchor=west, inner sep=1pt] at (12.55,0) {$x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,14.15) {$y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (12.55,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,14.15) {\rotuloynorte};
   \draw[dashed] (6,0) -- (6,9);
   \draw[dashed] (0,9) -- (6,9);
   \draw[dashed] (0,5) -- (6,5);
@@ -322,11 +324,11 @@ La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muest
 
 \begin{center}
 \begin{tikzpicture}[scale=0.34]
-  \path[use as bounding box] (-2,-1.5) rectangle (22,19);
+  \path[use as bounding box] (-2,-1.5) rectangle (23.5,19);
   \draw[<->, thick] (-1,0) -- (21,0);
   \draw[<->, thick] (0,-1) -- (0,18);
-  \node[anchor=west, inner sep=1pt] at (21.05,0) {$x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,18.55) {$y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (21.05,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,18.55) {\rotuloynorte};
   \fill (0,0) circle (\puntografico) node[below left] {$O$};
   \draw[dashed] (10,0) -- (10,9);
   \draw[dashed] (0,9) -- (10,9);
@@ -354,11 +356,11 @@ La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muest
 
 \begin{center}
 \begin{tikzpicture}[scale=0.38]
-  \path[use as bounding box] (-2,-1.5) rectangle (17,16);
+  \path[use as bounding box] (-2,-1.5) rectangle (18.5,16);
   \draw[<->, thick] (-1,0) -- (16,0);
   \draw[<->, thick] (0,-1) -- (0,15);
-  \node[anchor=west, inner sep=1pt] at (16.05,0) {$x$ (este)};
-  \node[anchor=south, inner sep=1pt] at (0,15.55) {$y$ (norte)};
+  \node[anchor=west, inner sep=1pt] at (16.05,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,15.55) {\rotuloynorte};
   \draw[dashed] (9,0) -- (9,13);
   \draw[dashed] (0,8) -- (9,8);
   \draw[dashed] (0,13) -- (9,13);
