@@ -485,6 +485,126 @@ Si se desea crear un camino perpendicular al camino $m$ representado por $3y=kx-
   \opcion{D}{-\frac{3}{4}}
 \end{enumerate}
 
+\Needspace{0.88\textheight}
+\item
+A continuaci\'on, se muestra la representaci\'on gr\'afica, cuyas unidades est\'an en metros, del piso de una casa:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.42]
+  \path[use as bounding box] (-1.2,-1.1) rectangle (13.8,9.6);
+  \draw[->, thick] (-0.8,0) -- (13.2,0);
+  \draw[->, thick] (0,-0.8) -- (0,9.0);
+  \node[anchor=west, inner sep=1pt] at (13.25,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,9.1) {$y$};
+  \draw[very thick] (0,8) -- (12,8) -- (12,0) -- (4,0) -- (0,4) -- cycle;
+  \draw[thick] (0.45,8) -- (0.45,7.55) -- (0,7.55);
+  \draw[thick] (11.35,0) -- (11.35,0.65) -- (12,0.65);
+  \fill (0,8) circle (\puntografico);
+  \fill (0,4) circle (\puntografico);
+  \fill (4,0) circle (\puntografico);
+  \fill (12,0) circle (\puntografico);
+  \node[anchor=east] at (0,8) {$8$};
+  \node[anchor=east] at (0,4) {$4$};
+  \node[anchor=north] at (4,0) {$4$};
+  \node[anchor=north] at (12,0) {$12$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, si se le quiere colocar cer\'amica a la totalidad del piso de esa casa, entonces, \textquestiondown cu\'antos metros cuadrados de cer\'amica, como m\'inimo, se deben comprar?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{80}
+  \opcion{B}{88}
+  \opcion{C}{96}
+  \opcion{D}{104}
+\end{enumerate}
+
+\Needspace{0.78\textheight}
+\item
+En un centro recreativo se construir\'an dos plazoletas. La primera tendr\'a forma de dodec\'agono regular y la segunda forma de oct\'agono regular.
+
+La medida del lado del dodec\'agono debe ser el doble de la medida del lado del oct\'agono.
+
+Si el per\'imetro de la plazoleta con forma de dodec\'agono debe ser $96\ \text{m}$, entonces, \textquestiondown cu\'al ser\'a el per\'imetro de la plazoleta con forma de oct\'agono?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{32\ \text{m}}
+  \opcion{B}{48\ \text{m}}
+  \opcion{C}{64\ \text{m}}
+  \opcion{D}{96\ \text{m}}
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+La siguiente representaci\'on gr\'afica muestra la superficie de una pieza decorativa que se colocar\'a sobre una pared:
+
+\begin{center}
+\fbox{\begin{minipage}{0.42\textwidth}
+\centering
+La medida del lado de cada cuadrado de la cuadr\'icula es $10\ \text{cm}$.
+\end{minipage}}
+
+\vspace{0.2cm}
+
+\begin{tikzpicture}[scale=0.58]
+  \path[use as bounding box] (-0.8,-0.8) rectangle (9.2,8.2);
+  \draw[step=1, dotted, gray!80] (0,0) grid (8,7);
+  \draw[<->, thick] (-0.4,0) -- (8.6,0);
+  \draw[<->, thick] (0,-0.4) -- (0,7.6);
+  \node[anchor=west, inner sep=1pt] at (8.65,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,7.75) {$y$};
+  \draw[very thick] (2,1) -- (2,6) -- (6,4) -- (6,2) -- cycle;
+  \fill (2,1) circle (\puntografico);
+  \fill (2,6) circle (\puntografico);
+  \fill (6,4) circle (\puntografico);
+  \fill (6,2) circle (\puntografico);
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, si se requiere colocar una cinta adhesiva alrededor de todo el borde de esa pieza decorativa, entonces, \textquestiondown cu\'al es la cantidad m\'inima aproximada de cent\'imetros de cinta que se requiere?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{140}
+  \opcion{B}{156}
+  \opcion{C}{180}
+  \opcion{D}{200}
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+Una carpintera dise\~n\'o una puerta decorativa como la que se muestra en la siguiente representaci\'on gr\'afica:
+
+\begin{center}
+\fbox{\begin{minipage}{0.42\textwidth}
+\centering
+La medida del lado de cada cuadrado de la cuadr\'icula es $1\ \text{m}$.
+\end{minipage}}
+
+\vspace{0.2cm}
+
+\begin{tikzpicture}[scale=0.62]
+  \path[use as bounding box] (-0.8,-0.8) rectangle (6.8,6.4);
+  \draw[step=1, dotted, gray!85] (0,0) grid (6,6);
+  \draw[<->, thick] (-0.4,0) -- (6.4,0);
+  \draw[<->, thick] (0,-0.4) -- (0,6.4);
+  \node[anchor=west, inner sep=1pt] at (6.45,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,6.55) {$y$};
+  \draw[very thick] (1,1) -- (5,1);
+  \draw[very thick] (1,1) -- (1,3);
+  \draw[very thick] (5,1) -- (5,3);
+  \draw[very thick] (1,3) arc[start angle=180,end angle=0,radius=2];
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, el per\'imetro, en metros, de esa puerta decorativa es
+
+\begin{enumerate}[label=\Alph*)]
+  \item mayor que $12$, pero menor que $13$.
+  \item mayor que $14$, pero menor que $15$.
+  \item mayor que $15$, pero menor que $16$.
+  \item mayor que $10$, pero menor que $12$.
+\end{enumerate}
+
 \end{enumerate}
 
 \end{document}
