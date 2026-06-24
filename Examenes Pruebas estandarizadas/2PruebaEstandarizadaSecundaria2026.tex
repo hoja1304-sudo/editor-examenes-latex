@@ -671,6 +671,529 @@ De acuerdo con los datos de la informaci\'on anterior, si el vaso corresponde a 
   \opcion{D}{12,4}
 \end{enumerate}
 
+\Needspace{0.92\textheight}
+\item
+En una instituci\'on educativa se dise\~n\'o una pieza decorativa para colocarla en la entrada del gimnasio. La siguiente figura representa la forma de esa pieza y algunas rectas trazadas sobre ella:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.72]
+  \path[use as bounding box] (-4.2,-3.1) rectangle (4.3,4.1);
+  \fill[gray!18] (0,3) -- (2.5,0.8) -- (1.6,-2) -- (0,-1.1) -- (-1.6,-2) -- (-2.5,0.8) -- cycle;
+  \draw[very thick] (0,3) -- (2.5,0.8) -- (1.6,-2) -- (0,-1.1) -- (-1.6,-2) -- (-2.5,0.8) -- cycle;
+  \draw[thick, dashed] (0,-2.7) -- (0,3.6);
+  \draw[thick, dashed] (-3.5,0.35) -- (3.5,0.35);
+  \draw[thick, dashed] (-2.8,-2.4) -- (2.8,3.2);
+  \draw[thick, dashed] (-2.8,3.2) -- (2.8,-2.4);
+  \node[above] at (0,3.6) {$h$};
+  \node[right] at (3.5,0.35) {$j$};
+  \node[above right] at (2.8,3.2) {$k$};
+  \node[below right] at (2.8,-2.4) {$n$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de esas rectas corresponde a un eje de simetr\'ia de la pieza decorativa?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $h$
+  \item $j$
+  \item $k$
+  \item $n$
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+En el dise\~no de un parque se desea ubicar dos postes de iluminaci\'on de manera sim\'etrica con respecto a un sendero rectil\'ineo. En el plano, el sendero est\'a representado por la recta $r$, y el poste $P$ est\'a ubicado como se muestra en la siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-1.2,-1.1) rectangle (12.4,8.7);
+  \draw[<->, thick] (-0.5,0) -- (11.8,0);
+  \draw[<->, thick] (0,-0.5) -- (0,8.3);
+  \node[anchor=west] at (12.05,-0.2) {$x$};
+  \node[anchor=south east] at (0.85,8.45) {$y$};
+  \draw[very thick] (6,-0.2) -- (6,8.1);
+  \node[anchor=south west] at (6,8.1) {$r$};
+  \draw[dashed] (2,0) -- (2,3);
+  \draw[dashed] (0,3) -- (2,3);
+  \fill (2,3) circle (\puntografico) node[above left] {$P$};
+  \node[anchor=north] at (2,0) {$2$};
+  \node[anchor=north] at (6,0) {$6$};
+  \node[left] at (0,3) {$3$};
+\end{tikzpicture}
+\end{center}
+
+Si el poste $Q$ debe ubicarse en el punto sim\'etrico de $P$ con respecto a la recta $r$, entonces \textquestiondown cu\'ales son las coordenadas de $Q$?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(4,3)}
+  \opcion{B}{(6,3)}
+  \opcion{C}{(8,3)}
+  \opcion{D}{(10,3)}
+\end{enumerate}
+
+\Needspace{0.95\textheight}
+\item
+En el plano de dise\~no de una instituci\'on educativa, el pol\'igono $ABCD$ representa la forma de una zona verde que ser\'a reproducida en diferentes posiciones del patio.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+  \def\puntotransformacion{0.21}
+  \path[use as bounding box] (-7.9,-1.2) rectangle (1.8,7.8);
+  \draw[step=1, gray!45, very thin] (-7,0) grid (0,7);
+  \draw[<->, thick] (-7.6,0) -- (1.3,0);
+  \draw[<->, thick] (0,-0.7) -- (0,7.4);
+  \node[anchor=west] at (1.45,-0.15) {$x$};
+  \node[anchor=south east] at (0.65,7.55) {$y$};
+  \fill[gray!15] (-2,6) -- (-4,1) -- (-6,4) -- (-5,5) -- cycle;
+  \draw[densely dashed, gray!70, thin] (-2,0) -- (-2,6) -- (0,6);
+  \draw[densely dashed, gray!70, thin] (-4,0) -- (-4,1) -- (0,1);
+  \draw[densely dashed, gray!70, thin] (-6,0) -- (-6,4) -- (0,4);
+  \draw[densely dashed, gray!70, thin] (-5,0) -- (-5,5) -- (0,5);
+  \draw[very thick] (-2,6) -- (-4,1) -- (-6,4) -- (-5,5) -- cycle;
+  \foreach \x/\lab in {-7/{\llap{-}7},-6/{\llap{-}6},-5/{\llap{-}5},-4/{\llap{-}4},-3/{\llap{-}3},-2/{\llap{-}2},-1/{\llap{-}1}}
+    \node[anchor=north, inner sep=1pt] at (\x,0) {$\lab$};
+  \foreach \y in {1,2,3,4,5,6,7}
+    \node[anchor=east, inner sep=1pt] at (0,\y) {$\y$};
+  \fill (-2,6) circle (\puntotransformacion) node[anchor=south west, inner sep=1pt, xshift=1pt, yshift=1pt] {\small $A$};
+  \fill (-4,1) circle (\puntotransformacion) node[anchor=north east, inner sep=1pt, xshift=-1pt, yshift=-1pt] {\small $B$};
+  \fill (-6,4) circle (\puntotransformacion) node[anchor=east, inner sep=1pt, xshift=-1pt] {\small $C$};
+  \fill (-5,5) circle (\puntotransformacion) node[anchor=south east, inner sep=1pt, xshift=-1pt, yshift=1pt] {\small $D$};
+\end{tikzpicture}
+\end{center}
+
+Si al pol\'igono $ABCD$ se le aplica una reflexi\'on respecto a la recta dada por $y = -x$, entonces, \textquestiondown cu\'al es la imagen del punto $A$?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(-2,-6)}
+  \opcion{B}{(6,-2)}
+  \opcion{C}{(-6,2)}
+  \opcion{D}{(2,6)}
+\end{enumerate}
+
+\Needspace{0.85\textheight}
+\item
+Considere la siguiente figura.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+  \def\puntof{0.10}
+  \path[use as bounding box] (-0.8,-1.5) rectangle (20.5,8.5);
+  \draw[step=1, dotted, gray!50, very thin] (0,0) grid (19,7);
+  \draw[->, thick] (-0.3,0) -- (19.8,0);
+  \draw[->, thick] (0,-0.5) -- (0,7.6);
+  \node[anchor=west, inner sep=1pt] at (19.9,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,7.7) {$y$};
+  \fill (0,0) circle (\puntof);
+  \node[anchor=north east, inner sep=2pt] at (-0.1,0) {$P$};
+  \foreach \x in {1,2,...,19}
+    \node[anchor=north, inner sep=1.5pt, font=\tiny] at (\x,0) {$\x$};
+  \foreach \y in {1,2,...,7}
+    \node[anchor=east, inner sep=1pt, font=\tiny] at (0,\y) {$\y$};
+  \draw[black!85, densely dashed] (0,0) -- (10,4);
+  \draw[black!85, densely dashed] (0,0) -- (14,6);
+  \draw[thick] (6,0) -- (5,2) -- (7,3) -- (9,0) -- cycle;
+  \fill (6,0) circle (\puntof) node[above, inner sep=2pt, xshift=6pt, font=\small] {$A$};
+  \fill (5,2) circle (\puntof) node[above left, inner sep=1pt, font=\small] {$B$};
+  \fill (7,3) circle (\puntof) node[above, inner sep=2pt, font=\small] {$C$};
+  \fill (9,0) circle (\puntof) node[above, inner sep=2pt, xshift=6pt, font=\small] {$D$};
+  \draw[thick] (12,0) -- (10,4) -- (14,6) -- (18,0) -- cycle;
+  \fill (12,0) circle (\puntof) node[above, inner sep=2pt, xshift=6pt, font=\small] {$E$};
+  \fill (10,4) circle (\puntof) node[above left, inner sep=1pt, font=\small] {$F$};
+  \fill (14,6) circle (\puntof) node[above, inner sep=2pt, font=\small] {$G$};
+  \fill (18,0) circle (\puntof) node[above, inner sep=2pt, xshift=6pt, font=\small] {$H$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con los datos de la figura, el cuadril\'atero $EFGH$ con respecto al cuadril\'atero $ABCD$ presenta una homotecia de raz\'on
+
+\begin{enumerate}[label=\Alph*)]
+  \item $k = 2$
+  \item $k = 6$
+  \item $k = \dfrac{1}{2}$
+  \item $k = \dfrac{1}{3}$
+\end{enumerate}
+
+\Needspace{0.48\textheight}
+\item
+En una aplicaci\'on de mapas, la ubicaci\'on de una c\'amara de seguridad se representa por el punto $P(3,-2)$ en un plano cartesiano. Para ajustar la orientaci\'on del mapa en la pantalla, el sistema aplica una rotaci\'on de $90^{\circ}$ en sentido antihorario alrededor del origen.
+
+\textquestiondown Cu\'ales son las coordenadas del punto que representa la nueva ubicaci\'on de la c\'amara en la pantalla?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(-2,-3)}
+  \opcion{B}{(2,3)}
+  \opcion{C}{(-3,2)}
+  \opcion{D}{(3,2)}
+\end{enumerate}
+
+% ── Bloque 2 – Relaciones y Álgebra ──────────────────────────────────────────
+
+\Needspace{0.52\textheight}
+\item
+La cantidad ``$D$'' de descargas diarias de una aplicaci\'on deportiva, en miles, est\'a dada por:
+\[D(t) = 250t^3 + 500\]
+donde ``$t$'' representa el tiempo en semanas transcurridas desde su lanzamiento, con $0 < t \leq 10$. \textquestiondown Cu\'antas semanas despu\'es de su lanzamiento la aplicaci\'on alcanz\'o las $54\,500$ miles de descargas diarias?
+
+\begin{enumerate}[label=\Alph*)]
+  \item 4
+  \item 5
+  \item 7
+  \opcion{D}{6}
+\end{enumerate}
+
+\Needspace{0.58\textheight}
+\item
+La funci\'on $h$, que determina el ingreso mensual en colones $h(n)$ obtenido en un taller de reparaciones por atender ``$n$'' clientes, est\'a dada por $h(n) = 15\,000n$, con $0 < n \leq 200$. Asimismo, la funci\'on $n$, que determina la cantidad mensual $n(m)$ de clientes atendidos en ese taller, est\'a dada por $n(m) = 4m + 2$, donde ``$m$'' representa el tiempo en meses desde que el taller inici\'o operaciones, con $1 < m \leq 12$.
+
+De acuerdo con la informaci\'on anterior, si en ese taller se requiere conocer el contenido de la funci\'on $(h \circ n)$ que determina el ingreso mensual en colones en funci\'on del tiempo ``$m$'', entonces, \textquestiondown cu\'al es el criterio de $(h \circ n)$?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $(h \circ n)(m) = 60\,000m$
+  \item $(h \circ n)(m) = 60\,000m + 2$
+  \opcion{C}{(h \circ n)(m) = 60\,000m + 30\,000}
+  \item $(h \circ n)(m) = 4m + 17\,000$
+\end{enumerate}
+
+\Needspace{0.82\textheight}
+\item
+La siguiente representaci\'on gr\'afica corresponde a la temperatura $T(h)$ en grados Celsius al interior de un invernadero de plantas, en funci\'on de las horas del d\'ia ``$h$'', con $6 < h \leq 18$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.42]
+  \def\puntog{0.19}
+  \path[use as bounding box] (-3.2,-2.8) rectangle (22,30);
+  \draw[->, thick] (-0.5,0) -- (20.5,0);
+  \draw[->, thick] (0,-0.5) -- (0,28.5);
+  \node[anchor=west, inner sep=1pt] at (20.6,0) {$h$};
+  \node[anchor=south, inner sep=1pt] at (0,28.7) {$T(h)$};
+  \foreach \x in {6,10,14,18}
+    \draw (\x,0.2) -- (\x,-0.2) node[below, inner sep=2pt, font=\small] {$\x$};
+  \foreach \y/\lab in {5/5,10/10,20/20,25/25}
+    \draw (0.2,\y) -- (-0.2,\y) node[left, inner sep=2pt, font=\small] {$\lab$};
+  \draw[densely dashed, black!85] (6,0) -- (6,5) -- (0,5);
+  \draw[densely dashed, black!85] (10,0) -- (10,25) -- (0,25);
+  \draw[densely dashed, black!85] (14,0) -- (14,10) -- (0,10);
+  \draw[densely dashed, black!85] (18,0) -- (18,20) -- (0,20);
+  \draw[very thick] (6,5) -- (10,25) -- (14,10) -- (18,20);
+  \filldraw[fill=white, draw=black, very thick] (6,5) circle (\puntog);
+  \fill (10,25) circle (\puntog);
+  \fill (14,10) circle (\puntog);
+  \fill (18,20) circle (\puntog);
+  \node[rotate=90, anchor=south, font=\footnotesize] at (-2.7,14) {Temperatura (\textdegree C)};
+  \node[anchor=north, font=\footnotesize] at (12,-2.2) {Horas del d\'ia};
+\end{tikzpicture}
+\end{center}
+
+En ese d\'ia, la temperatura al interior del invernadero disminuy\'o entre las
+
+\begin{enumerate}[label=\Alph*)]
+  \item 6h y 10h
+  \opcion{B}{10h y 14h}
+  \item 14h y 18h
+  \item 6h y 18h
+\end{enumerate}
+
+\Needspace{0.65\textheight}
+\item
+Considere las siguientes representaciones de dos relaciones:
+
+\begin{center}
+\begin{minipage}[t]{0.42\textwidth}
+\textbf{I.}
+
+\medskip
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & $2$ & $5$ & $9$ \\
+\hline
+$g(x)$ & $4$ & $4$ & $4$ \\
+\hline
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.50\textwidth}
+\textbf{II.}
+
+\medskip
+\begin{tikzpicture}[scale=0.70]
+  \def\puntog{0.10}
+  \path[use as bounding box] (-3.5,-0.8) rectangle (4.8,5.3);
+  \draw[<->, thick] (-3.2,0) -- (4.5,0);
+  \draw[->, thick] (0,-0.5) -- (0,5.1);
+  \node[anchor=west, inner sep=1pt, font=\small] at (4.6,0) {$x$};
+  \node[anchor=south, inner sep=1pt, font=\small] at (0,5.2) {$y$};
+  \draw (3,0.1) -- (3,-0.1) node[below, inner sep=2pt, font=\small] {$3$};
+  \draw[densely dashed, black!85] (3,0) -- (3,4.5);
+  \draw[->, thick] (3,4) -- (-3.2,4);
+  \fill (3,4) circle (\puntog);
+  \draw[->, thick] (3,1.5) -- (4.5,1.5);
+  \fill (3,1.5) circle (\puntog);
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al o cu\'ales representaciones pueden corresponder a una funci\'on?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Solo la II
+  \opcion{B}{Solo la I}
+  \item Ninguna
+  \item Ambas
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+La siguiente representaci\'on gr\'afica corresponde al costo de env\'io $C(p)$ en colones que cobra un servicio de mensajer\'ia, en funci\'on de la masa $p$ en kilogramos del paquete a enviar.
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.52, yscale=1.00]
+  \def\puntog{0.12}
+  \path[use as bounding box] (-2.8,-1.0) rectangle (22.5,6.5);
+  \draw[->, thick] (-0.3,0) -- (22,0);
+  \draw[->, thick] (0,-0.3) -- (0,6);
+  \node[anchor=west, inner sep=1pt, font=\small] at (22.2,0) {$p$};
+  \node[anchor=south, inner sep=1pt, font=\small] at (0,6.1) {$C(p)$};
+  \foreach \x/\lab in {3/3,6/6,12/12,20/20}
+    \draw (\x,0.07) -- (\x,-0.07) node[below, inner sep=2pt, font=\small] {$\lab$};
+  \foreach \y/\lab in {0.9/{900},1.8/{1\,800},3.0/{3\,000},5.0/{5\,000}}
+    \draw (0.12,\y) -- (-0.12,\y) node[left, inner sep=2pt, font=\small] {$\lab$};
+  \draw[densely dashed, black!85] (3,0) -- (3,1.8);
+  \draw[densely dashed, black!85] (6,0) -- (6,3.0);
+  \draw[densely dashed, black!85] (12,0) -- (12,5.0);
+  \draw[densely dashed, black!85] (20,0) -- (20,5.0);
+  \draw[densely dashed, black!85] (0,0.9) -- (3,0.9);
+  \draw[densely dashed, black!85] (0,1.8) -- (6,1.8);
+  \draw[densely dashed, black!85] (0,3.0) -- (12,3.0);
+  \draw[densely dashed, black!85] (0,5.0) -- (20,5.0);
+  \draw[very thick] (0,0.9) -- (3,0.9);
+  \draw[very thick] (3,1.8) -- (6,1.8);
+  \draw[very thick] (6,3.0) -- (12,3.0);
+  \draw[very thick] (12,5.0) -- (20,5.0);
+  \filldraw[fill=white, draw=black, very thick] (0,0.9) circle (\puntog);
+  \filldraw[fill=white, draw=black, very thick] (3,1.8) circle (\puntog);
+  \filldraw[fill=white, draw=black, very thick] (6,3.0) circle (\puntog);
+  \filldraw[fill=white, draw=black, very thick] (12,5.0) circle (\puntog);
+  \fill (3,0.9) circle (\puntog);
+  \fill (6,1.8) circle (\puntog);
+  \fill (12,3.0) circle (\puntog);
+  \fill (20,5.0) circle (\puntog);
+  \node[rotate=90, anchor=south, font=\footnotesize] at (-2.3,3) {Costo de env\'io (colones)};
+  \node[anchor=north, font=\footnotesize] at (10,-0.8) {Masa (kg)};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, si se enviar\'a un paquete con masa de 6~kg, \textquestiondown cu\'al es el costo de env\'io que se deber\'a pagar?
+
+\begin{enumerate}[label=\Alph*)]
+  \item 900 colones
+  \opcion{B}{1\,800 colones}
+  \item 3\,000 colones
+  \item 5\,000 colones
+\end{enumerate}
+
+% ── Afirmación 2 – Inversa de una función ─────────────────────────────────────
+
+\Needspace{0.95\textheight}
+\item
+La siguiente representaci\'on gr\'afica corresponde a la funci\'on $f$, que determina la tensi\'on $f(t)$ en voltios (V) en la red el\'ectrica de un edificio industrial, en funci\'on del tiempo $t$ en minutos desde que se reinici\'o el suministro, con $0 \leq t \leq 3$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.62]
+  \def\punto{0.10}
+  \path[use as bounding box] (-1.2,-0.8) rectangle (4.8,9.8);
+  \draw[->, thick] (-0.5,0) -- (4.5,0) node[anchor=west, inner sep=1pt, font=\small] {$t$};
+  \draw[->, thick] (0,-0.5) -- (0,9.5) node[anchor=south, inner sep=1pt, font=\small] {$f(t)$};
+  \foreach \x in {1,2,3}
+    \draw (\x,0.13) -- (\x,-0.13) node[below, inner sep=2pt, font=\small] {$\x$};
+  \foreach \y in {2,4,6,8}
+    \draw (0.13,\y) -- (-0.13,\y) node[left, inner sep=2pt, font=\small] {$\y$};
+  \draw[densely dashed, black!85] (3,0) -- (3,8) -- (0,8);
+  \draw[very thick] (0,2) -- (3,8);
+  \fill (0,2) circle (\punto);
+  \fill (3,8) circle (\punto);
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, la representaci\'on gr\'afica de $f^{-1}$ corresponde a
+
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{r@{\hspace{0.15cm}}c@{\hspace{0.45cm}}r@{\hspace{0.15cm}}c}
+\raisebox{2.55cm}{\textbf{A)}} &
+\begin{tikzpicture}[scale=0.47]
+  \def\pt{0.13}
+  \path[use as bounding box] (-1,-1) rectangle (10,10);
+  \draw[->, thick] (-0.4,0) -- (4.6,0) node[right, font=\scriptsize] {$x$};
+  \draw[->, thick] (0,-0.4) -- (0,9.5) node[above, font=\scriptsize] {$y$};
+  \foreach \x in {1,2,3} \draw (\x,0.14)--(\x,-0.14) node[below,font=\scriptsize]{$\x$};
+  \foreach \y in {2,4,6,8} \draw (0.14,\y)--(-0.14,\y) node[left,font=\scriptsize]{$\y$};
+  \draw[densely dashed, black!85] (3,0) -- (3,8) -- (0,8);
+  \draw[very thick] (0,2) -- (3,8);
+  \fill (0,2) circle (\pt); \fill (3,8) circle (\pt);
+\end{tikzpicture}
+&
+\raisebox{2.55cm}{\textbf{B)}} &
+\begin{tikzpicture}[scale=0.47]
+  \def\pt{0.13}
+  \path[use as bounding box] (-1,-1) rectangle (10,10);
+  \draw[->, thick] (-0.4,0) -- (9.5,0) node[right, font=\scriptsize] {$x$};
+  \draw[->, thick] (0,-0.4) -- (0,4.5) node[above, font=\scriptsize] {$y$};
+  \foreach \x in {2,4,6,8} \draw (\x,0.14)--(\x,-0.14) node[below,font=\scriptsize]{$\x$};
+  \foreach \y in {1,2,3} \draw (0.14,\y)--(-0.14,\y) node[left,font=\scriptsize]{$\y$};
+  \draw[densely dashed, black!85] (8,0) -- (8,3) -- (0,3);
+  \draw[very thick] (2,0) -- (8,3);
+  \fill (2,0) circle (\pt); \fill (8,3) circle (\pt);
+\end{tikzpicture}
+\\[0.35cm]
+\raisebox{2.55cm}{\textbf{C)}} &
+\begin{tikzpicture}[scale=0.47]
+  \def\pt{0.13}
+  \path[use as bounding box] (-1,-1) rectangle (10,10);
+  \draw[->, thick] (-0.4,0) -- (9.5,0) node[right, font=\scriptsize] {$x$};
+  \draw[->, thick] (0,-0.4) -- (0,4.5) node[above, font=\scriptsize] {$y$};
+  \foreach \x in {2,4,6,8} \draw (\x,0.14)--(\x,-0.14) node[below,font=\scriptsize]{$\x$};
+  \foreach \y in {1,2,3} \draw (0.14,\y)--(-0.14,\y) node[left,font=\scriptsize]{$\y$};
+  \draw[densely dashed, black!85] (2,0) -- (2,3) -- (0,3);
+  \draw[very thick] (2,3) -- (8,0);
+  \fill (2,3) circle (\pt); \fill (8,0) circle (\pt);
+\end{tikzpicture}
+&
+\raisebox{2.55cm}{\textbf{D)}} &
+\begin{tikzpicture}[scale=0.47]
+  \def\pt{0.13}
+  \path[use as bounding box] (-1,-1) rectangle (10,10);
+  \draw[->, thick] (-0.4,0) -- (9.5,0) node[right, font=\scriptsize] {$x$};
+  \draw[->, thick] (0,-0.4) -- (0,4.5) node[above, font=\scriptsize] {$y$};
+  \foreach \x in {2,4,6,8} \draw (\x,0.14)--(\x,-0.14) node[below,font=\scriptsize]{$\x$};
+  \foreach \y in {1,2,3} \draw (0.14,\y)--(-0.14,\y) node[left,font=\scriptsize]{$\y$};
+  \draw[densely dashed, black!85] (8,0) -- (8,3) -- (0,3);
+  \draw[very thick] (0,0) -- (8,3);
+  \fill (0,0) circle (\pt); \fill (8,3) circle (\pt);
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+% Respuesta correcta: B
+
+\Needspace{0.85\textheight}
+\item
+La siguiente representaci\'on gr\'afica corresponde a la funci\'on $g$, que determina la ganancia $g(x)$ en millones de colones de una empresa artesanal, en funci\'on de la cantidad $x$ (en cientos) de art\'iculos producidos, con $0 < x < 6$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+  \def\puntoab{0.12}
+  \path[use as bounding box] (-1.2,-1.0) rectangle (7.8,11.2);
+  \draw[->, thick] (-0.5,0) -- (7.5,0) node[anchor=west, inner sep=1pt, font=\small] {$x$};
+  \draw[->, thick] (0,-0.5) -- (0,10.8) node[anchor=south, inner sep=1pt, font=\small] {$g(x)$};
+  \foreach \x in {1,2,3,4,5,6}
+    \draw (\x,0.14) -- (\x,-0.14) node[below, inner sep=2pt, font=\small] {$\x$};
+  \foreach \y in {3,6,9}
+    \draw (0.14,\y) -- (-0.14,\y) node[left, inner sep=2pt, font=\small] {$\y$};
+  \draw[densely dashed, black!85] (3,0) -- (3,9) -- (0,9);
+  \draw[very thick, domain=0.04:5.96, samples=80] plot (\x, {-(\x-3)^2+9});
+  \filldraw[fill=white, draw=black, very thick] (0,0) circle (\puntoab);
+  \filldraw[fill=white, draw=black, very thick] (6,0) circle (\puntoab);
+  \fill (3,9) circle (\puntoab);
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es un intervalo donde la funci\'on $g$ tiene funci\'on inversa?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $[0,\; 6]$
+  \item $[1,\; 4]$
+  \item $[2,\; 5]$
+  \opcion{D}{[4,\; 6]}
+\end{enumerate}
+
+\Needspace{0.60\textheight}
+\item
+Una distribuidora de productos alimentarios establece que la funci\'on $c$, la cual determina el costo total $c(p)$ en colones de un pedido, est\'a dada por $c(p) = 200p + 400$, donde ``$p$'' representa la cantidad de productos solicitados, con $5 \leq p \leq 20$.
+
+De acuerdo con la informaci\'on anterior, si para verificar la cantidad de productos en un pedido a partir de su costo total se requiere determinar el criterio de la funci\'on $p$, la cual corresponde a la funci\'on inversa de $c$, entonces, \textquestiondown cu\'al opci\'on corresponde a ese criterio?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $p(c) = 200c - 400$
+  \item $p(c) = \dfrac{c + 400}{200}$
+  \opcion{C}{p(c) = \dfrac{c - 400}{200}}
+  \item $p(c) = 200(c - 400)$
+\end{enumerate}
+
+\Needspace{0.62\textheight}
+\item
+En una empresa constructora se establece que la funci\'on $a$, la cual determina el \'area $a(s)$ en metros cuadrados de la secci\'on transversal de una viga de concreto, est\'a dada por $a(s) = 5s^2 + 20$, donde ``$s$'' representa la longitud del lado en metros, con $2 \leq s \leq 8$.
+
+De acuerdo con la informaci\'on anterior, si para determinar la longitud del lado de la secci\'on a partir de su \'area se requiere conocer el criterio de la funci\'on $s$, la cual corresponde a la funci\'on inversa de $a$, entonces, \textquestiondown cu\'al opci\'on corresponde a ese criterio?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $s(a) = \sqrt{\dfrac{a}{5}} - 4$
+  \item $s(a) = \sqrt{\dfrac{a}{5}} - 20$
+  \opcion{C}{s(a) = \sqrt{\dfrac{a}{5} - 4}}
+  \item $s(a) = \dfrac{\sqrt{a - 20}}{5}$
+\end{enumerate}
+
+\Needspace{0.42\textheight}
+\item
+En una comunidad se utiliza una turbina e\'olica para generar electricidad. La potencia $P(v)$, en kilovatios, que produce la turbina est\'a dada por $P(v) = 2\sqrt{v-1}+4$, donde ``$v$'' representa la velocidad del viento en m/s, con $1 \leq v \leq 26$.
+
+De acuerdo con la informaci\'on anterior, si la turbina produce 12 kilovatios, \textquestiondown cu\'al es la velocidad del viento en m/s?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $13$
+  \item $15$
+  \opcion{C}{17}
+  \item $19$
+\end{enumerate}
+
+\Needspace{0.42\textheight}
+\item
+En un experimento de laboratorio se registra la temperatura $T(t)$, en grados Celsius, de una muestra met\'alica al enfriarse en agua. Dicha temperatura est\'a dada por $T(t)=-5\sqrt{t}+50$, donde ``$t$'' representa el tiempo en segundos transcurridos, con $0 < t \leq 100$.
+
+De acuerdo con la informaci\'on anterior, conforme avanza el tiempo de enfriamiento, la temperatura de la muestra
+
+\begin{enumerate}[label=\Alph*)]
+  \item aumenta
+  \opcion{B}{disminuye}
+  \item se mantiene constante
+  \item aumenta y luego disminuye
+\end{enumerate}
+
+\Needspace{0.78\textheight}
+\item
+La siguiente representaci\'on gr\'afica corresponde a la funci\'on $g$, la cual determina la producci\'on $g(x)$ en cientos de unidades de una empresa artesanal, en funci\'on de la cantidad $x$ de empleados disponibles, con $4 \leq x \leq 13$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+  \def\puntoab{0.12}
+  \path[use as bounding box] (-1.2,-0.8) rectangle (15.5,4.5);
+  \draw[->, thick] (-0.5,0) -- (14.5,0) node[anchor=west, inner sep=1pt, font=\small] {$x$};
+  \draw[->, thick] (0,-0.5) -- (0,4.0) node[anchor=south, inner sep=1pt, font=\small] {$g(x)$};
+  \foreach \x in {4,5,8,13}
+    \draw (\x,0.12) -- (\x,-0.12) node[below, inner sep=2pt, font=\small] {$\x$};
+  \foreach \y in {1,2,3}
+    \draw (0.12,\y) -- (-0.12,\y) node[left, inner sep=2pt, font=\small] {$\y$};
+  \draw[densely dashed, black!85] (5,0) -- (5,1);
+  \draw[densely dashed, black!85] (0,1) -- (5,1);
+  \draw[densely dashed, black!85] (8,0) -- (8,2);
+  \draw[densely dashed, black!85] (0,2) -- (8,2);
+  \draw[densely dashed, black!85] (13,0) -- (13,3);
+  \draw[densely dashed, black!85] (0,3) -- (13,3);
+  \draw[very thick, domain=4:13, samples=60] plot (\x, {sqrt(\x-4)});
+  \fill (4,0) circle (\puntoab);
+  \fill (5,1) circle (\puntoab);
+  \fill (8,2) circle (\puntoab);
+  \fill (13,3) circle (\puntoab);
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de las siguientes opciones corresponde al criterio de la funci\'on $g$?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $g(x) = \sqrt{x} - 4$
+  \item $g(x) = \sqrt{x + 4}$
+  \opcion{C}{g(x) = \sqrt{x - 4}}
+  \item $g(x) = \sqrt{x} + 4$
+\end{enumerate}
+
 \end{enumerate}
 
 \end{document}
