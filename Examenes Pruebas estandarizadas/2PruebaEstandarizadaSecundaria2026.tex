@@ -1133,7 +1133,9 @@ De acuerdo con la informaci\'on anterior, si para determinar la longitud del lad
 
 \Needspace{0.42\textheight}
 \item
-En una comunidad se utiliza una turbina e\'olica para generar electricidad. La potencia $P(v)$, en kilovatios, que produce la turbina est\'a dada por $P(v) = 2\sqrt{v-1}+4$, donde ``$v$'' representa la velocidad del viento en m/s, con $1 \leq v \leq 26$.
+En una comunidad se utiliza una turbina e\'olica para generar electricidad. La potencia $P(v)$, en kilovatios, que produce la turbina est\'a dada por
+\[P(v) = 2\sqrt{v-1}+4,\]
+donde ``$v$'' representa la velocidad del viento en m/s, con $1 \leq v \leq 26$.
 
 De acuerdo con la informaci\'on anterior, si la turbina produce 12 kilovatios, \textquestiondown cu\'al es la velocidad del viento en m/s?
 
@@ -1146,7 +1148,9 @@ De acuerdo con la informaci\'on anterior, si la turbina produce 12 kilovatios, \
 
 \Needspace{0.42\textheight}
 \item
-En un experimento de laboratorio se registra la temperatura $T(t)$, en grados Celsius, de una muestra met\'alica al enfriarse en agua. Dicha temperatura est\'a dada por $T(t)=-5\sqrt{t}+50$, donde ``$t$'' representa el tiempo en segundos transcurridos, con $0 < t \leq 100$.
+En un experimento de laboratorio se registra la temperatura $T(t)$, en grados Celsius, de una muestra met\'alica al enfriarse en agua. Dicha temperatura est\'a dada por
+\[T(t)=-5\sqrt{t}+50,\]
+donde ``$t$'' representa el tiempo en segundos transcurridos, con $0 < t \leq 100$.
 
 De acuerdo con la informaci\'on anterior, conforme avanza el tiempo de enfriamiento, la temperatura de la muestra
 
@@ -1192,6 +1196,117 @@ De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de las siguie
   \item $g(x) = \sqrt{x + 4}$
   \opcion{C}{g(x) = \sqrt{x - 4}}
   \item $g(x) = \sqrt{x} + 4$
+\end{enumerate}
+
+% ── AFIRMACIÓN 4 ──────────────────────────────────────────────────────────────
+
+\Needspace{0.78\textheight}
+\item
+La siguiente representaci\'on gr\'afica corresponde a la funci\'on $M$, la cual determina la tarifa $M(k)$, en colones, que cobra una empresa de transporte por un servicio de taxi, en funci\'on de la cantidad $k$ de kil\'ometros recorridos, con $5 \leq k \leq 20$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.50]
+  \def\puntoab{0.22}
+  \path[use as bounding box] (-3.5,-2.2) rectangle (24,14);
+  \draw[->, thick] (-0.5,0) -- (22.5,0) node[anchor=west, inner sep=1pt, font=\small] {$k$};
+  \draw[->, thick] (0,-0.5) -- (0,13.5) node[anchor=south, inner sep=1pt, font=\small] {$M(k)$};
+  \foreach \k in {5,20}
+    \draw (\k,0.15) -- (\k,-0.15) node[below, inner sep=2pt, font=\small] {$\k$};
+  \draw (0.15,3)  -- (-0.15,3)  node[left, inner sep=2pt, font=\small] {$1\,500$};
+  \draw (0.15,12) -- (-0.15,12) node[left, inner sep=2pt, font=\small] {$6\,000$};
+  \draw[densely dashed, black!85] (5,0)  -- (5,3)   -- (0,3);
+  \draw[densely dashed, black!85] (20,0) -- (20,12) -- (0,12);
+  \draw[very thick] (5,3) -- (20,12);
+  \node[right, inner sep=3pt, font=\small] at (13,9.2) {$M$};
+  \fill (5,3)  circle (\puntoab);
+  \fill (20,12) circle (\puntoab);
+  \node[font=\small] at (11,-1.5) {Kil\'ometros};
+  \node[font=\small, rotate=90] at (-2.8,6) {Monto};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es el criterio de $M$?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{M(k) = 300k}
+  \item $M(k) = 1\,500k$
+  \item $M(k) = 300k + 1\,500$
+  \item $M(k) = 300k - 1\,500$
+\end{enumerate}
+
+\Needspace{0.42\textheight}
+\item
+Un fot\'ografo profesional cobra por cada sesi\'on fotogr\'afica una tarifa $F(h)$, en colones, dada por
+\[F(h) = 15\,000h + 5\,000,\]
+donde ``$h$'' representa la cantidad de horas que dura la sesi\'on, con $1 \leq h \leq 8$.
+
+De acuerdo con la informaci\'on anterior, si el monto cobrado por una sesi\'on fue de $65\,000$ colones, \textquestiondown cu\'antas horas dur\'o dicha sesi\'on?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $2$
+  \item $3$
+  \opcion{C}{4}
+  \item $5$
+\end{enumerate}
+
+\Needspace{0.42\textheight}
+\item
+La funci\'on $V$ que determina la cantidad ``$V(d)$'' de visitantes a una exposici\'on de arte por d\'ia est\'a dada por
+\[V(d) = -2d^2 + 12d + 5,\]
+donde ``$d$'' representa el n\'umero de d\'ias transcurridos desde la apertura, con $1 \leq d \leq 6$.
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'antos visitantes llegaron el cuarto d\'ia desde la apertura?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $5$
+  \opcion{B}{21}
+  \item $29$
+  \item $37$
+\end{enumerate}
+
+\Needspace{0.42\textheight}
+\item
+La ganancia $G(n)$, en miles de colones, de una empresa comercial est\'a dada por
+\[G(n) = -n^2 + 10n - 16,\]
+donde ``$n$'' representa la cantidad de empleados contratados, con $2 \leq n \leq 8$.
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la ganancia m\'axima, en miles de colones, que puede obtener la empresa?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $5$
+  \opcion{B}{9}
+  \item $16$
+  \item $25$
+\end{enumerate}
+
+\Needspace{0.45\textheight}
+\item
+La cantidad de habitantes ``$N$'' de cierta ciudad, en miles, est\'a dada por
+\[N(t) = 10e^{0{,}02t},\]
+donde ``$t$'' es el n\'umero de a\~nos transcurridos a partir del a\~no 2000.
+
+\textquestiondown En cu\'antos miles de habitantes se habr\'a incrementado la poblaci\'on para el a\~no 2050?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $10{,}0$
+  \opcion{B}{17{,}2}
+  \item $27{,}2$
+  \item $37{,}2$
+\end{enumerate}
+
+\Needspace{0.42\textheight}
+\item
+El tiempo $T(n)$, en horas, que tarda una m\'aquina en fabricar ``$n$'' art\'iculos est\'a dado por
+\[T(n) = 3\ln(n+1),\]
+con $1 \leq n \leq 100$.
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'antas horas tardar\'a la m\'aquina en fabricar 99 art\'iculos?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $4{,}61$
+  \item $9{,}21$
+  \opcion{C}{13{,}82}
+  \item $27{,}63$
 \end{enumerate}
 
 \end{enumerate}
