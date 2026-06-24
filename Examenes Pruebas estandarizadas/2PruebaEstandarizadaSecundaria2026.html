@@ -45,7 +45,7 @@ table.res th{background:#e8ecff;color:#1f2b61}table.res th,table.res td{border:1
 .correct{color:#176b36;font-weight:800}.wrong{color:#b42318;font-weight:800}.omitted{color:#8a6100;font-weight:800}
 @media(max-width:720px){.wrap{padding:10px}.inicio,.item,.results{padding:14px 12px}.bar{align-items:flex-start;flex-direction:column;gap:6px}.nav .btn,.nav select{width:100%;min-height:44px;font-size:1rem}.opt{min-height:44px;padding:10px 11px}.score{font-size:1.9rem}h1{font-size:1.3rem}.choice-grid{grid-template-columns:1fr}}
 .fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.3;font-size:.95em}.fr>.n{border-bottom:1px solid;padding:0 3px;text-align:center}.fr>.d{padding:0 3px;text-align:center}.sq{display:inline-flex;align-items:stretch;vertical-align:middle}.sq::before{content:"\221A";font-size:1.55em;line-height:0.82;display:flex;align-items:flex-end;padding-bottom:1px;margin-right:1px}.sq>.rad{border-top:1.5px solid;padding:2px 4px 0;display:inline-flex;align-items:center;gap:3px}
-.fig-opt{display:block;margin:2px auto;max-height:52px;height:auto;width:auto}.fig-f{display:inline-block;vertical-align:middle;height:1.6em;width:auto}.fml{text-align:center;margin:0.4em 0}</style>
+.fig-opt{display:block;margin:2px auto;max-height:52px;height:auto;width:auto}.fig-f{display:inline-block;vertical-align:middle;height:1.6em;width:auto}.fml{text-align:center;margin:0.4em 0}.rotulo{border-collapse:collapse;margin:0.5em auto;text-align:center}.rotulo th,.rotulo td{padding:4px 2em;border:1px solid #555}</style>
 </head>
 <body>
 <div class="wrap">
@@ -524,7 +524,25 @@ const ITEMS=[
   q:`<p>El tiempo <em>T</em>(<em>n</em>), en horas, que tarda una máquina en fabricar "<em>n</em>" artículos está dado por</p><p class="fml"><em>T</em>(<em>n</em>) = 3 ln(<em>n</em> + 1),</p><p>con 1 ≤ <em>n</em> ≤ 100.</p><p>De acuerdo con la información anterior, ¿cuántas horas tardará la máquina en fabricar 99 artículos?</p>`,
   A:'4,61', B:'9,21', C:'13,82', D:'27,63',
   r:'C',
-  e:'T(99) = 3 ln(100) ≈ 3 × 4,6052 ≈ 13,82 horas.'}
+  e:'T(99) = 3 ln(100) ≈ 3 × 4,6052 ≈ 13,82 horas.'},
+{n:42,b:'Bloque 2 - Afirmación 5',
+  q:`<p>Las empresas <strong>Alfa</strong> y <strong>Beta</strong> cobran a sus respectivos usuarios un monto total en colones por la mensualidad de un gimnasio. Ese monto total "<em>y</em>" se compone de un monto fijo de inscripción, más un monto adicional correspondiente a la cantidad "<em>x</em>" de clases a las que se asista en el mes, con 0 &lt; <em>x</em> ≤ 5. A continuación, se muestra el rótulo de cada una de esas empresas, el cual contiene la ecuación que se utiliza para cobrar a los clientes el monto total en colones:</p><table class="rotulo"><tr><th>Gimnasio Alfa</th><th>Gimnasio Beta</th></tr><tr><td>2<em>y</em> − 4 000<em>x</em> = 6 000</td><td><em>y</em> − 2 000<em>x</em> = 3 000</td></tr></table><p>De acuerdo con la información anterior, si un usuario asiste a <em>x</em> clases en un mes, entonces el monto total que pagará en el gimnasio Alfa será</p>`,
+  A:'menor al que pagaría si lo hiciera en Beta.',
+  B:'mayor al que pagaría si lo hiciera en Beta.',
+  C:'igual al que pagaría si lo hiciera en Beta.',
+  D:'el doble del que pagaría si lo hiciera en Beta.',
+  r:'C',
+  e:'Alfa: 2y = 4 000x + 6 000 → y = 2 000x + 3 000. Beta: y = 2 000x + 3 000. Ambas ecuaciones son equivalentes, por lo que el monto es igual en ambos gimnasios.'},
+{n:43,b:'Bloque 2 - Afirmación 5',
+  q:`<p>En una tienda de souvenirs se venden llaveros de madera y llaveros de metal. El precio por unidad de los llaveros de madera es de ₡1 500 y el de los llaveros de metal es de ₡2 500. De acuerdo con la información anterior, si un turista pagó un total de ₡14 000 por la compra de 8 llaveros, unos de madera y otros de metal, entonces, ¿cuántos llaveros de madera obtuvo en esa compra?</p>`,
+  A:'2', B:'4', C:'6', D:'8',
+  r:'C',
+  e:'Sistema: m + l = 8 y 1 500m + 2 500l = 14 000. Sustituyendo l = 8 − m: 1 500m + 2 500(8 − m) = 14 000 → −1 000m = −6 000 → m = 6 llaveros de madera.'},
+{n:44,b:'Bloque 2 - Afirmación 5',
+  q:`<p>Un teatro dispone del servicio de palomitas de maíz y refresco, ambos con precios fijos sin importar la cantidad solicitada. Paula paga ₡5 800 por 3 bolsas de palomitas y 1 refresco. Rodrigo paga ₡6 200 por 2 bolsas de palomitas y 3 refrescos. De acuerdo con la información anterior, ¿cuál es el precio en colones de un refresco?</p>`,
+  A:'800', B:'1 000', C:'1 400', D:'1 600',
+  r:'B',
+  e:'Sistema: 3p + r = 5 800 y 2p + 3r = 6 200. De la primera: r = 5 800 − 3p. Sustituyendo: 2p + 3(5 800 − 3p) = 6 200 → −7p = −11 200 → p = 1 600. Entonces r = 5 800 − 4 800 = 1 000 colones.'}
 ];
 let idx=0,res={},flags=new Set(),finished=false,timerId=null,remaining=5760;
 function iniciar(){document.getElementById('inicio').style.display='none';['top','bar','progress','progressText'].forEach(id=>{const el=document.getElementById(id);el.style.display=id==='bar'?'flex':'block'});timerId=setInterval(tick,1000);show(0)}
