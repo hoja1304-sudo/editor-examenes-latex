@@ -1352,6 +1352,99 @@ Un teatro dispone del servicio de palomitas de ma\'iz y refresco, ambos con prec
   \item $1\,600$
 \end{enumerate}
 
+
+\Needspace{0.32\textheight}
+\item
+Una empresa de parqueo cobra a sus clientes una cuota fija de $10\,000$ colones mensuales por veh\'iculo registrado, m\'as $300$ colones por cada hora adicional de parqueo m\'as all\'a de la primera hora, con $1 \leq h \leq 8$ horas adicionales. De acuerdo con la informaci\'on anterior, el mejor modelo para representar la relaci\'on entre el costo mensual total y la cantidad de horas adicionales de parqueo corresponde a una funci\'on
+
+\begin{enumerate}[label=\Alph*)]
+  \item cuadr\'atica.
+  \opcion{B}{\mbox{lineal.}}
+  \item exponencial.
+  \item logar\'itmica.
+\end{enumerate}
+
+\Needspace{0.42\textheight}
+\item
+Considere la siguiente tabla referente a una funci\'on $B$, que representa la cantidad de bacterias (en miles) en un cultivo de laboratorio, en funci\'on del tiempo $t$, en horas, con $0 \leq t \leq 4$.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$t$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$B(t)$ & 1 & 3 & 9 & 27 & 81 \\
+\hline
+\end{tabular}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de los siguientes tipos de funciones es el que mayor se adapta para modelar la cantidad de bacterias que hay en ese cultivo, en funci\'on del tiempo, en horas?
+
+\begin{enumerate}[label=\Alph*)]
+  \item lineal.
+  \item cuadr\'atica.
+  \item logar\'itmica.
+  \opcion{D}{\mbox{exponencial.}}
+\end{enumerate}
+
+\Needspace{0.38\textheight}
+\item
+Considere la siguiente tabla referente a una funci\'on $f$.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & $2$ & $4$ & $8$ \\
+\hline
+$f(x)$ & $1$ & $2$ & $3$ \\
+\hline
+\end{tabular}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es el criterio de $f$ que modela los datos de la tabla?
+
+\begin{enumerate}[label=\Alph*)]
+  \item $f(x) = 2^x$
+  \opcion{B}{f(x) = \log_2(x)}
+  \item $f(x) = 2x^2$
+  \item $f(x) = \log_{\frac{1}{2}}(x)$
+\end{enumerate}
+
+\Needspace{0.50\textheight}
+\item
+En un experimento biol\'ogico, la siguiente representaci\'on gr\'afica muestra la cantidad de organismos $Q(t)$ (en miles) en funci\'on del tiempo $t$, en horas, desde el inicio del experimento, con $1 \leq t \leq 3$:
+
+\begin{center}
+\begin{tikzpicture}[xscale=1.5, yscale=0.6]
+  \path[use as bounding box] (-2,-3) rectangle (5,11);
+  \draw[->, thick] (-0.3,0) -- (4.5,0) node[anchor=west, inner sep=1pt, font=\small] {$t$};
+  \draw[->, thick] (0,-0.5) -- (0,10.5) node[anchor=south, inner sep=1pt, font=\small] {$Q(t)$};
+  \foreach \x in {1,2,3}
+    \draw (\x,0.22) -- (\x,-0.22) node[below, inner sep=2pt, font=\small] {$\x$};
+  \draw (0.1,2) -- (-0.1,2) node[left, inner sep=2pt, font=\small] {$2$};
+  \draw (0.1,4) -- (-0.1,4) node[left, inner sep=2pt, font=\small] {$4$};
+  \draw (0.1,8) -- (-0.1,8) node[left, inner sep=2pt, font=\small] {$8$};
+  \draw[densely dashed, black!85] (1,0) -- (1,2) -- (0,2);
+  \draw[densely dashed, black!85] (2,0) -- (2,4) -- (0,4);
+  \draw[densely dashed, black!85] (3,0) -- (3,8) -- (0,8);
+  \draw[very thick, domain=1:3, samples=60] plot (\x, {2^\x});
+  \node[circle, fill, minimum size=5pt, inner sep=0pt] at (1,2) {};
+  \node[circle, fill, minimum size=5pt, inner sep=0pt] at (2,4) {};
+  \node[circle, fill, minimum size=5pt, inner sep=0pt] at (3,8) {};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, el modelo matem\'atico que mejor se adapta para describir la cantidad de organismos en funci\'on del tiempo corresponde a una funci\'on de tipo
+
+\begin{enumerate}[label=\Alph*)]
+  \item lineal.
+  \item cuadr\'atica.
+  \item logar\'itmica.
+  \opcion{D}{\mbox{exponencial.}}
+\end{enumerate}
+
 \end{enumerate}
 
 \end{document}
