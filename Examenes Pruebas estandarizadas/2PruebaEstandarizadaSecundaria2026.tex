@@ -39,11 +39,11 @@
   \draw[dashed, black!70] (0,\topY) -- (#1,\topY);
   % Marcas y etiquetas (fill=white para visibilidad sobre punteadas)
   \draw (#1,-0.5) -- (#1,0.5);
-  \node[fill=white, anchor=north, inner sep=1.5pt] at (#1,0) {\scriptsize $#1$};
+  \node[fill=white, anchor=north, inner sep=1.5pt] at (#1,0) {\normalsize $#1$};
   \draw (-0.5,#2) -- (0.5,#2);
-  \node[fill=white, anchor=east, inner sep=1.5pt] at (0,#2) {\scriptsize $#2$};
+  \node[fill=white, anchor=east, inner sep=1.5pt] at (0,#2) {\normalsize $#2$};
   \draw (-0.5,\topY) -- (0.5,\topY);
-  \node[fill=white, anchor=east, inner sep=1.5pt] at (0,\topY) {\scriptsize $\topY$};
+  \node[fill=white, anchor=east, inner sep=1.5pt] at (0,\topY) {\normalsize $\topY$};
   % Circunferencia y puntos
   \draw[thick] (#1,#2) circle (3);
   \fill (#1,#2) circle (0.18);
@@ -182,7 +182,7 @@ En el jard\'in de una casa, se instala un aspersor de agua.
 La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra las posiciones, $V$ de la esquina del jard\'in, $A$ del aspersor y $C$ de la circunferencia correspondiente al alcance m\'aximo del chorro de agua lanzado por ese aspersor en metros:
 
 \begin{center}
-\begin{tikzpicture}[scale=0.45]
+\begin{tikzpicture}[scale=0.52]
   \path[use as bounding box] (-9.5,-5) rectangle (8.2,11);
   \draw[<->, thick] (-8.5,0) -- (6,0);
   \draw[<->, thick] (0,-4) -- (0,10);
@@ -196,7 +196,7 @@ La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muest
   \fill (0,0) circle (0.18) node[below left] {$V$};
   \fill (-2,3) circle (0.18) node[anchor=south east, inner sep=1pt] {$A$};
   \fill (2,3) circle (0.18) node[anchor=south west, inner sep=1pt] {$C$};
-  \node[anchor=north, inner sep=1pt] at (-2,0) {$\llap{-}2$};
+  \node[anchor=north, inner sep=2pt, yshift=-2pt] at (-2,0) {$\llap{-}2$};
   \node[anchor=north] at (2,0) {$2$};
   \node[left] at (0,3) {$3$};
 \end{tikzpicture}
@@ -270,7 +270,7 @@ Una empresa de telecomunicaciones modela el alcance de la se\~nal de una antena 
 \Needspace{0.72\textheight}
 \item
 Un sistema de alarma instalado en una bodega emite una se\~nal sonora circular. El alcance m\'aximo de esa se\~nal se modela mediante la circunferencia $C_1$ con la ecuaci\'on:
-\[(x+4)^2+(y-2)^2=9\]
+\[(x+4)^2+(y-2)^2=144\]
 donde las unidades est\'an en metros.
 
 Por razones de mantenimiento, el equipo se traslada $7$ metros hacia el este y $3$ metros hacia el sur.
@@ -278,10 +278,10 @@ Por razones de mantenimiento, el equipo se traslada $7$ metros hacia el este y $
 De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la ecuaci\'on de la circunferencia $C_2$ que representa el nuevo alcance de la se\~nal sonora?
 
 \begin{enumerate}[label=\Alph*)]
-  \opcion{A}{(x-3)^2+(y+1)^2=9}
-  \opcion{B}{(x+3)^2+(y-1)^2=9}
-  \opcion{C}{(x+11)^2+(y-5)^2=9}
-  \opcion{D}{(x-3)^2+(y+1)^2=3}
+  \opcion{A}{(x-3)^2+(y+1)^2=144}
+  \opcion{B}{(x+3)^2+(y-1)^2=144}
+  \opcion{C}{(x+11)^2+(y-5)^2=24}
+  \opcion{D}{(x-3)^2+(y+1)^2=24}
 \end{enumerate}
 
 \Needspace{0.90\textheight}
@@ -291,31 +291,31 @@ Un tel\'efono celular que emite una se\~nal inal\'ambrica circular se ubica en e
 La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra las ubicaciones $T$ del tel\'efono y $C$ de la circunferencia correspondiente al alcance m\'aximo de la se\~nal emitida:
 
 \begin{center}
-\begin{tikzpicture}[scale=0.45]
-  \path[use as bounding box] (-3,-2) rectangle (10,12);
-  \draw[<->, thick] (-2.5,0) -- (8,0);
-  \draw[<->, thick] (0,-1.5) -- (0,11);
-  \node[anchor=west, inner sep=1pt] at (8.05,0) {\rotuloxeste};
-  \node[anchor=south, inner sep=1pt] at (0,11.35) {\rotuloynorte};
-  \draw[thick] (2,5) circle (3);
+\begin{tikzpicture}[scale=0.32]
+  \path[use as bounding box] (-8,-4.5) rectangle (13,14.8);
+  \draw[<->, thick] (-7,0) -- (11.5,0);
+  \draw[<->, thick] (0,-4) -- (0,14);
+  \node[anchor=west, inner sep=1pt] at (11.55,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,14.35) {\rotuloynorte};
+  \draw[thick] (2,5) circle (8);
   \draw[dashed] (2,0) -- (2,5);
-  \draw[dashed] (5,0) -- (5,5);
-  \draw[dashed] (0,5) -- (5,5);
-  \fill (2,5) circle (0.15) node[anchor=south east, inner sep=1pt] {$T$};
-  \fill (5,5) circle (0.15) node[anchor=south west, inner sep=1pt] {$C$};
+  \draw[dashed] (10,0) -- (10,5);
+  \draw[dashed] (0,5) -- (10,5);
+  \fill (2,5) circle (0.22) node[anchor=south east, inner sep=1pt] {$T$};
+  \fill (10,5) circle (0.22) node[anchor=south west, inner sep=1pt] {$C$};
   \node[anchor=north] at (2,0) {$2$};
-  \node[anchor=north] at (5,0) {$5$};
+  \node[anchor=north] at (10,0) {$10$};
   \node[left] at (0,5) {$5$};
 \end{tikzpicture}
 \end{center}
 
-De acuerdo con la informaci\'on anterior, si ese tel\'efono se traslada $4$ metros hacia la izquierda y $5$ metros hacia el sur, \textquestiondown cu\'al es la representaci\'on algebraica, cuyas unidades est\'an en metros, de la circunferencia correspondiente al alcance m\'aximo de la se\~nal en su nueva ubicaci\'on?
+De acuerdo con la informaci\'on anterior, si ese tel\'efono se traslada $4$ metros al oeste y $5$ metros al norte, \textquestiondown cu\'al es la representaci\'on algebraica, cuyas unidades est\'an en metros, de la circunferencia correspondiente al alcance m\'aximo de la se\~nal en su nueva ubicaci\'on?
 
 \begin{enumerate}[label=\Alph*)]
-  \opcion{A}{(x-2)^2+y^2=9}
-  \opcion{B}{(x+2)^2+y^2=9}
-  \opcion{C}{(x+2)^2+y^2=3}
-  \opcion{D}{(x+2)^2+(y-5)^2=9}
+  \opcion{A}{(x-2)^2+(y-10)^2=64}
+  \opcion{B}{(x+2)^2+(y-10)^2=64}
+  \opcion{C}{(x+2)^2+(y+10)^2=16}
+  \opcion{D}{(x+2)^2+(y-10)^2=16}
 \end{enumerate}
 
 \Needspace{0.92\textheight}
