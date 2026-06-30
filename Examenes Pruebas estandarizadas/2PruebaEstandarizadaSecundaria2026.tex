@@ -921,6 +921,7 @@ $g(x)$ & $4$ & $4$ & $4$ \\
   \draw (0.1,2) -- (-0.1,2) node[left, inner sep=2pt, font=\small] {$2$};
   \draw (0.1,8) -- (-0.1,8) node[left, inner sep=2pt, font=\small] {$8$};
   \draw[densely dashed, black!85] (3,0) -- (3,8.5);
+  \draw[densely dashed, black!85] (0,2) -- (3,2);
   \draw[->, thick] (3,8) -- (-3.2,8);
   \fill (3,8) circle (\puntog);
   \draw[->, thick] (3,2) -- (4.5,2);
@@ -1409,7 +1410,7 @@ De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es el criteri
   \item $f(x) = 2^x$
   \opcion{B}{f(x) = \log_2(x)}
   \item $f(x) = 2x^2$
-  \item $f(x) = \log_{\frac{1}{2}}(x)$
+  \item $f(x) = \dfrac{x}{2}$
 \end{enumerate}
 
 \Needspace{0.50\textheight}
@@ -1715,19 +1716,19 @@ Los siguientes diagramas de caja muestran la distribuci\'on de puntajes obtenido
   \node[right, font=\footnotesize] at (104,0) {Puntaje};
   \node[left, font=\small] at (26,1) {\textbf{A}};
   \node[left, font=\small] at (26,3) {\textbf{B}};
-  % Grupo A: min=30, Q1=45, mediana=60, Q3=75, max=95
-  \draw (30,1) -- (45,1);
-  \draw (75,1) -- (95,1);
+  % Grupo A: min=30, Q1=40, mediana=60, Q3=80, max=95
+  \draw (30,1) -- (40,1);
+  \draw (80,1) -- (95,1);
   \draw (30,0.68) -- (30,1.32);
   \draw (95,0.68) -- (95,1.32);
-  \draw (45,0.52) rectangle (75,1.48);
+  \draw (40,0.52) rectangle (80,1.48);
   \draw[very thick] (60,0.52) -- (60,1.48);
-  % Grupo B: min=40, Q1=58, mediana=70, Q3=80, max=90
-  \draw (40,3) -- (58,3);
+  % Grupo B: min=40, Q1=50, mediana=70, Q3=80, max=90
+  \draw (40,3) -- (50,3);
   \draw (80,3) -- (90,3);
   \draw (40,2.68) -- (40,3.32);
   \draw (90,2.68) -- (90,3.32);
-  \draw (58,2.52) rectangle (80,3.48);
+  \draw (50,2.52) rectangle (80,3.48);
   \draw[very thick] (70,2.52) -- (70,3.48);
 \end{tikzpicture}
 \end{center}
