@@ -1,7 +1,9 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{amsmath, amssymb}
 \usepackage{geometry}
 \usepackage{enumitem}
@@ -9,7 +11,7 @@
 \usepackage{tikz}
 \usetikzlibrary{babel}
 
-\geometry{letterpaper, margin=2cm}
+\geometry{letterpaper, top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
 \hyphenpenalty=10000
@@ -211,36 +213,39 @@ De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la represe
 
 \Needspace{0.88\textheight}
 \item
-Una empresa instala un enrutador de Wi-Fi en el punto $E$ del plano de la oficina, donde las unidades est\'an en metros. El enrutador emite una se\~nal de $10$ metros a la redonda.
+Considere el siguiente contexto:
 
-Cuatro computadoras est\'an ubicadas en los puntos $P(11,2)$, $Q(3,14)$, $R(-3,9)$ y $S(8,9)$.
+Adri\'an (A), Blanca (B) y C\'esar (C) son guardaparques de una regi\'on forestal. Cada uno est\'a a cargo de una estaci\'on de monitoreo, las cuales se ubican seg\'un el siguiente eje de coordenadas, donde las medidas se dan en kil\'ometros. Los guardaparques usan transmisores de largo alcance para reportar su ubicaci\'on entre s\'i:
 
-La siguiente representaci\'on gr\'afica muestra la ubicaci\'on del enrutador y la circunferencia correspondiente al alcance m\'aximo de la se\~nal:
+Si Blanca explora un lugar de la reserva, ubicado en la posici\'on $(6,-3)$, y aun as\'i logra comunicarse con C\'esar, utilizando el transmisor, entonces, \textquestiondown cu\'al es una posible ecuaci\'on que representa el alcance, del transmisor de la nueva posici\'on de Blanca con relaci\'on a C\'esar?
 
 \begin{center}
-\begin{tikzpicture}[scale=0.18]
-  \path[use as bounding box] (-11,-12) rectangle (18.5,17);
-  \draw[<->, thick] (-10,0) -- (16,0);
-  \draw[<->, thick] (0,-11) -- (0,16);
-  \node[anchor=west, inner sep=1pt] at (16.05,0) {\small\rotuloxeste};
-  \node[anchor=south, inner sep=1pt] at (0,16.35) {\small\rotuloynorte};
-  \draw[thick] (3,2) circle (10);
-  \draw[dashed] (3,0) -- (3,2);
-  \draw[dashed] (0,2) -- (3,2);
-  \fill (3,2) circle (\puntografico);
-  \node[anchor=south, inner sep=1pt, yshift=3pt] at (3,2) {$E$};
-  \node[anchor=north] at (3,0) {$3$};
-  \node[left] at (0,2) {$2$};
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-6.1,-5.4) rectangle (6.6,6.2);
+  \draw[<->, thick] (-5.7,0) -- (5.9,0);
+  \draw[<->, thick] (0,-5.0) -- (0,5.8);
+  \draw[thick] (0,0) circle (5);
+  \draw[dashed] (-3,0) -- (-3,4) -- (0,4);
+  \draw[dashed] (3,0) -- (3,-2) -- (0,-2);
+  \draw[thick] (-3,4) -- (0,0) -- (3,-2);
+  \fill (-3,4) circle (\puntografico);
+  \fill (0,0) circle (\puntografico);
+  \fill (3,-2) circle (\puntografico);
+  \node[anchor=south east, inner sep=1pt, xshift=-1pt, yshift=1pt] at (-3,4) {$B$};
+  \node[anchor=south east, inner sep=1pt] at (0,0) {$C$};
+  \node[anchor=north west, inner sep=1pt, xshift=1pt, yshift=-1pt] at (3,-2) {$A$};
+  \node[anchor=north, inner sep=1pt] at (-3,0) {$-3$};
+  \node[anchor=north, inner sep=1pt] at (3,0) {$3$};
+  \node[anchor=west, inner sep=1pt] at (0,4) {$4$};
+  \node[anchor=east, inner sep=1pt] at (0,-2) {$-2$};
 \end{tikzpicture}
 \end{center}
 
-De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de esas computadoras se debe reubicar para que tenga se\~nal Wi-Fi del enrutador?
-
 \begin{enumerate}[label=\Alph*)]
-  \item $Q$
-  \item $S$
-  \item $P$
-  \item $R$
+  \opcion{A}{(x+6)^2+(y-3)^2=9}
+  \opcion{B}{(x-6)^2+(y+3)^2=9}
+  \opcion{C}{(x+6)^2+(y-3)^2=45}
+  \opcion{D}{(x-6)^2+(y+3)^2=45}
 \end{enumerate}
 
 \Needspace{0.88\textheight}
