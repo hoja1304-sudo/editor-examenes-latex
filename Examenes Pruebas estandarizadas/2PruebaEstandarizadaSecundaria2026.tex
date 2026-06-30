@@ -182,7 +182,7 @@ En el jard\'in de una casa, se instala un aspersor de agua.
 La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra las posiciones, $V$ de la esquina del jard\'in, $A$ del aspersor y $C$ de la circunferencia correspondiente al alcance m\'aximo del chorro de agua lanzado por ese aspersor en metros:
 
 \begin{center}
-\begin{tikzpicture}[scale=0.4]
+\begin{tikzpicture}[scale=0.45]
   \path[use as bounding box] (-9.5,-5) rectangle (8.2,11);
   \draw[<->, thick] (-8.5,0) -- (6,0);
   \draw[<->, thick] (0,-4) -- (0,10);
@@ -196,7 +196,7 @@ La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muest
   \fill (0,0) circle (0.18) node[below left] {$V$};
   \fill (-2,3) circle (0.18) node[anchor=south east, inner sep=1pt] {$A$};
   \fill (2,3) circle (0.18) node[anchor=south west, inner sep=1pt] {$C$};
-  \node[anchor=north] at (-2,0) {$-2$};
+  \node[anchor=north, inner sep=1pt] at (-2,0) {$\llap{-}2$};
   \node[anchor=north] at (2,0) {$2$};
   \node[left] at (0,3) {$3$};
 \end{tikzpicture}
@@ -221,18 +221,18 @@ Si Blanca explora un lugar de la reserva, ubicado en la posici\'on $(6,-3)$, y a
 
 \begin{center}
 \begin{tikzpicture}[scale=0.48]
-  \path[use as bounding box] (-6.1,-5.4) rectangle (6.6,6.2);
+  \path[use as bounding box] (-6.1,-6.2) rectangle (6.6,6.2);
   \draw[<->, thick] (-5.7,0) -- (5.9,0);
-  \draw[<->, thick] (0,-5.0) -- (0,5.8);
+  \draw[<->, thick] (0,-5.8) -- (0,5.8);
   \draw[thick] (0,0) circle (5);
   \draw[dashed] (-3,0) -- (-3,4) -- (0,4);
   \draw[dashed] (3,0) -- (3,-2) -- (0,-2);
   \draw[thick] (-3,4) -- (0,0) -- (3,-2);
-  \fill (-3,4) circle (\puntografico);
-  \fill (0,0) circle (\puntografico);
-  \fill (3,-2) circle (\puntografico);
+  \fill (-3,4) circle (0.14);
+  \fill (0,0) circle (0.14);
+  \fill (3,-2) circle (0.14);
   \node[anchor=south east, inner sep=1pt, xshift=-1pt, yshift=1pt] at (-3,4) {$B$};
-  \node[anchor=south east, inner sep=1pt] at (0,0) {$C$};
+  \node[anchor=north east, inner sep=1pt, xshift=-1pt, yshift=-1pt] at (0,0) {$C$};
   \node[anchor=north west, inner sep=1pt, xshift=1pt, yshift=-1pt] at (3,-2) {$A$};
   \node[anchor=north, inner sep=1pt] at (-3,0) {$-3$};
   \node[anchor=north, inner sep=1pt] at (3,0) {$3$};
