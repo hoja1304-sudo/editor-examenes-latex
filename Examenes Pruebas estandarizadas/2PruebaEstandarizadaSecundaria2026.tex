@@ -883,7 +883,7 @@ En ese d\'ia, la temperatura al interior del invernadero disminuy\'o entre las
 
 \begin{enumerate}[label=\Alph*)]
   \item 6h y 10h
-  \opcion{B}{10h y 14h}
+  \opcion{B}{\text{10h y 14h}}
   \item 14h y 18h
   \item 6h y 18h
 \end{enumerate}
@@ -910,19 +910,21 @@ $g(x)$ & $4$ & $4$ & $4$ \\
 \textbf{II.}
 
 \medskip
-\begin{tikzpicture}[scale=0.70]
+\begin{tikzpicture}[scale=0.46]
   \def\puntog{0.10}
-  \path[use as bounding box] (-3.5,-0.8) rectangle (4.8,5.3);
+  \path[use as bounding box] (-3.5,-0.8) rectangle (4.8,9.3);
   \draw[<->, thick] (-3.2,0) -- (4.5,0);
-  \draw[->, thick] (0,-0.5) -- (0,5.1);
+  \draw[->, thick] (0,-0.5) -- (0,9.0);
   \node[anchor=west, inner sep=1pt, font=\small] at (4.6,0) {$x$};
-  \node[anchor=south, inner sep=1pt, font=\small] at (0,5.2) {$y$};
+  \node[anchor=south, inner sep=1pt, font=\small] at (0,9.1) {$y$};
   \draw (3,0.1) -- (3,-0.1) node[below, inner sep=2pt, font=\small] {$3$};
-  \draw[densely dashed, black!85] (3,0) -- (3,4.5);
-  \draw[->, thick] (3,4) -- (-3.2,4);
-  \fill (3,4) circle (\puntog);
-  \draw[->, thick] (3,1.5) -- (4.5,1.5);
-  \fill (3,1.5) circle (\puntog);
+  \draw (0.1,2) -- (-0.1,2) node[left, inner sep=2pt, font=\small] {$2$};
+  \draw (0.1,8) -- (-0.1,8) node[left, inner sep=2pt, font=\small] {$8$};
+  \draw[densely dashed, black!85] (3,0) -- (3,8.5);
+  \draw[->, thick] (3,8) -- (-3.2,8);
+  \fill (3,8) circle (\puntog);
+  \draw[->, thick] (3,2) -- (4.5,2);
+  \fill (3,2) circle (\puntog);
 \end{tikzpicture}
 \end{minipage}
 \end{center}
@@ -931,18 +933,21 @@ De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al o cu\'ales re
 
 \begin{enumerate}[label=\Alph*)]
   \item Solo la II
-  \opcion{B}{Solo la I}
+  \opcion{B}{\text{Solo la I}}
   \item Ninguna
   \item Ambas
 \end{enumerate}
 
-\Needspace{0.88\textheight}
+\Needspace{0.46\textheight}
 \item
 La siguiente representaci\'on gr\'afica corresponde al costo de env\'io $C(p)$ en colones que cobra un servicio de mensajer\'ia, en funci\'on de la masa $p$ en kilogramos del paquete a enviar.
 
 \begin{center}
 \begin{tikzpicture}[xscale=0.52, yscale=1.00]
-  \def\puntog{0.12}
+  \tikzset{
+    puntoabierto/.style={circle, draw=black, fill=white, very thick, inner sep=0pt, minimum size=4.3pt},
+    puntocerrado/.style={circle, draw=black, fill=black, inner sep=0pt, minimum size=4.3pt}
+  }
   \path[use as bounding box] (-2.8,-1.0) rectangle (22.5,6.5);
   \draw[->, thick] (-0.3,0) -- (22,0);
   \draw[->, thick] (0,-0.3) -- (0,6);
@@ -964,14 +969,14 @@ La siguiente representaci\'on gr\'afica corresponde al costo de env\'io $C(p)$ e
   \draw[very thick] (3,1.8) -- (6,1.8);
   \draw[very thick] (6,3.0) -- (12,3.0);
   \draw[very thick] (12,5.0) -- (20,5.0);
-  \filldraw[fill=white, draw=black, very thick] (0,0.9) circle (\puntog);
-  \filldraw[fill=white, draw=black, very thick] (3,1.8) circle (\puntog);
-  \filldraw[fill=white, draw=black, very thick] (6,3.0) circle (\puntog);
-  \filldraw[fill=white, draw=black, very thick] (12,5.0) circle (\puntog);
-  \fill (3,0.9) circle (\puntog);
-  \fill (6,1.8) circle (\puntog);
-  \fill (12,3.0) circle (\puntog);
-  \fill (20,5.0) circle (\puntog);
+  \node[puntoabierto] at (0,0.9) {};
+  \node[puntoabierto] at (3,1.8) {};
+  \node[puntoabierto] at (6,3.0) {};
+  \node[puntoabierto] at (12,5.0) {};
+  \node[puntocerrado] at (3,0.9) {};
+  \node[puntocerrado] at (6,1.8) {};
+  \node[puntocerrado] at (12,3.0) {};
+  \node[puntocerrado] at (20,5.0) {};
   \node[rotate=90, anchor=south, font=\footnotesize] at (-2.3,3) {Costo de env\'io (colones)};
   \node[anchor=north, font=\footnotesize] at (10,-0.8) {Masa (kg)};
 \end{tikzpicture}
@@ -981,7 +986,7 @@ De acuerdo con la informaci\'on anterior, si se enviar\'a un paquete con masa de
 
 \begin{enumerate}[label=\Alph*)]
   \item 900 colones
-  \opcion{B}{1\,800 colones}
+  \opcion{B}{\text{1\,800 colones}}
   \item 3\,000 colones
   \item 5\,000 colones
 \end{enumerate}
