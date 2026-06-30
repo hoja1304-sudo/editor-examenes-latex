@@ -543,7 +543,7 @@ La medida del lado de cada cuadrado de la cuadr\'icula es $10\ \text{cm}$.
 
 \begin{tikzpicture}[scale=0.72]
   \path[use as bounding box] (-0.8,-0.8) rectangle (9.2,8.2);
-  \draw[step=1, dotted, black!68] (0,0) grid (8,7);
+  \draw[step=1, dotted, black!82] (0,0) grid (8,7);
   \draw[<->, thick] (-0.4,0) -- (8.6,0);
   \draw[<->, thick] (0,-0.4) -- (0,7.6);
   \node[anchor=west, inner sep=1pt] at (8.65,0) {$x$};
@@ -579,7 +579,7 @@ La medida del lado de cada cuadrado de la cuadr\'icula es $1\ \text{m}$.
 
 \begin{tikzpicture}[scale=0.76]
   \path[use as bounding box] (-0.8,-0.8) rectangle (6.8,6.4);
-  \draw[step=1, dotted, gray!85] (0,0) grid (6,6);
+  \draw[step=1, dotted, black!70] (0,0) grid (6,6);
   \draw[<->, thick] (-0.4,0) -- (6.4,0);
   \draw[<->, thick] (0,-0.4) -- (0,6.4);
   \node[anchor=west, inner sep=1pt] at (6.45,0) {$x$};
@@ -695,7 +695,7 @@ De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de esas recta
   \item $n$
 \end{enumerate}
 
-\Needspace{0.92\textheight}
+\Needspace{0.46\textheight}
 \item
 En el dise\~no de un parque se desea ubicar dos postes de iluminaci\'on de manera sim\'etrica con respecto a un sendero rectil\'ineo. En el plano, el sendero est\'a representado por la recta $r$, y el poste $P$ est\'a ubicado como se muestra en la siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros:
 
@@ -765,14 +765,14 @@ Si al pol\'igono $ABCD$ se le aplica una reflexi\'on respecto a la recta dada po
   \opcion{D}{(2,6)}
 \end{enumerate}
 
-\Needspace{0.85\textheight}
+\Needspace{0.50\textheight}
 \item
 Considere la siguiente figura.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.65]
+\begin{tikzpicture}[scale=0.58]
   \def\puntof{0.10}
-  \path[use as bounding box] (-0.8,-1.5) rectangle (20.5,8.5);
+  \path[use as bounding box] (-0.8,-1.0) rectangle (20.5,8.0);
   \draw[step=1, dotted, gray!50, very thin] (0,0) grid (19,7);
   \draw[->, thick] (-0.3,0) -- (19.8,0);
   \draw[->, thick] (0,-0.5) -- (0,7.6);
@@ -781,9 +781,9 @@ Considere la siguiente figura.
   \fill (0,0) circle (\puntof);
   \node[anchor=north east, inner sep=2pt] at (-0.1,0) {$P$};
   \foreach \x in {1,2,...,19}
-    \node[anchor=north, inner sep=1.5pt, font=\tiny] at (\x,0) {$\x$};
+    \node[anchor=north, inner sep=1.5pt, font=\scriptsize] at (\x,0) {$\x$};
   \foreach \y in {1,2,...,7}
-    \node[anchor=east, inner sep=1pt, font=\tiny] at (0,\y) {$\y$};
+    \node[anchor=east, inner sep=1pt, font=\scriptsize] at (0,\y) {$\y$};
   \draw[black!85, densely dashed] (0,0) -- (10,4);
   \draw[black!85, densely dashed] (0,0) -- (14,6);
   \draw[thick] (6,0) -- (5,2) -- (7,3) -- (9,0) -- cycle;
