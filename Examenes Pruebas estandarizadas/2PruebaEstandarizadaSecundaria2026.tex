@@ -24,14 +24,21 @@
 
 % Gráficas de circunferencia para opciones del ítem 4
 % #1,#2 = centro; punto superior = (#1, #2+3)
+% Los límites de los ejes se calculan a partir del círculo (radio 3 fijo),
+% recortando el tramo de eje que no se usa en cada opción. La figura se
+% centra por línea base para que la tabla externa alinee las letras.
 \newcommand{\grafcirc}[2]{%
 \pgfmathtruncatemacro{\topY}{#2+3}%
-\begin{tikzpicture}[scale=0.42]
-  \path[use as bounding box] (-7.5,-8) rectangle (10.5,9);
-  \draw[<->, thick] (-6.5,0) -- (6.5,0);
-  \draw[<->, thick] (0,-7.5) -- (0,7.5);
-  \node[anchor=west, inner sep=1pt] at (6.55,0) {\scriptsize\rotuloxeste};
-  \node[anchor=south, inner sep=1pt] at (0,7.85) {\scriptsize\rotuloynorte};
+\pgfmathsetmacro{\xmin}{min(0,#1-3)-1.8}%
+\pgfmathsetmacro{\xmax}{max(0,#1+3)+2.2}%
+\pgfmathsetmacro{\ymin}{min(0,#2-3)-1.3}%
+\pgfmathsetmacro{\ymax}{max(0,\topY)+1.6}%
+\begin{tikzpicture}[scale=0.42, baseline=(current bounding box.center)]
+  \path[use as bounding box] (\xmin,\ymin) rectangle (\xmax,\ymax+1.0);
+  \draw[<->, thick] (\xmin,0) -- (\xmax,0);
+  \draw[<->, thick] (0,\ymin) -- (0,\ymax);
+  \node[anchor=west, inner sep=1pt] at (\xmax+0.05,0) {\scriptsize\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,\ymax+0.05) {\scriptsize\rotuloynorte};
   % Punteadas: eje x-centro, eje y-centro, centro-punto superior, eje y-punto superior
   \draw[dashed, black!70] (#1,0) -- (#1,#2);
   \draw[dashed, black!70] (0,#2) -- (#1,#2);
@@ -52,14 +59,22 @@
 
 % Mini-gráficas para opciones gráficas de traslación
 % #1,#2 = centro; #3 = radio
+% Los límites de los ejes se calculan a partir del círculo, recortando el
+% espacio de ejes que no se utiliza en cada opción. La figura se centra por
+% línea base (centro de su caja), de modo que la tabla externa alinea la
+% letra de cada opción aunque las cajas tengan distinto tamaño.
 \newcommand{\grafcirctrasl}[3]{%
 \pgfmathtruncatemacro{\rxcoordint}{#1+#3}%
-\begin{tikzpicture}[scale=0.30]
-  \path[use as bounding box] (-8,-15) rectangle (19.5,13.5);
-  \draw[<->, thick] (-7,0) -- (14,0);
-  \draw[<->, thick] (0,-14) -- (0,12);
-  \node[anchor=west, inner sep=1pt] at (14.1,0) {\small\rotuloxeste};
-  \node[anchor=south, inner sep=1pt] at (0,12.1) {\small\rotuloynorte};
+\pgfmathsetmacro{\xmin}{min(0,#1-#3)-1.8}%
+\pgfmathsetmacro{\xmax}{max(0,#1+#3)+2.2}%
+\pgfmathsetmacro{\ymin}{min(0,#2-#3)-1.3}%
+\pgfmathsetmacro{\ymax}{max(0,#2+#3)+1.6}%
+\begin{tikzpicture}[scale=0.30, baseline=(current bounding box.center)]
+  \path[use as bounding box] (\xmin,\ymin) rectangle (\xmax,\ymax+1.3);
+  \draw[<->, thick] (\xmin,0) -- (\xmax,0);
+  \draw[<->, thick] (0,\ymin) -- (0,\ymax);
+  \node[anchor=west, inner sep=1pt] at (\xmax+0.05,0) {\small\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,\ymax+0.05) {\small\rotuloynorte};
   \draw[thick] (#1,#2) circle (#3);
   \draw[dashed] (#1,0) -- (#1,#2);
   \draw[dashed] (\rxcoordint,0) -- (\rxcoordint,#2);
@@ -260,9 +275,9 @@ Una empresa de telecomunicaciones modela el alcance de la se\~nal de una antena 
 
 \begin{center}
 \setlength{\tabcolsep}{0pt}
-\begin{tabular}{r@{\hspace{0.3cm}}c@{\hspace{0.6cm}}r@{\hspace{0.3cm}}c}
-\raisebox{3.2cm}{\textbf{A)}} & \grafcirc{3}{4} & \raisebox{3.2cm}{\textbf{B)}} & \grafcirc{-3}{-4} \\[0.5cm]
-\raisebox{3.2cm}{\textbf{C)}} & \grafcirc{-3}{4} & \raisebox{3.2cm}{\textbf{D)}} & \grafcirc{3}{-4}
+\begin{tabular}{r@{\hspace{0.4cm}}c@{\hspace{2.0cm}}r@{\hspace{0.4cm}}c}
+\textbf{A)} & \grafcirc{3}{4} & \textbf{B)} & \grafcirc{-3}{-4} \\[1.3cm]
+\textbf{C)} & \grafcirc{-3}{4} & \textbf{D)} & \grafcirc{3}{-4}
 \end{tabular}
 \end{center}
 
@@ -332,9 +347,9 @@ De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de las siguie
 
 \begin{center}
 \setlength{\tabcolsep}{0pt}
-\begin{tabular}{r@{\hspace{0.15cm}}c@{\hspace{0.15cm}}r@{\hspace{0.15cm}}c}
-\raisebox{4.0cm}{\textbf{A)}} & \grafcirctrasl{2}{3}{7} & \raisebox{4.0cm}{\textbf{B)}} & \grafcirctrasl{8}{3}{4} \\[0.5cm]
-\raisebox{4.0cm}{\textbf{C)}} & \grafcirctrasl{2}{-9}{4} & \raisebox{4.0cm}{\textbf{D)}} & \grafcirctrasl{2}{3}{4}
+\begin{tabular}{r@{\hspace{0.4cm}}c@{\hspace{2.0cm}}r@{\hspace{0.4cm}}c}
+\textbf{A)} & \grafcirctrasl{2}{3}{7} & \textbf{B)} & \grafcirctrasl{8}{3}{4} \\[1.3cm]
+\textbf{C)} & \grafcirctrasl{2}{-9}{4} & \textbf{D)} & \grafcirctrasl{2}{3}{4}
 \end{tabular}
 \end{center}
 
