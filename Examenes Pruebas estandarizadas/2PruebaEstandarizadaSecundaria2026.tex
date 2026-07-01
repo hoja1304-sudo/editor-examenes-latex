@@ -27,7 +27,7 @@
 % Los límites de los ejes se calculan a partir del círculo (radio 3 fijo),
 % recortando el tramo de eje que no se usa en cada opción. La figura se
 % centra por línea base para que la tabla externa alinee las letras.
-\newcommand{\grafcirc}[2]{%
+\newcommand{\grafcirc}[3]{%  % #3 = anchor de la etiqueta A (north west / north east)
 \pgfmathtruncatemacro{\topY}{#2+3}%
 \pgfmathsetmacro{\xmin}{min(0,#1-3)-1.8}%
 \pgfmathsetmacro{\xmax}{max(0,#1+3)+2.2}%
@@ -54,6 +54,7 @@
   % Circunferencia y puntos
   \draw[thick] (#1,#2) circle (3);
   \fill (#1,#2) circle (0.18);
+  \node[fill=white, anchor=#3, inner sep=1pt, font=\small] at (#1,#2) {$A$};
   \fill (#1,\topY) circle (0.18);
 \end{tikzpicture}}
 
@@ -269,15 +270,15 @@ Una empresa de telecomunicaciones modela el alcance de la se\~nal de una antena 
 
 \[(x+3)^2+(y-4)^2=9\]
 
-\textquestiondown Cu\'al de las siguientes representaciones gr\'aficas corresponde a esa circunferencia?
+\textquestiondown Cu\'al de las siguientes representaciones gr\'aficas, donde el punto $A$ representa la ubicaci\'on de la antena de telecomunicaci\'on, corresponde a su representaci\'on gr\'afica?
 
 \vspace{1\baselineskip}
 
 \begin{center}
 \setlength{\tabcolsep}{0pt}
 \begin{tabular}{r@{\hspace{0.4cm}}c@{\hspace{2.0cm}}r@{\hspace{0.4cm}}c}
-\textbf{A)} & \grafcirc{3}{4} & \textbf{B)} & \grafcirc{-3}{-4} \\[1.3cm]
-\textbf{C)} & \grafcirc{-3}{4} & \textbf{D)} & \grafcirc{3}{-4}
+\textbf{A)} & \grafcirc{3}{4}{north west} & \textbf{B)} & \grafcirc{-3}{-4}{north east} \\[2.8cm]
+\textbf{C)} & \grafcirc{-3}{4}{north east} & \textbf{D)} & \grafcirc{3}{-4}{north west}
 \end{tabular}
 \end{center}
 
