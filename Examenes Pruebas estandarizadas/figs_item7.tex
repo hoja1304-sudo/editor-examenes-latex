@@ -4,8 +4,8 @@
 \newcommand{\rotuloxeste}{\mbox{\textit{x} (este)}}
 \newcommand{\rotuloynorte}{\mbox{\textit{y} (norte)}}
 
-% #1=cx, #2=cy, #3=radio, #4=anchor para etiqueta A (south / north)
-\newcommand{\grafcirctrasl}[4]{%
+% #1=cx, #2=cy, #3=radio, #4=anchor etiqueta A, #5=etiqueta origen (N o vacío)
+\newcommand{\grafcirctrasl}[5]{%
 \pgfmathtruncatemacro{\rxcoordint}{#1+#3}%
 \pgfmathsetmacro{\xmin}{min(0,#1-#3)-1.8}%
 \pgfmathsetmacro{\xmax}{max(0,#1+#3)+2.2}%
@@ -23,6 +23,11 @@
   \draw[dashed] (0,#2) -- (\rxcoordint,#2);
   \fill (#1,#2) circle (0.42);
   \node[anchor=#4, inner sep=5pt, font=\small] at (#1,#2) {$A$};
+  \def\grafOrigLabel{#5}\def\grafOrigEmpty{}%
+  \ifx\grafOrigLabel\grafOrigEmpty\else
+    \fill (0,0) circle (0.42);
+    \node[anchor=north east, inner sep=2pt, font=\small] at (0,0) {$#5$};
+  \fi
   \fill (\rxcoordint,#2) circle (0.42);
   \draw (#1,-0.45) -- (#1,0.45);
   \node[anchor=north, inner sep=1.5pt] at (#1,0) {\normalsize $#1$};
@@ -33,8 +38,32 @@
 \end{tikzpicture}}
 
 \begin{document}
-\grafcirctrasl{2}{3}{7}{south}
-\grafcirctrasl{8}{3}{4}{south}
-\grafcirctrasl{2}{-9}{4}{north}
-\grafcirctrasl{2}{3}{4}{south}
+% Página 1: gráfica inicial del ítem 7 (C1 con A en centro y N en origen)
+\begin{tikzpicture}[scale=0.42]
+  \path[use as bounding box] (-1.8,-8.3) rectangle (11.2,2.6);
+  \draw[<->, thick] (-1.8,0) -- (11.2,0);
+  \draw[<->, thick] (0,-8.3) -- (0,2.6);
+  \node[anchor=west, inner sep=1pt] at (11.25,0) {\scriptsize\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,2.65) {\scriptsize\rotuloynorte};
+  \draw[dashed] (5,0) -- (5,-3);
+  \draw[dashed] (9,0) -- (9,-3);
+  \draw[dashed] (0,-3) -- (9,-3);
+  \draw[thick] (5,-3) circle (4);
+  \fill (5,-3) circle (0.18);
+  \node[anchor=north, inner sep=5pt, font=\small] at (5,-3) {$A$};
+  \fill (9,-3) circle (0.18);
+  \fill (0,0) circle (0.18);
+  \node[anchor=north east, inner sep=2pt, font=\small] at (0,0) {$N$};
+  \draw (5,-0.3) -- (5,0.3);
+  \node[anchor=north, inner sep=1.5pt] at (5,0) {\normalsize $5$};
+  \draw (9,-0.3) -- (9,0.3);
+  \node[anchor=north, inner sep=1.5pt] at (9,0) {\normalsize $9$};
+  \draw (-0.3,-3) -- (0.3,-3);
+  \node[anchor=east, inner sep=1.5pt] at (0,-3) {\normalsize $-3$};
+\end{tikzpicture}
+% Páginas 2-5: opciones A, B, C, D con punto N en origen
+\grafcirctrasl{2}{3}{7}{south}{N}
+\grafcirctrasl{8}{3}{4}{south}{N}
+\grafcirctrasl{2}{-9}{4}{north}{N}
+\grafcirctrasl{2}{3}{4}{south}{N}
 \end{document}
