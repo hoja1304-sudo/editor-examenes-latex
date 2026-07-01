@@ -80,14 +80,14 @@
   \draw[dashed] (#1,0) -- (#1,#2);
   \draw[dashed] (\rxcoordint,0) -- (\rxcoordint,#2);
   \draw[dashed] (0,#2) -- (\rxcoordint,#2);
-  \fill (#1,#2) circle (0.42);
+  \fill (#1,#2) circle (0.25);
   \node[anchor=#4, inner sep=5pt, font=\small] at (#1,#2) {$A$};
   \def\grafOrigLabel{#5}\def\grafOrigEmpty{}%
   \ifx\grafOrigLabel\grafOrigEmpty\else
-    \fill (0,0) circle (0.42);
+    \fill (0,0) circle (0.25);
     \node[anchor=north east, inner sep=2pt, font=\small] at (0,0) {$#5$};
   \fi
-  \fill (\rxcoordint,#2) circle (0.42);
+  \fill (\rxcoordint,#2) circle (0.25);
   \draw (#1,-0.45) -- (#1,0.45);
   \node[anchor=north, inner sep=1.5pt] at (#1,0) {\normalsize $#1$};
   \draw (\rxcoordint,-0.45) -- (\rxcoordint,0.45);
@@ -345,14 +345,20 @@ De acuerdo con la informaci\'on anterior, si ese tel\'efono se traslada $4$ metr
 La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, modela el alcance m\'aximo de un aspersor de riego $A$ instalado a cierta distancia de la entrada $N$ de una casa:
 
 \begin{center}
-\begin{tikzpicture}[scale=0.42]
+\begin{tikzpicture}[scale=0.55]
   \path[use as bounding box] (-1.8,-8.3) rectangle (11.2,2.6);
   \draw[<->, thick] (-1.8,0) -- (11.2,0);
   \draw[<->, thick] (0,-8.3) -- (0,2.6);
   \node[anchor=west, inner sep=1pt] at (11.25,0) {\scriptsize\rotuloxeste};
   \node[anchor=south, inner sep=1pt] at (0,2.65) {\scriptsize\rotuloynorte};
-  \draw[dashed] (5,0) -- (5,-3);
-  \draw[dashed] (9,0) -- (9,-3);
+  \draw (5,-0.3) -- (5,0.3);
+  \node[anchor=north, inner sep=1.5pt] at (5,0) {\normalsize $5$};
+  \draw (9,-0.3) -- (9,0.3);
+  \node[anchor=north, inner sep=1.5pt] at (9,0) {\normalsize $9$};
+  \draw (-0.3,-3) -- (0.3,-3);
+  \node[anchor=east, inner sep=1.5pt] at (0,-3) {\normalsize $-3$};
+  \draw[dashed] (5,-1.2) -- (5,-3);
+  \draw[dashed] (9,-1.2) -- (9,-3);
   \draw[dashed] (0,-3) -- (9,-3);
   \draw[thick] (5,-3) circle (4);
   \fill (5,-3) circle (0.18);
@@ -360,12 +366,6 @@ La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, model
   \fill (9,-3) circle (0.18);
   \fill (0,0) circle (0.18);
   \node[anchor=north east, inner sep=2pt, font=\small] at (0,0) {$N$};
-  \draw (5,-0.3) -- (5,0.3);
-  \node[anchor=north, inner sep=1.5pt] at (5,0) {\normalsize $5$};
-  \draw (9,-0.3) -- (9,0.3);
-  \node[anchor=north, inner sep=1.5pt] at (9,0) {\normalsize $9$};
-  \draw (-0.3,-3) -- (0.3,-3);
-  \node[anchor=east, inner sep=1.5pt] at (0,-3) {\normalsize $-3$};
 \end{tikzpicture}
 \end{center}
 
