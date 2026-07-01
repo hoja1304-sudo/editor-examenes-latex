@@ -45,7 +45,10 @@ table.res th{background:#e8ecff;color:#1f2b61}table.res th,table.res td{border:1
 .correct{color:#176b36;font-weight:800}.wrong{color:#b42318;font-weight:800}.omitted{color:#8a6100;font-weight:800}
 @media(max-width:720px){.wrap{padding:10px}.inicio,.item,.results{padding:14px 12px}.bar{align-items:flex-start;flex-direction:column;gap:6px}.nav .btn,.nav select{width:100%;min-height:44px;font-size:1rem}.opt{min-height:44px;padding:10px 11px}.score{font-size:1.9rem}h1{font-size:1.3rem}.choice-grid{grid-template-columns:1fr}}
 .fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.3;font-size:.95em}.fr>.n{border-bottom:1px solid;padding:0 3px;text-align:center}.fr>.d{padding:0 3px;text-align:center}.sq{display:inline-flex;align-items:stretch;vertical-align:middle}.sq::before{content:"\221A";font-size:1.55em;line-height:0.82;display:flex;align-items:flex-end;padding-bottom:1px;margin-right:1px}.sq>.rad{border-top:1.5px solid;padding:2px 4px 0;display:inline-flex;align-items:center;gap:3px}
-.fig-opt{display:block;margin:2px auto;max-height:52px;height:auto;width:auto}.fig-f{display:inline-block;vertical-align:middle;height:1.6em;width:auto}.fml{text-align:center;margin:0.4em 0}.rotulo{border-collapse:collapse;margin:0.5em auto;text-align:center}.rotulo th,.rotulo td{padding:4px 2em;border:1px solid #555}.retro{background:#f0f7ff;border-radius:5px;padding:6px 10px;line-height:1.6;font-size:.82rem;text-align:left}.paso{display:block;margin:2px 0}.paso strong{color:#1a3c7e}</style>
+.fig-opt{display:block;margin:2px auto;max-height:52px;height:auto;width:auto}.fig-f{display:inline-block;vertical-align:middle;height:1.6em;width:auto}.fml{text-align:center;margin:0.4em 0}.rotulo{border-collapse:collapse;margin:0.5em auto;text-align:center}.rotulo th,.rotulo td{padding:4px 2em;border:1px solid #555}.retro{background:#f0f7ff;border-radius:5px;padding:6px 10px;line-height:1.6;font-size:.82rem;text-align:left}.paso{display:block;margin:2px 0}.paso strong{color:#1a3c7e}
+.btn-retro{background:#1a3c7e;color:#fff;border:none;border-radius:4px;padding:7px 14px;cursor:pointer;font-size:.82rem;white-space:nowrap;font-family:inherit}.btn-retro:hover{background:#2d5bb9}
+#retro-view{display:none}
+.retro-nav{margin-bottom:18px}.retro-meta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #1a3c7e}.retro-num{font-size:1.15rem;font-weight:700;color:#1a3c7e}.retro-body{background:#f0f7ff;border-radius:6px;padding:16px 18px;line-height:1.8;font-size:.95rem;text-align:left}</style>
 <script>
 MathJax = {
   tex: {inlineMath: [['\\(','\\)']],
@@ -70,6 +73,7 @@ MathJax = {
 <div id="progressText" class="progress-text">0 de 32 respondidos</div>
 <main id="area"></main>
 <section id="results" class="card results"></section>
+<section id="retro-view" class="card results"></section>
 </div>
 <script>
 const FIG={
@@ -1816,8 +1820,26 @@ function tick(){remaining--;if(remaining<0){const u=new SpeechSynthesisUtterance
 function show(i){if(finished)return;idx=i;const it=ITEMS[i],total=ITEMS.length,answered=Object.keys(res).length;document.getElementById('itemLabel').textContent=`Ítem ${i+1} de ${total}`;document.getElementById('progressBar').style.width=answered/total*100+'%';document.getElementById('progressText').textContent=`${answered} de ${total} respondidos`;const opts=['A','B','C','D'].map(l=>`<button class="opt ${res[i]===l?'sel':''}" onclick="choose('${l}')" id="opt-${l}"><span class="letter">${l})</span><span class="opt-content">${it[l]}</span></button>`).join('');const sel=ITEMS.map((x,j)=>`<option value="${j}" ${j===i?'selected':''}>Ítem ${j+1}${flags.has(j)?' *':''}</option>`).join('');document.getElementById('area').innerHTML=`<article class="card item"><div class="item-head">Ítem ${i+1} | ${it.b}</div><div class="stem">${it.q}</div><div class="options">${opts}</div><div class="mark"><button class="${flags.has(i)?'on':''}" onclick="toggleFlag()">${flags.has(i)?'Marcado':'Marcar para revisar'}</button></div><div class="nav"><button class="btn muted" onclick="show(${i-1})" ${i===0?'disabled':''}>Anterior</button><select onchange="show(Number(this.value))">${sel}</select><button class="btn primary" onclick="show(${i+1})" ${i===total-1?'disabled':''}>Siguiente</button><button class="btn danger" onclick="askFinish()">Finalizar</button></div></article>`}
 function choose(l){res[idx]=l;document.querySelectorAll('.opt').forEach(b=>b.classList.remove('sel'));document.getElementById('opt-'+l).classList.add('sel');const answered=Object.keys(res).length;document.getElementById('progressBar').style.width=answered/ITEMS.length*100+'%';document.getElementById('progressText').textContent=`${answered} de ${ITEMS.length} respondidos`}
 function toggleFlag(){flags.has(idx)?flags.delete(idx):flags.add(idx);show(idx)}
+function showRetro(i){
+  const it=ITEMS[i];
+  const key=it.k||it.r||'?';
+  const r=res[i]||'-';
+  const state=r==='-'?'Omitido':(r===key?'Correcto':'Incorrecto');
+  const cls=r==='-'?'omitted':(r===key?'correct':'wrong');
+  const rv=document.getElementById('retro-view');
+  rv.innerHTML=`<div class="retro-nav"><button class="btn primary" onclick="backToResults()">&#8592; Regresar a Resultados</button></div><div class="retro-meta"><span class="retro-num">Ítem ${i+1}</span><span>Respuesta: <strong>${r}</strong></span><span>Clave: <strong>${key}</strong></span><span class="${cls}">${state}</span></div><div class="retro-body">${it.e||'<em>Sin retroalimentación disponible.</em>'}</div>`;
+  document.getElementById('results').style.display='none';
+  rv.style.display='block';
+  window.scrollTo(0,0);
+  if(window.MathJax)MathJax.typesetPromise([rv]).catch(e=>console.error(e));
+}
+function backToResults(){
+  document.getElementById('retro-view').style.display='none';
+  document.getElementById('results').style.display='block';
+  window.scrollTo(0,0);
+}
 function askFinish(){const miss=ITEMS.length-Object.keys(res).length;if(miss>0&&!confirm(`Tiene ${miss} item(s) sin responder. ¿Desea finalizar de todos modos?`))return;finish()}
-function finish(){if(finished)return;finished=true;if(timerId)clearInterval(timerId);document.getElementById('area').innerHTML='';['top','bar','progress','progressText'].forEach(id=>document.getElementById(id).style.display='none');let ok=0,bad=0,skip=0;ITEMS.forEach((it,i)=>{if(!res[i])skip++;else if(res[i]===it.k)ok++;else bad++});const pct=Math.round(ok/ITEMS.length*100);const rows=ITEMS.map((it,i)=>{const r=res[i]||'-',state=r==='-'?'Omitido':(r===it.k?'Correcto':'Incorrecto'),cls=r==='-'?'omitted':(r===it.k?'correct':'wrong');return `<tr><td>${i+1}</td><td>${r}</td><td>${it.k}</td><td class="${cls}">${state}</td><td><div class="retro">${it.e}</div></td></tr>`}).join('');document.getElementById('results').style.display='block';document.getElementById('results').innerHTML=`<h1>Resultados</h1><div class="score">${pct}%</div><div class="stats"><div class="stat ok"><strong>${ok}</strong><br>Correctas</div><div class="stat bad"><strong>${bad}</strong><br>Incorrectas</div><div class="stat skip"><strong>${skip}</strong><br>Omitidas</div></div><div class="table-wrap"><table class="res"><thead><tr><th>Ítem</th><th>Respuesta</th><th>Clave</th><th>Resultado</th><th>Retroalimentación</th></tr></thead><tbody>${rows}</tbody></table></div><button class="btn primary" style="display:block;margin:18px auto 0" onclick="location.reload()">Reiniciar</button>`;setTimeout(()=>{if(window.MathJax)MathJax.typesetPromise([document.getElementById('results')]).catch(e=>console.error(e))},200)}
+function finish(){if(finished)return;finished=true;if(timerId)clearInterval(timerId);document.getElementById('area').innerHTML='';['top','bar','progress','progressText'].forEach(id=>document.getElementById(id).style.display='none');let ok=0,bad=0,skip=0;ITEMS.forEach((it,i)=>{if(!res[i])skip++;else if(res[i]===it.k)ok++;else bad++});const pct=Math.round(ok/ITEMS.length*100);const rows=ITEMS.map((it,i)=>{const r=res[i]||'-',state=r==='-'?'Omitido':(r===it.k?'Correcto':'Incorrecto'),cls=r==='-'?'omitted':(r===it.k?'correct':'wrong');return `<tr><td>${i+1}</td><td>${r}</td><td>${it.k||it.r||'?'}</td><td class="${cls}">${state}</td><td><button class="btn-retro" onclick="showRetro(${i})">Ver solución</button></td></tr>`}).join('');document.getElementById('results').style.display='block';document.getElementById('results').innerHTML=`<h1>Resultados</h1><div class="score">${pct}%</div><div class="stats"><div class="stat ok"><strong>${ok}</strong><br>Correctas</div><div class="stat bad"><strong>${bad}</strong><br>Incorrectas</div><div class="stat skip"><strong>${skip}</strong><br>Omitidas</div></div><div class="table-wrap"><table class="res"><thead><tr><th>Ítem</th><th>Respuesta</th><th>Clave</th><th>Resultado</th><th>Retroalimentación</th></tr></thead><tbody>${rows}</tbody></table></div><button class="btn primary" style="display:block;margin:18px auto 0" onclick="location.reload()">Reiniciar</button>`;setTimeout(()=>{if(window.MathJax)MathJax.typesetPromise([document.getElementById('results')]).catch(e=>console.error(e))},200)}
 </script>
 </body>
 </html>
