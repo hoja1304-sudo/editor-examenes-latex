@@ -20,6 +20,7 @@ Para crear, corregir o verificar graficas matematicas y estadisticas en LaTeX/Ti
 
 Preferencias de formato para pruebas estandarizadas:
 
+- Usar como formato base de nuevas pruebas: letra tipo Arial en 11 pt y margenes de 1,5 cm en superior, inferior, izquierdo y derecho. En el flujo actual con `pdflatex`, usar una familia sans compatible tipo Arial/Helvetica si no se compila con motor que cargue Arial del sistema.
 - Usar puntos TikZ pequenos y discretos en diagramas: preferir una macro como `\puntografico` con valor cercano a `0.09` en coordenadas TikZ escaladas. Evitar puntos grandes para marcar ubicaciones; los puntos deben servir solo como marcas sutiles, no dominar la figura.
 - Si un item pide que el estudiante determine si puntos dados pertenecen a una circunferencia o region, no dibujar esos puntos en la grafica salvo que el enunciado solicite explicitamente mostrarlos; dejar que el estudiante deduzca su ubicacion a partir de las coordenadas.
 - Alinear las etiquetas numericas con sus lineas punteadas de proyeccion. En el eje `x`, centrar los digitos bajo la proyeccion vertical; si el valor es negativo, dejar el signo menos hacia la izquierda usando una forma como `$\llap{-}12$`. En el eje `y`, centrarlo al lado de la proyeccion horizontal.
@@ -34,7 +35,7 @@ Preferencias de formato para pruebas estandarizadas:
 - En LaTeX, PDF y HTML deben conservarse las tildes, enyes y signos de apertura propios del espanol. Al trasladar texto al HTML, no quitar acentos ni reemplazar `¿` por `?`.
 - Evitar que una palabra quede cortada por separacion silabica o por ajuste de linea. Si una palabra larga no cabe al final del renglon, hacer que pase completa al siguiente renglon; en LaTeX usar una proteccion puntual como `\mbox{palabra}` y en HTML usar una clase equivalente como `nowrap` solo cuando sea necesario.
 - En expresiones con radical, escribir en LaTeX `\sqrt{t+4}` y verificar que en HTML la barra del radical cubra completo `(t+4)` o la expresion que corresponda.
-- En la portada de pruebas, practicas y proyectos nuevos, incluir una autoria discreta y elegante, con tamano reducido y jerarquia visual sobria: "Elaborado por: Alberto Jiménez Ruiz", "Asesor Regional de Matemática", "DRE-Cartago 2026 | DAP". Primero colocarla en LaTeX, compilar el PDF y luego reproducirla en la portada o pantalla inicial del HTML.
+- En la portada de pruebas estandarizadas de secundaria, usar siempre la portada oficial del proyecto ya aprobada: mismo orden, campos de nombre y seccion, secciones de informacion general, materiales necesarios, material que se puede requerir e instrucciones. En cada nueva prueba, modificar solo el titulo segun el numero de practica, con la forma: "[Ordinal] Practica de Secundaria de la Prueba Nacional Estandarizada Sumativa de Matematica 2026." Primero colocar la portada en LaTeX, compilar el PDF y luego reproducirla en la portada o pantalla inicial del HTML.
 
 ## Flujo de creacion de items
 

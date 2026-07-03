@@ -1,0 +1,266 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{helvet}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\newcommand{\opcion}[2]{\item $#2$}
+\newcommand{\puntografico}{0.09}
+\newcommand{\puntodestacado}{0.16}
+\newcommand{\rotuloxeste}{\mbox{x (este)}}
+\newcommand{\rotuloynorte}{\mbox{y (norte)}}
+
+\begin{document}
+
+\begin{center}
+{\large \textbf{Tercera Pr\'actica de Secundaria de la Prueba Nacional Estandarizada Sumativa de Matem\'atica 2026.}}
+\end{center}
+
+\noindent Nombre: \rule{8cm}{0.4pt}\hfill Sec: \rule{3cm}{0.4pt}
+
+\vspace{6pt}
+\noindent\textbf{INFORMACI\'ON GENERAL}
+
+\vspace{4pt}
+\noindent\textbf{Materiales necesarios para la prueba:}
+
+\begin{itemize}[leftmargin=1.6em, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Un cuadernillo que contiene:
+  \begin{itemize}[leftmargin=1.6em, itemsep=0pt, topsep=1pt, parsep=0pt, label=$\blacklozenge$]
+    \item informaci\'on general
+    \item 60 \'items de selecci\'on de respuesta
+  \end{itemize}
+  \item Hoja de respuestas para lectora \'optica
+  \item Bol\'igrafo con tinta azul o negra
+  \item Corrector l\'iquido blanco
+\end{itemize}
+
+\noindent\textbf{Material que se puede requerir para la prueba:}
+
+\begin{itemize}[leftmargin=1.6em, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item Calculadora
+\end{itemize}
+
+\vspace{4pt}
+\noindent\textbf{Instrucciones:}
+
+\begin{enumerate}[leftmargin=*, itemsep=3pt, topsep=2pt, parsep=0pt]
+  \item La Prueba Nacional Estandarizada de secundaria de matem\'atica est\'a compuesta por 60 \'items. Verifique que el cuadernillo que tiene en sus manos est\'e bien compaginado y contenga los 60 \'items de selecci\'on de respuesta correspondientes al componente Matem\'aticas. En caso de encontrar alguna irregularidad, notif\'iquela inmediatamente al delegado de aula; de lo contrario, usted asume la responsabilidad sobre los problemas que se pudieran suscitar por esta causa.
+
+  \item Cada \'item presenta tres posibilidades de respuesta: A), B), C) y D) Solamente una de ellas es la respuesta correcta.
+
+  \item Lea cuidadosamente cada \'item y sus respectivas opciones. Puede utilizar el espacio al lado de cada \'item para realizar cualquier anotaci\'on que necesite, con el fin de hallar la respuesta.
+
+  \item Ning\'un \'item debe aparecer sin respuesta o con m\'as de una marca en la hoja lectora \'optica.
+
+  \item Una vez que haya revisado todas las opciones y tenga seguridad de su elecci\'on, rellene completamente el c\'irculo correspondiente, en la hoja lectora \'optica, tal como se indica en el siguiente ejemplo:
+
+  \begin{center}
+  \begin{tikzpicture}[baseline=-0.5ex]
+    \draw[thick] (0,0) circle (0.38);
+    \node at (0,0) {\textbf{A}};
+    \fill (1.1,0) circle (0.38);
+    \node[white] at (1.1,0) {\textbf{B}};
+    \draw[thick] (2.2,0) circle (0.38);
+    \node at (2.2,0) {\textbf{C}};
+  \end{tikzpicture}
+  \end{center}
+
+  \item Si necesita rectificar la respuesta, utilice corrector l\'iquido blanco sobre el c\'irculo por corregir y rellene con bol\'igrafo de tinta negra o azul la nueva opci\'on seleccionada. Adem\'as, en el espacio de observaciones de la hoja lectora \'optica debe anotar y firmar la correcci\'on efectuada (Ejemplo: 12=A, firma). Se firma solo una vez al final de todas las correcciones.
+\end{enumerate}
+
+\vspace{8pt}
+\noindent Creado por: Alberto Jim\'enez Ruiz asesor regional de Matem\'atica de la DRE-Cartago 2026.
+
+\newpage
+
+\begin{enumerate}[label=\textbf{\arabic*.}, itemsep=2.5cm]
+
+\Needspace{0.98\textheight}
+\item
+En un parque se instalar\'a una c\'amara de seguridad K ubicada a $6$ m al este y $3$ m al sur de la fuente representada por el punto F. La fuente se considera como origen y las unidades est\'an en metros. La c\'amara tiene un alcance m\'aximo de $4$ metros a su alrededor.
+
+\textquestiondown Cu\'al de las siguientes representaciones gr\'aficas corresponde al alcance m\'aximo de esa c\'amara?
+
+\vspace{1\baselineskip}
+
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{r@{\hspace{0.55cm}}c@{\hspace{1.2cm}}r@{\hspace{0.55cm}}c}
+\raisebox{3.45cm}{\textbf{A)}} &
+\begin{tikzpicture}[scale=0.38]
+  \path[use as bounding box] (-2,-9) rectangle (13,5);
+  \draw[<->, thick] (-1,0) -- (12,0);
+  \draw[<->, thick] (0,-8) -- (0,4);
+  \node[anchor=west, inner sep=1pt] at (12.05,0) {\scriptsize\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,4.25) {\scriptsize\rotuloynorte};
+  \draw[thick] (6,-3) circle (4);
+  \draw[dashed] (6,0) -- (6,-3);
+  \draw[dashed] (10,0) -- (10,-3);
+  \draw[dashed] (0,-3) -- (10,-3);
+  \fill (0,0) circle (\puntodestacado) node[below left] {F};
+  \fill (6,-3) circle (\puntodestacado) node[anchor=south east, inner sep=1pt] {K};
+  \fill (10,-3) circle (\puntodestacado);
+  \node[fill=white, anchor=north, inner sep=1pt] at (6,0) {$6$};
+  \node[fill=white, anchor=north, inner sep=1pt] at (10,0) {$10$};
+  \node[fill=white, anchor=west, inner sep=1pt] at (0,-3) {$-3$};
+\end{tikzpicture}
+&
+\raisebox{3.45cm}{\textbf{B)}} &
+\begin{tikzpicture}[scale=0.38]
+  \path[use as bounding box] (-9,-2) rectangle (7,11);
+  \draw[<->, thick] (-8,0) -- (6,0);
+  \draw[<->, thick] (0,-1) -- (0,10);
+  \node[anchor=west, inner sep=1pt] at (6.05,0) {\scriptsize\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,10.25) {\scriptsize\rotuloynorte};
+  \draw[thick] (-6,3) circle (4);
+  \draw[dashed] (-6,0) -- (-6,3);
+  \draw[dashed] (-2,0) -- (-2,3);
+  \draw[dashed] (0,3) -- (-6,3);
+  \fill (0,0) circle (\puntodestacado) node[below right] {F};
+  \fill (-6,3) circle (\puntodestacado) node[anchor=south west, inner sep=1pt] {K};
+  \fill (-2,3) circle (\puntodestacado);
+  \node[fill=white, anchor=south, inner sep=1pt] at (-6,0) {$\llap{-}6$};
+  \node[fill=white, anchor=north, inner sep=1pt] at (-2,0) {$-2$};
+  \node[fill=white, anchor=west, inner sep=1pt] at (0,3) {$3$};
+\end{tikzpicture}
+\\[1.25cm]
+\raisebox{3.45cm}{\textbf{C)}} &
+\begin{tikzpicture}[scale=0.38]
+  \path[use as bounding box] (-2,-5) rectangle (13,9);
+  \draw[<->, thick] (-1,0) -- (12,0);
+  \draw[<->, thick] (0,-4) -- (0,8);
+  \node[anchor=west, inner sep=1pt] at (12.05,0) {\scriptsize\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,8.25) {\scriptsize\rotuloynorte};
+  \draw[thick] (6,3) circle (4);
+  \draw[dashed] (6,0) -- (6,3);
+  \draw[dashed] (10,0) -- (10,3);
+  \draw[dashed] (0,3) -- (10,3);
+  \fill (0,0) circle (\puntodestacado) node[below left] {F};
+  \fill (6,3) circle (\puntodestacado) node[anchor=south east, inner sep=1pt] {K};
+  \fill (10,3) circle (\puntodestacado);
+  \node[fill=white, anchor=north, inner sep=1pt] at (6,0) {$6$};
+  \node[fill=white, anchor=north, inner sep=1pt] at (10,0) {$10$};
+  \node[fill=white, anchor=east, inner sep=1pt] at (0,3) {$3$};
+\end{tikzpicture}
+&
+\raisebox{3.45cm}{\textbf{D)}} &
+\begin{tikzpicture}[scale=0.38]
+  \path[use as bounding box] (-2,-9) rectangle (15,5);
+  \draw[<->, thick] (-1,0) -- (14,0);
+  \draw[<->, thick] (0,-8) -- (0,4);
+  \node[anchor=west, inner sep=1pt] at (14.05,0) {\scriptsize\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,4.25) {\scriptsize\rotuloynorte};
+  \draw[thick] (6,-3) circle (7);
+  \draw[dashed] (6,0) -- (6,-3);
+  \draw[dashed] (13,0) -- (13,-3);
+  \draw[dashed] (0,-3) -- (13,-3);
+  \fill (0,0) circle (\puntodestacado) node[below left] {F};
+  \fill (6,-3) circle (\puntodestacado) node[anchor=south east, inner sep=1pt] {K};
+  \fill (13,-3) circle (\puntodestacado);
+  \node[fill=white, anchor=north, inner sep=1pt] at (6,0) {$6$};
+  \node[fill=white, anchor=north, inner sep=1pt] at (13,0) {$13$};
+  \node[fill=white, anchor=west, inner sep=1pt] at (0,-3) {$-3$};
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\Needspace{0.90\textheight}
+\item
+En una zona de juegos se coloc\'o una fuente circular. La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra las posiciones, P de un punto de referencia, F del centro de la fuente y B de un punto del borde de la fuente:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+  \path[use as bounding box] (-3,-3) rectangle (15,13);
+  \draw[<->, thick] (-2,0) -- (14,0);
+  \draw[<->, thick] (0,-2) -- (0,12);
+  \node[anchor=west, inner sep=1pt] at (14.05,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,12.35) {\rotuloynorte};
+  \draw[thick] (8,5) circle (5);
+  \draw[dashed] (8,0) -- (8,5);
+  \draw[dashed] (13,0) -- (13,5);
+  \draw[dashed] (0,5) -- (13,5);
+  \fill (0,0) circle (\puntografico) node[below left] {P};
+  \fill (8,5) circle (\puntografico) node[anchor=south east, inner sep=1pt] {F};
+  \fill (13,5) circle (\puntografico) node[anchor=south west, inner sep=1pt] {B};
+  \node[anchor=north] at (8,0) {$8$};
+  \node[anchor=north] at (13,0) {$13$};
+  \node[left] at (0,5) {$5$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la representaci\'on algebraica, cuyas unidades est\'an en metros, de la circunferencia que representa el borde de esa fuente?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x-8)^2+(y-5)^2=25}
+  \opcion{B}{(x+8)^2+(y+5)^2=25}
+  \opcion{C}{(x-8)^2+(y-5)^2=10}
+  \opcion{D}{(x-13)^2+(y-5)^2=10}
+\end{enumerate}
+
+\Needspace{0.78\textheight}
+\item
+Una estaci\'on meteorol\'ogica registra datos mediante un sensor S ubicado a $4$ km al este y $2$ km al sur del punto de referencia de una zona de monitoreo. Ese punto de referencia se considera como origen y las unidades est\'an en kil\'ometros. El sensor cubre todos los puntos ubicados a $6$ km o menos de la estaci\'on.
+
+Durante una prueba t\'ecnica se colocaron tres dispositivos. El dispositivo A se ubic\'o $10$ km al este y $2$ km al sur del origen; el dispositivo B, $4$ km al este y $5$ km al norte del origen; y el dispositivo C, $1$ km al oeste y $5$ km al sur del origen.
+
+De acuerdo con la informaci\'on anterior, \textquestiondown en cu\'ales de esos dispositivos se pueden registrar datos mediante el sensor?
+
+\begin{enumerate}[label=\Alph*)]
+  \item Solo en A.
+  \item Solo en A y en C.
+  \item Solo en B y en C.
+  \item En A, en B y en C.
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+Una empresa de log\'istica modela la zona de cobertura de un lector de c\'odigos mediante una circunferencia. El lector se ubica en el punto L y un punto del borde de la zona de cobertura se ubica en R.
+
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra la circunferencia correspondiente a esa zona de cobertura:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.42]
+  \path[use as bounding box] (-10,-3) rectangle (8,14);
+  \draw[<->, thick] (-9,0) -- (7,0);
+  \draw[<->, thick] (0,-2) -- (0,13);
+  \node[anchor=west, inner sep=1pt] at (7.05,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,13.35) {\rotuloynorte};
+  \draw[thick] (-4,6) circle (5);
+  \draw[dashed] (-4,0) -- (-4,6);
+  \draw[dashed] (1,0) -- (1,6);
+  \draw[dashed] (-4,6) -- (1,6);
+  \fill (-4,6) circle (\puntografico) node[anchor=south east, inner sep=1pt] {L};
+  \fill (1,6) circle (\puntografico) node[anchor=south west, inner sep=1pt] {R};
+  \node[anchor=north] at (-4,0) {$\llap{-}4$};
+  \node[anchor=north] at (1,0) {$1$};
+  \node[left] at (0,6) {$6$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de las siguientes representaciones algebraicas corresponde a la circunferencia que modela la zona de cobertura del lector?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x+4)^2+(y-6)^2=25}
+  \opcion{B}{(x-4)^2+(y+6)^2=25}
+  \opcion{C}{(x-4)^2+(y-6)^2=25}
+  \opcion{D}{(x-1)^2+(y-6)^2=25}
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

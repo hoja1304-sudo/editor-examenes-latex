@@ -1,0 +1,56 @@
+{
+  "skill_name": "retroalimentacion-ver-solucion",
+  "evals": [
+    {
+      "id": 1,
+      "eval_name": "circle-figure-inclusion",
+      "prompt": "En el archivo fixtures/prueba-fixture.html, la solución del ítem 1 (el de la circunferencia) es muy pobre: solo dice el resultado sin explicar de dónde salen el centro y el radio. Mejórala: que se vea paso a paso cómo se obtiene la ecuación, y que se pueda ver la gráfica del enunciado mientras se lee la solución.",
+      "expected_output": "El campo `e` del item n:1 debe quedar como un template literal que interpola ${FIG.i1} (o inserte el SVG de la figura) dentro de un <div class=\"fig\">, con pasos separados que expliquen como leer el centro (4,3) y el radio (6) de la grafica antes de sustituir en la formula, terminando en verificacion y conclusion 'Respuesta: B'. El archivo debe seguir siendo JavaScript valido y la clave debe seguir siendo B.",
+      "files": ["fixtures/prueba-fixture.html"],
+      "assertions": [
+        "El archivo sigue siendo JavaScript valido (const ITEMS parsea sin error)",
+        "La clave del item 1 sigue siendo B",
+        "La solucion (e) incluye la figura del enunciado (FIG.i1 interpolado o el SVG copiado)",
+        "La solucion tiene mas de 2 pasos (<span class=\"paso\">)",
+        "La solucion menciona explicitamente el centro (4,3) y el radio (6) como datos leidos de la grafica",
+        "La solucion termina con una conclusion que indica 'Respuesta: B'",
+        "Las matematicas usan delimitadores de MathJax \\(...\\) / \\[...\\] (no texto plano o simbolos sueltos)",
+        "La solucion explica por que al menos una opcion incorrecta esta mal (nota de distractores)"
+      ]
+    },
+    {
+      "id": 2,
+      "eval_name": "radical-equation-despeje",
+      "prompt": "Para el ítem 2 del archivo fixtures/prueba-fixture.html (la ecuación con raíz cuadrada de la profundidad del buzo), quiero ver el despeje completo paso a paso, sin saltarse ningún paso, como si se lo explicara a un estudiante que apenas está aprendiendo a despejar ecuaciones.",
+      "expected_output": "El campo `e` del item n:2 debe mostrar cada operacion algebraica (restar 5, dividir entre 3, elevar al cuadrado, sumar 2) en pasos separados, cada uno mostrando la ecuacion aplicada a ambos lados antes de simplificar (dos lineas de \\[...\\] por paso), terminando en v=18, con verificacion sustituyendo v=18 en la formula original y conclusion 'Respuesta: B'. El archivo debe seguir siendo JavaScript valido y la clave debe seguir siendo B.",
+      "files": ["fixtures/prueba-fixture.html"],
+      "assertions": [
+        "El archivo sigue siendo JavaScript valido (const ITEMS parsea sin error)",
+        "La clave del item 2 sigue siendo B",
+        "Aparecen al menos 4 pasos de despeje distintos (restar 5, dividir entre 3, elevar al cuadrado, sumar 2)",
+        "Al menos un paso muestra la ecuacion 'antes de simplificar' con la operacion aplicada a ambos lados, no solo el resultado final",
+        "Incluye un paso de verificacion que sustituye v=18 de vuelta en la formula original",
+        "La solucion termina con una conclusion que indica 'Respuesta: B'",
+        "Las matematicas usan delimitadores de MathJax \\(...\\) / \\[...\\] (no texto plano o simbolos sueltos)",
+        "La solucion explica por que al menos una opcion incorrecta esta mal (nota de distractores)"
+      ]
+    },
+    {
+      "id": 3,
+      "eval_name": "table-average-detail",
+      "prompt": "Revisa la solución del ítem 3 en fixtures/prueba-fixture.html (la tabla de libros leídos): ahora mismo no se explica bien cómo se calcula el promedio. Detállala e incluye la tabla de datos en la solución.",
+      "expected_output": "El campo `e` del item n:3 debe incluir la tabla <table class=\"rotulo\"> con los mismos datos del enunciado, y pasos que muestren el calculo del promedio ponderado (multiplicar cada valor por su frecuencia, sumar, dividir entre el total de estudiantes) con los numeros explicitos, terminando en 1,3 con conclusion 'Respuesta: B'. El archivo debe seguir siendo JavaScript valido y la clave debe seguir siendo B.",
+      "files": ["fixtures/prueba-fixture.html"],
+      "assertions": [
+        "El archivo sigue siendo JavaScript valido (const ITEMS parsea sin error)",
+        "La clave del item 3 sigue siendo B",
+        "La solucion incluye la tabla de datos (<table class=\"rotulo\">) del enunciado",
+        "La solucion muestra los productos valor*frecuencia explicitos (0x4, 1x10, 2x6, 3x2) y su suma (28)",
+        "La solucion muestra la division entre el total de estudiantes (22) para llegar a 1,3",
+        "La solucion termina con una conclusion que indica 'Respuesta: B'",
+        "Las matematicas usan delimitadores de MathJax \\(...\\) / \\[...\\] (no texto plano o simbolos sueltos)",
+        "La solucion explica por que al menos una opcion incorrecta esta mal (nota de distractores)"
+      ]
+    }
+  ]
+}
