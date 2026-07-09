@@ -705,11 +705,30 @@ En el mismo plano de dise\~no, al pol\'igono $ABCD$ se le aplica una homotecia d
   \item $(12,-5)$
 \end{enumerate}
 
-\Needspace{0.48\textheight}
+\Needspace{0.98\textheight}
 \item
-En una aplicaci\'on de mapas, la ubicaci\'on de una camara de seguridad se representa por el punto $P(3,-2)$ en un plano cartesiano. Para ajustar la orientaci\'on del mapa en la pantalla, el sistema aplica una rotaci\'on de $90^\circ$ en sentido antihorario alrededor del origen.
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an expresadas en metros, muestra la ubicaci\'on del extremo de un brazo rob\'otico en el punto $\mathrm{P}(3,-2)$.
 
-\textquestiondown Cu\'ales son las coordenadas del punto que representa la nueva ubicaci\'on de la camara en la pantalla?
+\begin{center}
+\begin{tikzpicture}[scale=0.62]
+  \path[use as bounding box] (-4.7,-4.7) rectangle (4.9,4.7);
+  \draw[<->, thick] (-4.5,0) -- (4.5,0);
+  \draw[<->, thick] (0,-4.5) -- (0,4.5);
+  \node[anchor=west, inner sep=1pt] at (4.55,0) {\small $x$};
+  \node[anchor=south, inner sep=1pt] at (0,4.55) {\small $y$};
+  \foreach \x in {-4,-3,-2,-1,1,2,4}
+    \node[anchor=north, inner sep=1pt] at (\x,0) {\scriptsize $\x$};
+  \foreach \y in {-4,-3,-1,1,2,3,4}
+    \node[anchor=east, inner sep=1pt] at (0,\y) {\scriptsize $\y$};
+  \draw[black!75, densely dashed, thick] (3,0) -- (3,-2) -- (0,-2);
+  \fill (3,-2) circle (0.09) node[anchor=north west, inner sep=2pt] {\small $\mathrm{P}(3,-2)$};
+  \fill (0,0) circle (0.09) node[anchor=south west, inner sep=2pt] {\small $\mathrm{H}$};
+\end{tikzpicture}
+\end{center}
+
+Durante una operaci\'on, el brazo realiza un giro de $90^\circ$ en sentido antihorario alrededor del punto $\mathrm{H}$.
+
+De acuerdo con la informaci\'on anterior, \textquestiondown Cu\'ales son las coordenadas de la nueva ubicaci\'on del extremo del brazo rob\'otico despu\'es del giro?
 
 \begin{enumerate}[label=\Alph*)]
   \item $(-2,-3)$
@@ -1369,7 +1388,7 @@ De acuerdo con la informaci\'on anterior, \textquestiondown Cu\'al es el criteri
 \begin{enumerate}[label=\Alph*)]
   \item $h(x) = 5^{x}$
   \item $h(x) = 5x^{2}$
-  \item $h(x) = \log_{1/5}(x)$
+  \item $h(x) = \log_{\tfrac{1}{5}}(x)$
   \item $h(x) = 5x$
 \end{enumerate}
 
