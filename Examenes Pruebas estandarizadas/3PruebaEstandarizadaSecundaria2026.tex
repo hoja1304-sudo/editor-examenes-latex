@@ -21,6 +21,7 @@
 \newcommand{\opcion}[2]{\item $#2$}
 \newcommand{\puntografico}{0.09}
 \newcommand{\puntodestacado}{0.16}
+\newcommand{\puntotamanoestandar}{0.08cm}
 \newcommand{\rotuloxeste}{\mbox{x (este)}}
 \newcommand{\rotuloynorte}{\mbox{y (norte)}}
 
@@ -61,7 +62,7 @@
 \begin{enumerate}[leftmargin=*, itemsep=3pt, topsep=2pt, parsep=0pt]
   \item La Prueba Nacional Estandarizada de secundaria de matem\'atica est\'a compuesta por 60 \'items. Verifique que el cuadernillo que tiene en sus manos est\'e bien compaginado y contenga los 60 \'items de selecci\'on de respuesta correspondientes al componente Matem\'aticas. En caso de encontrar alguna irregularidad, notif\'iquela inmediatamente al delegado de aula; de lo contrario, usted asume la responsabilidad sobre los problemas que se pudieran suscitar por esta causa.
 
-  \item Cada \'item presenta tres posibilidades de respuesta: A), B), C) y D) Solamente una de ellas es la respuesta correcta.
+  \item Cada \'item presenta cuatro posibilidades de respuesta: A), B), C) y D). Solamente una de ellas es la respuesta correcta.
 
   \item Lea cuidadosamente cada \'item y sus respectivas opciones. Puede utilizar el espacio al lado de cada \'item para realizar cualquier anotaci\'on que necesite, con el fin de hallar la respuesta.
 
@@ -77,6 +78,8 @@
     \node[white] at (1.1,0) {\textbf{B}};
     \draw[thick] (2.2,0) circle (0.38);
     \node at (2.2,0) {\textbf{C}};
+    \draw[thick] (3.3,0) circle (0.38);
+    \node at (3.3,0) {\textbf{D}};
   \end{tikzpicture}
   \end{center}
 
@@ -90,94 +93,40 @@
 
 \begin{enumerate}[label=\textbf{\arabic*.}, itemsep=2.5cm]
 
-\Needspace{0.98\textheight}
+\Needspace{0.55\textheight}
 \item
-En un parque se instalar\'a una c\'amara de seguridad K ubicada a $6$ m al este y $3$ m al sur de la fuente representada por el punto F. La fuente se considera como origen y las unidades est\'an en metros. La c\'amara tiene un alcance m\'aximo de $4$ metros a su alrededor.
+Considere la siguiente informaci\'on:
 
-\textquestiondown Cu\'al de las siguientes representaciones gr\'aficas corresponde al alcance m\'aximo de esa c\'amara?
+Una empresa delimit\'o sobre el suelo una zona circular para el aterrizaje de helic\'opteros, cuyo radio mide $7$ m. Adem\'as, el centro de la zona est\'a ubicado en el punto extremo $A(40,-28)$ con respecto a la entrada principal de un edificio de la empresa.
 
-\vspace{1\baselineskip}
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra las ubicaciones $E$ de la entrada principal del edificio, $H$ del centro de la zona para aterrizaje y $C$ de la circunferencia correspondiente al borde de la zona:
 
 \begin{center}
-\setlength{\tabcolsep}{0pt}
-\begin{tabular}{r@{\hspace{0.55cm}}c@{\hspace{1.2cm}}r@{\hspace{0.55cm}}c}
-\raisebox{3.45cm}{\textbf{A)}} &
-\begin{tikzpicture}[scale=0.38]
-  \path[use as bounding box] (-2,-9) rectangle (13,5);
-  \draw[<->, thick] (-1,0) -- (12,0);
-  \draw[<->, thick] (0,-8) -- (0,4);
-  \node[anchor=west, inner sep=1pt] at (12.05,0) {\scriptsize\rotuloxeste};
-  \node[anchor=south, inner sep=1pt] at (0,4.25) {\scriptsize\rotuloynorte};
-  \draw[thick] (6,-3) circle (4);
-  \draw[dashed] (6,0) -- (6,-3);
-  \draw[dashed] (10,0) -- (10,-3);
-  \draw[dashed] (0,-3) -- (10,-3);
-  \fill (0,0) circle (\puntodestacado) node[below left] {F};
-  \fill (6,-3) circle (\puntodestacado) node[anchor=south east, inner sep=1pt] {K};
-  \fill (10,-3) circle (\puntodestacado);
-  \node[fill=white, anchor=north, inner sep=1pt] at (6,0) {$6$};
-  \node[fill=white, anchor=north, inner sep=1pt] at (10,0) {$10$};
-  \node[fill=white, anchor=west, inner sep=1pt] at (0,-3) {$-3$};
+\begin{tikzpicture}[scale=0.36]
+  \path[use as bounding box] (-2,-9) rectangle (15,4);
+  \draw[->, thick] (-1,0) -- (14,0);
+  \draw[->, thick] (0,-8) -- (0,3);
+  \node[anchor=west, inner sep=1pt] at (14.05,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,3.15) {$y$};
+  \draw[thick] (10,-7) circle (1.75);
+  \draw[dashed] (10,0) -- (10,-7);
+  \draw[dashed] (0,-7) -- (10,-7);
+  \fill (0,0) circle (\puntodestacado) node[above left] {E};
+  \fill (10,-7) circle (\puntodestacado) node[below left] {H};
+  \fill (11.75,-7) circle (\puntografico) node[right] {C};
+  \node[anchor=south, inner sep=1pt] at (10,0) {$40$};
+  \node[anchor=east, inner sep=1pt] at (0,-7) {$-28$};
 \end{tikzpicture}
-&
-\raisebox{3.45cm}{\textbf{B)}} &
-\begin{tikzpicture}[scale=0.38]
-  \path[use as bounding box] (-9,-2) rectangle (7,11);
-  \draw[<->, thick] (-8,0) -- (6,0);
-  \draw[<->, thick] (0,-1) -- (0,10);
-  \node[anchor=west, inner sep=1pt] at (6.05,0) {\scriptsize\rotuloxeste};
-  \node[anchor=south, inner sep=1pt] at (0,10.25) {\scriptsize\rotuloynorte};
-  \draw[thick] (-6,3) circle (4);
-  \draw[dashed] (-6,0) -- (-6,3);
-  \draw[dashed] (-2,0) -- (-2,3);
-  \draw[dashed] (0,3) -- (-6,3);
-  \fill (0,0) circle (\puntodestacado) node[below right] {F};
-  \fill (-6,3) circle (\puntodestacado) node[anchor=south west, inner sep=1pt] {K};
-  \fill (-2,3) circle (\puntodestacado);
-  \node[fill=white, anchor=south, inner sep=1pt] at (-6,0) {$\llap{-}6$};
-  \node[fill=white, anchor=north, inner sep=1pt] at (-2,0) {$-2$};
-  \node[fill=white, anchor=west, inner sep=1pt] at (0,3) {$3$};
-\end{tikzpicture}
-\\[1.25cm]
-\raisebox{3.45cm}{\textbf{C)}} &
-\begin{tikzpicture}[scale=0.38]
-  \path[use as bounding box] (-2,-5) rectangle (13,9);
-  \draw[<->, thick] (-1,0) -- (12,0);
-  \draw[<->, thick] (0,-4) -- (0,8);
-  \node[anchor=west, inner sep=1pt] at (12.05,0) {\scriptsize\rotuloxeste};
-  \node[anchor=south, inner sep=1pt] at (0,8.25) {\scriptsize\rotuloynorte};
-  \draw[thick] (6,3) circle (4);
-  \draw[dashed] (6,0) -- (6,3);
-  \draw[dashed] (10,0) -- (10,3);
-  \draw[dashed] (0,3) -- (10,3);
-  \fill (0,0) circle (\puntodestacado) node[below left] {F};
-  \fill (6,3) circle (\puntodestacado) node[anchor=south east, inner sep=1pt] {K};
-  \fill (10,3) circle (\puntodestacado);
-  \node[fill=white, anchor=north, inner sep=1pt] at (6,0) {$6$};
-  \node[fill=white, anchor=north, inner sep=1pt] at (10,0) {$10$};
-  \node[fill=white, anchor=east, inner sep=1pt] at (0,3) {$3$};
-\end{tikzpicture}
-&
-\raisebox{3.45cm}{\textbf{D)}} &
-\begin{tikzpicture}[scale=0.38]
-  \path[use as bounding box] (-2,-9) rectangle (15,5);
-  \draw[<->, thick] (-1,0) -- (14,0);
-  \draw[<->, thick] (0,-8) -- (0,4);
-  \node[anchor=west, inner sep=1pt] at (14.05,0) {\scriptsize\rotuloxeste};
-  \node[anchor=south, inner sep=1pt] at (0,4.25) {\scriptsize\rotuloynorte};
-  \draw[thick] (6,-3) circle (7);
-  \draw[dashed] (6,0) -- (6,-3);
-  \draw[dashed] (13,0) -- (13,-3);
-  \draw[dashed] (0,-3) -- (13,-3);
-  \fill (0,0) circle (\puntodestacado) node[below left] {F};
-  \fill (6,-3) circle (\puntodestacado) node[anchor=south east, inner sep=1pt] {K};
-  \fill (13,-3) circle (\puntodestacado);
-  \node[fill=white, anchor=north, inner sep=1pt] at (6,0) {$6$};
-  \node[fill=white, anchor=north, inner sep=1pt] at (13,0) {$13$};
-  \node[fill=white, anchor=west, inner sep=1pt] at (0,-3) {$-3$};
-\end{tikzpicture}
-\end{tabular}
 \end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la representaci\'on algebraica de $C$?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x-40)^2+(y+28)^2=7}
+  \opcion{B}{(x+40)^2+(y-28)^2=7}
+  \opcion{C}{(x-40)^2+(y+28)^2=49}
+  \opcion{D}{(x+40)^2+(y-28)^2=49}
+\end{enumerate}
 
 \Needspace{0.90\textheight}
 \item
@@ -212,20 +161,91 @@ De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la represe
   \opcion{D}{(x-13)^2+(y-5)^2=10}
 \end{enumerate}
 
-\Needspace{0.78\textheight}
+\Needspace{0.96\textheight}
 \item
-Una estaci\'on meteorol\'ogica registra datos mediante un sensor S ubicado a $4$ km al este y $2$ km al sur del punto de referencia de una zona de monitoreo. Ese punto de referencia se considera como origen y las unidades est\'an en kil\'ometros. El sensor cubre todos los puntos ubicados a $6$ km o menos de la estaci\'on.
+En un parque de diversiones se pint\'o sobre el suelo una zona de juegos con forma circular, cuyo centro $M$ est\'a ubicado en el punto correspondiente a $(-40,60)$ con respecto a la ubicaci\'on $Z$ de un monumento, el cual se considera el origen de un sistema de coordenadas. Adem\'as, la medida del radio de la circunferencia que representa el borde de la zona es $20$ m. \textquestiondown Cu\'al es la representaci\'on gr\'afica, cuyas unidades est\'an en metros, correspondiente a la ubicaci\'on de la circunferencia que representa el borde de la zona de juegos?
 
-Durante una prueba t\'ecnica se colocaron tres dispositivos. El dispositivo A se ubic\'o $10$ km al este y $2$ km al sur del origen; el dispositivo B, $4$ km al este y $5$ km al norte del origen; y el dispositivo C, $1$ km al oeste y $5$ km al sur del origen.
-
-De acuerdo con la informaci\'on anterior, \textquestiondown en cu\'ales de esos dispositivos se pueden registrar datos mediante el sensor?
-
-\begin{enumerate}[label=\Alph*)]
-  \item Solo en A.
-  \item Solo en A y en C.
-  \item Solo en B y en C.
-  \item En A, en B y en C.
-\end{enumerate}
+\vspace{0.5\baselineskip}
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{r@{\hspace{0.65cm}}c@{\hspace{1.8cm}}r@{\hspace{0.65cm}}c}
+\raisebox{3.0cm}{\textbf{A)}} &
+\begin{tikzpicture}[scale=0.34]
+  \path[use as bounding box] (-3,-10) rectangle (12,4);
+  \draw[->, thick] (-2,0) -- (11,0);
+  \draw[->, thick] (0,-8) -- (0,3);
+  \node[anchor=west, inner sep=1pt] at (11.05,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,3.15) {$y$};
+  \draw[thick] (6,-4) circle (3.0);
+  \draw[dashed] (6,0) -- (6,-4);
+  \draw[dashed] (9,0) -- (9,-4);
+  \draw[dashed] (0,-4) -- (6,-4);
+  \fill (0,0) circle (\puntodestacado) node[above left] {Z};
+  \fill (6,-4) circle (\puntodestacado) node[below] {M};
+  \fill (9,-4) circle (\puntodestacado);
+  \node[anchor=south] at (6,0) {$60$};
+  \node[anchor=south] at (9,0) {$100$};
+  \node[anchor=east] at (0,-4) {$-40$};
+\end{tikzpicture}
+&
+\raisebox{3.0cm}{\textbf{B)}} &
+\begin{tikzpicture}[scale=0.34]
+  \path[use as bounding box] (-11,-3) rectangle (3,13);
+  \draw[->, thick] (-9,0) -- (2,0);
+  \draw[->, thick] (0,-1) -- (0,11);
+  \node[anchor=west, inner sep=1pt] at (2.05,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,11.15) {$y$};
+  \draw[thick] (-4,6) circle (3.8);
+  \draw[dashed] (-4,0) -- (-4,6);
+  \draw[dashed] (-7.8,0) -- (-7.8,6);
+  \draw[dashed] (0,6) -- (-7.8,6);
+  \fill (0,0) circle (\puntodestacado) node[below right] {Z};
+  \fill (-4,6) circle (\puntodestacado) node[above] {M};
+  \fill (-7.8,6) circle (\puntodestacado);
+  \node[anchor=north] at (-7.8,0) {$-80$};
+  \node[anchor=north] at (-4,0) {$-40$};
+  \node[anchor=west] at (0,6) {$60$};
+\end{tikzpicture}
+\\[1.4cm]
+\raisebox{3.0cm}{\textbf{C)}} &
+\begin{tikzpicture}[scale=0.34]
+  \path[use as bounding box] (-8,-3) rectangle (3,11);
+  \draw[->, thick] (-7,0) -- (2,0);
+  \draw[->, thick] (0,-1) -- (0,9);
+  \node[anchor=west, inner sep=1pt] at (2.05,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,9.15) {$y$};
+  \draw[thick] (-4,6) circle (2.0);
+  \draw[dashed] (-4,0) -- (-4,6);
+  \draw[dashed] (-6,0) -- (-6,6);
+  \draw[dashed] (0,6) -- (-6,6);
+  \fill (0,0) circle (\puntodestacado) node[below right] {Z};
+  \fill (-4,6) circle (\puntodestacado) node[above] {M};
+  \fill (-6,6) circle (\puntodestacado);
+  \node[anchor=north] at (-6,0) {$-60$};
+  \node[anchor=north] at (-4,0) {$-40$};
+  \node[anchor=west] at (0,6) {$60$};
+\end{tikzpicture}
+&
+\raisebox{3.0cm}{\textbf{D)}} &
+\begin{tikzpicture}[scale=0.34]
+  \path[use as bounding box] (-3,-10) rectangle (10,4);
+  \draw[->, thick] (-2,0) -- (9,0);
+  \draw[->, thick] (0,-8) -- (0,3);
+  \node[anchor=west, inner sep=1pt] at (9.05,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,3.15) {$y$};
+  \draw[thick] (6,-4) circle (2.0);
+  \draw[dashed] (6,0) -- (6,-4);
+  \draw[dashed] (8,0) -- (8,-4);
+  \draw[dashed] (0,-4) -- (8,-4);
+  \fill (0,0) circle (\puntodestacado) node[above left] {Z};
+  \fill (6,-4) circle (\puntodestacado) node[below] {M};
+  \fill (8,-4) circle (\puntodestacado);
+  \node[anchor=south] at (6,0) {$60$};
+  \node[anchor=south] at (8,0) {$80$};
+  \node[anchor=east] at (0,-4) {$-40$};
+\end{tikzpicture}
+\end{tabular}
+\end{center}
 
 \Needspace{0.88\textheight}
 \item
@@ -259,6 +279,576 @@ De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de las siguie
   \opcion{B}{(x-4)^2+(y+6)^2=25}
   \opcion{C}{(x-4)^2+(y-6)^2=25}
   \opcion{D}{(x-1)^2+(y-6)^2=25}
+\end{enumerate}
+
+\Needspace{0.72\textheight}
+\item
+Una c\'amara de vigilancia se coloc\'o en un lugar ubicado a $2$ km al este y $2$ km al norte de la sala de control. El alcance m\'aximo de la zona vigilada por la c\'amara es $1$ km a su alrededor.
+
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en kil\'ometros, muestra las ubicaciones $M$ de la c\'amara, $G$ de la sala de control y $C$ de la circunferencia correspondiente al alcance m\'aximo de la zona vigilada:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.70]
+  \path[use as bounding box] (-2,-1.7) rectangle (5.8,4.4);
+  \draw[<->, thick] (-1.1,0) -- (5.1,0);
+  \draw[<->, thick] (0,-1.1) -- (0,4.0);
+  \node[anchor=south, inner sep=1pt] at (0,4.08) {\rotuloynorte};
+  \node[anchor=west, inner sep=1pt] at (5.12,0) {\rotuloxeste};
+  \draw[thick] (2,2) circle (1);
+  \draw[dashed] (2,0) -- (2,2);
+  \draw[dashed] (0,2) -- (2,2);
+  \fill (0,0) circle (\puntodestacado) node[below left] {$G$};
+  \fill (2,2) circle (\puntodestacado);
+  \node[anchor=west, inner sep=1pt] at (2.10,2) {$M$};
+  \node[anchor=south west, inner sep=1pt] at (2.76,2.76) {$C$};
+  \node[anchor=north] at (2,0) {$2$};
+  \node[anchor=east] at (0,2) {$2$};
+\end{tikzpicture}
+\end{center}
+
+Adem\'as, debido a prioridades en la seguridad se decidi\'o colocar la c\'amara en otro lugar. Para ello, se traslad\'o, desde su ubicaci\'on actual, a $1$ km al sur y $3$ km al oeste.
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la representaci\'on algebraica de la circunferencia correspondiente al alcance m\'aximo de la zona vigilada por esa c\'amara en la nueva ubicaci\'on?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x+1)^2+(y-1)^2=1}
+  \opcion{B}{(x+1)^2+(y-3)^2=1}
+  \opcion{C}{(x-5)^2+(y-1)^2=1}
+  \opcion{D}{(x+5)^2+(y+1)^2=1}
+\end{enumerate}
+
+\Needspace{0.90\textheight}
+\item
+En una biblioteca se coloc\'o un lector autom\'atico en el punto L para registrar materiales dentro de una zona circular. La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra las ubicaciones L del lector y C de un punto de la circunferencia correspondiente al alcance m\'aximo del lector:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.43]
+  \path[use as bounding box] (-3,-3) rectangle (15,12);
+  \draw[<->, thick] (-2,0) -- (14,0);
+  \draw[<->, thick] (0,-2) -- (0,11);
+  \node[anchor=west, inner sep=1pt] at (14.05,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,11.35) {\rotuloynorte};
+  \draw[thick] (6,4) circle (3);
+  \draw[dashed] (6,0) -- (6,4);
+  \draw[dashed] (9,0) -- (9,4);
+  \draw[dashed] (0,4) -- (9,4);
+  \fill (6,4) circle (\puntografico) node[anchor=south east, inner sep=1pt] {L};
+  \fill (9,4) circle (\puntografico) node[anchor=south west, inner sep=1pt] {C};
+  \node[anchor=north] at (6,0) {$6$};
+  \node[anchor=north] at (9,0) {$9$};
+  \node[left] at (0,4) {$4$};
+\end{tikzpicture}
+\end{center}
+
+Si ese lector se traslada $8$ metros al este y $2$ metros al sur, \textquestiondown cu\'al es la representaci\'on algebraica, cuyas unidades est\'an en metros, de la circunferencia correspondiente a su nuevo alcance?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(x-14)^2+(y-2)^2=9}
+  \opcion{B}{(x-14)^2+(y+2)^2=9}
+  \opcion{C}{(x-8)^2+(y-2)^2=9}
+  \opcion{D}{(x-14)^2+(y-2)^2=6}
+\end{enumerate}
+
+\Needspace{0.99\textheight}
+\item
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, modela la zona circular de trabajo de un robot barredor R instalado con respecto al punto E, que representa la esquina de una bodega:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-7.2,-8.2) rectangle (7.8,6.8);
+  \draw[<->, thick] (-6.8,0) -- (7.1,0);
+  \draw[<->, thick] (0,-7.6) -- (0,6.1);
+  \node[anchor=west, inner sep=1pt] at (7.15,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,6.35) {\rotuloynorte};
+  \draw[thick] (-3,-4) circle (3);
+  \draw[dashed] (-3,0) -- (-3,-4);
+  \draw[dashed] (0,-4) -- (-3,-4);
+  \draw[dashed] (0,-1) -- (-3,-1);
+  \fill (0,0) circle (\puntodestacado) node[above right] {E};
+  \fill (-3,-4) circle (\puntodestacado) node[anchor=south east, inner sep=1pt] {R};
+  \fill (-3,-1) circle (\puntografico);
+  \node[anchor=south] at (-3,0) {$\llap{-}3$};
+  \node[anchor=west] at (0.45,-4) {$-4$};
+  \node[anchor=west] at (0.45,-1) {$-1$};
+\end{tikzpicture}
+\end{center}
+
+Debido a una reorganizaci\'on del inventario, el robot se reubica $5$ metros hacia el este y $6$ metros hacia el norte.
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de las siguientes representaciones gr\'aficas corresponde a la nueva zona circular de trabajo del robot?
+
+\vspace{1\baselineskip}
+
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{r@{\hspace{0.7cm}}c@{\hspace{1.9cm}}r@{\hspace{0.7cm}}c}
+\raisebox{3.35cm}{\textbf{A)}} &
+\begin{tikzpicture}[scale=0.38]
+  \path[use as bounding box] (-3.6,-2.8) rectangle (8.8,7.8);
+  \draw[<->, thick] (-3.1,0) -- (8.2,0);
+  \draw[<->, thick] (0,-2.3) -- (0,7.1);
+  \node[anchor=west, inner sep=1pt] at (8.25,0) {\scriptsize\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,7.3) {\scriptsize\rotuloynorte};
+  \draw[thick] (2,2) circle (3);
+  \draw[dashed] (2,0) -- (2,2);
+  \draw[dashed] (5,0) -- (5,2);
+  \draw[dashed] (0,2) -- (5,2);
+  \fill (0,0) circle (\puntodestacado) node[below left] {E};
+  \fill (2,2) circle (\puntodestacado) node[anchor=south east, inner sep=1pt] {R};
+  \fill (5,2) circle (\puntodestacado);
+  \node[anchor=north] at (2,-0.42) {$2$};
+  \node[anchor=north] at (5,-0.42) {$5$};
+  \node[anchor=east] at (-0.22,2) {$2$};
+\end{tikzpicture}
+&
+\raisebox{3.35cm}{\textbf{B)}} &
+\begin{tikzpicture}[scale=0.38]
+  \path[use as bounding box] (-10.8,-4.4) rectangle (3.8,7.8);
+  \draw[<->, thick] (-10.2,0) -- (3.2,0);
+  \draw[<->, thick] (0,-4.0) -- (0,7.1);
+  \node[anchor=west, inner sep=1pt] at (3.25,0) {\scriptsize\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,7.3) {\scriptsize\rotuloynorte};
+  \draw[thick] (-8,2) circle (3);
+  \draw[dashed] (-8,0) -- (-8,2);
+  \draw[dashed] (-5,0) -- (-5,2);
+  \draw[dashed] (0,2) -- (-5,2);
+  \fill (0,0) circle (\puntodestacado) node[below right] {E};
+  \fill (-8,2) circle (\puntodestacado) node[anchor=south west, inner sep=1pt] {R};
+  \fill (-5,2) circle (\puntografico);
+  \node[anchor=south] at (-8,1.62) {$-8$};
+  \node[anchor=south] at (-5,1.62) {$-5$};
+  \node[anchor=west] at (0.22,2) {$2$};
+\end{tikzpicture}
+\\[0.75cm]
+\raisebox{3.35cm}{\textbf{C)}} &
+\begin{tikzpicture}[scale=0.34]
+  \path[use as bounding box] (-3.6,-5.8) rectangle (8.8,4.8);
+  \draw[<->, thick] (-3.1,0) -- (8.2,0);
+  \draw[<->, thick] (0,-5.3) -- (0,4.1);
+  \node[anchor=west, inner sep=1pt] at (8.25,0) {\scriptsize\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,4.3) {\scriptsize\rotuloynorte};
+  \draw[thick] (2,-2) circle (3);
+  \draw[dashed] (2,0) -- (2,-2);
+  \draw[dashed] (5,0) -- (5,-2);
+  \draw[dashed] (0,-2) -- (5,-2);
+  \fill (0,0) circle (\puntodestacado) node[above left] {E};
+  \fill (2,-2) circle (\puntodestacado) node[anchor=south east, inner sep=1pt] {R};
+  \fill (5,-2) circle (\puntografico);
+  \node[anchor=south] at (2,0.42) {$2$};
+  \node[anchor=north] at (5,-0.42) {$5$};
+  \node[anchor=west] at (0.45,-2) {$-2$};
+\end{tikzpicture}
+&
+\raisebox{3.35cm}{\textbf{D)}} &
+\begin{tikzpicture}[scale=0.34]
+  \path[use as bounding box] (-3.8,-2.8) rectangle (10.6,9.8);
+  \draw[<->, thick] (-3.2,0) -- (10,0);
+  \draw[<->, thick] (0,-2.3) -- (0,9.1);
+  \node[anchor=west, inner sep=1pt] at (10.05,0) {\scriptsize\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,9.3) {\scriptsize\rotuloynorte};
+  \draw[thick] (2,2) circle (5);
+  \draw[dashed] (2,0) -- (2,2);
+  \draw[dashed] (7,0) -- (7,2);
+  \draw[dashed] (0,2) -- (7,2);
+  \fill (0,0) circle (\puntodestacado) node[below left] {E};
+  \fill (2,2) circle (\puntodestacado) node[anchor=south east, inner sep=1pt] {R};
+  \fill (7,2) circle (\puntografico);
+  \node[anchor=north] at (2,-0.42) {$2$};
+  \node[anchor=north] at (7,-0.42) {$7$};
+  \node[anchor=west] at (0.45,2) {$2$};
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\Needspace{0.92\textheight}
+\item
+El tiro con arco es un deporte ol\'impico en el cual se utiliza un arco para lanzar flechas a un objetivo (diana), el cual tiene forma circular y la medida de su di\'ametro es $122$ cm. La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en cent\'imetros, muestra la forma que tiene una diana utilizada en un juego:
+
+\begin{center}
+\begin{tikzpicture}[x=0.045cm,y=0.045cm]
+  \path[use as bounding box] (-32,-28) rectangle (154,151);
+  \draw[<->, thick] (-25,0) -- (150,0);
+  \draw[<->, thick] (0,-25) -- (0,145);
+  \node[anchor=west, inner sep=1pt] at (150.5,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,145.5) {$y$};
+  \draw[thick] (61,61) circle (61);
+  \draw[dashed] (0,61) -- (122,61);
+  \draw[dashed] (61,0) -- (61,122);
+  \draw[dashed] (0,122) -- (61,122);
+  \fill (0,61) circle (\puntotamanoestandar);
+  \fill (61,0) circle (\puntotamanoestandar);
+  \fill (61,122) circle (\puntotamanoestandar);
+  \fill (122,61) circle (\puntotamanoestandar);
+  \node[anchor=east] at (-2,122) {$122$};
+  \node[anchor=north] at (122,-2) {$122$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, si durante el juego una persona deportista lanz\'o cuatro flechas, identificadas con R, S, T y V, que impactaron respectivamente en los puntos correspondientes a $(61,133)$, $(61,113)$, $(100,11)$ y $(100,130)$, entonces, \textquestiondown cu\'al flecha impact\'o en el interior de la diana?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{R}
+  \opcion{B}{S}
+  \opcion{C}{T}
+  \opcion{D}{V}
+\end{enumerate}
+
+\Needspace{0.82\textheight}
+\item
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en kil\'ometros, muestra las ubicaciones J, K, M y N, en una zona donde hay poca cobertura de telecomunicaciones:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \path[use as bounding box] (-3.2,-1.0) rectangle (3.0,5.2);
+  \draw[<->, thick] (-2.8,0) -- (2.3,0);
+  \draw[<->, thick] (0,-0.7) -- (0,4.8);
+  \node[anchor=west, inner sep=1pt] at (2.35,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,4.85) {$y$};
+  \draw[dashed] (-2,0) -- (-2,4);
+  \draw[dashed] (1,0) -- (1,2);
+  \draw[dashed] (-2,2) -- (1,2);
+  \draw[dashed] (-2,4) -- (0,4);
+  \fill (-2,2) circle (\puntografico) node[anchor=east, inner sep=1pt] {$J$};
+  \fill (1,2) circle (\puntografico) node[anchor=west, inner sep=1pt] {$K$};
+  \fill (0,4) circle (\puntografico) node[anchor=west, inner sep=1pt] {$M$};
+  \fill (-2,4) circle (\puntografico) node[anchor=east, inner sep=1pt] {$N$};
+  \node[anchor=north] at (-2,0) {$\llap{-}2$};
+  \node[anchor=north] at (1,0) {$1$};
+  \node[anchor=east] at (0,2) {$2$};
+  \node[anchor=east] at (0,4) {$4$};
+\end{tikzpicture}
+\end{center}
+
+Asimismo, una empresa de telecomunicaciones desea ampliar la cobertura colocando una antena que cumpla con las siguientes condiciones:
+
+\begin{itemize}[leftmargin=1.6em, itemsep=1pt, topsep=2pt, parsep=0pt]
+  \item El lugar donde se ubicar\'a la antena corresponder\'a a $(0,2)$.
+  \item El alcance m\'aximo de la se\~nal que emitir\'a la antena estar\'a ubicado a $2,2$ km alrededor de esta.
+\end{itemize}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al casa quedar\'a fuera del alcance m\'aximo de la antena?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{J}
+  \opcion{B}{K}
+  \opcion{C}{M}
+  \opcion{D}{N}
+\end{enumerate}
+
+\Needspace{0.86\textheight}
+\item
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra las ubicaciones, P de una persona, G del centro de la superficie de un mirador circular y T de la entrada al mirador. Adem\'as, se muestra la recta $b$ que representa un sendero, as\'i como la circunferencia $C$ correspondiente al borde del mirador:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.43]
+  \path[use as bounding box] (-3,-4) rectangle (23,29);
+  \draw[<->, thick] (-2,0) -- (22,0);
+  \draw[<->, thick] (0,-2) -- (0,28);
+  \node[anchor=west, inner sep=1pt] at (22.1,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,28.2) {$y$};
+  \draw[thick] (15,0) -- (15,27) node[anchor=south, inner sep=1pt] {$b$};
+  \draw[thick] (10,12) circle (5);
+  \draw[dashed] (10,0) -- (10,12);
+  \draw[dashed] (0,12) -- (15,12);
+  \draw[dashed] (0,24) -- (15,24);
+  \fill (15,24) circle (\puntotamanoestandar);
+  \fill (10,12) circle (\puntotamanoestandar);
+  \fill (15,12) circle (\puntotamanoestandar);
+  \node[anchor=west, inner sep=1pt] at (15.18,24) {$P$};
+  \node[anchor=south, inner sep=1pt] at (10,12.12) {$G$};
+  \node[anchor=west, inner sep=1pt] at (15.18,12) {$T$};
+  \node[anchor=east] at (-1,24) {$24$};
+  \node[anchor=east] at (-1,12) {$12$};
+  \node[anchor=north] at (10,0) {$10$};
+  \node[anchor=north] at (15,0) {$15$};
+  \node[anchor=south east, inner sep=1pt] at (6.25,15.78) {$C$};
+  \draw (14.2,0) rectangle (15,0.8);
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, si el radio del mirador mide $5$ m, entonces, \textquestiondown a qu\'e distancia est\'a la persona del centro del mirador?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{10,9\text{ m}}
+  \opcion{B}{13,0\text{ m}}
+  \opcion{C}{24,5\text{ m}}
+  \opcion{D}{28,3\text{ m}}
+\end{enumerate}
+
+\Needspace{0.90\textheight}
+\item
+En el parque infantil hay una pista de patinaje, un vestidor y una caseta de vigilancia. La pista tiene forma circular, cuya medida del di\'ametro es $6$ m.
+
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra la ubicaci\'on P de la caseta, M del vestidor y C de la circunferencia al borde de esa pista.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-3,-2.8) rectangle (21,15);
+  \draw[<->, thick] (-2,0) -- (20,0);
+  \draw[<->, thick] (0,-1.2) -- (0,14);
+  \node[anchor=west, inner sep=1pt] at (20.1,0) {\rotuloxeste};
+  \node[anchor=south, inner sep=1pt] at (0,14.2) {\rotuloynorte};
+  \draw[thick] (15,9) circle (3);
+  \draw[dashed] (15,0) -- (15,12);
+  \draw[dashed] (0,6) -- (15,6);
+  \draw[dashed] (6,0) -- (6,6);
+  \fill (0,0) circle (\puntodestacado) node[anchor=north east, inner sep=1pt] {$P$};
+  \fill (6,6) circle (\puntodestacado) node[anchor=south east, inner sep=1pt] {$M$};
+  \fill (15,6) circle (\puntografico);
+  \fill (15,12) circle (\puntografico);
+  \node[anchor=north] at (6,0) {$6$};
+  \node[anchor=east] at (0,6) {$6$};
+  \node[anchor=east] at (0,12) {$12$};
+  \node[anchor=north] at (15,0) {$15$};
+  \node[anchor=west, inner sep=1pt] at (15.5,10.2) {$C$};
+\end{tikzpicture}
+\end{center}
+
+Adem\'as, se desea construir un camino con forma de recta y que pase por la caseta y el vestidor.
+
+De acuerdo con la informaci\'on anterior, la recta que representa ese camino, con respecto a la circunferencia correspondiente al borde de la pista, ser\'a
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{\text{exterior}}
+  \opcion{B}{\text{secante}}
+  \opcion{C}{\text{tangente}}
+  \opcion{D}{\text{vertical}}
+\end{enumerate}
+
+\Needspace{0.34\textheight}
+\item
+A partir de una l\'amina de vidrio se construy\'o un espejo con forma de tri\'angulo equil\'atero, cuya \'area es $625\sqrt{3}$ cm$^2$. Si se requiere colocar un cable de luces decorativas alrededor de la totalidad del borde del espejo, entonces, \textquestiondown cu\'antos cent\'imetros de cable, como m\'inimo, se requieren colocar?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{50}
+  \opcion{B}{75}
+  \opcion{C}{150}
+  \opcion{D}{300}
+\end{enumerate}
+
+\Needspace{0.34\textheight}
+\item
+La superficie de un escudo decorativo, pintado en una pared, tiene forma de pent\'agono regular, cuya medida de uno de sus lados es $6$ m. Si se requiere pintar la totalidad de la superficie de otro escudo con forma de tri\'angulo equil\'atero y con el mismo per\'imetro que el del escudo pentagonal, entonces, \textquestiondown cu\'antos metros cuadrados, como m\'inimo, se requieren pintar en el escudo triangular?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{10\sqrt{3}}
+  \opcion{B}{20\sqrt{3}}
+  \opcion{C}{25\sqrt{3}}
+  \opcion{D}{50\sqrt{3}}
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra el pol\'igono ABCDEFG que representa la superficie de un jard\'in:
+
+\begin{center}
+\begin{tikzpicture}[scale=1.25]
+  \path[use as bounding box] (-1.4,-1.3) rectangle (7.2,6.5);
+  \draw[<->, thick] (-0.8,0) -- (6.8,0);
+  \draw[<->, thick] (0,-0.8) -- (0,6.0);
+  \node[anchor=west, inner sep=1pt] at (6.85,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,6.05) {$y$};
+  \draw[dashed] (1,0) -- (1,5);
+  \draw[dashed] (3,0) -- (3,3);
+  \draw[dashed] (5,0) -- (5,5);
+  \draw[dashed] (0,1) -- (5,1);
+  \draw[dashed] (0,2) -- (5,2);
+  \draw[dashed] (0,3) -- (3,3);
+  \draw[dashed] (0,5) -- (5,5);
+  \draw[thick] (1,5) -- (5,5) -- (3,3) -- (3,2) -- (5,2) -- (5,1) -- (1,1) -- cycle;
+  \fill (1,5) circle (\puntotamanoestandar) node[anchor=south west, inner sep=1pt] {$A$};
+  \fill (5,5) circle (\puntotamanoestandar) node[anchor=south west, inner sep=1pt] {$B$};
+  \fill (3,3) circle (\puntotamanoestandar);
+  \fill (3,2) circle (\puntotamanoestandar);
+  \node[anchor=south east, inner sep=1pt] at (2.86,3.14) {$C$};
+  \node[anchor=north east, inner sep=1pt] at (2.86,1.86) {$D$};
+  \fill (5,2) circle (\puntotamanoestandar) node[anchor=west, inner sep=1pt] {$E$};
+  \fill (5,1) circle (\puntotamanoestandar) node[anchor=west, inner sep=1pt] {$F$};
+  \fill (1,1) circle (\puntotamanoestandar) node[anchor=north west, inner sep=1pt] {$G$};
+  \node[anchor=north] at (1,0) {$1$};
+  \node[anchor=north] at (3,0) {$3$};
+  \node[anchor=north] at (5,0) {$5$};
+  \node[anchor=east] at (0,1) {$1$};
+  \node[anchor=east] at (0,2) {$2$};
+  \node[anchor=east] at (0,3) {$3$};
+  \node[anchor=east] at (0,5) {$5$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, si se requiere colocar un alambre sobre la totalidad del borde del jard\'in, entonces, \textquestiondown cu\'antos metros de alambre, como m\'inimo, se requieren colocar?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{10}
+  \opcion{B}{12}
+  \opcion{C}{16+\sqrt{8}}
+  \opcion{D}{19+\sqrt{8}}
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+La siguiente representaci\'on gr\'afica, cuyas unidades est\'an en metros, muestra la figura ABCD que representa la superficie del fondo de una piscina:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+  \path[use as bounding box] (-1.5,-1.4) rectangle (10.4,11.0);
+  \draw[<->, thick] (-1.0,0) -- (9.8,0);
+  \draw[<->, thick] (0,-0.8) -- (0,10.1);
+  \node[anchor=west, inner sep=1pt] at (9.85,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,10.15) {$y$};
+  \draw[dashed] (1,0) -- (1,2);
+  \draw[dashed] (4,0) -- (4,6);
+  \draw[dashed] (8,0) -- (8,9);
+  \draw[dashed] (0,2) -- (1,2);
+  \draw[dashed] (0,6) -- (4,6);
+  \draw[dashed] (0,9) -- (8,9);
+  \draw[thick]
+    (1,2)
+      .. controls (2.1,2.1) and (3.3,4.7) .. (4,6)
+      .. controls (5.0,7.9) and (6.9,8.8) .. (8,9)
+    -- (8,2) -- cycle;
+  \fill (1,2) circle (\puntotamanoestandar);
+  \fill (4,6) circle (\puntotamanoestandar);
+  \fill (8,9) circle (\puntotamanoestandar);
+  \fill (8,2) circle (\puntotamanoestandar);
+  \node[anchor=south east, inner sep=1pt] at (0.90,2.18) {$A$};
+  \node[anchor=south east, inner sep=1pt] at (3.88,6.20) {$B$};
+  \node[anchor=south east, inner sep=1pt] at (7.90,9.24) {$C$};
+  \node[anchor=west, inner sep=1pt] at (8.18,2) {$D$};
+  \node[anchor=north] at (1,0) {$1$};
+  \node[anchor=north] at (4,0) {$4$};
+  \node[anchor=north] at (8,0) {$8$};
+  \node[anchor=east] at (0,2) {$2$};
+  \node[anchor=east] at (0,6) {$6$};
+  \node[anchor=east] at (0,9) {$9$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, si se requiere pintar la totalidad de la superficie del fondo de la piscina, entonces la cantidad de metros cuadrados que se requieren pintar es mayor que
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{22 \text{ y menor que } 26}
+  \opcion{B}{26 \text{ y menor que } 32}
+  \opcion{C}{32 \text{ y menor que } 37}
+  \opcion{D}{38 \text{ y menor que } 43}
+\end{enumerate}
+
+\Needspace{0.48\textheight}
+\item
+La secci\'on plana que se forma mediante la intersecci\'on de un cilindro circular recto con un plano que pasa por los centros de las bases del cilindro, corresponde a
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{\text{una elipse}}
+  \opcion{B}{\text{una par\'abola}}
+  \opcion{C}{\text{una hip\'erbola}}
+  \opcion{D}{\text{un rect\'angulo}}
+\end{enumerate}
+
+\Needspace{0.55\textheight}
+\item
+Un farol decorativo se fabrica a partir de una esfera de vidrio, a la cual se le realiza un corte para obtener una secci\'on plana que representa la base del farol. La medida del radio de la esfera es $25$ cm. Adem\'as, cuando se realiz\'o el corte, el centro de la base est\'a a $15$ cm del centro de la esfera. \textquestiondown Cu\'al es la medida aproximada de la longitud de la circunferencia, en cent\'imetros, que representa el borde de la base del farol?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{62,8}
+  \opcion{B}{125,6}
+  \opcion{C}{314,0}
+  \opcion{D}{1256,0}
+\end{enumerate}
+
+\Needspace{0.55\textheight}
+\item
+Luc\'ia est\'a fabricando dos l\'amparas de mesa a partir de un cilindro circular recto de vidrio. Para obtener esas l\'amparas, ella realiz\'o a ese cilindro un corte plano oblicuo, sin intersectar las bases. En una de esas l\'amparas, la secci\'on plana que se obtuvo producto de ese corte corresponde a
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{\text{una elipse}}
+  \opcion{B}{\text{una par\'abola}}
+  \opcion{C}{\text{un rect\'angulo}}
+  \opcion{D}{\text{una circunferencia}}
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+Considere el siguiente pol\'igono ABCD que representa el dise\~no de una cometa decorativa. Cada unidad del plano cartesiano equivale a $10$ cm.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.78]
+  \path[use as bounding box] (-2.2,-1.5) rectangle (6.2,8.5);
+  \draw[<->, thick] (-1.6,0) -- (5.7,0);
+  \draw[<->, thick] (0,-0.8) -- (0,8.0);
+  \node[anchor=west, inner sep=1pt] at (5.75,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,8.05) {$y$};
+  \draw[dashed] (0,7) -- (2,7);
+  \draw[dashed] (0,3) -- (4,3);
+  \draw[dashed] (0,1) -- (2,1);
+  \draw[dashed] (2,0) -- (2,7);
+  \draw[dashed] (4,0) -- (4,3);
+  \draw[thick] (2,7) -- (0,3) -- (2,1) -- (4,3) -- cycle;
+  \fill (2,7) circle (\puntotamanoestandar);
+  \fill (0,3) circle (\puntotamanoestandar);
+  \fill (2,1) circle (\puntotamanoestandar);
+  \fill (4,3) circle (\puntotamanoestandar);
+  \node[anchor=south, inner sep=1pt] at (2,7.08) {\textnormal{A}};
+  \node[anchor=east, inner sep=1pt] at (-0.68,3) {\textnormal{B}};
+  \node[anchor=north, inner sep=1pt] at (2,0.78) {\textnormal{C}};
+  \node[anchor=west, inner sep=1pt] at (4.08,3) {\textnormal{D}};
+  \node[anchor=north] at (2,0) {$2$};
+  \node[anchor=north] at (4,0) {$4$};
+  \node[anchor=east] at (0,1) {$1$};
+  \node[anchor=east] at (-0.12,3) {$3$};
+  \node[anchor=east] at (0,7) {$7$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on de la gr\'afica, \textquestiondown cu\'al es la cantidad total de ejes de simetr\'ia que se le pueden trazar al pol\'igono ABCD?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{4}
+  \opcion{B}{3}
+  \opcion{C}{2}
+  \opcion{D}{1}
+\end{enumerate}
+
+\Needspace{0.92\textheight}
+\item
+Considere el siguiente pol\'igono ABCDEFG, que representa el dise\~no de una estructura para un invernadero:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.68]
+  \path[use as bounding box] (-6.5,-1.4) rectangle (6.5,10.5);
+  \draw[<->, thick] (-6.0,0) -- (6.0,0);
+  \draw[<->, thick] (0,-0.8) -- (0,9.6);
+  \node[anchor=west, inner sep=1pt] at (6.05,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,9.65) {$y$};
+  \draw[dashed] (-5,0) -- (-5,5);
+  \draw[dashed] (-2,0) -- (-2,5);
+  \draw[dashed] (2,0) -- (2,5);
+  \draw[dashed] (5,0) -- (5,5);
+  \draw[dashed] (0,2) -- (2,2);
+  \draw[dashed] (0,5) -- (5,5);
+  \draw[thick] (-5,5) -- (-2,5) -- (-2,2) -- (2,2) -- (2,5) -- (5,5) -- (0,9) -- cycle;
+  \fill (-5,5) circle (\puntotamanoestandar) node[anchor=east, inner sep=1pt] {$A$};
+  \fill (-2,5) circle (\puntotamanoestandar) node[anchor=south east, inner sep=1pt] {$B$};
+  \fill (-2,2) circle (\puntotamanoestandar) node[anchor=east, inner sep=1pt] {$C$};
+  \fill (2,2) circle (\puntotamanoestandar) node[anchor=west, inner sep=1pt] {$D$};
+  \fill (2,5) circle (\puntotamanoestandar) node[anchor=south west, inner sep=1pt] {$E$};
+  \fill (5,5) circle (\puntotamanoestandar) node[anchor=west, inner sep=1pt] {$F$};
+  \fill (0,9) circle (\puntotamanoestandar) node[anchor=south, inner sep=1pt] {$G$};
+  \node[anchor=north] at (-5,0) {$\llap{-}5$};
+  \node[anchor=north] at (-2,0) {$\llap{-}2$};
+  \node[anchor=north] at (2,0) {$2$};
+  \node[anchor=north] at (5,0) {$5$};
+  \node[anchor=east] at (0,2) {$2$};
+  \node[anchor=east] at (0,5) {$5$};
+  \node[anchor=east] at (0,9) {$9$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on de la gr\'afica, \textquestiondown cu\'al punto corresponde a la imagen de F con respecto al eje $y$?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{B}
+  \opcion{B}{C}
+  \opcion{C}{D}
+  \opcion{D}{A}
 \end{enumerate}
 
 \end{enumerate}
