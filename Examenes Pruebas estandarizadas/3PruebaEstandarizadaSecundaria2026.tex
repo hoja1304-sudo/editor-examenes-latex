@@ -1547,33 +1547,35 @@ De acuerdo con los datos, los modelos matem\'aticos que mejor se adaptan a las f
 
 \Needspace{0.76\textheight}
 \item
-Una empresa observa la expansi\'on de una mancha circular de fertilizante soluble sobre una superficie de cultivo. La siguiente gr\'afica muestra el radio $R(t)$, en metros, de la mancha en funci\'on del tiempo $t$, en minutos, desde el inicio de la observaci\'on, con $0\leq t\leq 9$.
+Durante una actividad deportiva, se lanza una pelota verticalmente desde el suelo. La siguiente gr\'afica muestra la altura $h(t)$, en metros, de la pelota en funci\'on del tiempo $t$, en segundos, desde el lanzamiento hasta que regresa al suelo, con $0\leq t\leq 6$.
 
 \begin{center}
-\begin{tikzpicture}[x=0.62cm,y=1.05cm,>=stealth]
-  \draw[->,thick] (0,0) -- (10.1,0);
-  \draw[->,thick] (0,0) -- (0,3.8);
-  \draw[dashed,gray] (0,3) -- (9,3) -- (9,0);
-  \draw[thick,domain=0:9,samples=100,smooth,variable=\x]
-    plot ({\x},{sqrt(\x)});
+\begin{tikzpicture}[x=0.78cm,y=0.42cm,>=stealth]
+  \draw[->,thick] (0,0) -- (7,0);
+  \draw[->,thick] (0,0) -- (0,10.5);
+  \draw[dashed,gray] (0,9) -- (3,9) -- (3,0);
+  \draw[thick,domain=0:6,samples=100,smooth,variable=\x]
+    plot ({\x},{-\x*\x+6*\x});
   \fill (0,0) circle (\puntografico);
-  \fill (9,3) circle (\puntografico);
-  \node[anchor=north] at (9,0) {$9$};
-  \node[anchor=east] at (0,3) {$3$};
-  \node[above] at (0,3.8) {$R(t)$};
-  \node[below] at (5.1,-0.25) {Tiempo};
-  \node[rotate=90] at (-0.72,1.9) {Radio};
-  \node[right] at (10.1,0) {$t$};
+  \fill (3,9) circle (\puntografico);
+  \fill (6,0) circle (\puntografico);
+  \node[anchor=north] at (3,0) {$3$};
+  \node[anchor=north] at (6,0) {$6$};
+  \node[anchor=east] at (0,9) {$9$};
+  \node[above] at (0,10.5) {$h(t)$};
+  \node[below] at (3.5,-0.9) {Tiempo};
+  \node[rotate=90] at (-0.75,5.25) {Altura};
+  \node[right] at (7,0) {$t$};
 \end{tikzpicture}
 \end{center}
 
-De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de los siguientes criterios podr\'ia modelar el radio de la mancha en funci\'on del tiempo?
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de los siguientes criterios podr\'ia modelar la altura de la pelota en funci\'on del tiempo?
 
 \begin{enumerate}[label=\Alph*)]
-  \opcion{A}{R(t)=t^2}
-  \opcion{B}{R(t)=\sqrt{t}}
-  \opcion{C}{R(t)=\log_{3}(t)}
-  \opcion{D}{R(t)=3^t}
+  \opcion{A}{h(t)=-t^2+6t}
+  \opcion{B}{h(t)=t^2+6t}
+  \opcion{C}{h(t)=\sqrt{t}}
+  \opcion{D}{h(t)=2^t}
 \end{enumerate}
 
 \end{enumerate}
