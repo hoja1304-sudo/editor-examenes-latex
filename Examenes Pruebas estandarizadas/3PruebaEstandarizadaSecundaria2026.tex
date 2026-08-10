@@ -1484,6 +1484,98 @@ De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es el precio,
   \opcion{D}{6400}
 \end{enumerate}
 
+\Needspace{0.40\textheight}
+\item
+En un criadero se liberan inicialmente $80$ insectos ben\'eficos para controlar una plaga. La cantidad de insectos se triplica al finalizar cada semana.
+
+Si $I(t)$ representa la cantidad de insectos despu\'es de $t$ semanas, \textquestiondown cu\'al criterio modela esta situaci\'on?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{I(t)=80+3t}
+  \opcion{B}{I(t)=80\cdot 3t}
+  \opcion{C}{I(t)=80+3^t}
+  \opcion{D}{I(t)=80\cdot 3^t}
+\end{enumerate}
+
+\Needspace{0.38\textheight}
+\item
+En una finca se construir\'a un invernadero rectangular cuyo largo medir\'a cuatro veces su ancho. Si $x$ representa el ancho, en metros, del invernadero, \textquestiondown cu\'al criterio modela el \`area $A(x)$, en metros cuadrados?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{A(x)=16x^2}
+  \opcion{B}{A(x)=4x^2}
+  \opcion{C}{A(x)=\dfrac{1}{4}x^2}
+  \opcion{D}{A(x)=\dfrac{1}{16}x^2}
+\end{enumerate}
+
+\Needspace{0.58\textheight}
+\item
+En un laboratorio se registran los resultados de dos procesos autom\'aticos durante cinco ciclos de operaci\'on. En las siguientes tablas se muestran algunos valores de las funciones $p$ y $q$, donde $x$ representa el n\'umero de ciclo.
+
+\begin{center}
+\begin{minipage}{0.43\textwidth}
+\centering
+\textbf{I.}\\[3pt]
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+$p(x)$ & $2$ & $3$ & $6$ & $11$ & $18$ \\ \hline
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}{0.43\textwidth}
+\centering
+\textbf{II.}\\[3pt]
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+$q(x)$ & $2$ & $6$ & $18$ & $54$ & $162$ \\ \hline
+\end{tabular}
+\end{minipage}
+\end{center}
+
+De acuerdo con los datos, los modelos matem\'aticos que mejor se adaptan a las funciones I y II son, respectivamente,
+
+\begin{enumerate}[label=\Alph*)]
+  \item lineal y cuadr\'atico.
+  \item cuadr\'atico y lineal.
+  \item cuadr\'atico y exponencial.
+  \item exponencial y radical.
+\end{enumerate}
+
+\Needspace{0.76\textheight}
+\item
+Una empresa observa la expansi\'on de una mancha circular de fertilizante soluble sobre una superficie de cultivo. La siguiente gr\'afica muestra el radio $R(t)$, en metros, de la mancha en funci\'on del tiempo $t$, en minutos, desde el inicio de la observaci\'on, con $0\leq t\leq 9$.
+
+\begin{center}
+\begin{tikzpicture}[x=0.62cm,y=1.05cm,>=stealth]
+  \draw[->,thick] (0,0) -- (10.1,0);
+  \draw[->,thick] (0,0) -- (0,3.8);
+  \draw[dashed,gray] (0,3) -- (9,3) -- (9,0);
+  \draw[thick,domain=0:9,samples=100,smooth,variable=\x]
+    plot ({\x},{sqrt(\x)});
+  \fill (0,0) circle (\puntografico);
+  \fill (9,3) circle (\puntografico);
+  \node[anchor=north] at (9,0) {$9$};
+  \node[anchor=east] at (0,3) {$3$};
+  \node[above] at (0,3.8) {$R(t)$};
+  \node[below] at (5.1,-0.25) {Tiempo};
+  \node[rotate=90] at (-0.72,1.9) {Radio};
+  \node[right] at (10.1,0) {$t$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de los siguientes criterios podr\'ia modelar el radio de la mancha en funci\'on del tiempo?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{R(t)=t^2}
+  \opcion{B}{R(t)=\sqrt{t}}
+  \opcion{C}{R(t)=\log_{3}(t)}
+  \opcion{D}{R(t)=3^t}
+\end{enumerate}
+
 \end{enumerate}
 
 \end{document}
