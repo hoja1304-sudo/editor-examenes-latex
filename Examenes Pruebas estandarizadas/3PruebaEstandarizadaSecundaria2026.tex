@@ -860,4 +860,84 @@ De acuerdo con la informaci\'on de la gr\'afica, \textquestiondown cu\'al punto 
 
 \end{enumerate}
 
+\newpage
+
+\noindent Para responder los 'items 21, 22 y 23, considere la siguiente informaci\'on:
+
+En el plano de un proyecto habitacional se muestran cuatro lotes poligonales, identificados como \#1, \#2, \#3 y \#4. Los dise\~nos de esos lotes se relacionan mediante transformaciones en el plano cartesiano.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.62]
+  \path[use as bounding box] (-5.8,-5.6) rectangle (7.8,5.8);
+  \foreach \x in {-5,-4,...,7}
+    \draw[dashed, gray!65, thin] (\x,-5) -- (\x,5);
+  \foreach \y in {-5,-4,...,5}
+    \draw[dashed, gray!65, thin] (-5,\y) -- (7,\y);
+  \draw[<->, thick] (-5.5,0) -- (7.4,0);
+  \draw[<->, thick] (0,-5.3) -- (0,5.4);
+  \node[anchor=west, inner sep=1pt] at (7.45,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,5.45) {$y$};
+
+  \draw[thick] (-4,1) -- (-2,1) -- (-2,3) -- (-3,4) -- (-4,3) -- cycle;
+  \draw[thick] (2,1) -- (4,1) -- (4,3) -- (3,4) -- (2,3) -- cycle;
+  \draw[thick] (4,-1) -- (6,-1) -- (6,-3) -- (5,-4) -- (4,-3) -- cycle;
+  \draw[thick] (-2,-1) -- (-4,-1) -- (-4,-3) -- (-3,-4) -- (-2,-3) -- cycle;
+
+  \foreach \p in {(-4,1),(-2,1),(-2,3),(-3,4),(-4,3),
+                    (2,1),(4,1),(4,3),(3,4),(2,3),
+                    (4,-1),(6,-1),(6,-3),(5,-4),(4,-3),
+                    (-2,-1),(-4,-1),(-4,-3),(-3,-4),(-2,-3)}
+    \fill \p circle (\puntografico);
+
+  \node at (-3,2.35) {\textnormal{\#1}};
+  \node at (3,2.35) {\textnormal{\#2}};
+  \node at (5,-2.35) {\textnormal{\#3}};
+  \node at (-3,-2.35) {\textnormal{\#4}};
+
+  \node[anchor=north] at (-4,0) {$\llap{-}4$};
+  \node[anchor=north] at (-2,0) {$\llap{-}2$};
+  \node[anchor=north] at (2,0) {$2$};
+  \node[anchor=north] at (4,0) {$4$};
+  \node[anchor=north] at (6,0) {$6$};
+  \node[anchor=east] at (0,-4) {$-4$};
+  \node[anchor=east] at (0,-2) {$-2$};
+  \node[anchor=east] at (0,2) {$2$};
+  \node[anchor=east] at (0,4) {$4$};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, start=21, itemsep=0.35cm]
+
+\item
+Al lote \#2 se le aplica una homotecia con centro en el origen para obtener el lote \#4. De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es la raz\'on de esa homotecia?
+
+\begin{enumerate}[label=\Alph*), itemsep=0pt, topsep=2pt, parsep=0pt]
+  \opcion{A}{-2}
+  \opcion{B}{-1}
+  \opcion{C}{1}
+  \opcion{D}{2}
+\end{enumerate}
+
+\item
+Una forma de obtener el lote \#3 a partir del lote \#4 es aplicarle una reflexi\'on con respecto a la recta
+
+\begin{enumerate}[label=\Alph*), itemsep=0pt, topsep=2pt, parsep=0pt]
+  \opcion{A}{x=0}
+  \opcion{B}{x=1}
+  \opcion{C}{y=0}
+  \opcion{D}{y=1}
+\end{enumerate}
+
+\item
+Uno de los v\'ertices del lote \#1 corresponde al punto $(-3,4)$. Si a ese lote se le aplica una rotaci\'on de $90^\circ$ en sentido horario y con centro en el origen, entonces, \textquestiondown cu\'al es el punto imagen de ese v\'ertice?
+
+\begin{enumerate}[label=\Alph*), itemsep=0pt, topsep=2pt, parsep=0pt]
+  \opcion{A}{(-4,3)}
+  \opcion{B}{(4,-3)}
+  \opcion{C}{(4,3)}
+  \opcion{D}{(-3,4)}
+\end{enumerate}
+
+\end{enumerate}
+
 \end{document}
