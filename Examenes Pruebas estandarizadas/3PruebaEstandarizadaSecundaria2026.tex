@@ -1132,4 +1132,164 @@ De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es el valor d
 
 \end{enumerate}
 
+\newpage
+
+\begin{enumerate}[label=\textbf{\arabic*.}, start=29, itemsep=1cm]
+
+\Needspace{0.48\textheight}
+\item
+En un vivero se construyeron cuatro semilleros cuadrados, cada uno con medida de lado $l$, en metros. Adem\'as, los pasillos que rodean los semilleros ocupan un \'area fija de $20$ m$^2$. La funci\'on que determina el \'area total $m(l)$, en metros cuadrados, ocupada por los semilleros y los pasillos est\'a dada por
+\[
+  m(l)=4l^2+20, \qquad l>0.
+\]
+
+Si se requiere determinar la medida del lado de cada semillero en funci\'on del \'area total $m$, entonces, \textquestiondown cu\'al es el criterio de la funci\'on inversa $l(m)$?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{l(m)=\dfrac{\sqrt{m-20}}{4}}
+  \opcion{B}{l(m)=\sqrt{\dfrac{m-20}{4}}}
+  \opcion{C}{l(m)=\sqrt{m-5}}
+  \opcion{D}{l(m)=\sqrt{\dfrac{m}{4}-20}}
+\end{enumerate}
+
+\Needspace{0.53\textheight}
+\item
+En una planta de empaque, la funci\'on $f$ relaciona la cantidad $b$ de cajas utilizadas con la cantidad $j$ de frascos empacados. Cada caja contiene $12$ frascos. La siguiente representaci\'on gr\'afica corresponde a la funci\'on inversa $f^{-1}$, la cual determina la cantidad de cajas requeridas seg\'un la cantidad de frascos:
+
+\begin{center}
+\begin{tikzpicture}[x=0.065cm,y=0.43cm]
+  \path[use as bounding box] (-18,-2.3) rectangle (138,13.3);
+  \draw[->, thick] (0,0) -- (132,0);
+  \draw[->, thick] (0,0) -- (0,12.2);
+  \node[anchor=west, inner sep=1pt] at (132.5,0) {$j$};
+  \node[anchor=south, inner sep=1pt] at (0,12.35) {$b$};
+  \draw[thick] (0,0) -- (126,10.5);
+  \draw[dashed, gray] (60,0) -- (60,5) -- (0,5);
+  \draw[dashed, gray] (120,0) -- (120,10) -- (0,10);
+  \fill (60,5) circle (\puntotamanoestandar);
+  \fill (120,10) circle (\puntotamanoestandar);
+  \node[anchor=north] at (60,0) {$60$};
+  \node[anchor=north] at (120,0) {$120$};
+  \node[anchor=east] at (0,5) {$5$};
+  \node[anchor=east] at (0,10) {$10$};
+  \node[anchor=south west, inner sep=1pt] at (92,8.1) {$f^{-1}$};
+\end{tikzpicture}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, para empacar $60$ frascos se requieren
+
+\begin{enumerate}[label=\Alph*)]
+  \item $3$ cajas.
+  \item $5$ cajas.
+  \item $10$ cajas.
+  \item $60$ cajas.
+\end{enumerate}
+
+\Needspace{0.88\textheight}
+\item
+En la calibraci\'on de una m\'aquina, la funci\'on lineal $r$ relaciona un valor de ajuste $x$ con la lectura obtenida y est\'a dada por
+\[
+  r(x)=2x+4.
+\]
+\textquestiondown Cu\'al de las siguientes representaciones gr\'aficas corresponde a $r^{-1}$?
+
+\vspace{0.5\baselineskip}
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{r@{\hspace{0.45cm}}c@{\hspace{1.2cm}}r@{\hspace{0.45cm}}c}
+\raisebox{2.3cm}{\textbf{A)}} &
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-5.3,-3.7) rectangle (6.0,4.8);
+  \draw[<->, thick] (-4.8,0) -- (5.5,0);
+  \draw[<->, thick] (0,-3.2) -- (0,4.3);
+  \node[anchor=west, inner sep=1pt] at (5.55,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,4.35) {$y$};
+  \draw[<->, thick] (-2,-3) -- (5,0.5);
+  \fill (0,-2) circle (\puntografico);
+  \fill (4,0) circle (\puntografico);
+  \node[anchor=east] at (0,-2) {$-2$};
+  \node[anchor=north] at (4,0) {$4$};
+\end{tikzpicture}
+&
+\raisebox{2.3cm}{\textbf{B)}} &
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-5.3,-3.7) rectangle (6.0,5.3);
+  \draw[<->, thick] (-4.8,0) -- (5.5,0);
+  \draw[<->, thick] (0,-3.2) -- (0,4.8);
+  \node[anchor=west, inner sep=1pt] at (5.55,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,4.85) {$y$};
+  \draw[<->, thick] (-3,-2) -- (0.4,4.8);
+  \fill (-2,0) circle (\puntografico);
+  \fill (0,4) circle (\puntografico);
+  \node[anchor=north] at (-2,0) {$-2$};
+  \node[anchor=west] at (0,4) {$4$};
+\end{tikzpicture}
+\\[0.8cm]
+\raisebox{2.3cm}{\textbf{C)}} &
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-5.3,-3.7) rectangle (6.0,4.8);
+  \draw[<->, thick] (-4.8,0) -- (5.5,0);
+  \draw[<->, thick] (0,-3.2) -- (0,4.3);
+  \node[anchor=west, inner sep=1pt] at (5.55,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,4.35) {$y$};
+  \draw[<->, thick] (-4,4) -- (5,-0.5);
+  \fill (0,2) circle (\puntografico);
+  \fill (4,0) circle (\puntografico);
+  \node[anchor=west] at (0,2) {$2$};
+  \node[anchor=north] at (4,0) {$4$};
+\end{tikzpicture}
+&
+\raisebox{2.3cm}{\textbf{D)}} &
+\begin{tikzpicture}[scale=0.48]
+  \path[use as bounding box] (-5.3,-3.7) rectangle (6.0,4.8);
+  \draw[<->, thick] (-4.8,0) -- (5.5,0);
+  \draw[<->, thick] (0,-3.2) -- (0,4.3);
+  \node[anchor=west, inner sep=1pt] at (5.55,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,4.35) {$y$};
+  \draw[<->, thick] (-5,-0.5) -- (4,4);
+  \fill (-4,0) circle (\puntografico);
+  \fill (0,2) circle (\puntografico);
+  \node[anchor=north] at (-4,0) {$-4$};
+  \node[anchor=west] at (0,2) {$2$};
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\Needspace{0.65\textheight}
+\item
+La siguiente representaci\'on gr\'afica muestra la altura $h(t)$, en metros, de un chorro de agua de una fuente ornamental, en funci\'on del tiempo $t$, en segundos, transcurrido desde que el agua sale de la boquilla:
+
+\begin{center}
+\begin{tikzpicture}[x=0.72cm,y=0.36cm]
+  \path[use as bounding box] (-1.8,-3.0) rectangle (10.2,15.5);
+  \draw[->, thick] (0,0) -- (9.3,0);
+  \draw[->, thick] (0,0) -- (0,14.2);
+  \node[anchor=west, inner sep=1pt] at (9.35,0) {$t$};
+  \node[anchor=south, inner sep=1pt] at (0,14.35) {$h(t)$};
+  \draw[thick, domain=0:8, samples=100, variable=\t]
+    plot ({\t},{-0.75*(\t-4)*(\t-4)+12});
+  \draw[dashed, gray] (4,0) -- (4,12);
+  \draw[dashed, gray] (0,12) -- (4,12);
+  \fill (0,0) circle (\puntotamanoestandar);
+  \fill (4,12) circle (\puntotamanoestandar);
+  \fill (8,0) circle (\puntotamanoestandar);
+  \node[anchor=north] at (4,0) {$4$};
+  \node[anchor=north] at (8,0) {$8$};
+  \node[anchor=east] at (0,12) {$12$};
+  \node[anchor=north] at (4,-2.0) {Tiempo};
+  \node[rotate=90, anchor=south] at (-1.15,7) {Altura};
+\end{tikzpicture}
+\end{center}
+
+\textquestiondown Cu\'al de los siguientes intervalos corresponde a un intervalo donde la funci\'on $h$ tiene funci\'on inversa?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{[0,4]}
+  \opcion{B}{[2,6]}
+  \opcion{C}{[1,7]}
+  \opcion{D}{[0,8]}
+\end{enumerate}
+
+\end{enumerate}
+
 \end{document}
