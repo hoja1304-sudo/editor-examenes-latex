@@ -24,6 +24,62 @@
 \newcommand{\puntotamanoestandar}{0.08cm}
 \newcommand{\rotuloxeste}{\mbox{x (este)}}
 \newcommand{\rotuloynorte}{\mbox{y (norte)}}
+\newcommand{\circulorespuesta}[1]{%
+\tikz[baseline=(letra.base)]\node[draw,circle,inner sep=0.7pt,minimum size=16pt,font=\scriptsize] (letra) {#1};}
+\newcommand{\itemrespuesta}[1]{%
+\makebox[0.58cm][r]{\textbf{#1}}\hspace{1pt}%
+\circulorespuesta{A}\hspace{1.5pt}\circulorespuesta{B}\hspace{1.5pt}\circulorespuesta{C}\hspace{1.5pt}\circulorespuesta{D}}
+\newcommand{\hojarespuestas}{%
+\clearpage
+\thispagestyle{empty}
+\begingroup
+\setlength{\parskip}{0pt}
+\begin{center}
+{\Large\bfseries HOJA DE RESPUESTAS}
+\end{center}
+\vspace{0.85cm}
+\noindent\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
+\textbf{Nombre del estudiante:} \rule{6.6cm}{0.4pt} &
+\textbf{Secci\'on:} \rule{2.4cm}{0.4pt}
+\end{tabular*}
+
+\vspace{0.55cm}
+\noindent\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{\extracolsep{\fill}}l@{}}
+\textbf{Puntos obtenidos:} \rule{2.0cm}{0.4pt} &
+\textbf{Nota:} \rule{2.0cm}{0.4pt} &
+\textbf{Porcentaje obtenido:} \rule{2.4cm}{0.4pt}
+\end{tabular*}
+
+\vspace{0.85cm}
+\noindent\rule{\textwidth}{0.4pt}
+
+\vspace{0.2cm}
+{\Large\bfseries SELECCI\'ON \'UNICA}
+
+\vspace{0.05cm}
+Rellene completamente el c\'irculo correspondiente a la opci\'on seleccionada.
+
+\vspace{0.7cm}
+\begin{center}
+\renewcommand{\arraystretch}{1.55}
+\setlength{\tabcolsep}{7.8pt}
+\begin{tabular}{@{}ccccc@{}}
+\itemrespuesta{1} & \itemrespuesta{13} & \itemrespuesta{25} & \itemrespuesta{37} & \itemrespuesta{49} \\
+\itemrespuesta{2} & \itemrespuesta{14} & \itemrespuesta{26} & \itemrespuesta{38} & \itemrespuesta{50} \\
+\itemrespuesta{3} & \itemrespuesta{15} & \itemrespuesta{27} & \itemrespuesta{39} & \itemrespuesta{51} \\
+\itemrespuesta{4} & \itemrespuesta{16} & \itemrespuesta{28} & \itemrespuesta{40} & \itemrespuesta{52} \\
+\itemrespuesta{5} & \itemrespuesta{17} & \itemrespuesta{29} & \itemrespuesta{41} & \itemrespuesta{53} \\
+\itemrespuesta{6} & \itemrespuesta{18} & \itemrespuesta{30} & \itemrespuesta{42} & \itemrespuesta{54} \\
+\itemrespuesta{7} & \itemrespuesta{19} & \itemrespuesta{31} & \itemrespuesta{43} & \itemrespuesta{55} \\
+\itemrespuesta{8} & \itemrespuesta{20} & \itemrespuesta{32} & \itemrespuesta{44} & \itemrespuesta{56} \\
+\itemrespuesta{9} & \itemrespuesta{21} & \itemrespuesta{33} & \itemrespuesta{45} & \itemrespuesta{57} \\
+\itemrespuesta{10} & \itemrespuesta{22} & \itemrespuesta{34} & \itemrespuesta{46} & \itemrespuesta{58} \\
+\itemrespuesta{11} & \itemrespuesta{23} & \itemrespuesta{35} & \itemrespuesta{47} & \itemrespuesta{59} \\
+\itemrespuesta{12} & \itemrespuesta{24} & \itemrespuesta{36} & \itemrespuesta{48} & \itemrespuesta{60}
+\end{tabular}
+\end{center}
+\endgroup
+}
 
 \begin{document}
 
@@ -1892,5 +1948,7 @@ De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al de las siguie
 \end{enumerate}
 
 \end{enumerate}
+
+\hojarespuestas
 
 \end{document}
