@@ -1076,4 +1076,60 @@ Si se requiere conocer el costo por transportar las cajas preparadas en funci\'o
 
 \end{enumerate}
 
+\begin{enumerate}[label=\textbf{\arabic*.}, start=28, itemsep=2.5cm]
+
+\Needspace{0.56\textheight}
+\item
+En una planta de empaque, la funci\'on $f$ relaciona el tiempo $x$, en horas, transcurrido desde el inicio de la jornada con la cantidad de paquetes terminados. Asimismo, la funci\'on $g$ relaciona la cantidad $x$ de paquetes terminados con la cantidad de paquetes que a\'un est\'an pendientes. Las siguientes representaciones gr\'aficas corresponden a esas funciones:
+
+\begin{center}
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{c@{\hspace{1.2cm}}c}
+\begin{tikzpicture}[x=0.48cm,y=0.48cm]
+  \path[use as bounding box] (-1.1,-1.2) rectangle (7.9,10.8);
+  \draw[->, thick] (0,0) -- (7.3,0);
+  \draw[->, thick] (0,0) -- (0,10.2);
+  \node[anchor=west, inner sep=1pt] at (7.35,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,10.25) {$y$};
+  \draw[<->, thick] (0.5,3.5) -- (6.8,9.8);
+  \draw[dashed, gray] (2,0) -- (2,5) -- (0,5);
+  \draw[dashed, gray] (6,0) -- (6,9) -- (0,9);
+  \fill (2,5) circle (\puntotamanoestandar);
+  \fill (6,9) circle (\puntotamanoestandar);
+  \node[anchor=north] at (2,0) {$2$};
+  \node[anchor=north] at (6,0) {$6$};
+  \node[anchor=east] at (0,5) {$5$};
+  \node[anchor=east] at (0,9) {$9$};
+  \node[anchor=south, inner sep=1pt] at (5.4,9.65) {$f$};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[x=0.48cm,y=0.48cm]
+  \path[use as bounding box] (-1.1,-1.2) rectangle (10.8,7.2);
+  \draw[->, thick] (0,0) -- (10.2,0);
+  \draw[->, thick] (0,0) -- (0,6.6);
+  \node[anchor=west, inner sep=1pt] at (10.25,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,6.65) {$y$};
+  \draw[->, thick] (4,5) -- (9.7,-0.7);
+  \draw[dashed, gray] (5,0) -- (5,4) -- (0,4);
+  \fill (5,4) circle (\puntotamanoestandar);
+  \fill (9,0) circle (\puntotamanoestandar);
+  \node[anchor=north] at (5,0) {$5$};
+  \node[anchor=north] at (9,0) {$9$};
+  \node[anchor=east] at (0,4) {$4$};
+  \node[anchor=south west, inner sep=1pt] at (8.0,0.8) {$g$};
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+De acuerdo con la informaci\'on anterior, \textquestiondown cu\'al es el valor de $(g\circ f)(2)$?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{2}
+  \opcion{B}{4}
+  \opcion{C}{5}
+  \opcion{D}{9}
+\end{enumerate}
+
+\end{enumerate}
+
 \end{document}
