@@ -940,4 +940,49 @@ Uno de los v\'ertices del lote \#1 corresponde al punto $(-3,4)$. Si a ese lote 
 
 \end{enumerate}
 
+\newpage
+
+\begin{enumerate}[label=\textbf{\arabic*.}, start=24, itemsep=2.5cm]
+
+\Needspace{0.92\textheight}
+\item
+\textquestiondown Cu\'al de las siguientes representaciones de relaciones, donde $x$ representa la variable independiente y $y$ la variable dependiente, corresponde a una funci\'on?
+
+\begin{enumerate}[label=\Alph*), itemsep=0.45cm, topsep=5pt, parsep=0pt]
+
+\item
+\begin{tikzpicture}[scale=0.78, baseline={(current bounding box.center)}]
+  \path[use as bounding box] (-3.2,-2.9) rectangle (4.1,2.9);
+  \draw[<->, thick] (-2.8,0) -- (3.7,0);
+  \draw[<->, thick] (0,-2.6) -- (0,2.6);
+  \node[anchor=west, inner sep=1pt] at (3.75,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (0,2.65) {$y$};
+  \draw[thick, domain=-2.2:2.2, samples=100, variable=\t]
+    plot ({0.72*\t*\t-1.15},{\t});
+\end{tikzpicture}
+
+\item
+\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  $x$ & $-2$ & $0$ & $0$ & $3$ \\ \hline
+  $y$ & $1$ & $2$ & $4$ & $5$ \\ \hline
+\end{tabular}
+
+\item
+Sean $D=[-2,2]$ y $E=[-2,2]$, y sea $R$ la relaci\'on de $D$ en $E$ determinada por
+\[
+  R=\{(x,y):x=y^2\}.
+\]
+
+\item
+La relaci\'on $S$ est\'a determinada por
+\[
+  S=\{(-2,3),(0,1),(2,1),(4,3)\}.
+\]
+
+\end{enumerate}
+
+\end{enumerate}
+
 \end{document}
