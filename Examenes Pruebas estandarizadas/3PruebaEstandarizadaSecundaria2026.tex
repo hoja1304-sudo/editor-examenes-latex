@@ -985,4 +985,95 @@ La relaci\'on $S$ est\'a determinada por
 
 \end{enumerate}
 
+\newpage
+
+\noindent Para responder los 'items 25 y 26, considere la siguiente informaci\'on:
+
+La siguiente representaci\'on gr\'afica muestra la cantidad de agua, en miles de litros, almacenada en un tanque de riego de una finca, en funci\'on del tiempo $x$, en horas de un d\'ia, con $7<x\leq 19$:
+
+\begin{center}
+\begin{tikzpicture}[x=0.55cm,y=0.20cm]
+  \path[use as bounding box] (3.8,-5.2) rectangle (21.3,28.5);
+  \draw[->, thick] (6,0) -- (20.4,0);
+  \draw[->, thick] (6,0) -- (6,27.2);
+  \node[anchor=west, inner sep=1pt] at (20.45,0) {$x$};
+  \node[anchor=south, inner sep=1pt] at (6,27.35) {$y$};
+
+  \draw[dashed, gray] (10,0) -- (10,24);
+  \draw[dashed, gray] (13,0) -- (13,8);
+  \draw[dashed, gray] (16,0) -- (16,16);
+  \draw[dashed, gray] (6,8) -- (13,8);
+  \draw[dashed, gray] (6,16) -- (16,16);
+  \draw[dashed, gray] (6,24) -- (10,24);
+
+  \draw[thick] (7,0) -- (10,24) -- (13,8) -- (16,16) -- (19,0);
+  \draw[fill=white, thick] (7,0) circle (0.10cm);
+  \fill (10,24) circle (\puntotamanoestandar);
+  \fill (13,8) circle (\puntotamanoestandar);
+  \fill (16,16) circle (\puntotamanoestandar);
+  \fill (19,0) circle (\puntotamanoestandar);
+
+  \node[anchor=north] at (7,0) {$7$};
+  \node[anchor=north] at (10,0) {$10$};
+  \node[anchor=north] at (13,0) {$13$};
+  \node[anchor=north] at (16,0) {$16$};
+  \node[anchor=north] at (19,0) {$19$};
+  \node[anchor=east] at (6,8) {$8$};
+  \node[anchor=east] at (6,16) {$16$};
+  \node[anchor=east] at (6,24) {$24$};
+  \node[anchor=north] at (13,-3.0) {Tiempo};
+  \node[rotate=90, anchor=south] at (4.35,13.5) {Cantidad de agua};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, start=25, itemsep=0.55cm]
+
+\item
+De acuerdo con la informaci\'on anterior, en ese d\'ia la cantidad de agua almacenada en el tanque disminuy\'o entre las
+
+\begin{enumerate}[label=\Alph*), itemsep=0pt, topsep=2pt, parsep=0pt]
+  \item $7$ h y $10$ h.
+  \item $13$ h y $16$ h.
+  \item $16$ h y $19$ h.
+  \item $7$ h y $16$ h.
+\end{enumerate}
+
+\item
+\textquestiondown A qu\'e hora de ese d\'ia se registr\'o la mayor cantidad de agua almacenada en el tanque?
+
+\begin{enumerate}[label=\Alph*), itemsep=0pt, topsep=2pt, parsep=0pt]
+  \item A las $7$ h.
+  \item A las $10$ h.
+  \item A las $16$ h.
+  \item A las $19$ h.
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, start=27, itemsep=2.5cm]
+
+\Needspace{0.54\textheight}
+\item
+Considere la siguiente informaci\'on:
+
+En una empresa, la funci\'on $c$ determina el costo, en colones, por transportar $n$ cajas de productos y est\'a dada por
+\[
+  c(n)=750n+1200, \qquad 0<n\leq 25.
+\]
+Asimismo, la funci\'on $q$ determina la cantidad de cajas preparadas para transportar en funci\'on del tiempo $t$, en horas, transcurrido desde el inicio de la jornada laboral y est\'a dada por
+\[
+  q(t)=3t+2, \qquad 1\leq t\leq 6.
+\]
+
+Si se requiere conocer el costo por transportar las cajas preparadas en funci\'on del tiempo transcurrido, entonces, \textquestiondown cu\'al es el criterio de $(c\circ q)(t)$?
+
+\begin{enumerate}[label=\Alph*)]
+  \opcion{A}{(c\circ q)(t)=2250t+1200}
+  \opcion{B}{(c\circ q)(t)=2250t+2700}
+  \opcion{C}{(c\circ q)(t)=750t+2700}
+  \opcion{D}{(c\circ q)(t)=2250t+1500}
+\end{enumerate}
+
+\end{enumerate}
+
 \end{document}
